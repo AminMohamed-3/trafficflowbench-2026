@@ -11,13 +11,13 @@ It never changes behaviour: every error inside the hook is swallowed.
 import os, sys
 
 _LOG = os.environ.get("TFB_OPEN_AUDIT_LOG")
-_ROOT = os.environ.get("TFB_ROOT")
+_ROOT = os.environ.get("TFB_OPEN_AUDIT_ROOT") or os.environ.get("TFB_ROOT")   # audit root may differ from the build root
 if _LOG and _ROOT:
     _real = os.path.realpath
     _ok = [_real(_ROOT), _real(sys.prefix), _real(sys.base_prefix), "/usr", "/lib", "/etc", "/proc", "/sys", "/dev", "/tmp",
            "/var", "/run", os.path.expanduser("~")] + [_real(p) for p in os.environ.get("TFB_OPEN_AUDIT_ALLOW", "").split(os.pathsep) if p]
     if os.name == "nt":
-        _ok += [os.environ.get("SystemRoot", "C:\Windows"), os.environ.get("TEMP", ""), os.environ.get("ProgramData", "")]
+        _ok += [os.environ.get("SystemRoot", r"C:\Windows"), os.environ.get("TEMP", ""), os.environ.get("ProgramData", "")]
     _ok = tuple(os.path.normcase(p) for p in _ok if p)
     _seen = set()
 
