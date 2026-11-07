@@ -1,0 +1,4 @@
+version: 4.6.0
+wheel: artifacts/lane_q/0121/runtime/lightgbm-4.6.0-py3-none-win_amd64.whl
+wheel_sha256: 37089ee95664b6550a7189d887dbf098e3eadab03537e411f52c63c121e3ba4b
+competition_reads: 0

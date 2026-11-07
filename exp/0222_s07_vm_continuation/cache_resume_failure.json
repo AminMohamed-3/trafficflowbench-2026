@@ -1,0 +1,8 @@
+{
+  "failed_job": "S_0189_1001T205305Z",
+  "charged_minutes": 2.6975924650828045,
+  "reason": "Repeated history control changed timing/resource receipt hash, so a completed data-builder reentry correctly stopped. Resume now verifies complete immutable producer contract/source/masks/date/parent/all actual arrays and skips rebuilding complete data. Original data provenance retained; future new phases get current proof. No array/source/pool/held gate change.",
+  "candidate_fits": 0,
+  "OWN_reads": 0,
+  "ADV_reads": 0
+}

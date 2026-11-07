@@ -1,0 +1,11 @@
+slice,cell_share_mar,cell_share_apr,improvable_mar,improvable_apr,loss_share_mar,loss_share_apr
+queue front (2 steps / 2 stations),0.022000000000000002,0.024,0.85,0.79,0.23,0.21
+"congested, not front",0.027000000000000003,0.028999999999999998,0.03,0.03,0.023,0.023
+free flow,0.95,0.94,0.2,0.25,0.74,0.76
+"4 panels (D12 I5 S, I405 N/S; D7 I210 W)",0.2,0.2,0.71,0.69,0.46,0.45
+hours 15-19,0.21,0.21,0.7,0.63,0.37,0.34
+regime R3 days,0.3,0.27,0.44,0.4,0.35,0.35
+hidden run 4-12 cells,0.27,0.26,0.35,0.41,0.29,0.31
+nearest visible station 3-5 away,0.067,0.065,0.16,0.23,0.09,0.11
+long links (top tercile),0.33,0.33,0.47,0.47,0.41,0.41
+6-lane stations,0.08,0.08,0.2,0.26,0.11,0.12

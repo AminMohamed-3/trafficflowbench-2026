@@ -1,0 +1,17 @@
+month,group,model,loss
+March,new official-view cells,S2b parent,0.004840098248639473
+March,new official-view cells,FV,0.003077216360804358
+March,new official-view cells,FV2,0.0028170084445992235
+March,new official-view cells,FV-INEL W.3,0.002844544140822747
+March,new official-view cells,W1.0,0.0028248391976592813
+March,INEL cells,FV,0.0036423645620943675
+March,INEL cells,FV-INEL W.3,0.0026501971040146484
+March,INEL cells,W1.0,0.002508822392155606
+April,new official-view cells,S2b parent,0.0060421798581876416
+April,new official-view cells,FV,0.0030820403559215807
+April,new official-view cells,FV2,0.0028390567165339086
+April,new official-view cells,FV-INEL W.3,0.0028626131801162014
+April,new official-view cells,W1.0,0.0028657176545231126
+April,INEL cells,FV,0.003570021530287034
+April,INEL cells,FV-INEL W.3,0.002627144398878482
+April,INEL cells,W1.0,0.0024582930656060183

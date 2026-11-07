@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TrafficFlowBench 2026, 8th place</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="8th-place solution to the 2026 IEEE BigData Cup TrafficFlowBench: method, every board read with its April result, a 267-idea registry, and a reproducible build.">
+<meta property="og:title" content="TrafficFlowBench 2026: 8th place, full solution record">
+<meta property="og:description" content="Method, public vs private for every adopted step, 267 tested ideas with test power, and a reproducible CPU build.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b6644'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='900' font-size='15' fill='white' text-anchor='middle'%3E8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;800;900&family=Overpass+Mono:wght@400;600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout concept: a corridor report. A sticky "exit" bar of numbered stops, a full-width space-time speed map as the opener,
+   then one column of prose (about 68ch) with charts that may run wider. Colour roles, fixed across the page:
+   blue = public / March, orange = private / April, component hues (state teal, ongoing purple, onset ochre, physics brick),
+   a magma-like ramp for speed (dark = jam, light = free flow; monotonic lightness, colour-blind safe). */
+:root {
+  --bg: #eef1ed; --surface: #f9fbf8; --sunk: #e3e8e2; --ink: #14201a; --muted: #56675d; --rule: #c6d1c9;
+  --accent: #0b6644; --on-accent: #ffffff; --good: #1d7a52; --bad: #b3261e; --warn: #9a5b00;
+  --pub: #2b6cb0; --priv: #c2410c; --grid: rgba(20, 32, 26, .08);
+  --c-state: #0f7b6c; --c-ongoing: #6d4bb5; --c-onset: #a87a00; --c-physics: #b5482b;
+  --pill-ink: #ffffff;
+  --display: "Overpass", "Highway Gothic", "Arial Narrow", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "Overpass Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --r: 6px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1411; --surface: #141d18; --sunk: #0a0f0c; --ink: #e2ebe5; --muted: #93a69a; --rule: #273730;
+  --accent: #2fb57e; --on-accent: #06140d; --good: #4cc38a; --bad: #f2685f; --warn: #e0a640;
+  --pub: #6ea8ff; --priv: #ff9152; --grid: rgba(226, 235, 229, .08);
+  --c-state: #3cc2ad; --c-ongoing: #a98bf0; --c-onset: #e3b53c; --c-physics: #f07f5f; --pill-ink: #06140d; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e1411; --surface: #141d18; --sunk: #0a0f0c; --ink: #e2ebe5; --muted: #93a69a; --rule: #273730;
+  --accent: #2fb57e; --on-accent: #06140d; --good: #4cc38a; --bad: #f2685f; --warn: #e0a640;
+  --pub: #6ea8ff; --priv: #ff9152; --grid: rgba(226, 235, 229, .08);
+  --c-state: #3cc2ad; --c-ongoing: #a98bf0; --c-onset: #e3b53c; --c-physics: #f07f5f; --pill-ink: #06140d; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 17px/1.6 var(--body); margin: 0 }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--accent) }
+a { color: var(--accent); text-underline-offset: 3px }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--c-onset); outline-offset: 2px }
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; text-wrap: balance; margin: 0 }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 900; letter-spacing: -.01em }
+h3 { font-size: 1.15rem; font-weight: 800 }
+p { margin: 0 }
+code, .mono { font-family: var(--mono); font-size: .88em }
+.num { font-variant-numeric: tabular-nums }
+.vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+.col { max-width: 1120px; margin: 0 auto }
+.prose { max-width: 68ch }
+.prose > * + * { margin-top: .9em }
+.muted { color: var(--muted) }
+.small { font-size: .86rem }
+.label { font-family: var(--display); font-weight: 800; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
+
+.exits { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--accent); color: var(--on-accent) }
+.exits .col { display: flex; align-items: center; gap: 14px; padding-block: 8px }
+.exits .brand { font-family: var(--display); font-weight: 900; letter-spacing: .02em; white-space: nowrap }
+.exits nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; min-width: 0 }
+.exits nav::-webkit-scrollbar { display: none }
+.exits nav a { color: var(--on-accent); text-decoration: none; font-family: var(--display); font-weight: 600; font-size: .86rem;
+  white-space: nowrap; padding: 3px 9px; border: 1.5px solid color-mix(in srgb, var(--on-accent) 55%, transparent); border-radius: 4px }
+.exits nav a b { font-weight: 900; margin-right: 5px }
+.exits nav a:hover, .exits nav a.on { background: var(--on-accent); color: var(--accent) }
+
+.hero { padding-block: 40px 28px }
+.hero .kicker { display: flex; gap: 10px; flex-wrap: wrap; align-items: center }
+.shield { display: inline-grid; place-items: center; min-width: 46px; height: 40px; padding: 0 8px; background: var(--surface); color: var(--ink);
+  border: 2.5px solid var(--ink); border-radius: 10px 10px 18px 18px; font-family: var(--display); font-weight: 900; font-size: 1.05rem }
+.hero h1 { font-size: clamp(2.3rem, 6.4vw, 4.6rem); font-weight: 900; letter-spacing: -.02em; margin-top: 14px }
+.hero h1 em { font-style: normal; color: var(--accent) }
+.hero .lede { font-size: 1.18rem; max-width: 62ch; margin-top: 14px }
+.stmap { margin-top: 26px; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r); padding: 14px }
+.stmap header { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap }
+.seg { display: inline-flex; border: 1.5px solid var(--rule); border-radius: 5px; overflow: hidden }
+.seg button { font: 600 .85rem var(--display); border: 0; background: transparent; color: var(--ink); padding: 6px 12px; cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg) }
+.mapgrid { display: grid; grid-template-columns: 22px 1fr; gap: 6px; margin-top: 12px }
+.ylab { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; font-size: .74rem; color: var(--muted) }
+.canvas-box { position: relative; overflow: hidden }
+#st { width: 100%; height: auto; display: block; image-rendering: pixelated; border-radius: 3px; background: var(--sunk); cursor: crosshair }
+.xticks { position: relative; height: 18px; font-size: .74rem; color: var(--muted); grid-column: 2 }
+.xticks span { position: absolute; transform: translateX(-50%) } .xticks span:first-child { transform: none } .xticks span:last-child { transform: translateX(-100%) }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--bg); font: 600 .8rem/1.35 var(--mono); padding: 6px 8px;
+  border-radius: 4px; white-space: nowrap; transform: translate(-50%, calc(-100% - 10px)) }
+.scale { display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap }
+.ramp { height: 10px; width: 220px; max-width: 60vw; border-radius: 2px }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+  border-radius: var(--r); overflow: hidden; margin-top: 22px }
+.stats div { background: var(--surface); padding: 14px 16px }
+.stats b { display: block; font: 900 1.9rem/1 var(--display); font-variant-numeric: tabular-nums }
+.stats span { font-size: .86rem; color: var(--muted) }
+.findings { margin-top: 22px; display: grid; gap: 8px; padding: 0; list-style: none; counter-reset: f }
+.findings li { counter-increment: f; display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: var(--r); padding: 10px 12px }
+.findings li::before { content: counter(f); font: 900 .9rem/26px var(--display); text-align: center; background: var(--accent); color: var(--on-accent); border-radius: 4px }
+
+section.sec { padding-block: 56px; border-top: 1px solid var(--rule) }
+.sec-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 22px }
+.exitno { flex: none; background: var(--accent); color: var(--on-accent); font: 900 .78rem/1 var(--display); letter-spacing: .08em;
+  padding: 7px 8px 5px; border-radius: 4px; text-transform: uppercase; margin-top: 6px }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 22px; align-items: start }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px }
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--r); padding: 18px; min-width: 0 }
+.panel h3 + p { margin-top: 6px }
+.scrollx { overflow-x: auto } .scrollx > svg { min-width: 700px }
+.chart { width: 100%; height: auto; display: block; overflow: visible }
+.chart text { fill: var(--muted); font: 12px var(--body) }
+.chart .ttl { fill: var(--ink); font: 800 13px var(--display) }
+.chart .axt { fill: var(--ink); font: 700 12px var(--body) }
+.chart .ax { stroke: var(--rule) } .chart .gr { stroke: var(--grid) }
+.chart [data-tip] { cursor: pointer }
+.readout { min-height: 2.6em; margin-top: 6px }
+.callout { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px }
+.callout b { font-family: var(--display) }
+.chips { display: flex; gap: 6px; flex-wrap: wrap }
+.chip { font: 600 .8rem var(--display); border: 1.5px solid var(--rule); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 4px 11px; cursor: pointer }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+.btn { font: 700 .82rem var(--display); border: 1.5px solid var(--ink); background: transparent; color: var(--ink); border-radius: 5px; padding: 6px 12px; cursor: pointer }
+.pill { display: inline-block; font: 800 .68rem/1 var(--display); letter-spacing: .06em; text-transform: uppercase; padding: 4px 6px 3px; border-radius: 3px; white-space: nowrap; color: var(--pill-ink) }
+.v-ADOPTED { background: var(--good) } .v-REFUTED { background: var(--bad) } .v-UNDETECTED { background: var(--c-onset) }
+.v-BAD-INSTRUMENT { background: var(--c-physics) } .v-REASONING-ONLY { background: var(--sunk); color: var(--ink); border: 1px solid var(--rule) }
+.v-other { background: var(--pub) }
+table { border-collapse: collapse; width: 100%; font-size: .9rem }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top }
+th { font: 800 .74rem var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--surface); position: sticky; top: 0 }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap }
+.tbl { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface) }
+.tbl.tall { max-height: 560px; overflow-y: auto }
+tr.me td { background: color-mix(in srgb, var(--accent) 14%, transparent); font-weight: 700 }
+.lanes { display: grid; gap: 14px }
+.lane { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: start }
+.lane > .label { padding-top: 10px }
+.blocks { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px }
+.blk { text-align: left; font: inherit; color: inherit; background: var(--surface); border: 1.5px solid var(--rule); border-radius: var(--r); padding: 10px 11px; cursor: pointer }
+.blk:hover { border-color: var(--accent) } .blk[aria-expanded="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent) }
+.blk strong { font-family: var(--display); display: block; line-height: 1.2 }
+.blk .tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 7px }
+.tag { font: 700 .66rem/1 var(--mono); padding: 3px 5px; border-radius: 3px; border: 1px solid var(--rule); color: var(--muted) }
+.tag.t-month { border-color: var(--c-state); color: var(--c-state) } .tag.t-online { border-color: var(--pub); color: var(--pub) }
+.tag.t-mar4apr { border-color: var(--priv); color: var(--priv) }
+.blkbody { margin-top: 10px; padding: 12px 14px; background: var(--sunk); border-radius: var(--r); font-size: .95rem }
+.steps { counter-reset: s; display: grid; gap: 12px; padding: 0; margin: 0; list-style: none }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start }
+.steps li > div { min-width: 0 }
+.steps li::before { content: counter(s); font: 900 1rem/34px var(--display); text-align: center; background: var(--ink); color: var(--bg); border-radius: 50% }
+.oschip { display: inline-block; font: 800 .68rem/1 var(--display); letter-spacing: .06em; text-transform: uppercase; padding: 4px 6px 3px; border-radius: 3px; border: 1.5px solid var(--ink); margin-left: 6px; vertical-align: 2px }
+.code { position: relative; background: var(--sunk); border: 1px solid var(--rule); border-radius: var(--r); padding: 10px 12px; margin-top: 6px; overflow-x: auto }
+.code pre { margin: 0; font: .82rem/1.5 var(--mono); white-space: pre }
+.copy { position: absolute; top: 6px; right: 6px; font: 700 .72rem var(--display); background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; cursor: pointer }
+input[type=search], select { font: inherit; font-size: .95rem; color: var(--ink); background: var(--surface); border: 1.5px solid var(--rule); border-radius: 5px; padding: 7px 10px }
+input[type=search] { width: min(100%, 360px) }
+.regrow td { cursor: pointer } .regrow:hover td { background: color-mix(in srgb, var(--accent) 6%, transparent) }
+.regdet td { background: var(--sunk); font-size: .88rem }
+.regdet dl { display: grid; grid-template-columns: 170px 1fr; gap: 4px 14px; margin: 0 } .regdet dt { color: var(--muted); font-weight: 700 }
+details { border: 1px solid var(--rule); border-radius: var(--r); background: var(--surface); padding: 12px 16px }
+details + details { margin-top: 8px }
+summary { cursor: pointer; font-family: var(--display); font-weight: 800 }
+footer { padding-block: 40px 60px; border-top: 1px solid var(--rule) }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .82rem; color: var(--muted) }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: -1px; margin-right: 5px }
+pre.cite { background: var(--sunk); border: 1px solid var(--rule); border-radius: var(--r); padding: 10px 12px; font: .78rem/1.5 var(--mono); overflow-x: auto; color: var(--ink) }
+@media (max-width: 640px) {
+  body { font-size: 16px } .hero h1 br { display: none } .lane { grid-template-columns: 1fr } .lane > .label { padding-top: 0 }
+  .regdet dl { grid-template-columns: 1fr } .exits .brand { display: none } section.sec { padding-block: 40px }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important } }
+</style>
+
+<div class="exits wrap">
+  <div class="col">
+    <span class="brand">TFB 2026 · 8th</span>
+    <nav id="exits" aria-label="Sections">
+      <a href="#result"><b>1</b>Result</a><a href="#private"><b>2</b>Public vs private</a><a href="#pipeline"><b>3</b>Pipeline</a>
+      <a href="#buildup"><b>4</b>Score build-up</a><a href="#measure"><b>5</b>Measuring</a><a href="#analysis"><b>6</b>Error anatomy</a>
+      <a href="#registry"><b>7</b>Idea registry</a><a href="#negative"><b>8</b>What failed</a><a href="#reproduce"><b>9</b>Reproduce</a>
+      <a href="#agents"><b>10</b>How it was built</a><a href="#rules"><b>11</b>Rules</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero wrap">
+  <div class="col">
+    <div class="kicker"><span class="shield">I-405</span><span class="shield">I-5</span><span class="shield">I-210</span><span class="shield">I-10</span>
+      <span class="label">2026 IEEE BigData Cup · TrafficFlowBench · synthetic corridors</span></div>
+    <h1>Reading freeways from<br>the cells they hide. <em>8th</em> place.</h1>
+    <p class="lede">Ten synthetic freeway corridors, 5-minute detector data, and four tasks scored as one number: rebuild hidden speed and flow,
+      forecast queues 30 minutes ahead, respect traffic physics, and estimate origin-destination demand. This page is the full record of our
+      solution: the method, all 91 of our board reads with their April scores, the 267 ideas in our registry, and a build you can rerun.</p>
+    <div class="stmap">
+      <header>
+        <div><h3 id="st-title">D12 I-405 South, 18 March 2031: where our state error lives</h3>
+          <p class="small muted" id="st-sub">44 stations × 288 five-minute steps; each pixel is one station in one interval. Chosen as the March day with the most
+            congested held-out (INEL) cells. The error is the INEL-FOLD chain (C77 class), whose members never saw the cells they predict. Speed values of the
+            released data are not shown. Hover or tap a cell.</p></div>
+        <div class="seg" role="group" aria-label="Map layer">
+          <button type="button" data-layer="err" aria-pressed="true">Our error</button>
+          <button type="button" data-layer="cells" aria-pressed="false">Cell types</button>
+        </div>
+      </header>
+      <div class="mapgrid">
+        <div class="ylab">station, corridor order</div>
+        <div class="canvas-box"><canvas id="st" width="576" height="176" role="img" aria-label="Error of our model by station and time of day on D12 I-405 South, 18 March 2031"></canvas><div class="tip" id="st-tip" hidden></div></div>
+        <div class="xticks" aria-hidden="true"><span style="left:0">00:00</span><span style="left:25%">06:00</span><span style="left:50%">12:00</span><span style="left:75%">18:00</span><span style="left:100%">24:00</span></div>
+      </div>
+      <div class="scale">
+        <span class="small muted" id="st-lo">ours 4+ km/h too low</span><span class="ramp" id="st-ramp"></span><span class="small muted" id="st-hi">ours 4+ km/h too high</span>
+        <span class="small muted" id="st-note"></span>
+      </div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <ol class="findings" aria-label="Key findings">
+      <li><span><b>Each split is its own scenario.</b> A queue CNN beat persistence by +.115 on train months and by +.015 on March. We learned on the scored month wherever the rules allowed. <a href="#private">Exit 2</a></span></li>
+      <li><span><b>State pieces carried to April in full; late queue pieces did not.</b> After C47, state carried 1.04× and ongoing 0.03×. <a href="#private">Exit 2</a></span></li>
+      <li><span><b>Forecast before you upload.</b> 90 of 91 submissions had a written forecast and band. State and physics reads landed in band 31 of 32 times, queue reads got the sign right 14 of 37. <a href="#measure">Exit 5</a></span></li>
+      <li><span><b>New label sources beat new inputs.</b> Released cells used as labels gave the largest late state gains; new input channels did not pass their gates. <a href="#analysis">Exit 6</a></span></li>
+      <li><span><b>ODME is at its floor.</b> The organiser's NNLS; every alternative lost. <a href="#negative">Exit 8</a></span></li>
+    </ol>
+  </div>
+</header>
+
+<main>
+<section class="sec wrap" id="result"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 1</span><div class="prose"><h2>The result</h2>
+    <p class="muted" style="margin-top:8px">The private leaderboard is the April 2031 split. Nobody saw it before the close. Our scored file is C79; we stopped development on 21 October (last upload 20 October), 17 days before the close.</p></div></div>
+  <div class="grid2">
+    <div class="panel"><h3 id="lb-h">Final private leaderboard, top 16 shown</h3><p class="small muted">Private S_total, axis from .885. Our team is highlighted. The gap to first is .0295, about 8 queue windows.</p>
+      <svg class="chart" id="lb" viewBox="0 0 520 460" aria-labelledby="lb-h"></svg></div>
+    <div class="panel"><h3 id="comp-h">Where the points are</h3>
+      <p class="small muted">S_total = .35 state + .15 onset + .15 ongoing + .15 physics + .20 ODME. Bar length = weight; filled part = our estimated level on that component (board-implied, at C72; the five levels reproduce the board within .0001).</p>
+      <svg class="chart" id="comp" viewBox="0 0 520 300" aria-labelledby="comp-h"></svg>
+      <div class="prose small" style="margin-top:10px"><p>Points lost against a perfect score: physics .037, onset .025, state .019, ongoing .018, ODME .001. Physics (about .754) is our weakest component and ODME (.9933, at the organiser's own solver) the strongest.</p></div>
+    </div>
+  </div>
+  <div class="grid3" style="margin-top:22px">
+    <div class="panel"><span class="label">Task 1 · state</span><h3 style="margin-top:6px">Fill hidden cells</h3><p class="small">20%, 30% or 50% of eligible speed and flow cells are blanked per day. Score mixes speed RMSE /25 and lane-flow RMSE /600.</p></div>
+    <div class="panel"><span class="label">Task 2 · queues</span><h3 style="margin-top:6px">Forecast queues 5 to 30 min ahead</h3><p class="small">40 onset and 40 ongoing windows per month, scored by space-time IoU. Online: only data stamped at or before the origin T. One window = .00375 S_total.</p></div>
+    <div class="panel"><span class="label">Task 3 · physics</span><h3 style="margin-top:6px">Obey the fundamental diagram</h3><p class="small">Scored on our own Task 1 rows: one third FD fit, two thirds LWR mass conservation.</p></div>
+    <div class="panel"><span class="label">Task 4 · ODME</span><h3 style="margin-top:6px">Estimate OD demand</h3><p class="small">Origin-destination flows from released link counts and a prior. We ship the organiser's own NNLS (λ = .05).</p></div>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="private"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 2</span><div class="prose"><h2>Public vs private: what carried to April</h2>
+    <p style="margin-top:10px">March was the public board and April the private one. The organisers generated the two months independently, with different incidents.
+      Every step we adopted was chosen on March evidence. Here is how each one landed in April.</p></div></div>
+  <div class="panel"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:end">
+      <div><h3 id="chain-h">The adopted chain, step by step (from C03)</h3><p class="small muted">Level after each adopted step. Steps in order, not time. Hollow dot = public level is a forecast (file never read). Hover or tap a step.</p></div>
+      <div class="legend"><span><i style="background:var(--pub)"></i>public (March)</span><span><i style="background:var(--priv)"></i>private (April)</span></div></div>
+    <div class="scrollx"><svg class="chart" id="chain" viewBox="0 0 1000 350" aria-labelledby="chain-h"></svg></div>
+    <p class="small muted readout" id="chain-read">Hover or tap a step to see its public and private change.</p>
+  </div>
+  <div class="grid2" style="margin-top:22px">
+    <div class="panel"><h3 id="pp-h">Every read: public vs private</h3><p class="small muted">Our scored submissions with both scores between .870 and .905. Dashed line: private = public. Hover or tap a dot.</p>
+      <svg class="chart" id="pp" viewBox="0 0 520 450" aria-labelledby="pp-h"></svg>
+      <p class="small muted readout" id="pp-read"></p></div>
+    <div class="panel"><h3>Carry by component</h3><p class="small muted">Σ private change over Σ public change, on adopted steps with both reads. "Same sign" counts steps where April moved the same way as March.</p>
+      <div class="tbl" style="margin-top:10px"><table id="carry"></table></div>
+      <p class="label" style="margin-top:16px">After C47 (the last 17 pieces)</p>
+      <div class="tbl" style="margin-top:6px"><table id="carry47"></table></div>
+      <div class="prose" style="margin-top:16px" id="carry-notes"></div></div>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="pipeline"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 3</span><div class="prose"><h2>The pipeline</h2>
+    <p style="margin-top:10px">The final file is built per scored month from 20 blocks. Each tag says what data a block may read. Task 2 blocks never see a month's
+      released cells after the forecast origin; Tasks 1, 3 and 4 are offline and may read all released cells of their month. Select a block for details.</p></div></div>
+  <div class="legend" style="margin-bottom:14px"><span><span class="tag">train</span> train months</span><span><span class="tag t-month">month</span> released cells of the scored month</span>
+    <span><span class="tag t-online">online ≤ T</span> data stamped at or before the origin</span><span><span class="tag t-mar4apr">Mar→Apr</span> a March choice carried to April by a declared rule</span></div>
+  <div class="lanes" id="lanes"></div>
+</div></section>
+
+<section class="sec wrap" id="buildup"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 4</span><div class="prose"><h2>Score build-up</h2>
+    <p style="margin-top:10px">Public S_total rose from .83664 (the organisers' canonical baseline) to .90088. The four early steps gave 71% of that; the 40 later
+      steps the rest. Bars are the change of each adopted step; the grey whisker is the band we wrote down before the upload, and the black dot its centre.</p></div></div>
+  <div class="panel"><h3 id="early-h">The four early steps (baseline .83664 to C03 .88225)</h3>
+    <svg class="chart" id="early" viewBox="0 0 1000 150" aria-labelledby="early-h" style="margin-top:8px"></svg></div>
+  <div class="panel" style="margin-top:16px">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:end">
+      <h3 id="wf-h">The 40 later steps (C03 .88225 to .90088)</h3>
+      <div class="seg" role="group" aria-label="Waterfall view"><button type="button" data-wf="pub" aria-pressed="true">Public change</button><button type="button" data-wf="priv" aria-pressed="false">Private change</button></div></div>
+    <div class="scrollx" style="margin-top:12px"><svg class="chart" id="wf" viewBox="0 0 1000 390" aria-labelledby="wf-h"></svg></div>
+    <p class="small muted readout" id="wf-read">Hover or tap a bar.</p>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="measure"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 5</span><div class="prose"><h2>Measuring before shipping</h2>
+    <p style="margin-top:10px">Five uploads a day and one queue window worth .00375 S_total make the board a noisy judge. We wrote a forecast and a band for 90 of our
+      91 submissions before making them, and built an offline instrument for each component. The record says which instruments to trust.</p></div></div>
+  <div class="grid2">
+    <div class="panel"><h3 id="calib-h">Forecast vs board change</h3><p class="small muted">Every read with a written forecast. Both axes are symmetric-log so the large misses fit. Diagonal = perfect forecast. Filter by kind; hover or tap a mark.</p>
+      <div class="chips" id="calib-chips" style="margin-top:10px"></div>
+      <svg class="chart" id="calib" viewBox="0 0 520 460" style="margin-top:8px" aria-labelledby="calib-h"></svg>
+      <p class="small readout" id="calib-read"></p></div>
+    <div class="panel"><h3>The instruments</h3>
+      <div class="tbl" style="margin-top:10px"><table>
+        <thead><tr><th>instrument</th><th>what it hides and scores</th><th>record against the board</th></tr></thead>
+        <tbody>
+          <tr><td><b>I-S-OWN</b></td><td>10% of observed cells plus 90-minute blocks, in the scored month</td><td>With the other Task 1 instruments: state and physics reads in band 31 of 32, median miss .00004</td></tr>
+          <tr><td><b>I-S-INEL</b></td><td>The shipped chain scored at released but never-scored (INEL) cells, hidden like targets</td><td>Calibrated once (k = 1.815), then predicted the next piece at 1.05×</td></tr>
+          <tr><td><b>INEL-FOLD</b></td><td>Members trained on half of the INEL cells, scored on the other half</td><td>Pre-registered gate passed in both months</td></tr>
+          <tr><td><b>Gap bench</b></td><td>Simulated 90-minute blackouts, date folds, counted April reads</td><td>Board = .308 × dState</td></tr>
+          <tr><td><b>I-Q-SPLIT / TM-R</b></td><td>Pseudo queue windows from released cells of the scored month</td><td>Right sign for early adaptation, wrong for output corrections</td></tr>
+          <tr><td><b>OFF250</b></td><td>250 selector-replica windows in Jan and Feb</td><td>Veto only; 5 of 7 control reads agree in sign</td></tr>
+        </tbody></table></div>
+      <div class="callout" style="margin-top:16px"><p><b>The rule we learned.</b> State and physics pieces learned and measured on the scored month read at a median 1.0× their forecast.
+        New label sources read above their forecast (median 2.2×, 3 of 6 in band), because no offline test could see their full value. Members trained on train
+        months read at .2× or below zero, and late adaptation pieces at a median −4.2×. We moved our effort to state pieces after this record.</p></div>
+      <p class="small muted" style="margin-top:12px">Board noise: a state piece moves the board by its true effect within about .00001; a queue piece moves it in steps of up to .00375 per window. Adopted reads of +.00002 to +.00003 (rows 20, 30, 32, 34) are at that noise level.</p></div>
+  </div>
+  <div class="panel" style="margin-top:22px"><h3 id="boot-h">Held-out intervals of the last state pieces, in board units</h3><p class="small muted">Point and 95% date-bootstrap interval (500 draws), each on its own instrument, converted to board units (I-S-INEL and INEL-FOLD × 1.81, gap bench × .308). Symmetric-log axis.</p>
+    <div class="scrollx"><svg class="chart" id="boot" viewBox="0 0 1000 350" aria-labelledby="boot-h"></svg></div></div>
+</div></section>
+
+<section class="sec wrap" id="analysis"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 6</span><div class="prose"><h2>Where the error lives</h2>
+    <p style="margin-top:10px">We scored the shipped chain at held-out INEL cells and split the error above a measured noise floor. The answer is narrow: queue fronts.</p></div></div>
+  <div class="grid2">
+    <div class="panel"><h3 id="anat-h">Improvable state error by slice</h3><p class="small muted">Share of cells (light bar) vs share of improvable error (dark bar). The first three rows partition the cells; the rest overlap. Improvable shares are computed per slice above that slice's noise floor, so the partition rows sum to a little over 100%.</p>
+      <div class="seg" role="group" aria-label="Month" style="margin-top:8px"><button type="button" data-an="mar" aria-pressed="true">March</button><button type="button" data-an="apr" aria-pressed="false">April</button></div>
+      <svg class="chart" id="anat" viewBox="0 0 520 450" style="margin-top:8px" aria-labelledby="anat-h"></svg></div>
+    <div class="panel"><h3 id="dose-h">Each new label source paid once</h3><p class="small muted">Public board gain per step of the label ladder. A second dose of the same labels added almost nothing. Hollow marker: S7c-INEL held out (+.00002); its read was against a forecast parent.</p>
+      <svg class="chart" id="dose" viewBox="0 0 520 290" aria-labelledby="dose-h"></svg>
+      <h3 id="dec-h" style="margin-top:22px">The queue decode bottleneck</h3><p class="small muted">Official windows that change as an in-model delta is scaled up. At its real size (1×) it changes one March window.</p>
+      <svg class="chart" id="dec" viewBox="0 0 520 240" aria-labelledby="dec-h"></svg></div>
+  </div>
+  <div class="grid3" style="margin-top:22px">
+    <div class="panel"><span class="label">Fronts</span><p style="margin-top:6px"><b class="num" style="font:900 1.6rem var(--display)">2.2%</b> of cells hold <b>85%</b> of the improvable March error (79% in April). No released input we tried predicted it across dates.</p></div>
+    <div class="panel"><span class="label">Physics</span><p style="margin-top:6px">Our cells sit on the published fundamental diagram closer than the observations do: FD loss <b>.009</b> vs <b>.015</b> at 968,856 held-out cells. Part of this is because predictions are smoother than observations, so it is a plausibility check, not a gain.</p></div>
+    <div class="panel"><span class="label">Decode</span><p style="margin-top:6px">The median official queue window has no cell within <b>.034</b> of the decode threshold, so small probability gains rarely flip a cell.</p></div>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="registry"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 7</span><div class="prose"><h2>All 267 ideas in our registry</h2>
+    <p style="margin-top:10px">Every idea got one verdict class. <b>Refuted</b> means a sound test with enough power said no. <b>Undetected</b> means the test could not have seen the expected effect,
+      so the idea stays open. <b>Reasoning-only</b> ideas were ruled out without a test. Search the mechanisms, results and test power.</p></div></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
+    <input type="search" id="rq" placeholder="Search: adaptation, ODME, seeds, INEL…" aria-label="Search ideas">
+    <select id="rtask" aria-label="Task"><option value="">all tasks</option></select>
+    <select id="rlearn" aria-label="Learns from the scored month"><option value="">any information source</option><option value="yes">learns from the scored month</option><option value="no">does not</option></select>
+    <button type="button" class="btn" id="rdl">Download TSV</button>
+  </div>
+  <div class="chips" id="rclass" style="margin-bottom:10px"></div>
+  <p class="small muted" id="rcount"></p>
+  <div class="tbl tall" style="margin-top:8px"><table><thead><tr><th>id</th><th>task</th><th>idea</th><th>verdict</th><th>result</th></tr></thead><tbody id="rbody"></tbody></table></div>
+</div></section>
+
+<section class="sec wrap" id="negative"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 8</span><div class="prose"><h2>What failed, and how hard we looked</h2>
+    <p style="margin-top:10px">A negative result is only useful with its power. The last column is the smallest effect each test could have seen.</p></div></div>
+  <div class="tbl"><table id="neg"></table></div>
+  <div class="grid3" style="margin-top:22px">
+    <div class="panel"><h3>Train months misled queue models</h3><p class="small" style="margin-top:6px">A CNN beat persistence by +.115 on January and February but by +.015 on March. Bigger ensembles and longer pretraining won offline and lost on the board.</p></div>
+    <div class="panel"><h3>Pseudo windows misled corrections</h3><p class="small" style="margin-top:6px">Output corrections fitted on pseudo windows read the wrong sign. Adaptation inside the model read right.</p></div>
+    <div class="panel"><h3>ODME is at its floor</h3><p class="small" style="margin-top:6px">The hidden reference is the projection plus about 1.5% random per-path scatter. Every move away from the organiser's NNLS lost.</p></div>
+  </div>
+  <div class="panel" style="margin-top:16px"><h3>What we would do differently</h3><p class="small" style="margin-top:6px">Spend the late weeks on physics, our weakest component, instead of ongoing pieces that did not carry. Read queue pieces only as bundles that move several windows. Keep development running to the close: the teams above us submitted until 6 and 7 November.</p></div>
+</div></section>
+
+<section class="sec wrap" id="reproduce"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 9</span><div class="prose"><h2>Reproduce it</h2>
+    <p style="margin-top:10px">The repository rebuilds the scored file C79 (and C80) from the organisers' release and our saved weights, CPU only. Each step checks its output against
+      our stored development file of that step, by sha256 or by value.</p></div></div>
+  <div class="grid2">
+    <div class="panel"><h3>Steps</h3>
+      <ol class="steps" style="margin-top:12px">
+        <li><div><b>Get the code and an environment</b><span class="oschip">Linux / WSL2</span> Python 3.12. The base build expects its venv at this path because the fitted files record it.
+          <div class="code"><button class="copy" type="button">Copy</button><pre>git clone __REPO_URL__
+cd __REPO_NAME__
+uv venv --python 3.12 /workspace/tfb/venv
+uv pip install --python /workspace/tfb/venv/bin/python -r environment/requirements-cpu.txt
+export PATH=/workspace/tfb/venv/bin:$PATH</pre></div></div></li>
+        <li><div><b>Fetch data and weights</b>: the competition data with your own Kaggle login; our weights (4.1 GB in 3 parts) from the GitHub release, sha256 checked
+          <div class="code"><button class="copy" type="button">Copy</button><pre>bash pipeline/00_fetch_data.sh
+bash pipeline/01_fetch_weights.sh --release</pre></div></div></li>
+        <li><div><b>Build the base file C47</b><span class="oschip">Linux / WSL2</span> about 3.5 h with our fitted S08 files, about 9 h with a full refit (7 to 11.5 h by flags)
+          <div class="code"><button class="copy" type="button">Copy</button><pre>bash pipeline/10_base_c47.sh --s08-fitted
+cat outputs/logs/base_c47.result</pre></div></div></li>
+        <li><div><b>Chain the 17 adopted pieces</b><span class="oschip">Windows Git Bash</span> 12 to 13 h. The piece scripts call cygpath and the Windows venv's python.exe.
+          <div class="code"><button class="copy" type="button">Copy</button><pre>bash pipeline/20_pieces.sh
+cat outputs/logs/chain_19_35.tsv</pre></div></div></li>
+      </ol></div>
+    <div class="panel"><h3>What "reproduced" means here</h3>
+      <div class="prose small" style="margin-top:8px">
+        <p><b>Scored file:</b> C79, sha256 <code>104c2c6f…</code> (public .90088, private .89874). The chain also writes C80, which adds the April rows of rows 34 and 35 and was never uploaded.</p>
+        <p><b>C47 from code:</b> queue and ODME rows equal; state rows within 4.2e-13 km/h of the submitted file.</p>
+        <p><b>Pieces 19 to 35:</b> each step is compared with our stored development file of that step: sha256 equal, or value-equal (queue and ODME exact, state within 1e-8).</p>
+        <p><b>Stored outputs instead of re-serving:</b> rows 21 (ConvNeXt-Tiny retrain), 22 (cold-date members), 23 (per-date Tiny adaptation) and 26 (S2b imputer members),
+          because the originals ran on a GPU or another machine and floats differ in the last bits; and row 33 (Q-ACCUM: per-date fits inside Kaggle kernels, no weights).
+          The base build's original ConvNeXt member is stored too: its fine-tuned weights were lost, and row 21 replaces it with a retrain whose weights are saved.</p>
+        <p id="chain-status"><b>Verification run:</b> __CHAIN_STATUS__</p>
+      </div>
+      <div class="tbl" style="margin-top:14px"><table>
+        <thead><tr><th>step</th><th class="n">runtime</th></tr></thead>
+        <tbody><tr><td>Base build C47 (fitted S08)</td><td class="n">203 min</td></tr><tr><td>Base build C47 (full refit)</td><td class="n">about 9 h</td></tr>
+        <tr><td>Rows 19 to 27</td><td class="n">about 3.5 h</td></tr><tr><td>Rows 28 to 35 (11 state builds)</td><td class="n">about 8.5 h</td></tr>
+        <tr><td>Hardware</td><td class="n">16-thread laptop, 15 GB RAM</td></tr><tr><td>Peak RAM</td><td class="n">7.5 GiB</td></tr><tr><td>GPU needed</td><td class="n">none</td></tr></tbody></table></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec wrap" id="agents"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 10</span><div class="prose"><h2>How it was built</h2>
+    <p style="margin-top:10px">One person set the goal, the budget, the rule interpretations and the final selection. The engineering was done by AI coding agents: Codex lanes
+      coordinated by a Claude planner until 8 October, then Claude Code alone, running as a harness that kept state in files and launched helper agents.</p></div></div>
+  <div class="grid3">
+    <div class="panel"><span class="label">State in files</span><p class="small" style="margin-top:6px">An idea registry (267 rows, one verdict class each), a ledger, a register of adopted pieces with build status, a calibration table of forecasts and board reads, and a digest of every user ruling.</p></div>
+    <div class="panel"><span class="label">Roles</span><p class="small" style="margin-top:6px">Ideation agents with different information wrote ideas only. A fresh advisor ranked them against the registry. Workers ran one line each with a hypothesis, budget and kill condition. A read-only critic reviewed between attempts.</p></div>
+    <div class="panel"><span class="label">Guards</span><p class="small" style="margin-top:6px">A hook blocked credential reads and allowed a submission only with a manifest line and a written forecast. Workers could not edit the instrument that judged them.</p></div>
+  </div>
+  <div class="panel" style="margin-top:16px"><h3>Numbers</h3><div class="tbl" style="margin-top:10px"><table id="compute"></table></div></div>
+  <details style="margin-top:16px"><summary>What went wrong in the process</summary>
+    <div class="prose small" style="margin-top:10px"><p>Wrong headroom estimates sent two lanes to ODME for days. The Codex lanes produced 1,093 coordination messages in six days, 61% with no action.
+      The supervisor lost one member's weights with a destroyed rented machine and deleted a cache later work needed.
+      Each became a rule: save weights and a recipe at adoption.</p></div></details>
+</div></section>
+
+<section class="sec wrap" id="rules"><div class="col">
+  <div class="sec-head"><span class="exitno">Exit 11</span><div class="prose"><h2>Rules, leakage checks and disclosures</h2></div></div>
+  <div class="grid2">
+    <div class="prose">
+      <p><b>Online rule.</b> Task 2 forecasts with origin T use only data stamped at or before T on that date, earlier dates of the same split, and train. Two read-only audits checked every Task 2 piece.</p>
+      <p><b>No identifiers as features.</b> No IDs, row order, window numbering, mask hashes or generator seeds. Replays with permuted rows and changed IDs left every queue output unchanged.</p>
+      <p><b>INEL cells.</b> Released cells the metric never scores. Their overlap with scored targets is 0 of 981,093 (March) and 0 of 948,791 (April).</p>
+      <p><b>Selection-implied inputs (U1).</b> The organisers keep an ongoing window only if persistence IoU is at most .9. Our persistence cap (.92), the type-A raise and the twin's flags use that fact.
+        They are computed from data at or before T. 43 of 80 windows are type A; the twin gave +.0045 public and +.0095 private.</p>
+      <p><b>Organiser ruling of 15 October.</b> Everything used for a window, including model and threshold selection, is stamped at or before its T; April windows may use released March data. Every April choice uses only train months and released March data.</p>
+      <p><b>Declared April methods.</b> Some April rows use a method chosen by a March board read, or April's own released view for offline Task 1 stages.</p>
+      <p><b>Open audit gaps.</b> The future-poison test was not run inside the final build, and "no April data in a March row" holds by structure (one split per load), not by a mechanical test.</p>
+      <p><b>External weights.</b> One ConvNeXt-Tiny with ImageNet-1k weights (Apache-2.0). No external data in any submitted file.</p>
+    </div>
+    <div class="panel"><h3>Checks you can run</h3><ul class="small" style="margin:8px 0 0 18px;padding:0">
+      <li><code>pipeline/99_verify.py</code>: compares a rebuilt file with our submitted file, by task.</li>
+      <li><code>checks/open_audit/</code>: logs every file the build opens; the build reads nothing outside the repository and the competition data.</li>
+      <li><code>docs/COMPLIANCE.md</code>: the online-rule audit, the guards in the code and the open audit items.</li>
+      <li><code>weights/MANIFEST.csv</code>: sha256 of every saved weight and fitted file.</li></ul></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="wrap"><div class="col prose small muted">
+  <p><b style="color:var(--ink);font-family:var(--display)">TrafficFlowBench 2026 · 8th place</b>. Amin Mohamed.
+    Code, weights and the full method report: <a href="__REPO_URL__">__REPO_URL__</a> (<a href="__REPO_URL__/blob/main/report/REPORT.md">method report</a>, <a href="__REPO_URL__/blob/main/report/KAGGLE_WRITEUP.md">Kaggle writeup</a>).</p>
+  <p>Data: the organisers' synthetic release, subject to the competition rules. All numbers come from the report's figure tables and our Kaggle submission history, exported 7 November 2026. Last updated 7 November 2026.</p>
+  <p>How to cite:</p>
+<pre class="cite">@misc{mohamed2026tfb,
+  title  = {TrafficFlowBench 2026: an 8th-place solution},
+  author = {Amin Mohamed},
+  year   = {2026},
+  note   = {IEEE BigData Cup 2026, TrafficFlowBench. Code: __REPO_URL__}
+}</pre>
+</div></footer>
+
+<script>
+const D = /*__DATA__*/null;
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const NS = "http://www.w3.org/2000/svg";
+function el(tag, attrs = {}, parent, text) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.appendChild(e); return e }
+function clear(s) { while (s.firstChild) s.removeChild(s.firstChild); return s }
+const f5 = v => v == null ? "–" : (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(5).replace(/^0/, "");
+const lvl = v => v == null ? "–" : v.toFixed(5).replace(/^0/, "");
+const pct = v => v == null ? "–" : Math.round(v * 100) + "%";
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])) }
+function pressGroup(btns, on) { btns.forEach(b => b.setAttribute("aria-pressed", b === on ? "true" : "false")) }
+const COMP = { state: "--c-state", ongoing: "--c-ongoing", onset: "--c-onset", physics: "--c-physics" };
+const comp = k => css(COMP[k] || "--muted");
+const symlog = c => v => Math.sign(v) * Math.log10(1 + Math.abs(v) / c);
+function axTitle(s, x, y, t, rot) { el("text", rot ? { x, y, class: "axt", "text-anchor": "middle", transform: `rotate(-90 ${x} ${y})` } : { x, y, class: "axt", "text-anchor": "middle" }, s, t) }
+/* tap/hover read-out for marks with data-tip */
+function readout(svg, out) { const f = ev => { const t = ev.target.closest("[data-tip]"); if (t) out.innerHTML = t.dataset.tip };
+  svg.addEventListener("pointerover", f); svg.addEventListener("pointerdown", f);
+  svg.addEventListener("focusin", f) }
+
+/* ---------- stats ---------- */
+(function stats() {
+  const S = D.summary, U = S.uploads;
+  const items = [[lvl(S.final.private), "private S_total (April), file C79"], ["#" + S.rank, "on the private leaderboard"],
+    [lvl(S.final.public), "public S_total (March)"], [`${U.total}`, `submissions, all shown with both scores`],
+    [String(D.registry.length), "ideas in the registry"], ["35", "adopted pieces (45 registry rows)"]];
+  $("#stats").innerHTML = items.map(([b, s]) => `<div><b class="num">${b}</b><span>${s}</span></div>`).join("");
+})();
+
+/* ---------- space-time map ---------- */
+(function stmap() {
+  const T = D.spacetime, cv = $("#st"), ctx = cv.getContext("2d"), tip = $("#st-tip");
+  const W = T.steps, H = T.stations; cv.width = W; cv.height = H; cv.style.aspectRatio = `${W * 2} / ${H * 3.4}`;
+  const rgb = name => { const h = getComputedStyle(document.documentElement).getPropertyValue(name).trim().replace("#", "");
+    return h.length === 6 ? [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)) : [128, 128, 128] };
+  const EMAX = 4, MID = [96, 112, 104], LO = [37, 99, 235], HI = [234, 88, 12];
+  const ecol = e => { const t = Math.min(1, Math.abs(e) / EMAX), c = e >= 0 ? HI : LO; return MID.map((x, k) => Math.round(x + (c[k] - x) * t)) };
+  let layer = "err";
+  const notes = { err: "Colour: ours minus released at the 934 held-out INEL cells (grey-green = within a fraction of a km/h). Pale: other released cells. Blank: scored target cells. Median miss 0.7 km/h. Speed RMSE 2.0 km/h against an SD of 18.9 km/h (1.4 km/h at congested cells). INEL cells sit among released neighbours, so this is easier than the official 20% to 50% masks.",
+    cells: "Grey: released cells. Green: released cells the metric never scores (INEL), held out here to test the model. Amber: scored target cells, hidden by the organisers (20%, 30% or 50% per day) plus 90-minute blackouts around Task 2 windows." };
+  function draw() {
+    const img = ctx.createImageData(W, H), d = img.data, g = rgb("--sunk"), a = rgb("--accent"), w = rgb("--warn");
+    for (let i = 0; i < H; i++) for (let t = 0; t < W; t++) {
+      const k = ((H - 1 - i) * W + t) * 4, m = T.mask[i][t], e = T.err[i][t]; let c = null;
+      if (layer === "cells") c = m === 2 ? w : m === 1 ? a : g;
+      else c = m === 2 ? null : (m === 1 && e != null) ? ecol(e) : g;
+      if (layer === "cells" && m === 0) c = rgb("--rule");
+      if (c) { d[k] = c[0]; d[k + 1] = c[1]; d[k + 2] = c[2]; d[k + 3] = 255 } else d[k + 3] = 0;
+    }
+    ctx.putImageData(img, 0, 0);
+    const e = layer === "err";
+    $("#st-ramp").style.background = e ? `linear-gradient(90deg, rgb(${LO}), rgb(${MID}), rgb(${HI}))` : `linear-gradient(90deg, rgb(${g}) 0 33%, rgb(${a}) 33% 66%, rgb(${w}) 66%)`;
+    $("#st-lo").textContent = e ? `ours ${EMAX}+ km/h too low` : "released"; $("#st-hi").textContent = e ? `ours ${EMAX}+ km/h too high` : "INEL · scored target";
+    $("#st-note").textContent = notes[layer];
+  }
+  $$(".stmap .seg button").forEach(b => b.addEventListener("click", () => { layer = b.dataset.layer; pressGroup($$(".stmap .seg button"), b); draw() }));
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+  function hover(ev) {
+    const r = cv.getBoundingClientRect(), t = Math.floor((ev.clientX - r.left) / r.width * W), i = H - 1 - Math.floor((ev.clientY - r.top) / r.height * H);
+    if (t < 0 || t >= W || i < 0 || i >= H) { tip.hidden = true; return }
+    const hh = String(Math.floor(t * 5 / 60)).padStart(2, "0"), mm = String(t * 5 % 60).padStart(2, "0"), m = T.mask[i][t], e = T.err[i][t];
+    tip.innerHTML = `station ${i + 1} · ${hh}:${mm}<br>` + (m === 2 ? "scored target cell" : m === 1 ? `held-out INEL cell · ours ${e > 0 ? "+" : ""}${e == null ? "–" : e.toFixed(1)} km/h` : "released cell");
+    tip.hidden = false; const b = cv.parentElement.getBoundingClientRect();
+    tip.style.left = Math.min(Math.max(ev.clientX - b.left, 90), b.width - 90) + "px"; tip.style.top = (ev.clientY - b.top) + "px";
+  }
+  cv.addEventListener("pointermove", hover); cv.addEventListener("pointerdown", hover); cv.addEventListener("pointerleave", () => tip.hidden = true);
+  draw();
+})();
+
+/* ---------- leaderboard (dot plot) ---------- */
+(function lb() {
+  const s = $("#lb"), L = D.leaderboard, x0 = 150, x1 = 470, lo = .885, hi = .93, sx = v => x0 + (v - lo) / (hi - lo) * (x1 - x0), yb = 26 * L.length + 8;
+  [.89, .90, .91, .92, .93].forEach(v => { el("line", { x1: sx(v), x2: sx(v), y1: 6, y2: yb, class: "gr" }, s); el("text", { x: sx(v), y: yb + 16, "text-anchor": "middle" }, s, String(v).replace(/^0/, "")) });
+  axTitle(s, (x0 + x1) / 2, yb + 38, "private S_total (April)");
+  L.forEach((r, i) => {
+    const y = 19 + i * 26, me = r.team === "Amin Mohamed", c = me ? css("--accent") : css("--muted");
+    el("text", { x: x0 - 8, y: y + 4, "text-anchor": "end", style: me ? "fill:var(--ink);font-weight:700" : "" }, s, `${r.rank}. ${r.team.length > 17 ? r.team.slice(0, 16) + "…" : r.team}`);
+    el("line", { x1: x0, x2: sx(r.private), y1: y, y2: y, stroke: css("--rule"), "stroke-width": 1.5 }, s);
+    el("circle", { cx: sx(r.private), cy: y, r: me ? 7 : 5, fill: c }, s);
+    el("text", { x: sx(r.private) + 11, y: y + 4, style: me ? "fill:var(--ink);font-weight:700" : "" }, s, lvl(r.private));
+  });
+})();
+
+/* ---------- component weights ---------- */
+(function compw() {
+  const s = $("#comp"), C = [["state", .35, .947], ["ODME", .20, .9933], ["onset", .15, .8324], ["ongoing", .15, .883], ["physics", .15, .754]];
+  const x0 = 90, W = 400; let y = 10;
+  C.forEach(([n, w, l]) => {
+    const bw = w / .35 * W, c = COMP[n] ? comp(n) : css("--accent");
+    el("text", { x: x0 - 10, y: y + 22, "text-anchor": "end", class: "ttl" }, s, n);
+    el("rect", { x: x0, y, width: bw, height: 34, rx: 3, fill: css("--sunk"), stroke: css("--rule") }, s);
+    el("rect", { x: x0, y, width: bw * l, height: 34, rx: 3, fill: c }, s);
+    el("text", { x: x0 + bw * l - 8, y: y + 22, "text-anchor": "end", style: "fill:#fff;font-weight:700" }, s, String(l).replace(/^0/, ""));
+    el("text", { x: x0 + bw + 8, y: y + 22 }, s, `×${String(w).replace(/^0/, "")}`);
+    y += 50;
+  });
+  el("text", { x: x0, y: y + 14 }, s, "unfilled = points lost; largest on physics and onset");
+})();
+
+/* ---------- public vs private chain ---------- */
+(function chain() {
+  const s = $("#chain"), C = D.chain.filter(c => c.pub != null), n = C.length, read = $("#chain-read");
+  const x0 = 70, x1 = 980, y0 = 300, y1 = 16, vals = C.flatMap(c => [c.pub, c.priv]).filter(v => v != null);
+  const lo = Math.floor(Math.min(...vals) * 200) / 200, hi = Math.ceil(Math.max(...vals) * 200) / 200;
+  const sx = i => x0 + i / (n - 1) * (x1 - x0), sy = v => y0 - (v - lo) / (hi - lo) * (y0 - y1);
+  for (let v = lo; v <= hi + 1e-9; v += .005) { el("line", { x1: x0, x2: x1, y1: sy(v), y2: sy(v), class: "gr" }, s); el("text", { x: x0 - 8, y: sy(v) + 4, "text-anchor": "end" }, s, v.toFixed(3).replace(/^0/, "")) }
+  axTitle(s, 16, (y0 + y1) / 2, "S_total", true); axTitle(s, (x0 + x1) / 2, y0 + 44, "adopted steps, in order");
+  const path = k => C.filter(c => c[k] != null).map((c, j) => `${j ? "L" : "M"}${sx(C.indexOf(c)).toFixed(1)},${sy(c[k]).toFixed(1)}`).join("");
+  el("path", { d: path("pub"), fill: "none", stroke: css("--pub"), "stroke-width": 2.5 }, s);
+  el("path", { d: path("priv"), fill: "none", stroke: css("--priv"), "stroke-width": 2.5 }, s);
+  C.forEach((c, i) => { const unread = /unread/.test(c.note || "");
+    el("circle", { cx: sx(i), cy: sy(c.pub), r: 3.8, fill: unread ? css("--surface") : css("--pub"), stroke: css("--pub"), "stroke-width": 1.5 }, s);
+    if (c.priv != null) el("circle", { cx: sx(i), cy: sy(c.priv), r: 3.5, fill: css("--priv") }, s);
+    if (i % 3 === 0 || i === n - 1) el("text", { x: sx(i), y: y0 + 18, "text-anchor": "middle" }, s, c.step.split(" ")[0]) });
+  const cur = el("line", { x1: 0, x2: 0, y1, y2: y0, stroke: css("--muted"), "stroke-dasharray": "3 3", visibility: "hidden" }, s);
+  const hit = el("rect", { x: x0 - 10, y: y1, width: x1 - x0 + 20, height: y0 - y1, fill: "transparent" }, s);
+  function show(ev) {
+    const p = s.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY; const q = p.matrixTransform(s.getScreenCTM().inverse());
+    const i = Math.max(0, Math.min(n - 1, Math.round((q.x - x0) / (x1 - x0) * (n - 1)))), c = C[i];
+    cur.setAttribute("x1", sx(i)); cur.setAttribute("x2", sx(i)); cur.setAttribute("visibility", "visible");
+    read.innerHTML = `<b>${esc(c.step)}</b> (${esc(c.comp)}). Public ${lvl(c.pub)} (${f5(c.dpub)}), private ${lvl(c.priv)} (${f5(c.dpriv)}).` +
+      (c.note ? ` <i>${esc(c.note)}.</i>` : c.dpriv === 0 ? " This file changed March rows only, so April could not move." : "");
+  }
+  hit.addEventListener("pointermove", show); hit.addEventListener("pointerdown", show);
+  const S = D.summary;
+  el("text", { x: x1, y: sy(S.final.public) - 10, "text-anchor": "end", style: "fill:var(--pub);font-weight:700" }, s, "public " + lvl(S.final.public));
+  el("text", { x: x1, y: sy(S.final.private) + 20, "text-anchor": "end", style: "fill:var(--priv);font-weight:700" }, s, "private " + lvl(S.final.private));
+})();
+
+/* ---------- every read: public vs private ---------- */
+(function pp() {
+  const s = $("#pp"), R = D.reads.filter(r => r.pub >= .87 && r.priv >= .87 && r.pub <= .905 && r.priv <= .905), x0 = 66, x1 = 500, y0 = 400, y1 = 14;
+  const lo = .87, hi = .905, sx = v => x0 + (v - lo) / (hi - lo) * (x1 - x0), sy = v => y0 - (v - lo) / (hi - lo) * (y0 - y1);
+  for (let v = .87; v <= .905 + 1e-9; v += .005) { el("line", { x1: sx(v), x2: sx(v), y1, y2: y0, class: "gr" }, s); el("line", { x1: x0, x2: x1, y1: sy(v), y2: sy(v), class: "gr" }, s);
+    el("text", { x: sx(v), y: y0 + 16, "text-anchor": "middle" }, s, v.toFixed(3).replace(/^0/, "")); el("text", { x: x0 - 6, y: sy(v) + 4, "text-anchor": "end" }, s, v.toFixed(3).replace(/^0/, "")) }
+  el("line", { x1: sx(lo), y1: sy(lo), x2: sx(hi), y2: sy(hi), stroke: css("--muted"), "stroke-dasharray": "5 4" }, s);
+  axTitle(s, (x0 + x1) / 2, y0 + 38, "public S_total (March)"); axTitle(s, 14, (y0 + y1) / 2, "private S_total (April)", true);
+  const fin = "c_isinel_s7c_mar_on_c77", best = D.summary.best_private_read[0];
+  R.forEach(r => { const f = r.file === fin, b = r.file === best;
+    el("circle", { cx: sx(r.pub), cy: sy(r.priv), r: f ? 7 : 4.5, fill: f ? css("--accent") : b ? css("--priv") : css("--pub"), "fill-opacity": f || b ? 1 : .55, tabindex: 0,
+      "data-tip": `<b>${esc(r.file)}</b>: public ${lvl(r.pub)}, private ${lvl(r.priv)}` }, s) });
+  const f = R.find(r => r.file === fin), b = R.find(r => r.file === best);
+  if (f) el("text", { x: sx(f.pub) + 4, y: sy(f.priv) + 26, "text-anchor": "end", class: "ttl" }, s, "final (C79)");
+  if (b) el("text", { x: sx(b.pub) - 10, y: sy(b.priv) - 10, "text-anchor": "end", style: "fill:var(--priv);font-weight:700" }, s, "best private: a rejected file");
+  const sp = D.summary.spearman; $("#pp-read").innerHTML = `Rank agreement (Spearman): ${sp.all.rho} over all ${sp.all.n} files, ${sp.since_10_12.rho} over the ${sp.since_10_12.n} files from 12 October on.`;
+  readout(s, $("#pp-read"));
+})();
+
+/* ---------- carry tables + notes ---------- */
+(function carry() {
+  const S = D.summary, A = S.after_c47_by_component;
+  $("#carry").innerHTML = "<thead><tr><th>component</th><th class='n'>steps</th><th class='n'>Σ public</th><th class='n'>Σ private</th><th class='n'>carry</th><th class='n'>same sign</th></tr></thead><tbody>" +
+    D.carry.map(c => `<tr><td>${esc(c.comp)}</td><td class="n">${c.steps}</td><td class="n">${f5(c.pub)}</td><td class="n">${f5(c.priv)}</td><td class="n">${c.carry == null ? "–" : c.carry.toFixed(2) + "×"}</td><td class="n">${c.same} of ${c.steps}</td></tr>`).join("") + "</tbody>";
+  $("#carry47").innerHTML = "<thead><tr><th>component</th><th class='n'>steps</th><th class='n'>Σ public</th><th class='n'>Σ private</th><th class='n'>carry</th></tr></thead><tbody>" +
+    Object.entries(A).map(([k, a]) => `<tr><td>${esc(k)}</td><td class="n">${a.steps}</td><td class="n">${f5(a.public)}</td><td class="n">${f5(a.private)}</td><td class="n">${a.carry == null ? "–" : a.carry.toFixed(2) + "×"}</td></tr>`).join("") + "</tbody>";
+  const g = S.gain_baseline_to_final, bp = D.reads.find(r => r.file === S.best_private_read[0]), sp = S.spearman;
+  const big = S.big_april_steps.map(b => `${esc(b.step.split(" ")[0])} (${esc(b.step.split(" ").slice(1).join(" "))}): ${f5(b.d_public)} public, ${f5(b.d_private)} private`).join("; ");
+  $("#carry-notes").innerHTML = `
+    <p><b>Early, large pieces carried in full.</b> From the canonical baseline to the final file, private rose ${f5(g.private)} against ${f5(g.public)} public.</p>
+    <p><b>Late state pieces carried; late ongoing pieces did not.</b> After C47, state carried ${A.state.carry.toFixed(2)}× and ongoing ${A.ongoing.carry.toFixed(2)}×. This is the strongest support for our transfer rule: trust what is learned and measured on the scored month.</p>
+    <p><b>Two early steps moved April far more than March.</b> ${big}. Each is about two April windows, so luck is possible. Without C19 the ongoing steps sum to about +.0036 public and −.0004 private.</p>
+    <p><b>Late public reads ranked April poorly.</b> Rank agreement was ${sp.all.rho} over all files but ${sp.since_10_12.rho} from 12 October on. Our best April file (${esc(bp.file)}, ${lvl(bp.priv)}) was a rejected ongoing change; it beat the final file by .00013, a small fraction of one window, so that gap is noise.</p>
+    <p class="small muted">Per-step private changes are differences of two scored files. Where a step's file was built on an earlier parent (C17, C26) the change is taken against that parent; C77 was never read and C79 shares C76's April rows, so both change April by 0.</p>`;
+})();
+
+/* ---------- pipeline lanes ---------- */
+(function pipe() {
+  const names = { T1: "Task 1 · state", T3: "Task 3 · physics", T2o: "Task 2 · onset", T2g: "Task 2 · ongoing", T4: "Task 4 · ODME" }, box = $("#lanes");
+  Object.keys(names).forEach(k => {
+    const B = D.pipeline.filter(b => b.lane === k); if (!B.length) return;
+    const lane = document.createElement("div"); lane.className = "lane";
+    lane.innerHTML = `<div class="label">${names[k]}</div><div><div class="blocks"></div><div class="blkbody" hidden></div></div>`;
+    const grid = $(".blocks", lane), body = $(".blkbody", lane);
+    B.forEach(b => {
+      const btn = document.createElement("button"); btn.type = "button"; btn.className = "blk"; btn.setAttribute("aria-expanded", "false");
+      btn.innerHTML = `<strong>${esc(b.title)}</strong><span class="tags">${b.train ? '<span class="tag">train</span>' : ""}${b.month ? '<span class="tag t-month">month</span>' : ""}${b.online ? '<span class="tag t-online">online ≤ T</span>' : ""}${b.mar4apr ? '<span class="tag t-mar4apr">Mar→Apr</span>' : ""}</span>`;
+      btn.addEventListener("click", () => { const open = btn.getAttribute("aria-expanded") === "true"; $$(".blk", grid).forEach(x => x.setAttribute("aria-expanded", "false"));
+        if (open) { body.hidden = true; return } btn.setAttribute("aria-expanded", "true"); body.hidden = false; body.innerHTML = `<b>${esc(b.title)}.</b> ${esc(b.body)}` });
+      grid.appendChild(btn);
+    });
+    box.appendChild(lane);
+  });
+})();
+
+/* ---------- early steps ---------- */
+(function early() {
+  const s = $("#early"), E = D.early, x0 = 220, x1 = 900, mx = .022, sx = v => x0 + v / mx * (x1 - x0);
+  [0, .005, .01, .015, .02].forEach(v => { el("line", { x1: sx(v), x2: sx(v), y1: 4, y2: 4 + E.length * 32, class: "gr" }, s); el("text", { x: sx(v), y: 20 + E.length * 32, "text-anchor": "middle" }, s, f5(v).slice(0, 4)) });
+  E.forEach((e, i) => { const y = 8 + i * 32;
+    el("text", { x: x0 - 10, y: y + 15, "text-anchor": "end", style: "fill:var(--ink)" }, s, e.step);
+    el("rect", { x: x0, y, width: sx(e.dpub) - x0, height: 10, rx: 1.5, fill: comp(e.comp) }, s);
+    el("rect", { x: x0, y: y + 12, width: sx(Math.max(0, e.dpriv)) - x0, height: 8, rx: 1.5, fill: css("--priv") }, s);
+    el("circle", { cx: sx(e.dfc), cy: y + 5, r: 3, fill: css("--ink") }, s);
+    el("text", { x: Math.max(sx(e.dpub), sx(e.dpriv)) + 8, y: y + 15 }, s, `${f5(e.dpub)} public · ${f5(e.dpriv)} private`) });
+  const L = el("g", {}, s); el("rect", { x: x0, y: 30 + E.length * 32, width: 10, height: 8, fill: css("--priv") }, L); el("text", { x: x0 + 14, y: 38 + E.length * 32 }, L, "private change");
+  el("circle", { cx: x0 + 130, cy: 34 + E.length * 32, r: 3, fill: css("--ink") }, L); el("text", { x: x0 + 138, y: 38 + E.length * 32 }, L, "forecast");
+})();
+
+/* ---------- waterfall ---------- */
+(function wf() {
+  const s = $("#wf"), C = D.chain.filter(c => c.dpub != null), read = $("#wf-read"); let mode = "pub";
+  function draw() {
+    clear(s); const key = mode === "pub" ? "dpub" : "dpriv", vals = C.map(c => c[key]).filter(v => v != null);
+    const x0 = 70, x1 = 990, y1 = 14, y0 = 300, hi = Math.max(.0046, ...vals), lo = Math.min(-.0003, ...vals);
+    const sy = v => y0 - (Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo) * (y0 - y1), bw = (x1 - x0) / C.length, tk = (hi - lo) > .006 ? .002 : .001;
+    for (let v = Math.ceil(lo / tk) * tk; v <= hi + 1e-12; v += tk) { el("line", { x1: x0, x2: x1, y1: sy(v), y2: sy(v), class: "gr" }, s); el("text", { x: x0 - 6, y: sy(v) + 4, "text-anchor": "end" }, s, f5(v).slice(0, 6)) }
+    el("line", { x1: x0, x2: x1, y1: sy(0), y2: sy(0), class: "ax" }, s);
+    axTitle(s, 16, (y0 + y1) / 2, mode === "pub" ? "public change in S_total" : "private change in S_total", true);
+    C.forEach((c, i) => {
+      const v = c[key], x = x0 + i * bw + 2, g = el("g", {}, s);
+      if (v != null) el("rect", { x, width: bw - 4, y: sy(Math.max(0, v)), height: Math.max(1, Math.abs(sy(v) - sy(0))), rx: 1.5,
+        fill: comp(c.comp), "fill-opacity": mode === "pub" ? 1 : (v >= 0 ? 1 : .45), stroke: mode === "priv" && v < 0 ? css("--bad") : "none" }, g);
+      if (mode === "pub" && c.lo != null && c.hi != null) { el("line", { x1: x + bw / 2 - 2, x2: x + bw / 2 - 2, y1: sy(c.lo), y2: sy(c.hi), stroke: css("--muted"), "stroke-width": 1.4 }, g);
+        if (c.dfc != null) el("circle", { cx: x + bw / 2 - 2, cy: sy(c.dfc), r: 2.6, fill: css("--ink") }, g) }
+      el("text", { x: x + bw / 2, y: y0 + 12, transform: `rotate(60 ${x + bw / 2} ${y0 + 12})`, style: "font-size:10px" }, g, c.step.split(" ")[0]);
+      const hit = el("rect", { x: x - 2, y: y1, width: bw, height: y0 - y1, fill: "transparent" }, g);
+      const say = () => read.innerHTML = `<b>${esc(c.step)}</b> (${esc(c.comp)}): public ${f5(c.dpub)}, forecast ${f5(c.dfc)}` + (c.lo != null ? ` [${f5(c.lo)}, ${f5(c.hi)}]` : "") + `; private ${f5(c.dpriv)}.` + (c.note ? ` <i>${esc(c.note)}.</i>` : "");
+      hit.addEventListener("pointerenter", say); hit.addEventListener("pointerdown", say);
+    });
+    const lg = el("g", {}, s); let lx = x0 + 10; Object.keys(COMP).forEach(k => { el("rect", { x: lx, y: y1, width: 10, height: 10, fill: comp(k) }, lg); el("text", { x: lx + 14, y: y1 + 9 }, lg, k); lx += 80 });
+    if (mode === "priv") el("text", { x: lx + 10, y: y1 + 9 }, lg, "pale bar with red edge = April went down");
+  }
+  $$("[data-wf]").forEach(b => b.addEventListener("click", () => { mode = b.dataset.wf; pressGroup($$("[data-wf]"), b); draw() }));
+  draw();
+})();
+
+/* ---------- calibration (symlog, all reads) ---------- */
+(function calib() {
+  const s = $("#calib"), kinds = [...new Set(D.calib.map(c => c.kind))].filter(Boolean), chips = $("#calib-chips"); let on = "all";
+  const short = k => k.replace("ongoing: ", "").replace("state and physics (target split)", "state + physics").replace(" (diagnostic)", "").replace("early whole-file and ODME probes", "early probes");
+  ["all", ...kinds].forEach(k => { const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = k === "all" ? "all" : short(k); b.setAttribute("aria-pressed", k === on ? "true" : "false");
+    b.addEventListener("click", () => { on = k; pressGroup($$(".chip", chips), b); draw() }); chips.appendChild(b) });
+  const tf = symlog(.0005), M = tf(.035);
+  function draw() {
+    clear(s); const R = D.calib, x0 = 66, x1 = 500, y0 = 400, y1 = 14;
+    const sx = v => x0 + (tf(v) + M) / (2 * M) * (x1 - x0), sy = v => y0 - (tf(v) + M) / (2 * M) * (y0 - y1);
+    [-.03, -.01, -.003, -.001, 0, .001, .003, .01, .03].forEach(v => { el("line", { x1: sx(v), x2: sx(v), y1, y2: y0, class: v ? "gr" : "ax" }, s); el("line", { x1: x0, x2: x1, y1: sy(v), y2: sy(v), class: v ? "gr" : "ax" }, s);
+      const t = v === 0 ? "0" : (v > 0 ? "+" : "−") + String(Math.abs(v)).replace(/^0/, ""); el("text", { x: sx(v), y: y0 + 16, "text-anchor": "middle", style: "font-size:10.5px" }, s, t); el("text", { x: x0 - 6, y: sy(v) + 4, "text-anchor": "end", style: "font-size:10.5px" }, s, t) });
+    el("line", { x1: sx(-.035), y1: sy(-.035), x2: sx(.035), y2: sy(.035), stroke: css("--muted"), "stroke-dasharray": "5 4" }, s);
+    axTitle(s, (x0 + x1) / 2, y0 + 38, "forecast change (written before upload)"); axTitle(s, 14, (y0 + y1) / 2, "board change", true);
+    let n = 0, inb = 0, sign = 0;
+    R.forEach(c => { const act = on === "all" || c.kind === on, X = sx(c.dfc), Y = sy(c.dboard);
+      if (act) { n++; inb += c.inband; sign += c.dfc !== 0 && Math.sign(c.dfc) === Math.sign(c.dboard) }
+      const tip = `<b>${esc(c.file)}</b> (${esc(short(c.kind))}): forecast ${f5(c.dfc)}, board ${f5(c.dboard)}, ${c.inband ? "inside" : "outside"} the band`;
+      if (!act) { el("circle", { cx: X, cy: Y, r: 2.6, fill: css("--rule") }, s); return }
+      if (c.inband) el("circle", { cx: X, cy: Y, r: 4.5, fill: css("--good"), "fill-opacity": .85, tabindex: 0, "data-tip": tip }, s);
+      else el("path", { d: `M${X - 4},${Y - 4}L${X + 4},${Y + 4}M${X - 4},${Y + 4}L${X + 4},${Y - 4}`, stroke: css("--bad"), "stroke-width": 2.4, tabindex: 0, "data-tip": tip }, s);
+    });
+    const lg = el("g", {}, s); el("circle", { cx: x0 + 10, cy: y1 + 6, r: 4.5, fill: css("--good") }, lg); el("text", { x: x0 + 20, y: y1 + 10 }, lg, "inside the written band");
+    el("path", { d: `M${x0 + 166},${y1 + 2}l8,8m0,-8l-8,8`, stroke: css("--bad"), "stroke-width": 2.4 }, lg); el("text", { x: x0 + 180, y: y1 + 10 }, lg, "outside");
+    $("#calib-read").innerHTML = `${n} reads: ${pct(inb / Math.max(1, n))} inside the band, ${pct(sign / Math.max(1, n))} with the right sign.`;
+  }
+  draw(); readout(s, $("#calib-read"));
+})();
+
+/* ---------- bootstrap forest, board units ---------- */
+(function boot() {
+  const K = { "I-S-INEL": 1.815, "INEL-FOLD": 1.81, "S7C-FOLD": 1.81, "gap bench": .308 };
+  const s = $("#boot"), B = D.boot.map(b => { const k = K[b.inst] ?? 1; return { ...b, point: b.point * k, lo: b.lo * k, hi: b.hi * k } });
+  const tf = symlog(.00001), x0 = 320, x1 = 980, a = tf(-.00005), z = tf(.0008), sx = v => x0 + (tf(v) - a) / (z - a) * (x1 - x0), yb = 24 * B.length + 6;
+  [-.00002, 0, .00001, .00003, .0001, .0003, .0008].forEach(v => { el("line", { x1: sx(v), x2: sx(v), y1: 4, y2: yb, class: v === 0 ? "ax" : "gr" }, s); el("text", { x: sx(v), y: yb + 16, "text-anchor": "middle", style: "font-size:10.5px" }, s, v === 0 ? "0" : f5(v)) });
+  axTitle(s, (x0 + x1) / 2, yb + 38, "board units (change in S_total), symmetric-log");
+  B.forEach((b, i) => { const y = 14 + i * 24, c = b.month === "March" ? css("--pub") : css("--priv");
+    el("text", { x: x0 - 10, y: y + 4, "text-anchor": "end" }, s, `${b.piece} · ${b.month} · ${b.inst}`);
+    el("line", { x1: sx(b.lo), x2: sx(b.hi), y1: y, y2: y, stroke: c, "stroke-width": 2.5 }, s);
+    el("circle", { cx: sx(b.point), cy: y, r: 5, fill: c, tabindex: 0, "data-tip": `${esc(b.piece)}, ${b.month}: ${f5(b.point)} [${f5(b.lo)}, ${f5(b.hi)}], P>0 ${b.p}` }, s) });
+  const lg = el("g", {}, s); el("rect", { x: 10, y: yb + 30, width: 10, height: 10, fill: css("--pub") }, lg); el("text", { x: 24, y: yb + 39 }, lg, "March");
+  el("rect", { x: 80, y: yb + 30, width: 10, height: 10, fill: css("--priv") }, lg); el("text", { x: 94, y: yb + 39 }, lg, "April");
+})();
+
+/* ---------- anatomy ---------- */
+(function anat() {
+  const s = $("#anat"); let m = "mar";
+  function draw() { clear(s); const A = D.anatomy, x0 = 210, x1 = 490, sx = v => x0 + Math.min(1, v) * (x1 - x0), yb = 38 * A.length + 14;
+    [0, .25, .5, .75, 1].forEach(v => { el("line", { x1: sx(v), x2: sx(v), y1: 0, y2: yb - 8, class: "gr" }, s); el("text", { x: sx(v), y: yb + 6, "text-anchor": "middle" }, s, pct(v)) });
+    axTitle(s, (x0 + x1) / 2, yb + 28, "share of cells (light) and of improvable error (dark)");
+    A.forEach((a, i) => { const y = 6 + i * 38 + (i >= 3 ? 12 : 0), c = a["cell_" + m], im = a["imp_" + m];
+      el("text", { x: x0 - 8, y: y + 15, "text-anchor": "end", style: "font-size:11.5px" }, s, a.slice.length > 32 ? a.slice.slice(0, 31) + "…" : a.slice);
+      if (c != null) { el("rect", { x: x0, y, width: sx(c) - x0, height: 11, fill: css("--rule"), rx: 1.5 }, s); el("text", { x: sx(c) + 5, y: y + 9, style: "font-size:10px" }, s, pct(c)) }
+      if (im != null) { el("rect", { x: x0, y: y + 13, width: sx(im) - x0, height: 13, fill: css("--c-physics"), rx: 1.5 }, s);
+        el("text", { x: sx(im) + 6, y: y + 24, style: "fill:var(--ink);font-weight:700;font-size:11.5px" }, s, pct(im)) } });
+    el("line", { x1: 10, x2: x1, y1: 6 + 3 * 38 + 4, y2: 6 + 3 * 38 + 4, stroke: css("--muted"), "stroke-dasharray": "4 3" }, s);
+    el("text", { x: x1, y: 6 + 3 * 38 + 1, "text-anchor": "end", style: "font-size:10.5px" }, s, "partition above, overlapping slices below") }
+  $$("[data-an]").forEach(b => b.addEventListener("click", () => { m = b.dataset.an; pressGroup($$("[data-an]"), b); draw() }));
+  draw();
+})();
+
+/* ---------- label dose + decode ---------- */
+(function dose() {
+  const ren = t => t.replace(/^FV1 \+6k official view/, "FV-FT +6k official view");
+  const s = $("#dose"), A = D.dose.filter(d => d.inc != null && !/FOLD|S2b chain/.test(d.step)), x0 = 190, x1 = 470, mx = .00045, sx = v => x0 + v / mx * (x1 - x0);
+  A.forEach((a, i) => { const y = 8 + i * 44; el("text", { x: x0 - 8, y: y + 18, "text-anchor": "end", style: "font-size:12px" }, s, ren(a.step));
+    el("rect", { x: x0, y, width: Math.max(2, sx(a.inc) - x0), height: 26, rx: 2, fill: css("--c-state") }, s);
+    el("text", { x: sx(a.inc) + 6, y: y + 18, style: "fill:var(--ink);font-weight:700" }, s, f5(a.inc));
+    if (/S7c/.test(a.step)) el("circle", { cx: sx(.00002), cy: y + 13, r: 6, fill: "none", stroke: css("--ink"), "stroke-width": 2 }, s) });
+  axTitle(s, (x0 + x1) / 2, 8 + A.length * 44 + 14, "public board gain");
+  const d = $("#dec"), P = D.decode.dose, dx0 = 56, dx1 = 500, dy0 = 180, dy1 = 10, xs = [1, 2, 5, 10, 20], lx = v => dx0 + Math.log(v) / Math.log(20) * (dx1 - dx0), my = 15, ly = v => dy0 - v / my * (dy0 - dy1);
+  xs.forEach(v => { el("line", { x1: lx(v), x2: lx(v), y1: dy1, y2: dy0, class: "gr" }, d); el("text", { x: lx(v), y: dy0 + 16, "text-anchor": "middle" }, d, v + "×") });
+  [0, 5, 10, 15].forEach(v => { el("line", { x1: dx0, x2: dx1, y1: ly(v), y2: ly(v), class: "gr" }, d); el("text", { x: dx0 - 6, y: ly(v) + 4, "text-anchor": "end" }, d, v) });
+  axTitle(d, (dx0 + dx1) / 2, dy0 + 38, "scale of the in-model delta (log)"); axTitle(d, 14, (dy0 + dy1) / 2, "windows changed", true);
+  el("line", { x1: dx0, x2: dx1, y1: ly(3), y2: ly(3), stroke: css("--muted"), "stroke-dasharray": "4 4" }, d); el("text", { x: dx1, y: ly(3) - 5, "text-anchor": "end" }, d, "3 windows: smallest file we may read");
+  [["mar", css("--pub")], ["apr", css("--priv")]].forEach(([k, c]) => { el("path", { d: P.map((p, i) => `${i ? "L" : "M"}${lx(p.scale)},${ly(p[k])}`).join(""), fill: "none", stroke: c, "stroke-width": 2.5 }, d);
+    P.forEach(p => el("circle", { cx: lx(p.scale), cy: ly(p[k]), r: 3.5, fill: c }, d)) });
+  const lg = el("g", {}, d); el("rect", { x: dx0 + 8, y: dy1, width: 10, height: 10, fill: css("--pub") }, lg); el("text", { x: dx0 + 22, y: dy1 + 9 }, lg, "March");
+  el("rect", { x: dx0 + 80, y: dy1, width: 10, height: 10, fill: css("--priv") }, lg); el("text", { x: dx0 + 94, y: dy1 + 9 }, lg, "April");
+})();
+
+/* ---------- registry explorer ---------- */
+(function reg() {
+  const R = D.registry, q = $("#rq"), task = $("#rtask"), learn = $("#rlearn"), box = $("#rclass"), body = $("#rbody"), cnt = $("#rcount");
+  const classes = [...new Set(R.map(r => r.verdict_class))].sort((a, b) => R.filter(r => r.verdict_class === b).length - R.filter(r => r.verdict_class === a).length);
+  const known = ["ADOPTED", "REFUTED", "UNDETECTED", "BAD-INSTRUMENT", "REASONING-ONLY"]; let on = new Set();
+  [...new Set(R.map(r => r.task))].sort().forEach(t => { const o = document.createElement("option"); o.value = t; o.textContent = t; task.appendChild(o) });
+  classes.forEach(c => { const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.setAttribute("aria-pressed", "false");
+    b.textContent = `${c.toLowerCase()} · ${R.filter(r => r.verdict_class === c).length}`;
+    b.addEventListener("click", () => { on.has(c) ? on.delete(c) : on.add(c); b.setAttribute("aria-pressed", on.has(c) ? "true" : "false"); draw() }); box.appendChild(b) });
+  const vc = c => known.includes(c) ? "v-" + c : "v-other";
+  const isYes = v => /^y/i.test(String(v || "").trim());
+  let F = R;
+  function draw() {
+    const s = q.value.trim().toLowerCase(), t = task.value, l = learn.value;
+    F = R.filter(r => (!t || r.task === t) && (!on.size || on.has(r.verdict_class)) && (!l || (l === "yes") === isYes(r.learns_from_target_month)) && (!s || Object.values(r).join(" ").toLowerCase().includes(s)));
+    cnt.textContent = `${F.length} of ${R.length} ideas`;
+    body.innerHTML = F.map(r => `<tr class="regrow" data-id="${esc(r.id)}" tabindex="0" aria-expanded="false"><td class="mono">${esc(r.id)}</td><td>${esc(r.task)}</td><td>${esc(r.mechanism.length > 150 ? r.mechanism.slice(0, 148) + "…" : r.mechanism)}</td>` +
+      `<td><span class="pill ${vc(r.verdict_class)}">${esc(r.verdict_class.toLowerCase())}</span></td><td class="small">${esc((r.result || "").slice(0, 90))}${(r.result || "").length > 90 ? "…" : ""}</td></tr>`).join("");
+  }
+  body.addEventListener("click", ev => toggle(ev.target.closest(".regrow"))); body.addEventListener("keydown", ev => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); toggle(ev.target.closest(".regrow")) } });
+  function toggle(tr) { if (!tr) return; const nx = tr.nextElementSibling; if (nx && nx.classList.contains("regdet")) { nx.remove(); tr.setAttribute("aria-expanded", "false"); return }
+    const r = R.find(x => x.id === tr.dataset.id), d = document.createElement("tr"); d.className = "regdet"; tr.setAttribute("aria-expanded", "true");
+    const f = [["mechanism", r.mechanism], ["information used", r.info_source], ["learns from the scored month", r.learns_from_target_month], ["instrument", r.instrument], ["result", r.result],
+      ["smallest effect the test could see", r.min_effect_test_could_see], ["why this verdict", r.why_class]];
+    d.innerHTML = `<td colspan="5"><dl>${f.map(([k, v]) => `<dt>${k}</dt><dd style="margin:0">${esc(v)}</dd>`).join("")}</dl></td>`; tr.after(d) }
+  $("#rdl").addEventListener("click", () => { const cols = Object.keys(R[0]); const tsv = [cols.join("\t"), ...F.map(r => cols.map(c => String(r[c] ?? "").replace(/[\t\n]/g, " ")).join("\t"))].join("\n");
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([tsv], { type: "text/tab-separated-values" })); a.download = "tfb2026_idea_registry.tsv"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000) });
+  q.addEventListener("input", draw); task.addEventListener("change", draw); learn.addEventListener("change", draw); draw();
+})();
+
+/* ---------- negatives + compute ---------- */
+(function tables() {
+  $("#neg").innerHTML = "<thead><tr><th>id</th><th>task</th><th>idea</th><th>result</th><th>test could see</th></tr></thead><tbody>" +
+    D.negatives.map(r => `<tr><td class="mono">${esc(r.id)}</td><td>${esc(r.task)}</td><td>${esc(r.idea)}</td><td class="small">${esc(r.result)}</td><td class="n">${esc(r.smallest_effect_the_test_could_see)}</td></tr>`).join("") + "</tbody>";
+  $("#compute").innerHTML = "<tbody>" + D.compute.map(r => `<tr><td>${esc(r.item.trim())}</td><td class="n">${esc(r.value)}</td><td class="small muted">${esc(r.note)}</td></tr>`).join("") + "</tbody>";
+})();
+
+/* ---------- accessibility labels, copy buttons, exit highlighting ---------- */
+$$("svg.chart").forEach(s => { s.setAttribute("role", "img"); if (!s.hasAttribute("aria-labelledby")) s.setAttribute("aria-label", s.closest(".panel")?.querySelector("h3")?.textContent || "chart") });
+$$(".copy").forEach(b => b.addEventListener("click", () => { const t = b.nextElementSibling.textContent;
+  (navigator.clipboard?.writeText(t) ?? Promise.reject()).then(() => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy", 1400) })
+    .catch(() => { const r = document.createRange(); r.selectNodeContents(b.nextElementSibling); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); b.textContent = "Selected" }) }));
+(function exits() { const nav = $("#exits"), links = $$("#exits a"), secs = links.map(a => $(a.getAttribute("href")));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const i = secs.indexOf(e.target); links.forEach((a, k) => a.classList.toggle("on", k === i));
+    const a = links[i]; if (a) { const l = a.offsetLeft - nav.offsetLeft, r = l + a.offsetWidth; if (l < nav.scrollLeft || r > nav.scrollLeft + nav.clientWidth) nav.scrollLeft = l - 8 } }),
+    { rootMargin: "-40% 0px -55% 0px" }); secs.forEach(s => s && io.observe(s)) })();
+</script>

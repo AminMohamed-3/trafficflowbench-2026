@@ -1,0 +1,186 @@
+id: 0193
+slug: f4_state_only
+parent: submissions/0164_q04_ongoing_only.csv
+hypothesis: Fixed corrected F4 residual model with observed split-local station levels
+  improves state transfer; queue Q03+Q04 and ODME NNLS.05 remain identical
+state:
+  method: F4
+  module: tfb.lane_s.local_predict
+  model_dir: artifacts/lane_s/0182/production273/model
+  prediction_threads: 2
+  model_sha256:
+    contract.json: 8494c3eea2815498fa9c07c372977662da87f09825ceefa2f25f2e7088b54fc1
+    D12_I405_N_summaries.npz: 7b0ffdf263555662542673f557a7b5fa35dcbb21842a79c7b5926a70b73d4d04
+    D12_I405_S_summaries.npz: 6ef5674a046c1dc8bdd8a101d0f53bf3eff1753e5022219d5fa7ea7e74c6b32e
+    D12_I5_N_summaries.npz: 7ca2fbf2e930f6d9d9dc99e87ccb11b724b523b0a216a6e77864e2688cd7c6c4
+    D12_I5_S_summaries.npz: a2fb0d059a63f159f133404aa228896eefca94f9db132b4436da500670e7b9fb
+    D7_I10_E_summaries.npz: e82b9b0fa439ea1fc4d2569b94cdb652c0acfa30a9ef7e8d1e9ebd0912d6c819
+    D7_I10_W_summaries.npz: e602732801c74f26a85cafd1ac3cb7596c379159dab0e0b909fe7008a26a8b81
+    D7_I210_E_summaries.npz: e1f21968043f9f7a96ccbe55f02929b1dd1592f9a43791c53a60efb1c0b49254
+    D7_I210_W_summaries.npz: b731307eaeb206bbd3e2efd9e473edf3fffc2a9ad0ab36a1a32bdf66f413f70b
+    D7_I405_N_summaries.npz: 2ac348dc0fe8be8477d402bb5da555d8c1adff206732f862d6b317e123b34fcf
+    D7_I405_S_summaries.npz: 6d805b463f29b1f9a2efd2a2fea7f0f6dd4fda0929e544da2110eaa3eebd01c5
+    flow_lane.txt: fa8efe6fae73cb17ca3444c329de2319ea24581cd7d0a5d630098d8f869a4b2c
+    flow_lane_complete.json: da49f52e7efc3faa4c7d777a73034dd08cbfcbb5d20326cc6e97ca2eb02274ee
+    metadata.json: a687ead3ee6e6c8260ba6cba29a7d0f240b5d60fb0b1a2ee8020abdf4b0a25d2
+    speed.txt: 8e976d6d0c4436afb8d632cfd2abdfa91c859484a0e4c077d74af93bdeb683f7
+    speed_complete.json: 5926629f1b6fef8dba168f1fcc961ce69b58c7dbb88929876a089b16c8747fa4
+queue:
+  onset_mode: site_prior
+  fit:
+    start: '2030-06-01'
+    end: '2030-12-31'
+    max_position_gap: 2
+  expected_prior_sha256: 17e1f842116a970a1c4a197e960fb5b0da46c0a82007da25454d0c446b6259c2
+  onset_model_dir: artifacts/lane_q/0121/full_model
+  onset_model_sha256:
+    model.txt: 334552c014269e00ec61495047db451c8ccb5ab4172207496b4737ad849ebbb2
+    metadata.json: b8dc7f30420577a7f2e77eba5c859eb75368e90a37451c045ea69d0c9ed9bb65
+    prior.json: 17e1f842116a970a1c4a197e960fb5b0da46c0a82007da25454d0c446b6259c2
+  lightgbm_version: 4.6.0
+  ongoing_model_dir: artifacts/lane_q/0137/full_model
+  ongoing_model_sha256:
+    D12_I5_N.txt: 3b1b3ff1a155ac9233396a28a15288d6876cc6e19311dd35f3e85988ed57ff23
+    D12_I5_S.txt: e60423c13df61d20bd5596c8314f3ae55d83502e966b14eb6aed29187a270637
+    D7_I10_E.txt: 5a6022c9414907ba378a959e927bd835f8d97049b2e666688b0b06d6501fe76e
+    D7_I10_W.txt: 9b205700ddbf2f12c9eb915ee705877f8bec73a0af6d6d7d63e5e4c4c997567c
+    D7_I210_E.txt: 29ecb59701d673e4e653aef85bce2b3b325a819c3e2be9c07fc690d851b2d79f
+    D7_I210_W.txt: 7075b1f6b547b685753ff95d881ffb0c3537e832254d3981852e40d002511583
+    D7_I405_N.txt: 2e69a32b48d138c0bf91a4f0d019d160099b8cad69812b570ad7ca544c4b44ab
+    D7_I405_S.txt: 7cd96131630a519addaf2407ecc46b06a44ee983be494803d98733bebc111ebb
+    metadata.json: 29c6bec1834f3416979480bdeb065b216ab6ab8fd79dc9bdf088e6cc3a31d7a6
+    prior.json: 17e1f842116a970a1c4a197e960fb5b0da46c0a82007da25454d0c446b6259c2
+odme:
+  method: nnls
+  lambda: 0.05
+threads: 2
+ram_limit_gb: 1.5
+upload: false
+parent_sha256: 6959d30c539128358137bb95ee61d59945dd1568c732b470e51b92d50d494f1a
+prediction:
+  parent_public: 0.85925
+  delta_S_total: 0.007609580580960762
+  point: 0.8668595805809607
+  band:
+  - 0.8518595805809607
+  - 0.8818595805809607
+  band_type: Judgmental transfer range, not a public confidence interval
+  source: Production273 fixed OWN2 validation state delta; D0021 uncalibrated local
+    physics is assigned zero expected gain
+  created_utc: '2026-10-01T07:30:21.884629+00:00'
+  public: null
+  OWN_validation_state_delta: 0.021741658802745034
+  OWN_validation_ci95:
+  - 0.016701733758015248
+  - 0.02532774138148263
+  OWN_private_state_delta: 0.021580713967343512
+  local_ADV_physics_delta: 0.05595133837118316
+  expected_physics_delta: 0.0
+  local_ADV_delta_J_S: 0.01919885129194243
+  local_ADV_ci95:
+  - 0.018703354411
+  - 0.019723167829
+  local_ADV_total_point: 0.8784488512919424
+  second_derivation:
+    queue_contribution: 0.2447
+    nonqueue_parent: 0.61455
+    nonqueue_forecast: 0.6221595805809608
+    total: 0.8668595805809608
+    note: Arithmetic consistency under original zero-control decomposition; hidden
+      components not measured
+  physics_calibration: After public read record (public_delta-.35*OWN_validation_state_delta)/.15
+    against local_ADV_physics_delta; D05 remains paused until2/2 sign agreement
+upload_class: candidate_update
+upload_not_before_utc: '2026-10-01'
+component_change:
+  task: state
+  column: speed_kmh
+  columns:
+  - speed_kmh
+  - flow_vph
+  description: Task1 speed/flow and induced Task3 physics only
+  tolerance: 0.0
+  reviewed_predictions:
+  - panel: D7_I10_E
+    split: validation
+    path: artifacts/lead/0192/D7_I10_E_validation_state.csv
+    sha256: 89167d3992675a5c43cd9c8683a919c037d7d1be660241ad1aefbcb6be101129
+  - panel: D7_I10_W
+    split: validation
+    path: artifacts/lead/0192/D7_I10_W_validation_state.csv
+    sha256: 3d9359433981f51dfa0ba12b03e7977b6a8581a933314f3b7f81403adaa89745
+  - panel: D7_I210_E
+    split: validation
+    path: artifacts/lead/0192/D7_I210_E_validation_state.csv
+    sha256: cce436e0556c4449889571608b01a2dd17b6c17e50130f83c1eaf5df52f5f982
+  - panel: D7_I210_W
+    split: validation
+    path: artifacts/lead/0192/D7_I210_W_validation_state.csv
+    sha256: b6079afcd69163c205381e35f8b9c93f948395a0eea34e7852d10681c4c79008
+  - panel: D7_I405_N
+    split: validation
+    path: artifacts/lead/0192/D7_I405_N_validation_state.csv
+    sha256: d55ca0df435f0e287ba318251c471546da4b2792f3733529ab0438b000d920db
+  - panel: D7_I405_S
+    split: validation
+    path: artifacts/lead/0192/D7_I405_S_validation_state.csv
+    sha256: fb4d62ca3152ceb18d1802e4f271f2c1f87da0972f63f149f121d4fd52f19a95
+  - panel: D12_I5_N
+    split: validation
+    path: artifacts/lead/0192/D12_I5_N_validation_state.csv
+    sha256: 30cea41e50812dcb9fc1740868c3ece31eacb1351ebb04a7d57510a42e9552d8
+  - panel: D12_I5_S
+    split: validation
+    path: artifacts/lead/0192/D12_I5_S_validation_state.csv
+    sha256: e569b4d312c681b0b3f785a9fedcf6d3c7d1f3742357aa9de7fe8f13438baea5
+  - panel: D12_I405_N
+    split: validation
+    path: artifacts/lead/0192/D12_I405_N_validation_state.csv
+    sha256: de7a79342d85d2fe04f747aa16a51d6ba8e1a117028c399b0dca8f146ad1bf4e
+  - panel: D12_I405_S
+    split: validation
+    path: artifacts/lead/0192/D12_I405_S_validation_state.csv
+    sha256: a33d52c0b4f878d5a16b7060ba15a3bce761a1b8796bcf240d0a753e7b6a8f54
+  - panel: D7_I10_E
+    split: private
+    path: artifacts/lead/0192/D7_I10_E_private_state.csv
+    sha256: cfe80c84046571944600e7f511b8c6c23cf3e9fb17f8ffbd1e4ccee903206ce6
+  - panel: D7_I10_W
+    split: private
+    path: artifacts/lead/0192/D7_I10_W_private_state.csv
+    sha256: 7a0a822e5d2ab0a221b7209a2b74be8a337fddf23a6eaea3bac0e8b8dcd0505a
+  - panel: D7_I210_E
+    split: private
+    path: artifacts/lead/0192/D7_I210_E_private_state.csv
+    sha256: f13acfb3ff5fa8e5fb6c188518c1950b86554825cbc95cadd4262055bca46d61
+  - panel: D7_I210_W
+    split: private
+    path: artifacts/lead/0192/D7_I210_W_private_state.csv
+    sha256: 7d28fd9b3f5a56d47ad43cd683b27482193634ad9a48acca7f229bdaa358e5a4
+  - panel: D7_I405_N
+    split: private
+    path: artifacts/lead/0192/D7_I405_N_private_state.csv
+    sha256: bf1e6a0e2ff39b30e12fa788a1d1a4b28f6eb45481d944793f203877aa73ef18
+  - panel: D7_I405_S
+    split: private
+    path: artifacts/lead/0192/D7_I405_S_private_state.csv
+    sha256: 4593f0410f42a34b11471ef53a624a19db3f0c71783c59c61a450842fc7d3d3e
+  - panel: D12_I5_N
+    split: private
+    path: artifacts/lead/0192/D12_I5_N_private_state.csv
+    sha256: c3efd3609e2b30018b1b007661c0ae74724581899cbc23bc1531b1262e9ffec5
+  - panel: D12_I5_S
+    split: private
+    path: artifacts/lead/0192/D12_I5_S_private_state.csv
+    sha256: 66ff975b920a9d0cefc6c275bf1bb9e169d72042180cba7f4eb02121d02b0392
+  - panel: D12_I405_N
+    split: private
+    path: artifacts/lead/0192/D12_I405_N_private_state.csv
+    sha256: a60a09c7b088872ae92c7ccfe625ad0033d739618417c81a148d08b21d54e92f
+  - panel: D12_I405_S
+    split: private
+    path: artifacts/lead/0192/D12_I405_S_private_state.csv
+    sha256: 30371a8fa329d00fc5154c36e4b549b518396dd4c91ebba4edf6c83d15b9d456
+independent_reviews:
+- path: exp/0192_l_f4_review/result.json
+  sha256: 4fd706d70cc927a5dc5c026c0c33b60f411660611c63cc803404da7ec50c79eb

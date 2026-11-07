@@ -1,0 +1,87 @@
+{
+  "id": "0154",
+  "phase": "resource/setup repair, not candidate comparison",
+  "utc": "2026-09-30T19:56:05.278311+00:00",
+  "failed_receipt_sha256": "4714873722476c6c68913a049cdb13634bbe450eaec4611b09c4bcad05c52e0e",
+  "completed_cases_retained": [
+    "asm",
+    "ramps",
+    "S04_edges",
+    "gap_context",
+    "history",
+    "same_station",
+    "spatial_characteristic"
+  ],
+  "incomplete_case_preserved": "ablations/physics_allocation_reference",
+  "direct_column_controls": {
+    "id": "0154",
+    "verdict": "PASS",
+    "fixture_dates": [
+      "2030-07-14",
+      "2030-07-15",
+      "2030-07-16"
+    ],
+    "population": "fit dates only",
+    "bounded_source_sha256": "f980277afa14a1f67691f735afe2f6a1ef1055bb6e27a9a2496e4b3cd583820b",
+    "legacy_source_sha256": "794bef8f3ecb9c12793c9bff7ce4f6456d7f021ec209c3e712a2d1ba792efe3f",
+    "controller_source_sha256": "ba130099dff1eb53b7bec645c29086e36a563e8a90bd525f2facc56b6e4b6c8f",
+    "receipt_source_sha256": "41d676c601d0fee2ba44eaf046e82a4ed756a9835d26ac4574d81c63ce026bea",
+    "groups": {
+      "physics": {
+        "n": 881,
+        "retained_columns": 165,
+        "matrix_labels_weights": "exact",
+        "five_tree_prediction_sha256": "9b68a905c6f1f7b684930364f38132fe562437cdd9a5cf6fcb1fad82f7221401",
+        "model_text": "bit-identical",
+        "scope": "Fit-date setup fixture only; not candidate noise"
+      },
+      "bases": {
+        "n": 881,
+        "retained_columns": 171,
+        "matrix_labels_weights": "exact",
+        "five_tree_prediction_sha256": "cff0ed87fed7797522fd2b26f2d8401bb9de8c39670c91cbebb26bf8a173a94c",
+        "model_text": "bit-identical",
+        "scope": "Fit-date setup fixture only; not candidate noise"
+      },
+      "context": {
+        "n": 881,
+        "retained_columns": 169,
+        "matrix_labels_weights": "exact",
+        "five_tree_prediction_sha256": "0c6263bfc1f560f64ca074108413e0d9610f24d52884043205ae6de20a18b4d3",
+        "model_text": "bit-identical",
+        "scope": "Fit-date setup fixture only; not candidate noise"
+      },
+      "resolved_characteristics": {
+        "n": 881,
+        "retained_columns": 129,
+        "matrix_labels_weights": "exact",
+        "five_tree_prediction_sha256": "7d4e77272b9c301b9db517d5ae9b4c64ef0390bd684047133c74248b82e1fdcb",
+        "model_text": "bit-identical",
+        "scope": "Fit-date setup fixture only; not candidate noise"
+      }
+    },
+    "receipt_sharing_faults": {
+      "n": 9,
+      "faults": 6
+    },
+    "monitor_after_fault": "active",
+    "candidate_seed_sd_J_S": null,
+    "adv_access": false,
+    "new_held_candidate_reads": 0
+  },
+  "repaired_source_sha256": {
+    "travel_bounded_audit_model.py": "f980277afa14a1f67691f735afe2f6a1ef1055bb6e27a9a2496e4b3cd583820b",
+    "ablate_travel.py": "ba130099dff1eb53b7bec645c29086e36a563e8a90bd525f2facc56b6e4b6c8f",
+    "jobs.py": "41d676c601d0fee2ba44eaf046e82a4ed756a9835d26ac4574d81c63ce026bea",
+    "adv_travel.py": "2f23c2a69f9ac3db2ca05806eb7e2988221cbd5a81b84683fcab933a13a5ec43"
+  },
+  "source_parent_unchanged": "travel_model/features/characteristics; original F3 CV and configuration unchanged",
+  "lossless_compression_receipt_sha256": "02f0cf7cee9826463abf6f5f3555f74af2582943e1f329a865c1a3f097ad55f0",
+  "adv_reads": 0,
+  "no_held_ablation_scores_before_repair": true,
+  "expected_peak_rss_gib": 5.0,
+  "peak_measurement_pending": true,
+  "launch_available_ram_min_gib": 3,
+  "launch_free_disk_min_gib": 12,
+  "verdict": "PASS setup only"
+}

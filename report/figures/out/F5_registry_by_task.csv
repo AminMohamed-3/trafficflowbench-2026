@@ -1,0 +1,9 @@
+task,ADOPTED,"passed offline, not shipped",UNDETECTED,REFUTED,BAD-INSTRUMENT,REASONING-ONLY
+state,21,2,21,30,0,4
+physics,5,0,1,8,2,1
+onset,3,0,16,22,3,2
+ongoing,12,0,35,39,11,7
+queue,1,0,5,3,0,0
+odme,1,0,0,5,0,0
+cross,1,0,2,1,0,2
+instrument,1,0,0,0,0,0

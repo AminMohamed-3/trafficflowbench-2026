@@ -1,0 +1,14 @@
+{
+  "_comment": "Kaggle winning-model documentation format. Documentation only: the code binds these paths relative to the repository root (TFB_ROOT); change them only by moving the folders.",
+  "RAW_DATA_DIR": "data/raw/kaggle_public/",
+  "CACHE_DIR": "artifacts/cache/",
+  "MODEL_CHECKPOINT_DIR": "artifacts/claude_ref/",
+  "FITTED_INPUT_MANIFEST": "artifacts/claude_ref/asm2/serving_inputs_sha256.txt",
+  "WEIGHTS_MANIFEST": "weights/MANIFEST.csv",
+  "BUILD_WORK_DIR": "artifacts/claude_ref/asm2/run/",
+  "SUBMISSION_DIR": "outputs/c47/",
+  "LOGS_DIR": "outputs/logs/",
+  "REFERENCE_DIR": "reference/",
+  "PYTHON_VENV": "/workspace/tfb/venv",
+  "ENV": {"TFB_ROOT": "<repository root>", "TFB_ASM2_CPU_ONLY": "1", "TFB_ASM2_DET": "1", "CUDA_VISIBLE_DEVICES": ""}
+}

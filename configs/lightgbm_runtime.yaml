@@ -1,0 +1,8 @@
+version: 4.6.0
+path: .venv_tfb/Lib/site-packages
+wheel_sha256: 37089ee95664b6550a7189d887dbf098e3eadab03537e411f52c63c121e3ba4b
+verification: exp/0135_lgb_runtime/result.json
+scope: shared verified runtime; S and Q identical existing fixtures confirmed
+shared_venv_modified: true
+shared_verification: exp/0144_l_shared_runtime/result.json
+builder_overrides_removed: true

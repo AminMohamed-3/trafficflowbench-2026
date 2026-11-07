@@ -1,0 +1,27 @@
+{
+  "id": "0222",
+  "phase": "Flow600 difference diagnostic; no qualification",
+  "verdict": "FAIL",
+  "n_different_lines": 2,
+  "structural_differences": [],
+  "structural_difference_count": 0,
+  "numeric_difference_count": 1,
+  "field_max_abs": {
+    "leaf_value": 1.7763568394002505e-15,
+    "split_gain": 0,
+    "internal_value": 0,
+    "internal_weight": 0,
+    "leaf_weight": 0
+  },
+  "first_numeric": [
+    {
+      "line": 7937,
+      "field": "leaf_value",
+      "max_abs": 1.7763568394002505e-15,
+      "scale": 9.041575153209775
+    }
+  ],
+  "model_sha256": "4907d08a7b912a1dbe2e19706d1772036d5378be04f3dc8a9166eee16e7c53a5",
+  "OWN_reads": 0,
+  "ADV_reads": 0
+}

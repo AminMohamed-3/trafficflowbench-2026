@@ -1,0 +1,43 @@
+{
+  "id": "0305",
+  "utc": "2026-10-03T19:20:16.006316+00:00",
+  "verdict": "PASS",
+  "stage": "joint harness local preparation",
+  "synthetic_checks": [
+    "query/history/gap and true-channel exclusion",
+    "actual released observation-only reader and pct blinding",
+    "quick/full equal panel-regime mass and original float32 arithmetic",
+    "same-month/hidden-label poison isolation",
+    "joint CI/actual-member noise/original floor/state-loss guard",
+    "equal3 prediction and per-lane-to-total flow once",
+    "direct state/physics day-stat parity and paired population guard"
+  ],
+  "synthetic_count": 7,
+  "syntax": "PASS",
+  "local_source_plan": "PASS",
+  "actual_VM_source_plan": "PENDING guarded run autosync",
+  "source_pins": 37,
+  "main_pins": 7,
+  "completed_bindings": 64,
+  "protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+  "scientific_source_sha256": "d63a8080bc0ae3522c78381c6dcd2419f4da18ac85a2c356d28dff0332ffd53e",
+  "scientific_source_unchanged": true,
+  "quick_OPT_panels": [
+    "D12_I5_N",
+    "D7_I405_N"
+  ],
+  "quick_training_pool": "2 panels x3 regimes, diagnostic only, original all10 parent codes",
+  "ADV_training_pool": "all10 x3 regimes fixed original S08 recipe",
+  "new_fits": 0,
+  "quality_reads": 0,
+  "new_OWN_reads": 0,
+  "phase_caps": {
+    "quick_opt": 12,
+    "adv": 60
+  },
+  "diagnostic_actual_minutes": 16.464491748809813,
+  "diagnostic_remaining_minutes": 73.53550825119018,
+  "total_actual_launcher_minutes": 126.54157457749048,
+  "gate": "Positive paired J_S CI, actual3seed deltaSD<delta/2, original noise floor and no point state loss",
+  "metadata_dependency": "VM rebuilt OWN manifest metadata-only original-field binding PASS on all30; D receipt delivered separately"
+}

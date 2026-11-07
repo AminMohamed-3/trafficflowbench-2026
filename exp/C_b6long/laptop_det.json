@@ -1,0 +1,11 @@
+{
+ "det0_identical_in_process": false,
+ "det0_identical_across_processes": false,
+ "det0_ms_per_it": 31.8,
+ "det1_identical": true,
+ "det1_ms_per_it": 38.1,
+ "device": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+ "panel": "D12_I5_S",
+ "note": "600 it x 2 runs x 2 processes (det0), 60 it x 2 runs (det1)",
+ "use_det": 1
+}

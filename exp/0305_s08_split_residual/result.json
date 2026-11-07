@@ -1,0 +1,1089 @@
+{
+  "id": "0305",
+  "lane": "S",
+  "status": "CLOSED_RUNTIME_FAIL_ADV_UNMEASURED",
+  "authority": "D0059 + D0061",
+  "instrument": "I-S-OWN validation then unchanged private confirmation",
+  "reference": "original qualified F4fit214",
+  "checks": {
+    "synthetic_tests": 5,
+    "synthetic_tests_verdict": "PASS",
+    "source_bindings": 38,
+    "local_source_plan": "PASS",
+    "VM_source_plan": "PASS",
+    "syntax": "PASS"
+  },
+  "fits": 26,
+  "OWN_reads": {
+    "validation": 2,
+    "private": 2
+  },
+  "ADV_reads": 0,
+  "VM_jobs": 9,
+  "manual_initial_sync": "PASS_ONCE",
+  "C_ready": true,
+  "Lead_actual_launcher_release": true,
+  "followup_minutes": 30,
+  "followup_status": "ACTIVE",
+  "threads": 8,
+  "ram_gib": 23,
+  "gpu": false,
+  "verdict": "FAIL",
+  "limitations": [
+    "March/April OWN state and official-mix positives retained; OWN physics unknown",
+    "Quick OPT joint gate PASS on fixed two-panel residual pool; not full10 OPT reproduction",
+    "Full ADV hit registered49min cap before fixed seed4703 completed; no scorer read or joint ADV number",
+    "Sole implementation repair consumed; exact continuation closed without candidate request",
+    "Old S07/NN NULLs, gates, charges and deadlines remain unchanged; Task4 frozen"
+  ],
+  "job": "S_0305_1003T201404Z",
+  "job_start_utc": "2026-10-03T20:14:13.630379+00:00",
+  "registered_maximum_minutes": 49,
+  "remote_startup_verdict": "ACTUAL_ADV_SOURCE_PLAN_PASS",
+  "shared_api_sources": "4/4 main and primary bytes equal",
+  "input_completion": {
+    "job": "S_0305_1003T131858Z",
+    "verdict": "PASS",
+    "panels": 10,
+    "raw_arrays": 60,
+    "monthly_tables": 90,
+    "OWN_populations": 30,
+    "job_start_epoch": 1791033547.9762478,
+    "job_end_epoch": 1791035924.8873184,
+    "actual_launcher_minutes": 39.61518450975418,
+    "driver_minutes": 39.60979257668369,
+    "peak_process_group_rss_gib": 5.927295684814453,
+    "result_budget_binding": "PASS",
+    "quality_reads": 0
+  },
+  "parent_completion": {
+    "id": "0305",
+    "phase": "parent",
+    "job": "S_0305_1003T140815Z",
+    "actual_state": "done",
+    "actual_exit": 0,
+    "actual_start_epoch": 1791036505.314772,
+    "actual_end_epoch": 1791037053.4093196,
+    "actual_launcher_minutes": 9.13490912914276,
+    "driver_minutes": 9.129505431108798,
+    "peak_process_group_rss_gib": 4.60211181640625,
+    "models": {
+      "speed": {
+        "rounds": 600,
+        "numeric_leaf11": "PASS",
+        "strict_without_threads": "PASS",
+        "sha256": "971c3773a8c38782d2c40ee476a45befcb424874a5f1741ccba8f3d72dc3ef19"
+      },
+      "flow_lane": {
+        "rounds": 600,
+        "numeric_leaf11": "PASS",
+        "strict_without_threads": "PASS",
+        "sha256": "5f352ab5895586cb0975cc25958ce8b8c04b7c2dfecdd16821fd196dad2b3f84"
+      }
+    },
+    "budget_result_binding": "PASS",
+    "quality_reads": 0,
+    "verdict": "PASS",
+    "total_actual_launcher_minutes": 48.75009363889694,
+    "total_driver_minutes": 48.739298007792485,
+    "startup_charges_preserved_externally": true
+  },
+  "job_start_epoch": 1791058453.6303794,
+  "S08_corrector_fits": "validation6/6 and private6/6 full600 PASS",
+  "validation_completion": {
+    "id": "0305",
+    "phase": "validation",
+    "job": "S_0305_1003T145821Z",
+    "actual_state": "done",
+    "actual_exit": 0,
+    "actual_start_epoch": 1791039510.4831634,
+    "actual_end_epoch": 1791041382.8054857,
+    "actual_launcher_minutes": 31.20537203947703,
+    "driver_minutes": 31.20045782069986,
+    "peak_process_group_rss_gib": 1.0585899353027344,
+    "budget_result_binding": "PASS",
+    "protocol_model_data_bindings": "PASS",
+    "collected_models": {
+      "4701": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "1469a780307d4b038ee0aab386c2d68c183236889bd1a259b29a2368e7241f53"
+      },
+      "4702": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "b4814f16219b8aa3dfc4baa41e54be916b2f75e443ed72db725dae382ea0a012"
+      },
+      "4703": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "fe230ced3214713bfe9554d3bbfb4b70a51eed3d2abd26cab7b28ee651fe611b"
+      }
+    },
+    "OWN_reads": 1,
+    "n_targets": 1118289,
+    "panel_rows_files": 10,
+    "comparison": {
+      "incumbent_S_state": 0.8820793461266152,
+      "candidate_S_state": 0.8953448160941748,
+      "delta_S_state": 0.013265469967559618,
+      "ci95": [
+        0.01054021683144155,
+        0.016969918340714398
+      ],
+      "n_dates": 31,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent_ci95": [
+        0.8729665463001017,
+        0.8931512891181965
+      ],
+      "incumbent_half_width": 0.010092371409047396,
+      "verdict": "PASS"
+    },
+    "gate": {
+      "delta_S_state": 0.013265469967559618,
+      "ci95": [
+        0.01054021683144155,
+        0.016969918340714398
+      ],
+      "seed_delta_sd": 0.001005966849215456,
+      "positive": true
+    },
+    "verdict": "PASS",
+    "total_actual_launcher_minutes": 79.95546567837397,
+    "total_driver_minutes": 79.93975582849235,
+    "startup_charges_preserved_externally": true
+  },
+  "private_completion": {
+    "id": "0305",
+    "phase": "private",
+    "job": "S_0305_1003T163814Z",
+    "actual_state": "done",
+    "actual_exit": 0,
+    "actual_start_epoch": 1791045504.637356,
+    "actual_end_epoch": 1791047311.934385,
+    "actual_launcher_minutes": 30.1216171503067,
+    "driver_minutes": 30.113877030989777,
+    "peak_process_group_rss_gib": 1.0692253112792969,
+    "budget_result_binding": "PASS",
+    "protocol_model_data_bindings": "PASS",
+    "collected_models": {
+      "4701": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "2ae657767e0a38ad187ebfadd9c30e5c0a869b64eba6b72ca504c82e350b7aaf"
+      },
+      "4702": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "8b3ae8acee1a537ac1a7b78ada6049329a04d9d5e509f1e999b9967ad28cd83c"
+      },
+      "4703": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "d8b4d9ffb199b3b7de5c5531a9faee5d514beec48050fab7c11bb746f5878a2b"
+      }
+    },
+    "OWN_reads": 1,
+    "n_targets": 1090848,
+    "panel_rows_files": 10,
+    "comparison": {
+      "incumbent_S_state": 0.8876133875316186,
+      "candidate_S_state": 0.9024100191397633,
+      "delta_S_state": 0.014796631608144706,
+      "ci95": [
+        0.011023516826232604,
+        0.018744506533134902
+      ],
+      "n_dates": 30,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent_ci95": [
+        0.8829531856712068,
+        0.8966553744737801
+      ],
+      "incumbent_half_width": 0.006851094401286617,
+      "verdict": "PASS"
+    },
+    "gate": {
+      "delta_S_state": 0.014796631608144706,
+      "ci95": [
+        0.011023516826232604,
+        0.018744506533134902
+      ],
+      "seed_delta_sd": 0.003971651400400902,
+      "positive": true
+    },
+    "verdict": "PASS",
+    "total_actual_launcher_minutes": 110.07708282868067,
+    "total_driver_minutes": 110.05363285948212,
+    "startup_charges_preserved_externally": true
+  },
+  "next": "Physics-aware state support with D under D0061; no more S0305 jobs, Task4 frozen",
+  "official_mix_preparation": {
+    "synthetic_checks": 3,
+    "syntax": "PASS",
+    "source_plan": "PASS",
+    "completed_bindings": 45,
+    "maximum_minutes": 25,
+    "fits": 0,
+    "extra_joint_reads_per_period": 1,
+    "shared_reserve_minutes": 90
+  },
+  "OPT_parent_preparation": {
+    "status": "QUALIFIED_COLLECTED_PASS",
+    "fits": 0,
+    "reference": "Original F4 OPT0/171",
+    "fit_dates": 171,
+    "excluded_held_dates": 43,
+    "rounds_each": 600,
+    "local_source_plan": "PASS",
+    "syntax": "PASS",
+    "maximum_minutes": 20,
+    "shared_reserve_minutes": 90,
+    "destination_VM": "/workspace/work/main/artifacts/lane_s/0305/diagnostics/opt_parent",
+    "authority": "L_S0305_OPT_parent.md"
+  },
+  "official_mix_completion": {
+    "id": "0305",
+    "phase": "official_mix",
+    "job": "S_0305_1003T174446Z",
+    "actual_state": "done",
+    "actual_exit": 0,
+    "actual_start_epoch": 1791049495.4149091,
+    "actual_end_epoch": 1791050058.9208128,
+    "peak_process_group_rss_gib": 1.074371337890625,
+    "budget_result_binding": "PASS",
+    "protocol_model_result_bindings": "PASS",
+    "unchanged_forecasts_panel_periods": 20,
+    "weights_labels_used": false,
+    "fits": 0,
+    "OWN_reads": {
+      "validation": 2,
+      "private": 2
+    },
+    "reports": {
+      "validation": {
+        "parent_S_state": 0.9342788191954641,
+        "candidate_S_state": 0.9373505243716952,
+        "delta_S_state": 0.003071705176231121,
+        "ci95": [
+          0.0027273077862162293,
+          0.00336310786138872
+        ],
+        "member_deltas": [
+          0.0025258792661349005,
+          0.0021560824410340462,
+          0.0023829420357707187
+        ],
+        "gate": {
+          "delta_S_state": 0.003071705176231121,
+          "ci95": [
+            0.0027273077862162293,
+            0.00336310786138872
+          ],
+          "seed_delta_sd": 0.00018647878315550286,
+          "positive": true
+        },
+        "points": {
+          "parent": 0.9342788191954641,
+          "candidate": 0.9373505243716952,
+          "4701": 0.936804698461599,
+          "4702": 0.9364349016364981,
+          "4703": 0.9366617612312348
+        },
+        "n_dates": 31,
+        "bootstrap_samples": 1000,
+        "period": "validation",
+        "instrument": "I-S-OWN official regime/block mix diagnostic",
+        "reference": "Original F4fit214; unchanged S08 equal3/dose1",
+        "fits": 0,
+        "original_joint_OWN_reads": 1,
+        "additional_joint_diagnostic_reads": 1,
+        "total_joint_OWN_reads": 2,
+        "n_targets": 1118289,
+        "original_raw_read_not_replaced": true,
+        "physics": "UNKNOWN",
+        "verdict": "PASS",
+        "official_template_target_gap_fraction": 0.018751941254734342,
+        "official_template_targets": 3451376,
+        "official_template_gap_targets": 64720
+      },
+      "private": {
+        "parent_S_state": 0.9337165380928903,
+        "candidate_S_state": 0.9372474613728301,
+        "delta_S_state": 0.003530923279939757,
+        "ci95": [
+          0.0031326186986301158,
+          0.0038651422464241357
+        ],
+        "member_deltas": [
+          0.002723304665980697,
+          0.0026758454059470083,
+          0.003157511154854409
+        ],
+        "gate": {
+          "delta_S_state": 0.003530923279939757,
+          "ci95": [
+            0.0031326186986301158,
+            0.0038651422464241357
+          ],
+          "seed_delta_sd": 0.00026545230268779275,
+          "positive": true
+        },
+        "points": {
+          "parent": 0.9337165380928903,
+          "candidate": 0.9372474613728301,
+          "4701": 0.936439842758871,
+          "4702": 0.9363923834988374,
+          "4703": 0.9368740492477448
+        },
+        "n_dates": 30,
+        "bootstrap_samples": 1000,
+        "period": "private",
+        "instrument": "I-S-OWN official regime/block mix diagnostic",
+        "reference": "Original F4fit214; unchanged S08 equal3/dose1",
+        "fits": 0,
+        "original_joint_OWN_reads": 1,
+        "additional_joint_diagnostic_reads": 1,
+        "total_joint_OWN_reads": 2,
+        "n_targets": 1090848,
+        "original_raw_read_not_replaced": true,
+        "physics": "UNKNOWN",
+        "verdict": "PASS",
+        "official_template_target_gap_fraction": 0.019408303264595656,
+        "official_template_targets": 3284419,
+        "official_template_gap_targets": 63745
+      }
+    },
+    "verdict": "PASS",
+    "actual_launcher_minutes": 9.391765062014262,
+    "driver_minutes": 9.385479712486267,
+    "diagnostic_actual_minutes": 9.391765062014262,
+    "diagnostic_remaining_minutes": 80.60823493798574,
+    "total_actual_launcher_minutes": 119.46884789069493
+  },
+  "joint_diagnostics_preparation": {
+    "id": "0305",
+    "utc": "2026-10-03T19:20:16.006316+00:00",
+    "verdict": "PASS",
+    "stage": "joint harness local preparation",
+    "synthetic_checks": [
+      "query/history/gap and true-channel exclusion",
+      "actual released observation-only reader and pct blinding",
+      "quick/full equal panel-regime mass and original float32 arithmetic",
+      "same-month/hidden-label poison isolation",
+      "joint CI/actual-member noise/original floor/state-loss guard",
+      "equal3 prediction and per-lane-to-total flow once",
+      "direct state/physics day-stat parity and paired population guard"
+    ],
+    "synthetic_count": 7,
+    "syntax": "PASS",
+    "local_source_plan": "PASS",
+    "actual_VM_source_plan": "PENDING guarded run autosync",
+    "source_pins": 37,
+    "main_pins": 7,
+    "completed_bindings": 64,
+    "protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+    "scientific_source_sha256": "d63a8080bc0ae3522c78381c6dcd2419f4da18ac85a2c356d28dff0332ffd53e",
+    "scientific_source_unchanged": true,
+    "quick_OPT_panels": [
+      "D12_I5_N",
+      "D7_I405_N"
+    ],
+    "quick_training_pool": "2 panels x3 regimes, diagnostic only, original all10 parent codes",
+    "ADV_training_pool": "all10 x3 regimes fixed original S08 recipe",
+    "new_fits": 0,
+    "quality_reads": 0,
+    "new_OWN_reads": 0,
+    "phase_caps": {
+      "quick_opt": 12,
+      "adv": 60
+    },
+    "diagnostic_actual_minutes": 16.464491748809813,
+    "diagnostic_remaining_minutes": 73.53550825119018,
+    "total_actual_launcher_minutes": 126.54157457749048,
+    "gate": "Positive paired J_S CI, actual3seed deltaSD<delta/2, original noise floor and no point state loss",
+    "metadata_dependency": "VM rebuilt OWN manifest metadata-only original-field binding PASS on all30; D receipt delivered separately"
+  },
+  "opt_parent_completion": {
+    "id": "0305",
+    "phase": "opt_parent",
+    "job": "S_0305_1003T180811Z",
+    "actual_state": "done",
+    "actual_exit": 0,
+    "actual_start_epoch": 1791050901.1376834,
+    "actual_end_epoch": 1791051325.5012846,
+    "actual_launcher_minutes": 7.072726686795552,
+    "driver_minutes": 7.067861255009969,
+    "peak_process_group_rss_gib": 3.8071670532226562,
+    "budget_result_binding": "PASS",
+    "source_model_protocol_bindings": "PASS",
+    "reference": "Original qualified F4 OPT0/171",
+    "fit_dates": 171,
+    "excluded_held_dates": 43,
+    "panels": 10,
+    "fields": 177,
+    "models": {
+      "speed": {
+        "sha256": "31464465f9dfce8ff9efe4ea7fec0c0677670daf901ecf7b68bd112817daf835",
+        "rounds": 600,
+        "numeric_original_reference": "PASS",
+        "strict_original_without_threads": true
+      },
+      "flow_lane": {
+        "sha256": "af322420ea513963ec445975172701c21d036aba434a34f585fce2a5937f04a9",
+        "rounds": 600,
+        "numeric_original_reference": "PASS",
+        "strict_original_without_threads": true
+      }
+    },
+    "metadata_sha256": "52fc70f53eb1f447fe318a692c70e067b9e28b6deef03bcf4611d124b5a748a1",
+    "protocol_sha256": "a362af7b07ead4f7d494c382aa3958c8c393efcbc91723692d27fcfba7f90606",
+    "new_F4_parent_fits": 2,
+    "candidate_fits": 0,
+    "quality_reads": 0,
+    "inputs_rebuilt": false,
+    "fit214_refitted": false,
+    "diagnostic_actual_minutes": 16.464491748809813,
+    "total_actual_launcher_minutes": 126.54157457749048,
+    "VM_path": "/workspace/work/main/artifacts/lane_s/0305/diagnostics/opt_parent",
+    "source_VM": "/workspace/work/tfb-wt/lane-s/src/tfb/lane_s/s08_opt_parent.py",
+    "reference_VM": "/workspace/work/tfb-wt/lane-s/exp/0305_s08_split_residual/opt_parent_reference.json",
+    "local_model_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\artifacts\\lane_s\\0305\\diagnostics\\opt_parent",
+    "verdict": "PASS",
+    "diagnostic_remaining_minutes": 73.53550825119018
+  },
+  "VM_active_jobs": 0,
+  "quick_opt_launch": {
+    "job": "S_0305_1003T192052Z",
+    "phase": "quick_opt",
+    "source_commit": "62dcd72",
+    "actual_source_plan": "PASS",
+    "actual_start_epoch": 1791055262.3122394,
+    "actual_start_utc": "2026-10-03T19:21:02.312239+00:00",
+    "maximum_minutes": 12,
+    "expected_check_utc": "2026-10-03T19:33:00Z",
+    "latest_utc": "2026-10-03T19:33:02.312239+00:00",
+    "manual_initial_sync_repeated": false,
+    "routine_guarded_autosync": "PASS",
+    "source_files": 840,
+    "source_gz_MiB": 4.4,
+    "threads": 8,
+    "ram_gib": 23,
+    "gpu": false,
+    "OWN_reads_new": 0,
+    "OPT_joint_reads_allowed": 1,
+    "models_required": 6,
+    "training_panels": [
+      "D12_I5_N",
+      "D7_I405_N"
+    ],
+    "pool_limitation": "Reduced2-panel diagnostic, never full10 OPT reproduction",
+    "charged_prior_diagnostic_minutes": 16.464491748809813,
+    "total_prior_actual_minutes": 126.54157457749048
+  },
+  "expected_check_utc": "2026-10-03T21:04:00Z",
+  "latest_utc": "2026-10-03T21:03:13.630379+00:00",
+  "quick_opt_failure": {
+    "id": "0305",
+    "job": "S_0305_1003T192052Z",
+    "actual_status": {
+      "state": "failed",
+      "error": "Active runtime cap",
+      "start": 1791055262.3122394,
+      "end": 1791055982.5817604,
+      "peak_process_group_rss_gib": 1.2271690368652344,
+      "owner_rss_gib": 0.6051025390625
+    },
+    "verdict": "FAIL_RUNTIME_CAP_NO_SCORE",
+    "actual_launcher_minutes": 12.004492016633352,
+    "source_plan": "PASS",
+    "compact_manifest_sha256": "f68d89a2f0f3ccef548121bb48cfe52796e13a3993a993b20cd222e753221e4c",
+    "actual_diagnostic_used_minutes": 28.468983765443163,
+    "actual_diagnostic_remaining_minutes": 61.53101623455684,
+    "total_actual_launcher_minutes": 138.54606659412383,
+    "retained_complete_data_seeds": [
+      4701,
+      4702
+    ],
+    "retained_full600_member_pairs": [
+      4701,
+      4702
+    ],
+    "incomplete_seed": 4703,
+    "partial_seed_action": "Move uncompleted seed4703 data to done before exact regeneration; preserve bytes",
+    "quality_reads": 0,
+    "OPT_reads": 0,
+    "new_OWN_reads": 0,
+    "ADV_reads": 0,
+    "recipe_changed": false,
+    "implementation_repair_used": 0,
+    "prepared_repair_caps": {
+      "quick_opt_repair": 12,
+      "adv": 49
+    },
+    "repair_reason": "Runtime controller lacks the registered resume of validated completed seeds after interruption; add one explicit resumable adapter with failure accounting",
+    "scientific_source_unchanged": true
+  },
+  "runtime_repair_preparation": {
+    "id": "0305",
+    "utc": "2026-10-03T19:49:43.786052+00:00",
+    "verdict": "PASS",
+    "scope": "Single runtime resume, original source/harness/recipe unchanged",
+    "synthetic_count": 5,
+    "synthetic_checks": [
+      "exact failed guard and elapsed charge",
+      "original attempt fields preserved after reconciliation",
+      "only fixed qualified two seeds skipped",
+      "partial bytes preserved by move to done",
+      "complete stages/models/started read cannot be quarantined"
+    ],
+    "local_source_plan": "PASS",
+    "actual_VM_source_plan": "PENDING guarded run",
+    "runtime_protocol_sha256": "7aa6a4715d3323dbc949816de8e786da378c0c06df8c5bd9551231737931446c",
+    "original_joint_protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+    "original_harness_sha256": "0de20d5de69c28aa057d0a791178da26d1a5af5b097a5ef9842bd258e5133fa2",
+    "scientific_source_sha256": "d63a8080bc0ae3522c78381c6dcd2419f4da18ac85a2c356d28dff0332ffd53e",
+    "new_fits": 0,
+    "new_reads": 0,
+    "retained_completed_seeds": [
+      4701,
+      4702
+    ],
+    "missing_seed": 4703,
+    "failed_charge": 12.004492016633352,
+    "diagnostic_used": 28.468983765443166,
+    "diagnostic_remaining": 61.53101623455684,
+    "caps": {
+      "quick_opt_repair": 12,
+      "adv": 49
+    },
+    "full_ADV_model_unchanged": true,
+    "seed_dose_pool_choice_from_held": false
+  },
+  "runtime_repair_launch": {
+    "id": "0305",
+    "phase": "quick_opt_repair",
+    "job": "S_0305_1003T195027Z",
+    "source_commit": "49f5baf",
+    "actual_source_plan": "PASS",
+    "actual_start_epoch": 1791057036.7848368,
+    "actual_start_utc": "2026-10-03T19:50:36.784837+00:00",
+    "registered_maximum_minutes": 12,
+    "expected_check_utc": "2026-10-03T20:03:00Z",
+    "latest_utc": "2026-10-03T20:02:36.784837+00:00",
+    "retained_complete_seeds": [
+      4701,
+      4702
+    ],
+    "remaining_fixed_seed": 4703,
+    "implementation_repair_used": 1,
+    "old_failed_job": "S_0305_1003T192052Z",
+    "old_failed_actual_minutes": 12.004492016633352,
+    "prior_diagnostic_actual_minutes": 28.468983765443166,
+    "prior_total_actual_minutes": 138.54606659412383,
+    "next_ADV_fixed_requested_cap_minutes": 49,
+    "original_joint_source_protocol_unchanged": true,
+    "recipe_unchanged": true,
+    "OWN_read_counts_unchanged": true,
+    "manual_initial_sync_repeated": false,
+    "routine_guarded_autosync": "PASS",
+    "threads": 8,
+    "ram_gib": 23,
+    "gpu": false
+  },
+  "implementation_repair_used": 1,
+  "quick_opt_completion": {
+    "id": "0305",
+    "utc": "2026-10-03T20:12:42.362486+00:00",
+    "job": "S_0305_1003T195027Z",
+    "verdict": "PASS",
+    "scope": "Fixed2-panel OPT0 diagnostic, reduced residual training pool; never full10 reproduction",
+    "collection_manifest_sha256": "a7c1eb660c3ccf425c0d37d531cd7e92d2801b889a5b3080fcbd6a8b09c9cebf",
+    "result_sha256": "8bb97a125757f11132c58110a1e57f266a2ed28d503c625acd6d5020c59aa2c8",
+    "budget_sha256": "3cfa832b4092313a98bc5a9cb64828528b2b6337649528642b2977fbffea0f13",
+    "log_sha256": "c01529ca73c0b7b76739a64383b802260e87bb53f9e82e3c62a5452c1f455112",
+    "original_joint_protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+    "runtime_protocol_sha256": "7aa6a4715d3323dbc949816de8e786da378c0c06df8c5bd9551231737931446c",
+    "actual_start_epoch": 1791057036.7848368,
+    "actual_end_epoch": 1791057665.4780457,
+    "actual_done": true,
+    "actual_exit": 0,
+    "actual_launcher_minutes": 10.478220148881276,
+    "peak_rss_gib": 1.2708320617675781,
+    "diagnostic_actual_minutes": 38.94720391432444,
+    "diagnostic_remaining_minutes": 51.05279608567556,
+    "total_actual_launcher_minutes": 149.02428674300512,
+    "reference": "Original F4 OPT171",
+    "comparison": {
+      "n_dates": 43,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent": {
+        "S_state": 0.9358256798391829,
+        "S_physics": 0.7449184298126981,
+        "J_S": 0.4392767524156187
+      },
+      "candidate": {
+        "S_state": 0.9395624058645047,
+        "S_physics": 0.7562159344810037,
+        "J_S": 0.4422792322247271
+      },
+      "delta_J_S": 0.0030024798091083937,
+      "ci95": [
+        0.0027779506370304895,
+        0.003186378437031698
+      ],
+      "paired_ci_half_width": 0.00020421390000060417,
+      "incumbent_J_S_ci95": [
+        0.4383954320599828,
+        0.44017891771140066
+      ],
+      "incumbent_instrument_ci_half_width": 0.0008917428257089188
+    },
+    "delta_S_state": 0.0037367260253218237,
+    "delta_S_physics": 0.011297504668305591,
+    "gate": {
+      "ci95": [
+        0.0027779506370304895,
+        0.003186378437031698
+      ],
+      "seed_delta_sd": 8.106281456582247e-05,
+      "positive": true,
+      "delta_J_S": 0.0030024798091083937,
+      "original_noise_floor_verdict": "PASS",
+      "delta_S_state": 0.0037367260253218237,
+      "state_loss_guard": true,
+      "candidate_qualified": true
+    },
+    "member_deltas": [
+      0.0024026360161685245,
+      0.0024422783317812335,
+      0.0022863142166629213
+    ],
+    "panels": [
+      "D12_I5_N",
+      "D7_I405_N"
+    ],
+    "n_dates": 43,
+    "n_targets": 1857110,
+    "panel_date_rows": 86,
+    "models": {
+      "4701": {
+        "speed": {
+          "sha256": "58a98189861c99f2d6900d0868cb6c89f472fcc5da138df25f63d0fa8ea80c2f",
+          "rounds": 600
+        },
+        "flow_lane": {
+          "sha256": "b56b640558299f8d605de9e9a611187c6ec8c7e2b2eb8516a4604d029846ac5d",
+          "rounds": 600
+        }
+      },
+      "4702": {
+        "speed": {
+          "sha256": "09cafbcff48951e597ac9db53ca8481e8f0789f790c7eca3835ff33a48b7b909",
+          "rounds": 600
+        },
+        "flow_lane": {
+          "sha256": "3964ac70a42a39702417fefcc1a95ad2732994a69f7cb3c5db5d7e2db41b1f2f",
+          "rounds": 600
+        }
+      },
+      "4703": {
+        "speed": {
+          "sha256": "0ca9abb3a5171d0dcfecaaa84a211be660cf6a53eba45f71c22205b44da37654",
+          "rounds": 600
+        },
+        "flow_lane": {
+          "sha256": "a531b11d34d458bebc1f1e638f20c93e8edcec8b3d70eb26698838fac3aa1a2a",
+          "rounds": 600
+        }
+      }
+    },
+    "data": {
+      "4701": {
+        "complete_sha256": "11b2c37d3f64d7012411e29e78f4ba47fd735359b3f8ab86f3f679689dcbf04b",
+        "n_rows": 339177
+      },
+      "4702": {
+        "complete_sha256": "29012f0e6c71d2720a1e5c16f1ffbd2ac2b73cadb71ae1984bd1844edc6fe715",
+        "n_rows": 327790
+      },
+      "4703": {
+        "complete_sha256": "c0b33edd238fa4fcfa45d8982bd4f47bd17c1ff62a8320fde5ae11deaef173d4",
+        "n_rows": 321160
+      }
+    },
+    "checks": {
+      "result_budget": "PASS",
+      "all6_full600_models": "PASS",
+      "original179_recipe": "PASS",
+      "original_protocol": "PASS",
+      "retained_complete_seeds": "PASS",
+      "partial_preserved": "PASS",
+      "one_joint_OPT_read": "PASS",
+      "new_OWN_reads": 0,
+      "ADV_reads": 0,
+      "local_collected_file_sha256": "PASS",
+      "identical_arm_population": "PASS",
+      "registered_launcher": "PASS",
+      "actual_source_plan": "PASS"
+    },
+    "implementation_repair_used": 1,
+    "failed_original_job_retained": true,
+    "old_failed_charge_minutes": 12.004492016633352,
+    "OPT_joint_reads": 1,
+    "ADV_reads": 0,
+    "OWN_reads": {
+      "validation": 2,
+      "private": 2
+    },
+    "full10_OPT_reproduction": false,
+    "local_model_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\artifacts\\lane_s\\0305\\diagnostics\\quick_opt",
+    "VM_path": "/workspace/work/main/artifacts/lane_s/0305/diagnostics/quick_opt",
+    "next_requested_ADV_cap_minutes": 49
+  },
+  "OPT_reads": 1,
+  "adv_launch": {
+    "id": "0305",
+    "phase": "adv",
+    "job": "S_0305_1003T201404Z",
+    "source_commit": "49f5baf",
+    "latest_collection_commit": "ce09489",
+    "actual_source_plan": "PASS",
+    "actual_start_epoch": 1791058453.6303794,
+    "actual_start_utc": "2026-10-03T20:14:13.630379+00:00",
+    "maximum_minutes": 49,
+    "expected_check_utc": "2026-10-03T21:04:00Z",
+    "latest_utc": "2026-10-03T21:03:13.630379+00:00",
+    "protocol": "joint_runtime_repair_protocol.json",
+    "scientific_source_commit": "771fb2c",
+    "scientific_source_unchanged": true,
+    "joint_harness_protocol_unchanged": true,
+    "full10_panels": true,
+    "dates": 59,
+    "features": 179,
+    "rounds": 600,
+    "categorical": "list",
+    "seeds": [
+      4701,
+      4702,
+      4703
+    ],
+    "aggregation": "equal3",
+    "dose": 1,
+    "balance_masses": 30,
+    "own_view_extra_blinding": true,
+    "JanFeb_OWN_reads": 0,
+    "ADV_joint_reads_allowed": 1,
+    "original_fixed_windows_sha256": "3bb6edec7dbb003dcf6d0bf7d69935009c867ad4a51413803407104c14e94670",
+    "prerequisite": "Pure released-data exact0109 window producer; no old controller",
+    "prior_diagnostic_actual_minutes": 38.94720391432444,
+    "prior_remaining_diagnostic_minutes": 51.05279608567556,
+    "prior_total_actual_minutes": 149.0242867430051,
+    "implementation_repair_used": 1,
+    "old_quick_failed_charge_retained": true,
+    "manual_initial_sync_repeated": false,
+    "routine_guarded_autosync": "PASS",
+    "threads": 8,
+    "ram_gib": 23,
+    "gpu": false
+  },
+  "adv_failure": {
+    "id": "0305",
+    "utc": "2026-10-03T21:11:40.592702+00:00",
+    "verdict": "FAIL",
+    "classification": "Fixed continuation closed for registered runtime failure; joint ADV quality unmeasured",
+    "job": "S_0305_1003T201404Z",
+    "actual_status": {
+      "state": "failed",
+      "error": "Active runtime cap",
+      "start": 1791058453.6303794,
+      "end": 1791061393.8380082,
+      "peak_process_group_rss_gib": 1.6464996337890625,
+      "owner_rss_gib": 0.5944595336914062
+    },
+    "actual_launcher_minutes": 49.00346047878266,
+    "diagnostic_actual_minutes": 87.9506643931071,
+    "diagnostic_remaining_minutes": 2.049335606892896,
+    "total_actual_launcher_minutes": 198.02774722178776,
+    "implementation_repair_used": 1,
+    "final_budget_sha256": "ea97c436646eb6c8e782ec8f8dfccb8b2f4b9e9a814b9b7abf59cdae733a0391",
+    "original_attempt_sha256": "c7df1f45ec56ce8f47d82bbd967475138d25e2437ec38d3d2bc6310a04ab601d",
+    "immutable_failure_collection_sha256": "86e2585b79a4091eeebc744e5e018ce88193842d6799956b0c24c328bf1c8f9b",
+    "OPT_joint_reads": 1,
+    "ADV_joint_reads": 0,
+    "OWN_reads": {
+      "validation": 2,
+      "private": 2
+    },
+    "complete_ADV_member_pairs": [
+      "4701",
+      "4702"
+    ],
+    "incomplete_ADV_seed": 4703,
+    "partial_files": 24,
+    "no_more_0305_jobs": true,
+    "candidate_qualified": false,
+    "joint_ADV_delta": null,
+    "retained_positive_OWN_and_quickOPT": true,
+    "reopen_condition": "Independent new information or demonstrable instrument defect plus explicit new protocol/budget authorization; never held-selected seed/dose/pool/cap rescue",
+    "next": "Physics-aware state support with D under D0061; Task4 remains frozen",
+    "collection_manifest_sha256": "86e2585b79a4091eeebc744e5e018ce88193842d6799956b0c24c328bf1c8f9b",
+    "original_joint_protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+    "runtime_protocol_sha256": "7aa6a4715d3323dbc949816de8e786da378c0c06df8c5bd9551231737931446c",
+    "local_files_verified": 16,
+    "complete_models": {
+      "4701": {
+        "speed": {
+          "sha256": "104f995f410d03df9936ed3e4f5efbf1869b4d631c1e6ac501044d3d5fa5c2fa",
+          "rounds": 600
+        },
+        "flow_lane": {
+          "sha256": "0ea9406069365485c7aec232bf94fd097882af8f7f05186b3973c2c0d998415e",
+          "rounds": 600
+        }
+      },
+      "4702": {
+        "speed": {
+          "sha256": "cc457602502cc31cc949fe7e47629ee3a4859cf82f314be603ab86b62675b764",
+          "rounds": 600
+        },
+        "flow_lane": {
+          "sha256": "68c4e6111636b0190bb38c799650dca10bda030ed1c88e51c0c3539ec6ebb6d6",
+          "rounds": 600
+        }
+      }
+    },
+    "complete_data": {
+      "4701": {
+        "complete_sha256": "482ac5b3a8c0730028e5fbdccc0195fb659d8a9d817c121de1af0f05f871c04f",
+        "n_rows": 791770,
+        "panels": [
+          "D7_I10_E",
+          "D7_I10_W",
+          "D7_I210_E",
+          "D7_I210_W",
+          "D7_I405_N",
+          "D7_I405_S",
+          "D12_I5_N",
+          "D12_I5_S",
+          "D12_I405_N",
+          "D12_I405_S"
+        ],
+        "arrays": "original_complete_hashes_PASS"
+      },
+      "4702": {
+        "complete_sha256": "84eef338fcde01e5ac06ce33291196055be1220a477db4e246d6d32a96a86d81",
+        "n_rows": 799340,
+        "panels": [
+          "D7_I10_E",
+          "D7_I10_W",
+          "D7_I210_E",
+          "D7_I210_W",
+          "D7_I405_N",
+          "D7_I405_S",
+          "D12_I5_N",
+          "D12_I5_S",
+          "D12_I405_N",
+          "D12_I405_S"
+        ],
+        "arrays": "original_complete_hashes_PASS"
+      }
+    },
+    "partial_data_inventory": {
+      "data_seed4703/D12_I5_N/X.npy": {
+        "sha256": "6593fbbee8426db1bf9dfc2b9dab5c2ac46760d3992f6428d7799205d97eee33",
+        "bytes": 91371036,
+        "mtime_epoch": 1791061352.370127
+      },
+      "data_seed4703/D12_I5_N/w.npy": {
+        "sha256": "e12d9228aab1d120cb7eae92e2cb2366be40fff633c9c834137a286b96f6686b",
+        "bytes": 510580,
+        "mtime_epoch": 1791061352.370127
+      },
+      "data_seed4703/D12_I5_N/y.npy": {
+        "sha256": "b251d6164d5fe1c8f47a8a98165c774ad03da73492bf6db16f89f1397733247a",
+        "bytes": 1021032,
+        "mtime_epoch": 1791061352.370127
+      },
+      "data_seed4703/D12_I5_S/X.npy": {
+        "sha256": "b69744ea407a27ec5396c80d17b9d35ea0a312fd3bd42396620e8714d5a1076b",
+        "bytes": 38290376,
+        "mtime_epoch": 1791061393.3255568
+      },
+      "data_seed4703/D12_I5_S/w.npy": {
+        "sha256": "e741f3b876f1c12b15813b2c5893002d2107d2f5c4684ca6882903db91175fc5",
+        "bytes": 214040,
+        "mtime_epoch": 1791061393.3255568
+      },
+      "data_seed4703/D12_I5_S/y.npy": {
+        "sha256": "688f5c1f3dec37bf837785696633e29121bb77ba1ef8245fd5cac3fceeb1c9fb",
+        "bytes": 427952,
+        "mtime_epoch": 1791061393.3255568
+      },
+      "data_seed4703/D7_I10_E/X.npy": {
+        "sha256": "73880e519b88cd226d32109fb9796ce06ae28c5d5f5040c8c3f5da2f09aaa1a8",
+        "bytes": 50488868,
+        "mtime_epoch": 1791060671.6110866
+      },
+      "data_seed4703/D7_I10_E/w.npy": {
+        "sha256": "527829d7e645ce06eac417c87144facb156f2527a0ab6384511a6e857b4a80c3",
+        "bytes": 282188,
+        "mtime_epoch": 1791060671.6110866
+      },
+      "data_seed4703/D7_I10_E/y.npy": {
+        "sha256": "dbf9e3280640a0dc5d48fc39f35d925e9b0752bc0fdeff80b3b319d0b6c29b20",
+        "bytes": 564248,
+        "mtime_epoch": 1791060671.6110866
+      },
+      "data_seed4703/D7_I10_W/X.npy": {
+        "sha256": "5504114cfe2cbdd0643366b3b04f284520526f920ddde535bc0d3be0672c33b2",
+        "bytes": 29539424,
+        "mtime_epoch": 1791060725.0783467
+      },
+      "data_seed4703/D7_I10_W/w.npy": {
+        "sha256": "a601cc254447c0f24f04d1c734a1c939d99535cbfcdf13f699e3d58103a840ab",
+        "bytes": 165152,
+        "mtime_epoch": 1791060725.0783467
+      },
+      "data_seed4703/D7_I10_W/y.npy": {
+        "sha256": "7e1f2bba83f4a481f20f010c4110868b46bf9559f1552b15a0889a3273f3d264",
+        "bytes": 330176,
+        "mtime_epoch": 1791060725.0783467
+      },
+      "data_seed4703/D7_I210_E/X.npy": {
+        "sha256": "1f9c8d4c49bdd34e738d70c3da2e2156d36a2da8f5d21782177a92d89ef336ae",
+        "bytes": 93771784,
+        "mtime_epoch": 1791060903.240145
+      },
+      "data_seed4703/D7_I210_E/w.npy": {
+        "sha256": "9be21c9055d414e853fa9eb41a3836e4a90b1470247eec794bcd36e434f41af6",
+        "bytes": 523992,
+        "mtime_epoch": 1791060903.240145
+      },
+      "data_seed4703/D7_I210_E/y.npy": {
+        "sha256": "cc62cb93d34119a042d611523521e570d22722ebf513f41e7ca9ec4b4c071076",
+        "bytes": 1047856,
+        "mtime_epoch": 1791060903.240145
+      },
+      "data_seed4703/D7_I210_W/X.npy": {
+        "sha256": "96a80bd0583eaa748991f9a9745cca887bb19f6148f704fd034f4114bc3cbaaa",
+        "bytes": 33521816,
+        "mtime_epoch": 1791060946.2115939
+      },
+      "data_seed4703/D7_I210_W/w.npy": {
+        "sha256": "c7e3a7b634141361daf29a45f109797796b19fb51ef87c09ddd77ce24aeb8b33",
+        "bytes": 187400,
+        "mtime_epoch": 1791060946.2115939
+      },
+      "data_seed4703/D7_I210_W/y.npy": {
+        "sha256": "95688c6c46f4756f343eafa8fd589b8b3df6ce437dcfce4907e153a6da6b0ca1",
+        "bytes": 374672,
+        "mtime_epoch": 1791060946.2115939
+      },
+      "data_seed4703/D7_I405_N/X.npy": {
+        "sha256": "879ab6b330acf0f7530507a5f2629927702f27c92b408d9a2f3d5bc47660a74c",
+        "bytes": 135773060,
+        "mtime_epoch": 1791061153.3408554
+      },
+      "data_seed4703/D7_I405_N/w.npy": {
+        "sha256": "b9ae688758850c1539488d06563053eb5e7fde2369f78149fcd39f15f8d86e52",
+        "bytes": 758636,
+        "mtime_epoch": 1791061153.3408554
+      },
+      "data_seed4703/D7_I405_N/y.npy": {
+        "sha256": "e3219facb9ad1d67d4348cbd4a5ff6f570069046a101d746b1bf04d4c8137f52",
+        "bytes": 1517144,
+        "mtime_epoch": 1791061153.3408554
+      },
+      "data_seed4703/D7_I405_S/X.npy": {
+        "sha256": "ee8df1f7064f8e11991b10be56a666bd83c83894f1ca69ddefa8a86f2d61904e",
+        "bytes": 41709992,
+        "mtime_epoch": 1791061208.512107
+      },
+      "data_seed4703/D7_I405_S/w.npy": {
+        "sha256": "70fce5183bd1161c03f8518fa2c9d163a27da0dcbfdcdc738117b828f890778b",
+        "bytes": 233144,
+        "mtime_epoch": 1791061207.836116
+      },
+      "data_seed4703/D7_I405_S/y.npy": {
+        "sha256": "f3922cb45c01a68c3ad69fe5595d22ca22a68117b8845601a294ca2624e04a96",
+        "bytes": 466160,
+        "mtime_epoch": 1791061208.512107
+      }
+    },
+    "local_collection_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\artifacts\\lane_s\\0305\\diagnostics\\adv_failure_collected",
+    "checks": {
+      "local_exact_bytes": "PASS",
+      "failed_actual_launcher": "PASS",
+      "original_source_pins": "PASS",
+      "all_original_prior_budget_attempts": "PASS",
+      "original_ADV_attempt_fields": "PASS",
+      "original_windows_160": "PASS",
+      "complete_179_full600_pairs": "PASS",
+      "no_ADV_scorer_read": "PASS",
+      "charge_and_budget_binding": "PASS",
+      "no_candidate_qualification": "PASS"
+    },
+    "disk_used_gb_at_collection": 35,
+    "disk_available_gb_at_collection": 46,
+    "VM_active_S_jobs": 0,
+    "disposable_matrices_pulled": false
+  },
+  "closure": {
+    "id": "0305",
+    "utc": "2026-10-03T21:11:40.592702+00:00",
+    "verdict": "FAIL",
+    "classification": "Fixed continuation closed for registered runtime failure; joint ADV quality unmeasured",
+    "job": "S_0305_1003T201404Z",
+    "actual_status": {
+      "state": "failed",
+      "error": "Active runtime cap",
+      "start": 1791058453.6303794,
+      "end": 1791061393.8380082,
+      "peak_process_group_rss_gib": 1.6464996337890625,
+      "owner_rss_gib": 0.5944595336914062
+    },
+    "actual_launcher_minutes": 49.00346047878266,
+    "diagnostic_actual_minutes": 87.9506643931071,
+    "diagnostic_remaining_minutes": 2.049335606892896,
+    "total_actual_launcher_minutes": 198.02774722178776,
+    "implementation_repair_used": 1,
+    "final_budget_sha256": "ea97c436646eb6c8e782ec8f8dfccb8b2f4b9e9a814b9b7abf59cdae733a0391",
+    "original_attempt_sha256": "c7df1f45ec56ce8f47d82bbd967475138d25e2437ec38d3d2bc6310a04ab601d",
+    "immutable_failure_collection_sha256": "86e2585b79a4091eeebc744e5e018ce88193842d6799956b0c24c328bf1c8f9b",
+    "OPT_joint_reads": 1,
+    "ADV_joint_reads": 0,
+    "OWN_reads": {
+      "validation": 2,
+      "private": 2
+    },
+    "complete_ADV_member_pairs": [
+      "4701",
+      "4702"
+    ],
+    "incomplete_ADV_seed": 4703,
+    "partial_files": 24,
+    "no_more_0305_jobs": true,
+    "candidate_qualified": false,
+    "joint_ADV_delta": null,
+    "retained_positive_OWN_and_quickOPT": true,
+    "reopen_condition": "Independent new information or demonstrable instrument defect plus explicit new protocol/budget authorization; never held-selected seed/dose/pool/cap rescue",
+    "next": "Physics-aware state support with D under D0061; Task4 remains frozen"
+  },
+  "candidate_qualified": false,
+  "fits_scope": "Distinct completed boosters: F4full2142 + OPT1712 + OWN12 + quickOPT6 + partial ADV4; retained seeds counted once",
+  "owned_report_contribution": "exp/0305_s08_split_residual/report_contribution.md",
+  "owned_state_contribution": "exp/0305_s08_split_residual/lead_state_contribution.md",
+  "Lead_collect_close_ACTION": "FULFILLED_AND_ARCHIVED",
+  "nightly_C_notice": "VM done S sent after output collection; no S VM job active"
+}

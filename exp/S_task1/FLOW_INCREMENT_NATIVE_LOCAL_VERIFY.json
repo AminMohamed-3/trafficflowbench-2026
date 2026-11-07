@@ -1,0 +1,62 @@
+{
+  "screen_sha256": "e803b526ee5585c1e34e55c8d4918efa7219a3e4273e146fc6b1ed77c8be1f7a",
+  "helper_protocol_output_utilities_SHA_exact": true,
+  "full_original0749_baseline_stats_and_dates_exact": true,
+  "all_coordinates_counts_speed_stats_exact": true,
+  "all_seven_points_all2000_CIs_support_attempts_exact": true,
+  "bootstrap_attempts": 38531,
+  "original_state_macro": 0.914858563752263,
+  "confidence_negative_state_physics_J": true,
+  "no_raw_labels_features_or_source_cache_pulled": true,
+  "summary": {
+    "mixed_S_state": {
+      "delta": -1.165062347374679e-05,
+      "ci": [
+        -1.3161435765574048e-05,
+        -9.986762349756262e-06
+      ]
+    },
+    "S_phys": {
+      "delta": -5.087623332045155e-05,
+      "ci": [
+        -6.407376425665579e-05,
+        -4.201984492813171e-05
+      ]
+    },
+    "S_LWR": {
+      "delta": -7.690312881092343e-05,
+      "ci": [
+        -9.666314035072787e-05,
+        -6.360904662550126e-05
+      ]
+    },
+    "S_FD": {
+      "delta": 1.1775576606032345e-06,
+      "ci": [
+        1.0655351971866622e-06,
+        1.247270870918804e-06
+      ]
+    },
+    "mixed_J": {
+      "delta": -1.1709153213879108e-05,
+      "ci": [
+        -1.3584196232546696e-05,
+        -1.0303521852794706e-05
+      ]
+    },
+    "native_S_state": {
+      "delta": -1.165062347374679e-05,
+      "ci": [
+        -1.3161435765574048e-05,
+        -9.986762349756262e-06
+      ]
+    },
+    "native_J": {
+      "delta": -1.1709153213856904e-05,
+      "ci": [
+        -1.3584196232596657e-05,
+        -1.0303521852883524e-05
+      ]
+    }
+  }
+}

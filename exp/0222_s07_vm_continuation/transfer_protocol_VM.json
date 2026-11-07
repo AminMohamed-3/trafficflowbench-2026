@@ -1,0 +1,102 @@
+{
+  "id": "0189",
+  "placement_id": "0222",
+  "host": "vm",
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "scientific_config_sha256": "89801f044b335ca5ab7cc7ba8cefdf99286c2195054e7e7c9f1137d01217658a",
+  "fixed_NN_dose": 0,
+  "seeds": [
+    4701,
+    4702,
+    4703
+  ],
+  "num_boost_round": 600,
+  "phases": [
+    "OWN1_jan_feb",
+    "OWN1_validation",
+    "OWN1_private",
+    "ADV1"
+  ],
+  "population": "Exact original214 plus each blinded own observed period; all177/sampling/weights/combined30 masses unchanged",
+  "fit_runtime": {
+    "cpu_threads": 3,
+    "ram_gib": 30,
+    "maximum_minutes_per_seed_phase": 90,
+    "runtime_only_change": "VM RAM availability; same Fortran matrix and fixed reused-bin training"
+  },
+  "OWN1": {
+    "cpu_threads": 2,
+    "ram_gib": 7,
+    "maximum_minutes": 180,
+    "reads_per_period": 1
+  },
+  "ADV1": {
+    "cpu_threads": 2,
+    "ram_gib": 7,
+    "maximum_minutes": 180,
+    "reads": 1,
+    "n_targets": 7000196
+  },
+  "source_sha256": {
+    "vm_s07_transfer_data.py": "a0c55412864aa81bdbff0ab93ff75998554ba078d72133a9616f6effc71b6cda",
+    "vm_s07_transfer_fit.py": "84d5889ed8a18174e2a72722d1001b0fb8fedd082795e1d5288ca2ad1072050e",
+    "vm_s07_stages.py": "2c975945d5b5db21426b6456ea70b1fa05763693cfa15c193368e39ad031976f",
+    "vm_s07_predict.py": "5e886a07931101742b17682a93f8e2be0224967777538c30d4d95be82735458b",
+    "vm_s07_transfer_predict.py": "1f69dd0f010dc0e2de39b1b7d2116bfc7c29ae99f399c4ac8f659e499e76f621",
+    "vm_evaluate_s07_own.py": "5a76a8228891156b3062ec1d845279033a008aad4f83e689e411daecc9d2b29d",
+    "vm_evaluate_s07_adv.py": "d84bfee317de8bcb38cca4c9268de635db5f058b67ebb0ff694165dc4608322b",
+    "observed_adaptation_delta_gate.py": "68a28cbc3bfd782edcff3332eef0fee13f438798243a25e628059cd5fe723d82",
+    "vm_s07_numeric_runtime.py": "4192159b621677ced0f9fcb6e154e22032e3c4758b98a390d53bc1ced8b3ca05"
+  },
+  "selection": "Run full fixed OWN1 AND ADV1 before interpretation regardless OPT/OWN signs; CI positive, actual3seedSD belowhalf delta, ADV>.002; then conditionalproduction/OWN2/native20-under60/independentLead/publicsign/finaluser; no dose/seed/recipe choice.",
+  "coordination": "On laptop only through tools/ledger.py and tools/msg.py; actual remote read_started markers pulled promptly",
+  "sequence": {
+    "cpu_threads": 3,
+    "ram_gib": 30,
+    "maximum_minutes": 1200,
+    "bound": "Effective max-minutes clipped at launch to remaining original0189 deadline; no budget reset",
+    "source_sha256": "aa2e709644f5a405255a5c89bd9a0aeefc2a57779d8f02d5589bdfcb0c3fc2c1",
+    "dependent_phase_caps_minutes": {
+      "ADVwindows": 30,
+      "combined_controls": 60,
+      "parent_serving": 30,
+      "data_phase": 90,
+      "each_seed_fit": 90,
+      "OWN_batch": 180,
+      "ADV_batch": 180
+    }
+  },
+  "native_precision_qualification": {
+    "source_sha256": "afe29560706a47e690d842d839b2cfc762a4c03fa5f638a5a3ddeeda3c00d00e",
+    "reference_sha256": "398c33cb8fba9bb66761293434dc993933f62e7966baef94d091ba2512a4c7c5",
+    "definition": "Preregistered before any VM transfer fit or held read: exact all structure and other values, onlyleaf11decimal serialization tolerance; real ensemble bound6e-9 perlane, all10 serving proof and final1e-6 native gate retained."
+  },
+  "prior_phase_charged_minutes": {
+    "ADV_windows": 0.8797445643664105,
+    "mask_controls": 1.83395782510003,
+    "feature_controls": 0.8159659201832256,
+    "history_controls": 0.7938922494499517,
+    "ADV_parent_serving": 1.679854364199855,
+    "data_OWN1_jan_feb": 9.976049962866819,
+    "fit_OWN1_jan_feb_4701": 38.62842328463303
+  },
+  "prior_combined_controls_minutes": 3.443815994733207,
+  "prior_sequence_charged_minutes": 54.690062789122265,
+  "remaining_sequence_minutes": 1145.3099372108777,
+  "executor_correction": "Original immutable S07 runtime passes CATEGORICAL tuple, effectively numeric fields in LightGBM4.6; preserve that actual recipe. Failed adapter list pair has real categorical splits and is retained unscored; F4 parent correctly retains list categories unchanged. No gate/seed/dose/population change; no OWN/ADV read.",
+  "startup_failure": {
+    "job": "S_0189_1001T204808Z",
+    "runtime_min": 0.027057445049285887,
+    "held_reads": 0,
+    "fits": 0,
+    "reason": "PowerShell bare numeric CLI argument rounded above precise registered remaining cap; use quoted floored decimal arguments."
+  },
+  "cache_resume_correction": {
+    "failed_job": "S_0189_1001T205305Z",
+    "charged_minutes": 2.6975924650828045,
+    "reason": "Repeated history control changed timing/resource receipt hash, so a completed data-builder reentry correctly stopped. Resume now verifies complete immutable producer contract/source/masks/date/parent/all actual arrays and skips rebuilding complete data. Original data provenance retained; future new phases get current proof. No array/source/pool/held gate change.",
+    "candidate_fits": 0,
+    "OWN_reads": 0,
+    "ADV_reads": 0
+  }
+}

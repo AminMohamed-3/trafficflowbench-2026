@@ -1,0 +1,113 @@
+# TrafficFlowBench 2026 (IEEE BigData Cup): 8th place solution
+
+Author: Amin Mohamed. Private score .89874 (8th), public .90088.
+
+- Write-up: `report/KAGGLE_WRITEUP.md`; full method report: `report/REPORT.md`.
+- Interactive site (all board reads, the idea registry, the analysis): https://aminmohamed-3.github.io/trafficflowbench-2026/
+- Weights: the `weights-v1` release of this repository (4.1 GB in 3 zip parts, sha256-checked by the fetch script).
+
+Code that rebuilds our submitted files from the organisers' release and our saved weights.
+Competition: Kaggle `2026-ieee-big-data-traffic-flow-bench`. Score: S_total = .35 state + .15 onset + .15 ongoing
++ .15 physics + .20 ODME. Public board = validation split (March 2031), private = April 2031.
+
+## Results
+
+| file | what | public S_total | private S_total | rebuilt by |
+|---|---|---|---|---|
+| C47 | base build: state chain + B6 imputer (24k it), onset Q03 + Q0436, ongoing CNN ensemble + cold-start pools + ConvNeXt member, ODME NNLS | .89776 | .89697 | `pipeline/10_base_c47.sh` |
+| C79 | C47 + ADOPTED rows 19-35 except the April rows of 34 and 35: **the scored file** (sha256 104c2c6f...) | .90088 | **.89874** | `pipeline/20_pieces.sh` |
+| C80 | C79 + the April rows of rows 34 and 35 (sha256 3e27d66c...; built after our last upload, never uploaded) | .90088 (same March rows) | not scored | `pipeline/20_pieces.sh` |
+
+The reproducibility gate of the award is 1% of the private score (about .009). C47 alone is within .002 of C79 on the private board.
+
+## Hardware and runtime
+
+- Development: laptop, 16 logical CPUs, 15.3 GB RAM, NVIDIA RTX 3050 Ti 4 GB, Windows 11 + WSL2 Ubuntu 22.04; rented
+  Vast.ai GPU VMs and Kaggle kernels for training (GPU hours per piece in `retrain/`).
+- The base build needs NO GPU. Measured on the laptop under WSL2 (at most 10 threads), 2026-10-12/13: caches 20 min, S08
+  refit 238 min at 10 threads, onset + ODME 21 min, ongoing 196 min with 3 cold-start members at a time (peak 7.5 GiB),
+  Task 1 chain 38-53 min (peak 4.6 GiB), assembly 8-11 min: about 9 h. `10_base_c47.sh` defaults to 2 cold-start members
+  at a time (lower RAM, about +1.8 h); `--reuse-cache` saves 20 min, `--s08-fitted` saves about 4 h.
+- Disk: release 12 GB; fetched weights 1.6 GB (+ .55 GB reference); build peak about 2.6 to 7.5 GB (flags).
+
+## Commands (reproduce C80)
+
+Five steps, run from the repository root. Steps 0-2 run on Linux (or WSL2); steps 3-4 run in Git Bash on Windows with
+the Windows venv (the piece scripts use `cygpath` and `python.exe`), on the same checkout.
+
+```bash
+# 0. environment (Linux, Python 3.12; venv path is required, see environment/README.md)
+uv venv --python 3.12 /workspace/tfb/venv
+uv pip install --python /workspace/tfb/venv/bin/python -r environment/requirements-cpu.txt
+export PATH=/workspace/tfb/venv/bin:$PATH
+# 1. data and weights
+bash pipeline/00_fetch_data.sh                      # Kaggle CLI with your own credentials (or --link DIR)
+bash pipeline/01_fetch_weights.sh --release         # downloads the 3 release parts, checks sha256, unpacks (or --from-dir DIR)
+# 2. base build C47 (Linux / WSL, CPU only, self-detaching; log and result in outputs/logs/)
+bash pipeline/10_base_c47.sh --s08-fitted           # optional --reuse-cache DIR
+cat outputs/logs/base_c47.result                    # RESULT ... VERIFY_PASS ... -> outputs/c47/final_A.csv (+ .state.parquet)
+# 3. ADOPTED rows 19-35 chained on the fresh C47 (Git Bash): each piece reads the previous piece's output
+bash pipeline/20_pieces.sh --dry-run                # checks inputs and stored references, prints the plan
+bash pipeline/20_pieces.sh                          # -> outputs/C80.csv; per step outputs/logs/chain_19_35.tsv
+# 4. verify the final file against the submitted C80 (sha 3e27d66c...)
+#    (C80_SUBMITTED.csv = the submitted file; not in reference/ yet, laptop: artifacts/claude_ref/l_isinel/cand/c80/c_s7c_both_aprw10_c80.csv)
+python pipeline/99_verify.py outputs/C80.csv --ref C80_SUBMITTED.csv --ref-sha 3e27d66cd2b3cfc4371fd218617ebf08a0fa16e481a7bf7108ea2942cd9ef650 --state-atol 1e-8
+# steps 3 + 4 unattended (waits for a free laptop lock, writes outputs/logs/chain_19_35.result: RESULT ... or FAILED ...):
+nohup bash pipeline/run_chain_when_free.sh > /dev/null 2>&1 &
+```
+
+Runtimes (laptop: 16 logical CPUs, 15.3 GB RAM, CPU only; from `outputs/logs/base_c47.result` and
+`pipeline/pieces/STATUS_19_27.md`, `STATUS_28_35.md`):
+
+| step | runtime | notes |
+|---|---|---|
+| 10 base C47 | 203 min measured (WSL, `--s08-fitted`, cache reuse); about 7 to 11.5 h without those flags | peak RAM ~7.5 GiB with 3 cold-start members at a time |
+| 19 gap2 U-Net member | 2 min | 48 panel weights served on CPU |
+| 20 L_micro state build | 31 min | full Task 1 state build |
+| 21-23 ongoing members | 1-2 min each | stored member predictions (below) |
+| 24 B6R S2 | about 45 min (191 min measured under lock and RAM contention) | 60 members served + state build |
+| 25 GAPW gap rows | about 40 min | hooked state build |
+| 26 BUNDLE18 | about 80 min | 60 members + 2 state builds |
+| 27 L_gap2 gap rows | about 2 to 10 min | G1 serve + G3 LightGBM serve |
+| 28-35 | about 8.5 h | 11 state builds of ~33 min, 8 hook builds, Q-ACCUM ~30 min |
+| rows 19-35 in all | about 12 to 13 h | peak work disk about 3 GB; keeps a 13.5 GiB free-disk floor |
+
+The fresh base is value-equal to C47, not byte-equal (state rows differ by at most 4.2e-13 km/h / 3.6e-11 vph). So
+`20_pieces.sh` does not stop on a sha difference: it records for every step SHA_EQUAL, VALUE_EQUAL_TOL (queue and
+ODME exact, state within 1e-8), DIFF or NOT_COMPARED against the stored development file of that step, and stops only
+when a piece fails.
+
+Stored-prediction exceptions on the path to C80 (sha-pinned, rerun recipes in `retrain/`):
+- row 21 (ConvNeXt-Tiny VM member): stored probabilities of the bf16 GPU serve of the saved `model.pt`; a CPU fp32 serve
+  gives a sibling file, not C80 (`retrain/tiny_vm.md`).
+- row 22 (L_dose A3 cold members): stored member predictions of the saved per-date fits; a CPU re-serve differs by ~1e-6
+  (`retrain/a3_cold.md`).
+- row 23 (L_tinyad A1): stored per-date adapted probabilities; the saved weights serve bitwise only on an RTX 5070 with
+  torch 2.7.1+cu128 bf16 (`retrain/tinyad_a1.md`, ~.8 GPU h).
+- row 33 (Q-ACCUM): no weights, per-date online fits inside 3 Kaggle kernels; the default path uses the stored kernel
+  outputs (`retrain/qaccum.md`; a kernel rerun reproduces the decoded cells, not the bits).
+
+Expected verification result (measured 2026-10-13, Linux CPU against the Windows CPU run that made the submitted file):
+every queue row (174,000) and every ODME row (70,708) equal; of 6,735,795 state rows 77,942 speed and 101,773 flow
+values differ in the last bits (max 4.2e-13 km/h, 3.6e-11 vph), inside the build's own tolerance 1e-8. The file is not
+byte-identical (line endings and those last bits); `99_verify.py` reports both.
+
+## Known exceptions (stated, not hidden)
+
+- ConvNeXt-Tiny ongoing member in the base build (ADOPTED row 6): served from stored probabilities (sha-pinned
+  `artifacts/claude_ref/c_bb/serve/convnext_tiny_up2_e8_s0_serve0228.parquet`); its fine-tuned weights were lost with a VM.
+  Row 21 replaces it with a retrain whose weights are saved.
+- Q-ACCUM (row 33): per-date online fits inside 3 Kaggle kernels, no weights; default path uses the stored kernel
+  outputs (sha checked). Tiny adaptation A1 (row 23): per-date weights not saved; stored probabilities with sha, rerun
+  recipe in `retrain/`.
+- S0631 TabPFN (CUDA only) and hedge file B are off in the default build.
+
+## Layout notes
+
+- Code keeps the development repository's relative paths (`docs/reference_code/`, `src/tfb/`, `scripts/`, `tools/`):
+  the scripts find the root as `parents[2]` of their own file, put `ROOT/src` and `ROOT/docs/reference_code` on
+  `sys.path`, and the shipped adaptation receipts bind source hashes. Files are byte copies (`checks/code_files.csv`).
+- `PLAN.md` and an empty `.git/` are root markers: `tfb.paths.project_root` accepts `TFB_ROOT` only with a PLAN.md, and
+  several modules find the root by walking up to `.git`. After `git init` the real `.git` takes that role.
+- `checks/open_audit/` (on PYTHONPATH during the build) logs any Python-level file open outside the repository.
+- Compliance and disclosures: `docs/COMPLIANCE.md`, `docs/DISCLOSURES.md`.

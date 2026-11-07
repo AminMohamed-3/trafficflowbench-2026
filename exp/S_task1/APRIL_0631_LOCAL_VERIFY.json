@@ -1,0 +1,22 @@
+{
+  "screen_sha256": "706a5eaf448432df3248b6b3b6556c0150918c7da15de14a2dd6ee0084914f0c",
+  "helper_protocol_all_safe_output_SHA_exact": true,
+  "full_held_coordinates_original_half_direction_arithmetic_exact": true,
+  "unchanged_state_population_counts_flow_statistics_exact": true,
+  "every_April_point_all_2000_CIs_attempts_missing_populations_exact": true,
+  "original_March_points_all_2000_CIs_attempts_missing_populations_exact": true,
+  "declared_ancestor_graph_rechecked": true,
+  "actual_VM_hidden_source_parent_nonfit_response_CUDA_refit_native_guard_receipts_retained": true,
+  "OWNdv_size_arithmetic_exact": true,
+  "delta": {
+    "rows": 1261,
+    "changed": 1258,
+    "mean_abs_dv_kmh": 0.7629379237160299,
+    "rms_dv_kmh": 1.1280684085052584,
+    "max_abs_dv_kmh": 7.709477959278516,
+    "dq": 0.0,
+    "scope": "OWN held nongap speed delta only"
+  },
+  "passed": true,
+  "no_raw_source_response_label_feature_cache_or_checkpoint_loaded": true
+}

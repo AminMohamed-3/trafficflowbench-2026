@@ -1,0 +1,21 @@
+{
+  "id": "0222",
+  "phase": "Actual original600 categorical mismatch diagnosis",
+  "verdict": "FAIL",
+  "original_categorical_parameter": [
+    "[categorical_feature: 83,84,87]"
+  ],
+  "actual_categorical_parameter": [
+    "[categorical_feature: ]"
+  ],
+  "cause": "Original trainer passes list; VM adapter passes tuple. LightGBM4.6 basic.py2142 recognizes only list. Earlier32-round tuple fixture qualified its executed variant only, not original categorical recipe.",
+  "failed_parent_source_sha256": "406a825c0c8e039652de934a2f59c9cc24ad5191dc1cd50ddbe902b43f67539d",
+  "speed_complete": {
+    "best_iteration": 600,
+    "model_sha256": "341441ce8967a7911bb2df6a2df702df699737da204b3a3f3a067aae4a6cc062"
+  },
+  "repair": "List only; mandatory actual indices83,84,87 and original full600 SHA equality; old source/failure/time retained",
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "candidate_fits": 0
+}

@@ -1,0 +1,39 @@
+{
+  "id": "0222",
+  "host": "vm",
+  "job": "S_0222_1001T190441Z",
+  "phase": "Repaired speed600/interim only; flow and full parent qualification pending",
+  "actual": {
+    "canonical_threads_sha256": "8c9a3087f32f72041a977572bddcea62b6e64bb6a78a4cac1467c368ed68894d",
+    "tree_values_sha256": "b73788805188a1407ccb365ed85b6170d8290bfe826e12167fed982a8192ea6a"
+  },
+  "expected": {
+    "canonical_threads_sha256": "8c9a3087f32f72041a977572bddcea62b6e64bb6a78a4cac1467c368ed68894d",
+    "tree_values_sha256": "b73788805188a1407ccb365ed85b6170d8290bfe826e12167fed982a8192ea6a"
+  },
+  "speed_parity": {
+    "canonical_threads_sha256": true,
+    "tree_values_sha256": true
+  },
+  "control": {
+    "verdict": "PASS",
+    "rows": 210001,
+    "rounds": 32,
+    "control_fits": 4,
+    "features": 177,
+    "categorical_indices": [
+      83,
+      84,
+      87
+    ],
+    "categorical_argument_type": "list",
+    "scope": "Actual fully populated original F4 monthly/structural features and residual labels; ordinary vs reused bins exact model text and prediction",
+    "source_sha256": "af5f5c34a92b5bb69a67f4cd55d3819570347fc91a8dd8b089ced04201737c3d",
+    "native_library_sha256": "6a12e1a7b13824d14c252d2a4d2e36af467383331a114eb0e7448eecbf02d7b1",
+    "OWN_reads": 0,
+    "ADV_reads": 0
+  },
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "candidate_fits": 0
+}

@@ -1,0 +1,48 @@
+{
+  "id": "0305",
+  "phase": "opt_parent",
+  "job": "S_0305_1003T180811Z",
+  "actual_state": "done",
+  "actual_exit": 0,
+  "actual_start_epoch": 1791050901.1376834,
+  "actual_end_epoch": 1791051325.5012846,
+  "actual_launcher_minutes": 7.072726686795552,
+  "driver_minutes": 7.067861255009969,
+  "peak_process_group_rss_gib": 3.8071670532226562,
+  "budget_result_binding": "PASS",
+  "source_model_protocol_bindings": "PASS",
+  "reference": "Original qualified F4 OPT0/171",
+  "fit_dates": 171,
+  "excluded_held_dates": 43,
+  "panels": 10,
+  "fields": 177,
+  "models": {
+    "speed": {
+      "sha256": "31464465f9dfce8ff9efe4ea7fec0c0677670daf901ecf7b68bd112817daf835",
+      "rounds": 600,
+      "numeric_original_reference": "PASS",
+      "strict_original_without_threads": true
+    },
+    "flow_lane": {
+      "sha256": "af322420ea513963ec445975172701c21d036aba434a34f585fce2a5937f04a9",
+      "rounds": 600,
+      "numeric_original_reference": "PASS",
+      "strict_original_without_threads": true
+    }
+  },
+  "metadata_sha256": "52fc70f53eb1f447fe318a692c70e067b9e28b6deef03bcf4611d124b5a748a1",
+  "protocol_sha256": "a362af7b07ead4f7d494c382aa3958c8c393efcbc91723692d27fcfba7f90606",
+  "new_F4_parent_fits": 2,
+  "candidate_fits": 0,
+  "quality_reads": 0,
+  "inputs_rebuilt": false,
+  "fit214_refitted": false,
+  "diagnostic_actual_minutes": 16.464491748809813,
+  "total_actual_launcher_minutes": 126.54157457749048,
+  "VM_path": "/workspace/work/main/artifacts/lane_s/0305/diagnostics/opt_parent",
+  "source_VM": "/workspace/work/tfb-wt/lane-s/src/tfb/lane_s/s08_opt_parent.py",
+  "reference_VM": "/workspace/work/tfb-wt/lane-s/exp/0305_s08_split_residual/opt_parent_reference.json",
+  "local_model_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\artifacts\\lane_s\\0305\\diagnostics\\opt_parent",
+  "verdict": "PASS",
+  "diagnostic_remaining_minutes": 73.53550825119018
+}

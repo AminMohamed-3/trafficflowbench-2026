@@ -1,0 +1,54 @@
+{
+  "screen_sha256": "d45e4193abb872b5853b8ab4917f3bce9edec75056790c993bc0ede1c55b10a4",
+  "helper_protocol_output_SHA_exact": true,
+  "available_source_SHA_exact": [
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation.json",
+    "/workspace/work/main/artifacts/lane_p/P_physics/ramp_visibility/census.json",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I10_E.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I10_W.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I210_E.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I210_W.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I405_S.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I5_N.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I5_S.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I405_S.npz"
+  ],
+  "VM_only_sources_not_pulled": [
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I10_E.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I10_W.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I210_E.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I210_W.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I405_S.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I5_N.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I5_S.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I405_S.npz"
+  ],
+  "original_state_ceiling_counts_replay_exact": true,
+  "state": 0.914858563752263,
+  "ceiling": 0.0014600842313369222,
+  "counts": {
+    "all_even_queries": 338041,
+    "held_queries": 167575,
+    "held_zero_weight": 3668,
+    "held_exposed": 3023,
+    "context_exposed": 2887,
+    "held_exposed_zero_weight": 145
+  },
+  "panels": 10,
+  "dates": [
+    "2031-03-01",
+    "2031-03-05",
+    "2031-03-09",
+    "2031-03-13",
+    "2031-03-17",
+    "2031-03-21",
+    "2031-03-25",
+    "2031-03-29"
+  ],
+  "original_frozen_gate_and_new_C155718_eligibility_both_pass": true,
+  "raw_calibration_fields_not_regenerated_locally": true
+}

@@ -1,0 +1,54 @@
+{
+  "id": "0222",
+  "host": "vm",
+  "job": "S_0222_1001T175045Z",
+  "verdict": "PASS",
+  "phase": "All10 supervised214 raw arrays byteexact",
+  "result": {
+    "id": "0222",
+    "verdict": "PASS",
+    "phase": "Actual supervised-array regeneration parity only; F4 fit and transfer prerequisites still due",
+    "panels": {
+      "D7_I10_E": 378280,
+      "D7_I10_W": 200920,
+      "D7_I210_E": 594062,
+      "D7_I210_W": 253938,
+      "D7_I405_N": 1288409,
+      "D7_I405_S": 315288,
+      "D12_I5_N": 738568,
+      "D12_I5_S": 329328,
+      "D12_I405_N": 199277,
+      "D12_I405_S": 90565
+    },
+    "runtime_min": 23.20089244234987,
+    "fits": 0,
+    "OWN_reads": 0,
+    "ADV_reads": 0,
+    "board_reads": 0,
+    "source_contract_sha256": "872b27c631e36b260b471a3045ed9e4c14886237ba00a68df9707931631e89b3"
+  },
+  "result_sha256": "52933c95c81c131aa89a4a7dc63d17a783c8e7da00f973f7df73d850c2626d16",
+  "receipt": {
+    "id": "0222_supervised_raw_rebuild",
+    "owner": "S",
+    "pid": 8129,
+    "command": [
+      "/workspace/tfb/venv/bin/python",
+      "src/tfb/lane_s/vm_run.py"
+    ],
+    "start_utc": "2026-10-01T17:50:50.825034+00:00",
+    "eta": "2026-10-01T19:50:50.825034+00:00",
+    "checkpoint_path": "/workspace/work/main/artifacts/lane_s/0222/prerequisites",
+    "status": "COMPLETE",
+    "ram_limit_gib": 7,
+    "peak_rss_gib": 4.604694366455078,
+    "updated_utc": "2026-10-01T18:14:01.685693+00:00",
+    "end_utc": "2026-10-01T18:14:02.879100+00:00"
+  },
+  "receipt_sha256": "557e5ad98a76a0077f64a00dfe323bcd94cba04eb7be1bb71ff5d2f71f681450",
+  "original_first_run_min": 1.9338604887326558,
+  "total_active_builder_min": 25.134752931082524,
+  "candidate_fits": 0,
+  "OWN_reads": 0,
+  "ADV_reads": 0
+}

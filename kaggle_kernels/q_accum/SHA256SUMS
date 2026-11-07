@@ -1,0 +1,14 @@
+9ac841108ab551f9fdf6c7b7f82081ab00837907b82b7f2bdfe64c2c839d8da8 *./dw_pull.sh
+c0a99ff0d514165cd5fca6f2eab3e741fdc114089f8f5f7f5e3af9105c42b4e8 *./make_dataset.sh
+540bb45fdec884344ed699bc2ee428aed95a38580ed0734ce62c3992000971c3 *./mg_pull.sh
+0a18bace456336960be0c40f941b94163c5c78cec2f8dabbbfd964fc92e67420 *./tfb-dwadapt-base-weights.sha256.json
+4aa33bdcd26d0ded836ebcbc3b7aa52da959c697442b3b2b77d6d1b2dae81cfe *./tfb-kg-dwadapt-serve/code_manifest.json
+f49151885580f47dfaf4f3cdd11d9ba1595fbe9a19f7a65cd77cf898d020c620 *./tfb-kg-dwadapt-serve/kernel-metadata.json
+d01e53a0aa2cb21ef7d0aa61e322c4d127be6cf632b666093d4a273eba7b15a5 *./tfb-kg-dwadapt-serve/tfb-kg-dwadapt-serve.py
+f7381605cb17167a3e2a128912670023b351dcd13cbc5ac9c2c739cbc03cbb7d *./tfb-kg-margin-inst/code_manifest.json
+c5577b70be7a703c47dd9c09d9ab279566db2fff14ec9cebdacd76fd98c79594 *./tfb-kg-margin-inst/kernel-metadata.json
+e8b041041835eeda05a5df01dac47f0498f7f58814b21b1a46d580a30210a54d *./tfb-kg-margin-inst/tfb-kg-margin-inst.py
+4ea89b7746e52240893ad2285c8a0f2d0f36783fefcb57c1c7c69d36f99cdc61 *./tfb-kg-todr-serve/code_manifest.json
+8c6eaf2d489f201e19964549fc7a2eb3600c86c0d7ea3527b101827b218dda6e *./tfb-kg-todr-serve/kernel-metadata.json
+2e54319ec7c468409ba27056353eeb35d838d1dc46238787dc9b7dc5b320f16b *./tfb-kg-todr-serve/tfb-kg-todr-serve.py
+d5a6feb2e48db783d5398d7c96040218c16173e4c42ecbe2caba6bfc4da332a9 *./todr_pull.sh

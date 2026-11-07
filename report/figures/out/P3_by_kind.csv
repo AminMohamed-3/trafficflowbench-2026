@@ -1,0 +1,4 @@
+component,steps,sum_public,sum_private,carry,same_sign
+ongoing,11,0.00814,0.00909,1.12,8
+onset,1,0.0,0.00714,,0
+state,26,0.01049,0.01009,0.96,20

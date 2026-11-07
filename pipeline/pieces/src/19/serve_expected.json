@@ -1,0 +1,11 @@
+{
+ "source": "artifacts/claude_ref/c_gap2c47/pred_cpu/serve_<split>.json outputs values_sha256 (laptop CPU serve 2026-10-13, torch 2.7.1+cu118, GPU hidden)",
+ "values_sha256": {
+  "pred_cnr0_off_validation.npz": "5b34ca93081bd04af6f620cbdd5faf2ffa7f2066f867814f840f0cc6f2ad4c5e",
+  "pred_cnr1_off_validation.npz": "4670c09a9f6d1fd87fd6a0eae92df8dcec353821d6195bc7bc1195db867046a9",
+  "pred_cnr2_off_validation.npz": "fb13020aba1a0ce88ef321f8e6129ae3bd03445e637e8f1e6038fc750c54f1ea",
+  "pred_cnr0_off_private.npz": "b4e44e21e372c5847043434d88ed9cd5145d7a2956d2e51b5332b5c8356c36bb",
+  "pred_cnr1_off_private.npz": "c493af2114304959f1183456c4f4ec5b5ffdfaf4dbc7bca0460b707033bc47ba",
+  "pred_cnr2_off_private.npz": "8d28e93ac6f5510d026f7beb8f0345fa8243d2834d91c0c350c9bc143ccc04f3"
+ }
+}

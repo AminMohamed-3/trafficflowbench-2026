@@ -1,0 +1,24 @@
+{
+  "owner": "S",
+  "id": "0222",
+  "host": "vm",
+  "threads": 1,
+  "ram_gib": 2,
+  "max_minutes": 15,
+  "gpu": false,
+  "actual_launcher_fixture_job": "L_0226_1001T172856Z",
+  "actual_launcher_helper_sha256": "c87ac4307b22ed032031adea318b918d6bf39b2a8469acf0b998b1fb6f10a271",
+  "entry_sha256": "aedb1138f6bc3338f78724e0aecdec8b970550dc9d983eae760634e60af4e048",
+  "fixture_sha256": "e001d083c1bb1c97044e40522f023cb16d5d0fb52ffb8bcee1c8e06738144112",
+  "command": [
+    "python",
+    "src/tfb/lane_s/vm_run.py",
+    "tfb.lane_s.vm_state_training_parity",
+    "--host",
+    "vm",
+    "--id",
+    "0222"
+  ],
+  "original_S07_deadline": "2026-10-02T17:34:00+00:00",
+  "selection": "Control only; zero held reads, no new VM rental"
+}

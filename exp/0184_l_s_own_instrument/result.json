@@ -1,0 +1,106 @@
+{
+  "id": "0184",
+  "owner": "L",
+  "verdict": "PASS",
+  "utc": "2026-09-30T23:14:49.320389+00:00",
+  "manifest_sha256": "39f2f12433ab953af3ac8290e3abe122cc2c959da5df024969294dd921f65c99",
+  "periods": [
+    {
+      "period": "jan_feb",
+      "n_dates": 59,
+      "n_panel_days": 590,
+      "n_targets": 2103231,
+      "scores": {
+        "B1": 0.8603889307806558,
+        "B2_stale": 0.8630121323276405,
+        "B2_local": 0.8629476901759346
+      },
+      "local_comparisons": {
+        "B2_stale": {
+          "delta_S_state": -6.444215170586798e-05,
+          "ci95": [
+            -7.40134238254142e-05,
+            -5.650223095589046e-05
+          ]
+        },
+        "B1": {
+          "delta_S_state": 0.0025587593952788312,
+          "ci95": [
+            0.002497736983778065,
+            0.002820942565728071
+          ]
+        }
+      },
+      "known_worse_pass": false,
+      "reference_reads": 1,
+      "F3_candidate_reads": 0
+    },
+    {
+      "period": "validation",
+      "n_dates": 31,
+      "n_panel_days": 310,
+      "n_targets": 1118289,
+      "scores": {
+        "B1": 0.8631759824879428,
+        "B2_stale": 0.8618481163080605,
+        "B2_local": 0.8657614182236448
+      },
+      "local_comparisons": {
+        "B2_stale": {
+          "delta_S_state": 0.003913301915584366,
+          "ci95": [
+            0.0038047408938706256,
+            0.004610622155745997
+          ]
+        },
+        "B1": {
+          "delta_S_state": 0.002585435735702024,
+          "ci95": [
+            0.002518702576011303,
+            0.003076609646640571
+          ]
+        }
+      },
+      "known_worse_pass": true,
+      "reference_reads": 1,
+      "F3_candidate_reads": 0
+    },
+    {
+      "period": "private",
+      "n_dates": 30,
+      "n_panel_days": 300,
+      "n_targets": 1090848,
+      "scores": {
+        "B1": 0.8694679348054051,
+        "B2_stale": 0.8678844580814689,
+        "B2_local": 0.8721697989972246
+      },
+      "local_comparisons": {
+        "B2_stale": {
+          "delta_S_state": 0.00428534091575572,
+          "ci95": [
+            0.004147035328866333,
+            0.005045977693041215
+          ]
+        },
+        "B1": {
+          "delta_S_state": 0.002701864191819503,
+          "ci95": [
+            0.0025942345488819433,
+            0.0032176098604385526
+          ]
+        }
+      },
+      "known_worse_pass": true,
+      "reference_reads": 1,
+      "F3_candidate_reads": 0
+    }
+  ],
+  "scope": "Canonical B2 source-only constant swap and B1 references; observed pseudo labels, no actual hidden evaluation truth or model selection",
+  "runtime_min": 1.0885333333339076,
+  "sampled_peak_rss_mib": 265.83203125,
+  "new_ADV_reads": 0,
+  "new_public_reads": 0,
+  "read_counts": "B1/B2 reference1 per period; F3/new formulations0; max3 per formulation/period",
+  "limitation": "Observed pseudo-target cohort; not exact hidden public/private components or physics decomposition"
+}

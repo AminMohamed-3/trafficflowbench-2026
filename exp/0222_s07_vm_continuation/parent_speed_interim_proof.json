@@ -1,0 +1,33 @@
+{
+  "id": "0222",
+  "host": "vm",
+  "job": "S_0222_1001T183650Z",
+  "phase": "Completed speed600/interim only; flow and full parent qualification pending",
+  "actual": {
+    "canonical_threads_sha256": "05a99510f12d7d5a0d0fe8d12f731543d49b30401a09b54d7270c4bf2689a338",
+    "tree_values_sha256": "520ea7b75d785d4956fb0de62874cd48e15de901f415eb76d96e3a15d61a9af3"
+  },
+  "expected": {
+    "canonical_threads_sha256": "8c9a3087f32f72041a977572bddcea62b6e64bb6a78a4cac1467c368ed68894d",
+    "tree_values_sha256": "b73788805188a1407ccb365ed85b6170d8290bfe826e12167fed982a8192ea6a"
+  },
+  "speed_parity": {
+    "canonical_threads_sha256": false,
+    "tree_values_sha256": false
+  },
+  "control": {
+    "verdict": "PASS",
+    "rows": 210001,
+    "rounds": 32,
+    "control_fits": 4,
+    "features": 177,
+    "scope": "Actual fully populated original F4 monthly/structural features and residual labels; ordinary vs reused bins exact model text and prediction",
+    "source_sha256": "406a825c0c8e039652de934a2f59c9cc24ad5191dc1cd50ddbe902b43f67539d",
+    "native_library_sha256": "6a12e1a7b13824d14c252d2a4d2e36af467383331a114eb0e7448eecbf02d7b1",
+    "OWN_reads": 0,
+    "ADV_reads": 0
+  },
+  "candidate_fits": 0,
+  "OWN_reads": 0,
+  "ADV_reads": 0
+}

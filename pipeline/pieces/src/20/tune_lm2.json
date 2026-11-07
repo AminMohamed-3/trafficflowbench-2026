@@ -1,0 +1,68 @@
+{
+ "b6": {
+  "validation": {
+   "arm": "c_b6long/p24k/arm24k:valown_:0,1,2:",
+   "weights": "artifacts/claude_ref/l_micro/b6w_lm_a2_vm01.json"
+  },
+  "private": {
+   "arm": "c_b6long/p24k/arm24k:privown_:0,1,2:",
+   "weights": "artifacts/claude_ref/l_micro/b6w_lm_a2_vm01.json"
+  }
+ },
+ "s3": {
+  "models": [
+   [
+    "artifacts/claude_ref/phys4/s3_yqL.txt",
+    "artifacts/claude_ref/phys4/s3_yvL.txt"
+   ]
+  ],
+  "scale": [
+   1.0,
+   1.0
+  ]
+ },
+ "lm_split": {
+  "validation": {
+   "polish_chain": {
+    "s3": {
+     "r": 3.0,
+     "a": 1.0,
+     "g": 1.0,
+     "h": 0.1
+    },
+    "tv": {
+     "tau": 0.004
+    },
+    "s4": {
+     "H": 12.0,
+     "beta": -0.046889258600808115
+    }
+   },
+   "s3_scale": [
+    0.8,
+    1.0
+   ]
+  },
+  "private": {
+   "polish_chain": {
+    "s3": {
+     "r": 3.0,
+     "a": 1.0,
+     "g": 1.0,
+     "h": 0.1
+    },
+    "tv": {
+     "tau": 0.004
+    },
+    "s4": {
+     "H": 12.0,
+     "beta": -0.046889258600808115
+    }
+   },
+   "s3_scale": [
+    0.7,
+    1.0
+   ]
+  }
+ }
+}

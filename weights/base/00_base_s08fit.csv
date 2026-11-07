@@ -1,0 +1,3 @@
+repo_path,sha256,bytes,old_repo_path,piece
+artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_validation.parquet,c0ea341d05d39a81198e21c133fd600a73d5c9c92c760fdb46d7d9da3b9b3e2d,48626938,artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_validation.parquet,base_s08fit
+artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_private.parquet,bfc24f2a02ff64e65ff1fcf99539f22f5e0a8bed205ecf64e80f2f3295c34057,46637207,artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_private.parquet,base_s08fit

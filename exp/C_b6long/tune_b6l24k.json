@@ -1,0 +1,1 @@
+{"b6": {"validation": {"arm": "c_b6long/p24k/arm24k:valown_:0,1,2:", "weights": "artifacts/claude_ref/c_b6long/b6w_24k.json"}, "private": {"arm": "c_b6long/p24k/arm24k:privown_:0,1,2:", "weights": "artifacts/claude_ref/c_b6long/b6w_24k.json"}}}

@@ -1,0 +1,80 @@
+{
+  "id": "0301",
+  "lane": "S",
+  "utc": "2026-10-03T12:26:20.056857+00:00",
+  "status": "PREPARED_UNEXECUTED",
+  "verdict": "PASS_PREPARATION_ONLY",
+  "instrument": "No-data reconstruction controls against frozen incumbent0193 F4 recipe",
+  "reference": "0182 production273, original current0193 state dependency",
+  "n_guard_controls": 26,
+  "n_lane_source_bindings": 30,
+  "n_main_source_bindings": 7,
+  "actual_source_plan_exit": 0,
+  "syntax_exit": 0,
+  "source_sha256": "feb9bbe77b5d74c7937926326f4931418970ad773cfcfda2713e5a6db7215f65",
+  "protocol_sha256": "ff55ff1d747c26e3552ada8c231d32182d7ab0befc6f74dfd25469b1194a2a60",
+  "guard_controls_sha256": "1a1b08a70bef38a463962db0dc04913976b909824fd3f5a18cba9e512e1d40c1",
+  "reference_sha256": "0b2b1fd3c0460cb9eae72b3702f570288a1c2730d80e570cb566cfe74e00f654",
+  "fixed_recipe": {
+    "train_dates": 273,
+    "panels": 10,
+    "features": 177,
+    "rounds_per_target": 600,
+    "seed": 4701,
+    "categorical_indices": [
+      83,
+      84,
+      87
+    ],
+    "targets": [
+      "speed",
+      "flow_lane"
+    ]
+  },
+  "future_raw_qualification": {
+    "windows": 710,
+    "n_numeric_arrays": 60,
+    "n_own_month_tables": 90,
+    "geometry_fit_dates": 171,
+    "raw_numeric_bytes": 5068902765
+  },
+  "future_native_qualification": {
+    "cases": 20,
+    "rows": 6735795,
+    "VM_gate": "Original prediction hashes exact0",
+    "after_pull": "Actual all20 <=1e-6 against local frozen F4 forecasts; independent Lead review"
+  },
+  "job_plan": {
+    "raw": {
+      "maximum_minutes": 135,
+      "threads": 1
+    },
+    "fit": {
+      "maximum_minutes": 90,
+      "threads": 8
+    },
+    "native": {
+      "maximum_minutes": 60,
+      "threads": 2
+    }
+  },
+  "RAM_gib": 7,
+  "GPU": false,
+  "VM_jobs": 0,
+  "initial_manual_sync": "PENDING_C_READY",
+  "fits": 0,
+  "predictions": 0,
+  "OPT_reads": 0,
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "board_reads": 0,
+  "readiness": "C VM ready and L0298 actual guarded launcher/release gate pending",
+  "scientific_conclusions_changed": false,
+  "old_S07_gate": "NULL_OR_FAIL; no conditional production",
+  "old_NN_gate": "fixed primary OWN NULL; no old GPU budget reset",
+  "automation": {
+    "id": "builder-s-continuous-trafficflowbench-work",
+    "status": "ACTIVE",
+    "interval_minutes": 10
+  }
+}

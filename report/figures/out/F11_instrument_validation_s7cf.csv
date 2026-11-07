@@ -1,0 +1,6 @@
+pair,mar_fc,mar_lo,mar_hi,mar_board,apr_fc,apr_lo,apr_hi,apr_board
+fold->s7c_fv2fit,3.8e-05,3.6e-05,4e-05,6.9e-05,3.3e-05,3.1e-05,3.5e-05,6e-05
+fold->s7c_fv2x,1.1e-05,1e-05,1.3e-05,2e-05,9e-06,7e-06,1.1e-05,1.6e-05
+fold->s7c_fold_x,1.2e-05,1.1e-05,1.4e-05,2.2e-05,9e-06,8e-06,1.1e-05,1.7e-05
+s7c_fv2fit->s7c_fold_x,-2.6e-05,-2.7e-05,-2.5e-05,-4.7e-05,-2.4e-05,-2.5e-05,-2.3e-05,-4.3e-05
+s7c_fv2x->s7c_fold_x,1e-06,0.0,1e-06,2e-06,0.0,-0.0,1e-06,1e-06

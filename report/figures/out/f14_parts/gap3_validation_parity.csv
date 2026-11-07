@@ -1,0 +1,2 @@
+part,split,pair,point,lo,hi,stored_point,stored_lo,stored_hi,parity
+gap3,validation,S->B0,7.503066905684e-05,4.323639298994e-05,1.057542270105e-04,7.503066905684e-05,4.323639298994e-05,1.057542270105e-04,EXACT

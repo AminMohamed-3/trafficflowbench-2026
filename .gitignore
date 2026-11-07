@@ -1,0 +1,19 @@
+# large or machine-local content: fetched by pipeline/00_fetch_data.sh and pipeline/01_fetch_weights.sh, or written by the build
+data/
+!report/data/
+weights/*
+!weights/MANIFEST.csv
+!weights/base/
+!weights/rows/
+!weights/README.md
+!weights/RELEASE_PARTS.csv
+!weights/RELEASE.tsv
+artifacts/
+reference/
+outputs/
+work/
+# local markers / links (see README "Layout notes")
+.venv*/
+__pycache__/
+*.pyc
+*.part

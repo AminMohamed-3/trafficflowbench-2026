@@ -1,0 +1,150 @@
+{
+  "id": "0305",
+  "utc": "2026-10-03T20:12:42.362486+00:00",
+  "job": "S_0305_1003T195027Z",
+  "verdict": "PASS",
+  "scope": "Fixed2-panel OPT0 diagnostic, reduced residual training pool; never full10 reproduction",
+  "collection_manifest_sha256": "a7c1eb660c3ccf425c0d37d531cd7e92d2801b889a5b3080fcbd6a8b09c9cebf",
+  "result_sha256": "8bb97a125757f11132c58110a1e57f266a2ed28d503c625acd6d5020c59aa2c8",
+  "budget_sha256": "3cfa832b4092313a98bc5a9cb64828528b2b6337649528642b2977fbffea0f13",
+  "log_sha256": "c01529ca73c0b7b76739a64383b802260e87bb53f9e82e3c62a5452c1f455112",
+  "original_joint_protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+  "runtime_protocol_sha256": "7aa6a4715d3323dbc949816de8e786da378c0c06df8c5bd9551231737931446c",
+  "actual_start_epoch": 1791057036.7848368,
+  "actual_end_epoch": 1791057665.4780457,
+  "actual_done": true,
+  "actual_exit": 0,
+  "actual_launcher_minutes": 10.478220148881276,
+  "peak_rss_gib": 1.2708320617675781,
+  "diagnostic_actual_minutes": 38.94720391432444,
+  "diagnostic_remaining_minutes": 51.05279608567556,
+  "total_actual_launcher_minutes": 149.02428674300512,
+  "reference": "Original F4 OPT171",
+  "comparison": {
+    "n_dates": 43,
+    "bootstrap_samples": 1000,
+    "seed": 4701,
+    "incumbent": {
+      "S_state": 0.9358256798391829,
+      "S_physics": 0.7449184298126981,
+      "J_S": 0.4392767524156187
+    },
+    "candidate": {
+      "S_state": 0.9395624058645047,
+      "S_physics": 0.7562159344810037,
+      "J_S": 0.4422792322247271
+    },
+    "delta_J_S": 0.0030024798091083937,
+    "ci95": [
+      0.0027779506370304895,
+      0.003186378437031698
+    ],
+    "paired_ci_half_width": 0.00020421390000060417,
+    "incumbent_J_S_ci95": [
+      0.4383954320599828,
+      0.44017891771140066
+    ],
+    "incumbent_instrument_ci_half_width": 0.0008917428257089188
+  },
+  "delta_S_state": 0.0037367260253218237,
+  "delta_S_physics": 0.011297504668305591,
+  "gate": {
+    "ci95": [
+      0.0027779506370304895,
+      0.003186378437031698
+    ],
+    "seed_delta_sd": 8.106281456582247e-05,
+    "positive": true,
+    "delta_J_S": 0.0030024798091083937,
+    "original_noise_floor_verdict": "PASS",
+    "delta_S_state": 0.0037367260253218237,
+    "state_loss_guard": true,
+    "candidate_qualified": true
+  },
+  "member_deltas": [
+    0.0024026360161685245,
+    0.0024422783317812335,
+    0.0022863142166629213
+  ],
+  "panels": [
+    "D12_I5_N",
+    "D7_I405_N"
+  ],
+  "n_dates": 43,
+  "n_targets": 1857110,
+  "panel_date_rows": 86,
+  "models": {
+    "4701": {
+      "speed": {
+        "sha256": "58a98189861c99f2d6900d0868cb6c89f472fcc5da138df25f63d0fa8ea80c2f",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "sha256": "b56b640558299f8d605de9e9a611187c6ec8c7e2b2eb8516a4604d029846ac5d",
+        "rounds": 600
+      }
+    },
+    "4702": {
+      "speed": {
+        "sha256": "09cafbcff48951e597ac9db53ca8481e8f0789f790c7eca3835ff33a48b7b909",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "sha256": "3964ac70a42a39702417fefcc1a95ad2732994a69f7cb3c5db5d7e2db41b1f2f",
+        "rounds": 600
+      }
+    },
+    "4703": {
+      "speed": {
+        "sha256": "0ca9abb3a5171d0dcfecaaa84a211be660cf6a53eba45f71c22205b44da37654",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "sha256": "a531b11d34d458bebc1f1e638f20c93e8edcec8b3d70eb26698838fac3aa1a2a",
+        "rounds": 600
+      }
+    }
+  },
+  "data": {
+    "4701": {
+      "complete_sha256": "11b2c37d3f64d7012411e29e78f4ba47fd735359b3f8ab86f3f679689dcbf04b",
+      "n_rows": 339177
+    },
+    "4702": {
+      "complete_sha256": "29012f0e6c71d2720a1e5c16f1ffbd2ac2b73cadb71ae1984bd1844edc6fe715",
+      "n_rows": 327790
+    },
+    "4703": {
+      "complete_sha256": "c0b33edd238fa4fcfa45d8982bd4f47bd17c1ff62a8320fde5ae11deaef173d4",
+      "n_rows": 321160
+    }
+  },
+  "checks": {
+    "result_budget": "PASS",
+    "all6_full600_models": "PASS",
+    "original179_recipe": "PASS",
+    "original_protocol": "PASS",
+    "retained_complete_seeds": "PASS",
+    "partial_preserved": "PASS",
+    "one_joint_OPT_read": "PASS",
+    "new_OWN_reads": 0,
+    "ADV_reads": 0,
+    "local_collected_file_sha256": "PASS",
+    "identical_arm_population": "PASS",
+    "registered_launcher": "PASS",
+    "actual_source_plan": "PASS"
+  },
+  "implementation_repair_used": 1,
+  "failed_original_job_retained": true,
+  "old_failed_charge_minutes": 12.004492016633352,
+  "OPT_joint_reads": 1,
+  "ADV_reads": 0,
+  "OWN_reads": {
+    "validation": 2,
+    "private": 2
+  },
+  "full10_OPT_reproduction": false,
+  "local_model_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\artifacts\\lane_s\\0305\\diagnostics\\quick_opt",
+  "VM_path": "/workspace/work/main/artifacts/lane_s/0305/diagnostics/quick_opt",
+  "next_requested_ADV_cap_minutes": 49
+}

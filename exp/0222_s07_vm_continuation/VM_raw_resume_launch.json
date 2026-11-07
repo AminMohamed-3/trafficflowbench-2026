@@ -1,0 +1,16 @@
+{
+  "parent_job": "S_0222_1001T174043Z",
+  "parent_active_min": 1.9338604887326558,
+  "registered_total_cap_min": 120,
+  "max_minutes": 118.06613951126734,
+  "threads": 1,
+  "ram_gib": 7,
+  "host": "vm",
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "command": [
+    "python",
+    "src/tfb/lane_s/vm_run.py",
+    "tfb.lane_s.vm_s07_supervised_data"
+  ],
+  "resume": "Verify retained completed panel, then remaining nine; no newpopulation/budget reset"
+}

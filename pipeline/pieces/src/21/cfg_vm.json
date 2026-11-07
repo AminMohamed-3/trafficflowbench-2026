@@ -1,0 +1,22 @@
+{
+ "name": "c28vm_convnext_tiny_up2_e8_s0_serve0228_vm",
+ "a": 0.2,
+ "spec": {
+  "bb": "convnext_tiny.fb_in1k",
+  "adapt": "up2",
+  "pretrained": true
+ },
+ "drop": [
+  "prior",
+  "pos",
+  "tod"
+ ],
+ "source": "probs",
+ "weights": "artifacts/claude_ref/c_bb/vm_tinyserve_e8s0/out/runs/convnext_tiny_up2_e8_s0_serve0228_vm/model.pt",
+ "weights_sha256": "43da1ffcb0871b16190b9251e7d3a14a018e78283d7d05402323d2ac252c6dc7",
+ "device": "cuda",
+ "amp_bf16": true,
+ "probs": "artifacts/claude_ref/c_bb/vm_tinyserve_e8s0/out/serve/convnext_tiny_up2_e8_s0_serve0228_vm.parquet",
+ "probs_sha256": "c02523d2e9464f9e4bda710ad889375c21c44dab1df9ee30d52b41d4cb7ddf6a",
+ "note": "VM retrain 10-15 (exp/C_backbone/vm_tiny), source=probs from its own serve of the saved weights"
+}

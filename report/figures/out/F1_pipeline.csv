@@ -1,0 +1,21 @@
+block,lane,title,body,reads_train,reads_month,reads_online,reads_mar4apr
+s0,T1,Stage 0 + S08,"pooled LightGBM residuals, station levels; S08 split-local LightGBM on pseudo- targets",1,1,0,0
+phys,T1,Physical stages,"common-mode shock, class hedge, log-flow kriging, projection to the published FD",0,1,0,0
+s2,T1,Stage 2,"LightGBM residuals on speed and flow, then the FD projection",1,1,0,0
+b6,T1,B6 blend,U-Net members blended with the stack per corridor (March fit also serves April),0,1,0,1
+late,T1,Late stages,polish; stage 3 (S7b +60 own-month trees); occupancy; flow-only stage 4,1,1,0,0
+gap,T1,Gap rows + clip,90-min blackouts around Task 2 windows; speed ≤ 1.15 x free speed,0,1,0,1
+lab,T1,Label sources of the scored month,"own view: released cells hidden to make labels; official view: every released cell (18.4% the own view never showed); INEL: released, ineligible, never scored (labels only, never inputs)",0,1,0,0
+mem,T1,"B6 U-Net members, per month","3 seeds x 10 corridors; own view 48k it, ramp and occupancy channels; FV-FT +6k and FV2 +6k on the official view; FV-INEL W1.0 (INEL labels). April: same methods on April's own cells",0,1,0,1
+s7c,T1,S7c-INEL,+60 stage-3 trees fitted on INEL cells (date-parity gate),0,1,0,1
+gapm,T1,Gap models,"specialist, gap U-Net, weights refit by date cross-fit, edge taper",0,1,0,1
+phy3,T3,Physics is scored on our Task 1 rows,"S_phys = S_FD/3 + 2 S_LWR/3 on the submitted speed and flow; no rows of its own, so every state piece is also a physics piece; pieces were ranked with .88 x (.35 dState + .45 dPhys)",0,0,0,0
+q03,T2o,Q03 site classifier,"LightGBM on online precursors, fitted on train months",1,0,1,0
+q0436,T2o,Q0436 switches,two calibrated online switches and an agreement rule on the window's own history,0,0,1,0
+dec_o,T2o,Onset decode,cell set with the highest expected IoU; top-two union if the probability ratio is ≥ .8,0,0,1,0
+mem_q,T2g,Ongoing members,"1-D CNN and sccnn (type A), 5 seeds each, 16 epochs; ConvNeXt- Tiny at .2 (ImageNet- 1k init)",1,0,0,0
+ada,T2g,Per-date adaptation,"fine-tune on pseudo windows of earlier dates (5 ep, lr 6e-4); .75 adapted + .25 unadapted",0,0,1,0
+cold,T2g,Cold dates,≤ 2 earlier dates: XSD two-stage pool with a speed term (A3); Tiny member adapted per date (A1),0,0,1,1
+dec_g,T2g,Ongoing decode,expected-IoU top-k over 6 steps; persistence cap .92; type A raised to ≥ .8,0,0,1,0
+qacc,T2g,Q-ACCUM,three per-date member deltas summed; 11 cells,0,0,1,1
+odme,T4,ODME: the organiser's NNLS,"min ||A f - c||² + .05 ||f - b||², f ≥ 0, on the split's own link counts c and prior b; every move away from this projection lost on the board",0,1,0,0

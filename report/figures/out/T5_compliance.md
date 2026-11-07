@@ -1,0 +1,20 @@
+# T5. Compliance checklist (skeleton)
+
+- Status: PASS = checked with the evidence named; COMPUTED numbers are produced by make_figures.py; DECLARED = stated in the report, no mechanical check; TODO = what is still to run and how.
+- Sources: RULES.md, DECISIONS_DIGEST.md, docs/report/ADOPTED.md, docs/report/TASK2_ONLINE_AUDIT_2026-10-11.md.
+
+| item | rule_source | evidence | status |
+|---|---|---|---|
+| Task 2 online rule: a window with origin T uses only data stamped <= T on its date, earlier dates of the split, and train | RULES.md 2; forum 742068 | docs/report/TASK2_ONLINE_AUDIT_2026-10-11.md: no violation found; poisoned-future test in asm2_run_all.sh (--poison) | PASS (audit 10-11); TODO before the final build: extend poison to ramp_states, window_history, window_index and every origin (ADOPTED.md follow-ups) |
+| April may use released March data (Task 2); March never uses April data | RULES.md 2 (D-0062); DECISIONS_DIGEST Data use | audit 10-11 section 1: no piece loads two evaluation splits together for a March forecast | PASS; TODO: mechanical check that no March Task 2 step opens an April file (final_solution/checks) |
+| Task 1 and 3 offline: any released observation of the split; INEL cells (released, ineligible) used as labels | RULES.md 2 (Tasks 1 and 3) | COMPUTED: INEL cells x scored target cells = 0 (March, 981,093 INEL vs 3,451,376 target cells) and 0 (April, 948,791 vs 3,284,419); INEL x gap = 0 / 0; target cells outside eligibility = 0 / 0. Recomputed from the cache by exp/L_fvinel/inel_count.py; equal to the stored JSONs: True. | PASS (computed) |
+| No IDs, seeds, row order, window numbering or file timestamps as features | RULES.md 3 and 5 | by construction of the feature code; registry has no row using them | TODO: grep check in final_solution/checks over the build's feature code |
+| No matching of a hidden day to a train day to copy values | RULES.md 3; CLAUDE.md hard rules | no method in ADOPTED.md matches days; all target-month learning uses the split's own released cells | DECLARED |
+| Upload cap 5 per UTC day; each upload with a reason and a pre-written forecast | RULES.md 7; D-0069; D-0068 | manifest: most reads on one UTC day = 5 | PASS (computed from the manifest) |
+| Organiser-only files (queue truth, boundary flux, path-flow truth) never used | RULES.md 3 | no code path reads them | DECLARED |
+| Declared April methods: a March board verdict of a METHOD chooses it for April rows; April gap and FV methods fitted on April's own view | DECISIONS_DIGEST rulings 2026-10-15 (a), 10-17 (precedence), 10-18 (April gap methods) | ADOPTED.md rows 22, 23, 27-35 state 'declared method' | DECLARED in the report |
+| U1 selection-conditioned inputs (sccnn flags, type A, persistence cap, band raise; about +.0045) read nothing after T | FINAL_PLAN decision 3; ADOPTED.md online follow-ups | disclosed plainly | DECLARED |
+| External data: PeMS screen (failed gate, not in any file); Chronos-Bolt zero-shot screen (not used) | RULES.md 3 | RULES.md disclosures 2026-10-13 | DECLARED; TODO(C): Chronos-Bolt repo id and revision |
+| Pretrained weights: timm ConvNeXt-Tiny (ImageNet-1k) in the ongoing member; TabPFN-v2 only in file B (S0631 off by default) | RULES.md 3 (D-0048) | pins and SHA256 in RULES.md and artifacts/claude_ref/c_bb/weights_manifest.json | DECLARED |
+| No code or predictions shared outside the team; no public notebook copied | RULES.md 3 |  | DECLARED |
+| Reproducibility: rebuilt file within 1% of the selected file's private score | RULES.md 6; D-0051 | C47 rebuilt from code, state rows max diff 4e-13 (REPRO_README.md); C80 rebuild from saved weights in final_solution/ | PASS for C47 (C80 - C47 = +.00312 public, inside the gate); TODO: C80 rebuild parity |

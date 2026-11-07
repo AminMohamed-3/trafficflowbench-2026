@@ -1,0 +1,27 @@
+2026-10-21T01:53:58Z lock taken (22_parity)
+2026-10-21T01:54:01Z 22 start: parent /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/22_parent.csv, base on /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/asm2/e16/s01234_5_6e-4_none_out/rows/on, off /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/asm2/e16/s01234_5_6e-4_none_out/rows/off
+XSD cnn_s0.parquet cold rows 62028 changed prob 57564 un parity 0.0
+XSD cnn_s1.parquet cold rows 62028 changed prob 58690 un parity 0.0
+XSD cnn_s2.parquet cold rows 62028 changed prob 58346 un parity 0.0
+XSD cnn_s3.parquet cold rows 62028 changed prob 57876 un parity 0.0
+XSD cnn_s4.parquet cold rows 62028 changed prob 58457 un parity 0.0
+XSD sccnn_official.parquet cold rows 62028 changed prob 58709 un parity 1.1920928955078125e-07
+cold windows {'private': 25, 'validation': 31} un parity worst 1.1920928955078125e-07 check failures 0
+COLD_XSD_BUILD_OK
+blend cnn_s0.parquet a 0.75 rows 87000 mean|dp| vs adapted 0.00177 max 0.2495
+blend cnn_s1.parquet a 0.75 rows 87000 mean|dp| vs adapted 0.00201 max 0.25
+blend cnn_s2.parquet a 0.75 rows 87000 mean|dp| vs adapted 0.00207 max 0.2499
+blend cnn_s3.parquet a 0.75 rows 87000 mean|dp| vs adapted 0.00183 max 0.2496
+blend cnn_s4.parquet a 0.75 rows 87000 mean|dp| vs adapted 0.00191 max 0.2484
+blend sccnn_official.parquet a 0.75 rows 87000 mean|dp| vs adapted 0.00122 max 0.2331
+agreement with part 0 0.9965
+agreement with part 1 0.9961
+agreement with part 2 0.9957
+agreement with part 3 0.9955
+agreement with part 4 0.9953
+queued share 0.1166
+wrote ongoing rows C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\final_solution\work\22_a3cold\a0.75\ongoing.parquet 87000 changed vs C17 280
+BBMEMBER decode {"cfg_sha256": "1dc98b80d07cdf06baab93a58e7381506ab0fcaff1ef9d9ac6970775fee7e7ee", "a": 0.2, "member": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/c_bb/vm_tiny_swap/bb_member_vm.parquet", "member_sha256": "c02523d2e9464f9e4bda710ad889375c21c44dab1df9ee30d52b41d4cb7ddf6a", "base_sha256": "c4976682d8edbeb4350a7e9eb4b9077a1efa41b9484d483dcb46f27048072218", "sc_sha256": "f5955d669905c83d6b0f6ce15d48d6cc37ef8738576f6fdae4a8d0882d4a724e", "parent_ongoing_sha256": "1a3fa6dd4f95c7ca6c25b780a5e3880814b52f70aa475cda42e6d9e740014b8d", "parent_reproduced_at_a0": 87000, "changed_cells": 79, "changed_by_split": {"private": 35, "validation": 44}, "changed_windows_by_split": {"private": 21, "validation": 21}, "changed_by_type": {"A": 34, "B": 29, "C": 16}, "out": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/22_a3cold/ongoing_bb_c55.parquet", "out_sha256": "ff1113a7d08fc18e9b0fac70a0c3f55e2823bffdd46112cc1eed43fb6fe16870", "seconds": 12.4, "source_sha256": "5da84228364f14c26ec6c3114edf98bc025ad0045f05b832fabf05d7238836d0"}
+ONGOING_APPLY {"parent": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/22_parent.csv", "new_rows": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/22_a3cold/ongoing_bb_c55.parquet", "parent_sha256": "5ebd5de0438517e03a719ecf88545acd26152287441e66265bb3d81081ff3020", "parent_vs_old_rows_cells": 0, "changed_cells": 79, "out": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/22_out.csv", "out_sha256": "caaf4d8a3740a27db5cb5237164b3850c69761830002649ef4497f06ed7999a5"}
+2026-10-21T01:55:19Z 22 done in 78 s: /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/22_out.csv
+{"built": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/22_out.csv", "sha256": "caaf4d8a3740a27db5cb5237164b3850c69761830002649ef4497f06ed7999a5", "expected": "caaf4d8a3740a27db5cb5237164b3850c69761830002649ef4497f06ed7999a5", "result": "PASS-SHA", "window_guard": "PASS", "guard_rc": 0, "guard_out": ["22_out.csv vs c_b6l12k_on_c43.csv: 23 validation queue windows, 0 ODME rows, 3451376 state rows -> PASS", "22_out.csv vs 22_parent.csv: 16 validation queue windows, 0 ODME rows, 0 state rows -> PASS"], "piece": "22", "variant": "full", "runtime_s": 122}

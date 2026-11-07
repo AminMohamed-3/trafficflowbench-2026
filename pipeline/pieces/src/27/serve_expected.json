@@ -1,0 +1,11 @@
+{
+ "source": "artifacts/claude_ref/l_gap2/g1/pred_cpu/serve_*.json (laptop CPU serve 2026-10-18)",
+ "values_sha256": {
+  "pred_off8k_s0_off_validation.npz": "1f3fe9fa5791348cb1a58b1b4d11d14b91e18c518f6ce814c2798dbd7266d03e",
+  "pred_off8k_s1_off_validation.npz": "7635c0c3159faa7e5e272c9a319afb0551ff1b0965f124acf9b59d56b25f6218",
+  "pred_off8k_s2_off_validation.npz": "7d63006caa7a66012479256dca5735e57ea849c204c1b2c08981a328ad38b8bd",
+  "pred_off8k_s0_off_private.npz": "84a2f898d194c6992d73f31d67335a472eabeb2c90ce3b18caf23f97b3094e3d",
+  "pred_off8k_s1_off_private.npz": "cb7289d65d456100dd4bcfca9218201c85d98575722b064e31813ecfa9fc54e4",
+  "pred_off8k_s2_off_private.npz": "0540a89fca5abc7028fa084bc541ae689a14595ff211b320c54297f66b4c3a8d"
+ }
+}

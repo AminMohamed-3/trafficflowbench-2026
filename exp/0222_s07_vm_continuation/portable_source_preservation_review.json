@@ -1,0 +1,11 @@
+{
+  "id": "0222",
+  "verdict": "PASS",
+  "scope": "Static source-preservation review, no execution/data/metric",
+  "exact_AST_functions": [
+    "source_view (post-history OWN reblind)",
+    "predict_transfer (allthree fixed seeds/equalfloat64 mean)"
+  ],
+  "exact_source_body": "predict_arms after integrity validation and entire predict_observed",
+  "actual_vm_controls_and_parent_serving_still_due": true
+}

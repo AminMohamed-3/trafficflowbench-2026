@@ -1,0 +1,95 @@
+{
+  "panels": {
+    "D12_I405_N": {
+      "reference_sha256": "cb1a2a946111c7ae70a7fbd99933b754a0a8c94b3c92d76cf70ec65cf17e3a52",
+      "target_mask_sha256": "ffc9a35abb666c80c7bd826441e07f65893bb944a41eb2ddc6a29b44eab4239f",
+      "n_targets": 15638,
+      "first_two_parent_target_arrays": {
+        "0": "1b6392968815b227668606a31cb94a1713a6a57afa85e53da01d21297ad0c21c",
+        "1": "e75535040cb30346fa250a3e5124a80f692dab69573d5c0acebb09449eb5fe56"
+      }
+    },
+    "D12_I405_S": {
+      "reference_sha256": "d047ac559acc9d091589278c02db543107a48bff6ca680bc9be7e283a979d147",
+      "target_mask_sha256": "1e47e2e5668dc8eb106c7aca7f927ede6e51fd6dca230d9c19f1d187781c093f",
+      "n_targets": 7751,
+      "first_two_parent_target_arrays": {
+        "0": "3b289e0ebaf393ca363b8f77ea4737dd58affffd55221fa5f22de102f056e251",
+        "1": "a147c6d0146b3c8fe92b152650f714d719282bfee7172a7f74d168166993152c"
+      }
+    },
+    "D12_I5_N": {
+      "reference_sha256": "a690f45a59d3c0a3b849a7596add52ecb200be29c14c6a6981f4efbf8142a160",
+      "target_mask_sha256": "255ba9710f0f32cf8c94fee14fc124fd5a2de66267142fbffd6dc58a1c6ea132",
+      "n_targets": 27327,
+      "first_two_parent_target_arrays": {
+        "0": "023001a009608bec3fb8db1b0116ed2b8c8b9ccda12814faf2c2e783beaabaa8",
+        "1": "42aa22b5ea77d508b73aa3d61f206c006317f611585a4656a5aa77b223c63327"
+      }
+    },
+    "D12_I5_S": {
+      "reference_sha256": "2bc28a12d12e1e258f3fcde1f1481eb674b840e547ce17da3bd3784f09d51d4d",
+      "target_mask_sha256": "e58ebd4a3a365fa4392de92274f8b061873a44ac04098011816a71b678fc98d7",
+      "n_targets": 12735,
+      "first_two_parent_target_arrays": {
+        "0": "804a91f020d69d615ccd158ef3f214cb1d5be36876666547e429f9f73053cb9a",
+        "1": "d61769186fb82e9230cfbdad33f15a9dc8fd4ad23dbeacf27f8f2627d730a3d3"
+      }
+    },
+    "D7_I10_E": {
+      "reference_sha256": "ff700f42179b7183454e3d165cf66fe8c5b830a6a6e10319694a128ff4ec789f",
+      "target_mask_sha256": "8a1df4b2c4642a5458f0b630eebec10edb037dca8ef20f12e98397cb34c0dc27",
+      "n_targets": 15508,
+      "first_two_parent_target_arrays": {
+        "0": "00555a5e89b36a2b639e5c927a06c0643a9ad1c0fab60a4c5bdefc4215210dbe",
+        "1": "8a8cad3ac17e8fa88fb2dd762841679c7cb3dc44c0579a63350dcfc7f216640b"
+      }
+    },
+    "D7_I10_W": {
+      "reference_sha256": "cfa5091418ec2f55012c4702c5f1b9b1ee5023e05c8a58210f603662d67fbee4",
+      "target_mask_sha256": "4e2faf7af4089a26b632b7e61101e389ae5171177929e653222d57aa0c2ce42b",
+      "n_targets": 16444,
+      "first_two_parent_target_arrays": {
+        "0": "0f0b6458605b0422b7ddebc6315172de2dcabd8f0344caac6cdb87a4510bf83c",
+        "1": "d5eda024bc512e91848b1ffa0b984512cc05a3bf3945e0d5b7d2f1eaead71a8f"
+      }
+    },
+    "D7_I210_E": {
+      "reference_sha256": "5195d51c0e3680f1c6b74d5e42d6c5000b8ba12dfca46f2c8312b02dfe7d897d",
+      "target_mask_sha256": "5b5545b0f94074af2e9dc3a4828e46fd2387cc2c97abe9a432cd571e73cef278",
+      "n_targets": 25089,
+      "first_two_parent_target_arrays": {
+        "0": "7a8de771d06980d0ff2e793cbfe5147b418545f1f935d6164b41bac482be171c",
+        "1": "72dfeef999013d9f07a67e3d881137d93224c3893cd8def5deb2fbaaae11421f"
+      }
+    },
+    "D7_I210_W": {
+      "reference_sha256": "5f5187765b62e15de55209c5d632fadffa271590989ac622bcf927fb58128f59",
+      "target_mask_sha256": "491fd848e3ff8bbf3c26616b3cb0f8c6295503ca35e8c8839d4897f71ae4d430",
+      "n_targets": 13564,
+      "first_two_parent_target_arrays": {
+        "0": "18a407bf190f6b314224d527772f3c85ab91eadd10b346c495294fb985d81861",
+        "1": "c3bbf799fa127e31745665b986be58a5ae44fa5ad2d34104395fb051639b0f87"
+      }
+    },
+    "D7_I405_N": {
+      "reference_sha256": "b3c3bed36f1559ddf5e76c29afe3547689033930d008e6cf7199e565f21f1f9f",
+      "target_mask_sha256": "9814fc9768c709438878a04cc8479c88af1321ff17881209811997f07341618b",
+      "n_targets": 50193,
+      "first_two_parent_target_arrays": {
+        "0": "8acffbdc0792128f06b9d6bc76a4c1421f765690f8e00a613c12d8a782727eb6",
+        "1": "f11a50a7011fb5fa004dc8e47b6acda1528b0bb2d5813206315ac83e8e326076"
+      }
+    },
+    "D7_I405_S": {
+      "reference_sha256": "3dd021238aec05e8f2ed5834b4e1eb830fee5b5c48796ec53624d14c94e39987",
+      "target_mask_sha256": "72632b0fc666e33101a6a78c1c94da9eeaeffda2e0f12e4a1649b0e2afe53040",
+      "n_targets": 15998,
+      "first_two_parent_target_arrays": {
+        "0": "f0cd5dcfc6b16fe49b38b26dc2a2c7dc8b21279bd446d766f4d7c9c95edc5414",
+        "1": "028319ef2aa6580dc4d5d6c3b14cd04bb40e31bdacf3893ad9030bfbc0157fa9"
+      }
+    }
+  },
+  "definition": "Fingerprints only for first two dates, parent channels4/5 at existing frozen ADV targets; no labels uploaded"
+}

@@ -1,0 +1,82 @@
+{
+ "b6": {
+  "validation": {
+   "arm": "@S:FVI_MAR@:valown_:0,1,2:",
+   "weights": "artifacts/claude_ref/l_b6/s2b/b6w_s2b.json"
+  },
+  "private": {
+   "arm": "@S:S2B@:privown_:0,1,2:",
+   "weights": "artifacts/claude_ref/l_b6/s2b/b6w_s2b.json"
+  }
+ },
+ "s3": {
+  "models": [
+   [
+    "artifacts/claude_ref/phys4/s3_yqL.txt",
+    "artifacts/claude_ref/phys4/s3_yvL.txt"
+   ]
+  ],
+  "scale": [
+   1.0,
+   1.0
+  ]
+ },
+ "lm_split": {
+  "validation": {
+   "polish_chain": {
+    "s3": {
+     "r": 3.0,
+     "a": 1.0,
+     "g": 1.0,
+     "h": 0.1
+    },
+    "tv": {
+     "tau": 0.004
+    },
+    "s4": {
+     "H": 12.0,
+     "beta": -0.046889258600808115
+    }
+   },
+   "s3_scale": [
+    0.8,
+    1.0
+   ]
+  },
+  "private": {
+   "polish_chain": {
+    "s3": {
+     "r": 3.0,
+     "a": 1.0,
+     "g": 1.0,
+     "h": 0.1
+    },
+    "tv": {
+     "tau": 0.004
+    },
+    "s4": {
+     "H": 12.0,
+     "beta": -0.046889258600808115
+    }
+   },
+   "s3_scale": [
+    0.7,
+    1.0
+   ]
+  }
+ },
+ "s3_split": {
+  "validation": [
+   [
+    "artifacts/claude_ref/l_b6/bundle18/s7b/models/C_yq_mar_all.txt",
+    "artifacts/claude_ref/l_b6/bundle18/s7b/models/C_yv_mar_all.txt"
+   ]
+  ],
+  "private": [
+   [
+    "artifacts/claude_ref/l_b6/bundle18/s7b/models/C_yq_apr_all.txt",
+    "artifacts/claude_ref/l_b6/bundle18/s7b/models/C_yv_apr_all.txt"
+   ]
+  ]
+ }
+}

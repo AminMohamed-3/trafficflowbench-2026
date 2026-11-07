@@ -1,0 +1,76 @@
+{
+ "final_file": "c_isinel_s7c_mar_on_c77 (C79; C80 differs only in April rows and was not uploaded)",
+ "rank": 8,
+ "teams_listed": 16,
+ "final": {
+  "public": 0.90088,
+  "private": 0.89874
+ },
+ "c47": {
+  "public": 0.89776,
+  "private": 0.89697
+ },
+ "c03": {
+  "public": 0.88225,
+  "private": 0.87242
+ },
+ "baseline": {
+  "public": 0.83664,
+  "private": 0.81725
+ },
+ "best_private_read": [
+  "c_linfF_on_c57",
+  0.89887
+ ],
+ "winner": 0.92823,
+ "gain_c47_to_final": {
+  "public": 0.00312,
+  "private": 0.00177,
+  "carry": 0.567
+ },
+ "gain_baseline_to_final": {
+  "public": 0.06424,
+  "private": 0.08149,
+  "carry": 1.269
+ },
+ "step_carry_median": 0.94,
+ "after_c47_by_component": {
+  "state": {
+   "steps": 13,
+   "public": 0.00166,
+   "private": 0.00173,
+   "carry": 1.04
+  },
+  "ongoing": {
+   "steps": 4,
+   "public": 0.00146,
+   "private": 4e-05,
+   "carry": 0.03
+  }
+ },
+ "big_april_steps": [
+  {
+   "step": "C16 onset Q03 + Q0436",
+   "d_public": 0.0,
+   "d_private": 0.00714
+  },
+  {
+   "step": "C19 ongoing ong2 (sccnn A, band)",
+   "d_public": 0.00451,
+   "d_private": 0.00949
+  }
+ ],
+ "spearman": {
+  "all": {
+   "n": 91,
+   "rho": 0.95
+  },
+  "since_10_12": {
+   "n": 37,
+   "rho": 0.56
+  }
+ },
+ "uploads": {
+  "total": 91
+ }
+}

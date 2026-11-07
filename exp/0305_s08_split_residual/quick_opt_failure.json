@@ -1,0 +1,41 @@
+{
+  "id": "0305",
+  "job": "S_0305_1003T192052Z",
+  "actual_status": {
+    "state": "failed",
+    "error": "Active runtime cap",
+    "start": 1791055262.3122394,
+    "end": 1791055982.5817604,
+    "peak_process_group_rss_gib": 1.2271690368652344,
+    "owner_rss_gib": 0.6051025390625
+  },
+  "verdict": "FAIL_RUNTIME_CAP_NO_SCORE",
+  "actual_launcher_minutes": 12.004492016633352,
+  "source_plan": "PASS",
+  "compact_manifest_sha256": "f68d89a2f0f3ccef548121bb48cfe52796e13a3993a993b20cd222e753221e4c",
+  "actual_diagnostic_used_minutes": 28.468983765443163,
+  "actual_diagnostic_remaining_minutes": 61.53101623455684,
+  "total_actual_launcher_minutes": 138.54606659412383,
+  "retained_complete_data_seeds": [
+    4701,
+    4702
+  ],
+  "retained_full600_member_pairs": [
+    4701,
+    4702
+  ],
+  "incomplete_seed": 4703,
+  "partial_seed_action": "Move uncompleted seed4703 data to done before exact regeneration; preserve bytes",
+  "quality_reads": 0,
+  "OPT_reads": 0,
+  "new_OWN_reads": 0,
+  "ADV_reads": 0,
+  "recipe_changed": false,
+  "implementation_repair_used": 0,
+  "prepared_repair_caps": {
+    "quick_opt_repair": 12,
+    "adv": 49
+  },
+  "repair_reason": "Runtime controller lacks the registered resume of validated completed seeds after interruption; add one explicit resumable adapter with failure accounting",
+  "scientific_source_unchanged": true
+}

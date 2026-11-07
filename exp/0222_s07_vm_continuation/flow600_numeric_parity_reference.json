@@ -1,0 +1,29 @@
+{
+  "id": "0222",
+  "host": "laptop",
+  "scope": "Read-only full600 model numeric comparison, no data or held score",
+  "verdict": "NUMERIC_PARITY_PASS_STRICT_HASH_FAIL",
+  "original_model_sha256": "2f2cb775202088ceb8b081a88dc5bfb7e85eb48a85cd8cce6f865952dd9dc155",
+  "actual_model_sha256": "4907d08a7b912a1dbe2e19706d1772036d5378be04f3dc8a9166eee16e7c53a5",
+  "trees": 600,
+  "n_perturbed_leaves": 2,
+  "changed_leaves": [
+    {
+      "tree": 406,
+      "leaf": 0,
+      "abs_difference": 2.220446049250313e-16
+    },
+    {
+      "tree": 406,
+      "leaf": 2,
+      "abs_difference": 1.7763568394002505e-15
+    }
+  ],
+  "all_other_model_lines_exact_except_native_thread_parameter": true,
+  "global_real_arithmetic_q_per_lane_prediction_abs_bound": 1.7763568394002505e-15,
+  "qualification": "The fixed VM1e-6 native tolerance is the selection requirement; byte hashes remain unequal and failure receipts retained. Full all10 actual serving fingerprints remain mandatory before transfer fits.",
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "candidate_fits": 0,
+  "analysis_source": "Bothcomplete model texts compared line-by-line, require only two leaves differ within one tree; all leaves of that tree are mutually exclusive, so its maximum change bounds the whole ensemble."
+}

@@ -1,0 +1,10 @@
+{
+  "worker_exit": 0,
+  "launcher_exit": 0,
+  "stop_reason": null,
+  "elapsed_minutes": 13.362391669999731,
+  "aggregate_peak_upper_mib": 1451.37109375,
+  "threads": 2,
+  "GPU": false,
+  "host": "local"
+}

@@ -1,0 +1,119 @@
+{
+  "id": "0301",
+  "verdict": "PASS_GUARD_CONTROLS_ONLY",
+  "controls": [
+    {
+      "name": "37 actual source/reference bindings",
+      "verdict": "PASS"
+    },
+    {
+      "name": "lane source tamper",
+      "verdict": "PASS"
+    },
+    {
+      "name": "shared provider tamper",
+      "verdict": "PASS"
+    },
+    {
+      "name": "reference tamper",
+      "verdict": "PASS"
+    },
+    {
+      "name": "resource cap change",
+      "verdict": "PASS"
+    },
+    {
+      "name": "nonzero quality read",
+      "verdict": "PASS"
+    },
+    {
+      "name": "foreign output destination",
+      "verdict": "PASS"
+    },
+    {
+      "name": "wrong F4 parent",
+      "verdict": "PASS"
+    },
+    {
+      "name": "conditional S07 identity",
+      "verdict": "PASS"
+    },
+    {
+      "name": "invalid or excessive budget 0",
+      "verdict": "PASS"
+    },
+    {
+      "name": "invalid or excessive budget 1",
+      "verdict": "PASS"
+    },
+    {
+      "name": "invalid or excessive budget 2",
+      "verdict": "PASS"
+    },
+    {
+      "name": "invalid or excessive budget 3",
+      "verdict": "PASS"
+    },
+    {
+      "name": "invalid or excessive budget 4",
+      "verdict": "PASS"
+    },
+    {
+      "name": "unresolved interrupted attempt",
+      "verdict": "PASS"
+    },
+    {
+      "name": "failed runtime remains charged",
+      "verdict": "PASS"
+    },
+    {
+      "name": "third attempt rejected",
+      "verdict": "PASS"
+    },
+    {
+      "name": "completed phase cannot relaunch",
+      "verdict": "PASS"
+    },
+    {
+      "name": "remaining charged budget allowed",
+      "verdict": "PASS"
+    },
+    {
+      "name": "successful phase handoff",
+      "verdict": "PASS"
+    },
+    {
+      "name": "result tamper blocks handoff",
+      "verdict": "PASS"
+    },
+    {
+      "name": "output PASS cannot override failed budget",
+      "verdict": "PASS"
+    },
+    {
+      "name": "phase cumulative cap blocks handoff",
+      "verdict": "PASS"
+    },
+    {
+      "name": "projected disk headroom enforced",
+      "verdict": "PASS"
+    },
+    {
+      "name": "exact disk headroom boundary",
+      "verdict": "PASS"
+    },
+    {
+      "name": "local compute rejected before heavy imports",
+      "verdict": "PASS"
+    }
+  ],
+  "n_controls": 26,
+  "scientific_data_loaded": false,
+  "fits": 0,
+  "predictions": 0,
+  "quality_reads": 0,
+  "VM_access": 0,
+  "source_sha256": "feb9bbe77b5d74c7937926326f4931418970ad773cfcfda2713e5a6db7215f65",
+  "protocol_sha256": "ff55ff1d747c26e3552ada8c231d32182d7ab0befc6f74dfd25469b1194a2a60",
+  "fixture_folder": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\artifacts\\lane_s\\0301\\guard_fixtures\\20261003T122230532167Z"
+}

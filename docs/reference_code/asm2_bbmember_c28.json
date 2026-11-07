@@ -1,0 +1,14 @@
+{
+ "name": "c28_convnext_tiny_up2_e8_s0_serve0228",
+ "a": 0.2,
+ "spec": {"bb": "convnext_tiny.fb_in1k", "adapt": "up2", "pretrained": true},
+ "drop": ["prior", "pos", "tod"],
+ "source": "probs",
+ "weights": "artifacts/claude_ref/c_bb/runs/convnext_tiny_up2_e8_s0_serve0228/model.pt",
+ "weights_sha256": "b119e830551615b45ff54d6153fc2d859824e239a9f90bca72b8ce5822d0045b",
+ "device": "cuda",
+ "amp_bf16": true,
+ "probs": "artifacts/claude_ref/c_bb/serve/convnext_tiny_up2_e8_s0_serve0228.parquet",
+ "probs_sha256": "af23b1c7780cd8726acd6d8d6af90d5494304abbfbaf15d9ab80211a9b0fc632",
+ "note": "C28 board read .89450 (ledger 0764). source=probs until model.pt (on tfb-vm2old) is retrieved; then source=weights."
+}

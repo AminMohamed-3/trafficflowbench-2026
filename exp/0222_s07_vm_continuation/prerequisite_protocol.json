@@ -1,0 +1,140 @@
+{
+  "id": "0222",
+  "parent_id": "0189",
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "scientific_config_sha256": "89801f044b335ca5ab7cc7ba8cefdf99286c2195054e7e7c9f1137d01217658a",
+  "own_mask_rebuild": {
+    "cpu_threads": 1,
+    "ram_gib": 7,
+    "maximum_minutes": 89.9687975396834,
+    "source_sha256": "7ad0233ded2b61a9086b41ea5a82bbc36ee0a520dec8d01684204f7f2edfb2dd",
+    "reads": 0
+  },
+  "priors214_rebuild": {
+    "cpu_threads": 1,
+    "ram_gib": 7,
+    "maximum_minutes": 45,
+    "source_sha256": "92d96718e449144df9e5e7f09e5ac0753dcaac6a391feb91543ffb79443b8492",
+    "reads": 0
+  },
+  "parent214_refit": {
+    "cpu_threads": 3,
+    "ram_gib": 7,
+    "maximum_minutes": 90,
+    "source_sha256": "af5f5c34a92b5bb69a67f4cd55d3819570347fc91a8dd8b089ced04201737c3d",
+    "target_fits": 2,
+    "diagnostic_fits": 4,
+    "rounds": 600,
+    "held_reads": 0,
+    "full600_parent_model_parity": "Original full600 trees and model text (only thread count metadata normalized) exact before reuse; final candidate still one-panel laptop serving parity due"
+  },
+  "host": "vm",
+  "data_uploads": 0,
+  "definition": "Fixed scientific F4 parent and S07 prerequisite regeneration; all time charged inside original deadline; original laptop receipts retained. All additional source producers have actual new provenance, no historical receipt fabrication.",
+  "portable_controls": {
+    "cpu_threads": 1,
+    "ram_gib": 7,
+    "maximum_minutes": 60,
+    "mask_cases": 30,
+    "feature_cases": 10,
+    "history_cases": 10,
+    "held_reads": 0,
+    "source_sha256": {
+      "vm_s07_stages.py": "2c975945d5b5db21426b6456ea70b1fa05763693cfa15c193368e39ad031976f",
+      "vm_check_observed_adaptation.py": "6cd1890afbee41ca2f574b3090fbc422bdf4f8a94af587fe36d6fc8c05036069",
+      "vm_check_observed_adaptation_features.py": "5012815c924d3cd4b2c72db39e4bfcfadfbaae1bc4f7e6dbb71e2ff222295cf8",
+      "vm_check_observed_adaptation_history.py": "d8ce0c2295a1ca380416c192abf4034b707e625d48653b566628b27d17d1a2c3"
+    }
+  },
+  "observed_phase_data": {
+    "cpu_threads": 1,
+    "ram_gib": 7,
+    "maximum_minutes_per_phase": 90,
+    "phases": [
+      "OWN1_jan_feb",
+      "OWN1_validation",
+      "OWN1_private",
+      "ADV1"
+    ],
+    "source_sha256": "a0c55412864aa81bdbff0ab93ff75998554ba078d72133a9616f6effc71b6cda",
+    "held_reads": 0
+  },
+  "transfer_fits": {
+    "cpu_threads": 3,
+    "ram_gib": 30,
+    "maximum_minutes_per_seed_phase": 90,
+    "original_deadline": "2026-10-02T17:34:00+00:00",
+    "phases": [
+      "OWN1_jan_feb",
+      "OWN1_validation",
+      "OWN1_private",
+      "ADV1"
+    ],
+    "seeds": [
+      4701,
+      4702,
+      4703
+    ],
+    "rounds": 600,
+    "observed_dose": "full fixed original",
+    "source_sha256": "84d5889ed8a18174e2a72722d1001b0fb8fedd082795e1d5288ca2ad1072050e",
+    "runtime_only_ram_change": "VM allocation30GiB withinS70 cap; fixed Fortran matrix/labels/weights/bin reuse/600 rounds unchanged. Actual pooled177-field ordinary/reuse32-round controls and legacy original matrix equality mandatory before600.",
+    "completed_model_parity": "All5 original completed laptop model pairs must reproduce full600 model/tree fingerprints before serving; other pairs have no old completed reference"
+  },
+  "prerequisite_sequence": {
+    "cpu_threads": 3,
+    "maximum_minutes": 224.94301830530168,
+    "source_sha256": "ba10514dd6c51aea3622f7107d3a3969d9aaf2719c0de681e65f81517eb732f1",
+    "phase_caps": [
+      89.9687975396834,
+      45,
+      90
+    ],
+    "held_reads": 0
+  },
+  "placement_repair": {
+    "failed_job": "S_0222_1001T181706Z",
+    "failed_outer_min": 0.05698169469833374,
+    "failed_OWN_phase_min": 0.031202460316611298,
+    "reason": "Physical cache meta differs only runtime_seconds; hidden,target,dates EXACT. Actual cache source SHA retained; scientific metadata allkeys except runtime_seconds exact before normalization.",
+    "failed_sources_preserved": "artifacts/lane_s/0222/OWN_portability_failure"
+  },
+  "ADV_window_rebuild": {
+    "cpu_threads": 1,
+    "ram_gib": 7,
+    "maximum_minutes": 30,
+    "source_sha256": "30fb557723f4a0190437cab327dfb913229ff20f092df00e3897f561168fd1d3",
+    "reads": 0
+  },
+  "parent_serving_replay": {
+    "cpu_threads": 2,
+    "ram_gib": 7,
+    "maximum_minutes": 30,
+    "source_sha256": "c7137d32ff3a732f490d3bd23272daf1d8ef29b12af5d1607a82fb8fc9d67366",
+    "predictions": "All10/twoactualADVdates; exact original target fingerprints before held candidate scoring",
+    "reads": 0
+  },
+  "OWN1_batch": {
+    "cpu_threads": 2,
+    "ram_gib": 7,
+    "maximum_minutes": 180,
+    "source_sha256": "5a76a8228891156b3062ec1d845279033a008aad4f83e689e411daecc9d2b29d",
+    "periods": [
+      "jan_feb",
+      "validation",
+      "private"
+    ],
+    "reads": "One fixed batch perperiod, no interpretation untilADV1 also complete",
+    "seeds": [
+      4701,
+      4702,
+      4703
+    ],
+    "selection": false
+  },
+  "native_precision_qualification": {
+    "source_sha256": "afe29560706a47e690d842d839b2cfc762a4c03fa5f638a5a3ddeeda3c00d00e",
+    "reference_sha256": "398c33cb8fba9bb66761293434dc993933f62e7966baef94d091ba2512a4c7c5",
+    "definition": "Preregistered before any VM transfer fit or held read: exact all structure and other values, onlyleaf11decimal serialization tolerance; real ensemble bound6e-9 perlane, all10 serving proof and final1e-6 native gate retained."
+  }
+}

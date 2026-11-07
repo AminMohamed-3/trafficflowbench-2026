@@ -1,0 +1,2 @@
+part,split,pair,point,lo,hi,stored_point,stored_lo,stored_hi,parity
+s7cf,validation,fold->s7c_fv2x,1.124468647096e-05,9.763708506134e-06,1.324057264133e-05,1.124468647096e-05,9.763708506134e-06,1.324057264133e-05,EXACT

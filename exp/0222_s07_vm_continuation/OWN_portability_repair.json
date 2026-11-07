@@ -1,0 +1,14 @@
+{
+  "id": "0222",
+  "host": "vm",
+  "failed_job": "S_0222_1001T181706Z",
+  "phase": "Pre-fit OWN physical metadata portability failure, logicalmask arrays exact",
+  "outer_minutes_charged": 0.05698169469833374,
+  "phase_minutes_charged": 0.031202460316611298,
+  "scientific_recipe_changed": false,
+  "repair": "Compare all original cache metadata fields except runtime_seconds; retain actual physical SHA and timing; normalize only scientific comparison path/metadata digest.",
+  "candidate_fits": 0,
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "board_reads": 0
+}

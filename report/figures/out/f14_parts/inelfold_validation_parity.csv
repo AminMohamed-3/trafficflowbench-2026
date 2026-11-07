@@ -1,0 +1,2 @@
+part,split,pair,point,lo,hi,stored_point,stored_lo,stored_hi,parity
+inelfold,validation,fv2->fold,2.492917457310e-04,1.066231377947e-04,3.870620381470e-04,2.492917457310e-04,1.066231377947e-04,3.870620381470e-04,EXACT

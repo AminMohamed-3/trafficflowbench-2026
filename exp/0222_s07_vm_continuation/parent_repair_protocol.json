@@ -1,0 +1,16 @@
+{
+  "id": "0222",
+  "host": "vm",
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "failed_job": "S_0222_1001T183650Z",
+  "failed_parent_runtime_min": 22.402190824233305,
+  "parent_original_maximum_min": 90,
+  "remaining_parent_maximum_min": 67.5978091757667,
+  "source_sha256": "af5f5c34a92b5bb69a67f4cd55d3819570347fc91a8dd8b089ced04201737c3d",
+  "output": "artifacts/lane_s/0222/F4_parent214_v2",
+  "failed_artifacts": "artifacts/lane_s/0222/F4_parent214",
+  "repair": "Tuple to list only; categorical83,84,87 mandatory in controls and full600, then full model/text parity. All scientific config/data/priors/population/gates unchanged; no candidate or held read.",
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "repair_controller_sha256": "fd9bd22782d99727281c264254bb3e9e3d7c67d8b5e01a15d507107dfbe3e5b2"
+}

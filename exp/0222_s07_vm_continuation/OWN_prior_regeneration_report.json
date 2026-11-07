@@ -1,0 +1,22 @@
+{
+  "id": "0222",
+  "host": "vm",
+  "job": "S_0222_1001T183650Z",
+  "phase": "Actual raw OWN masks/priors/geometry qualification; parent training active",
+  "verdict": "PASS",
+  "OWN_population_panels_periods": 30,
+  "n_OWN_targets": 4312368,
+  "OWN_runtime_min": 0.14723890548339114,
+  "prior_runtime_min": 0.9067961000832535,
+  "prior_panels": 10,
+  "months_per_panel": 7,
+  "structural_fit_dates": 171,
+  "OWN_result_sha256": "32938fe4637eed833a7bbb32b2e6ea1058bf47eb375480e9c5fdb204c4ea4ab9",
+  "OWN_manifest_sha256": "ec9b081c527f70c3e6797c26f549a021a1a88721ef63d130dd877a0592049270",
+  "prior_result_sha256": "ee7b4f628153bd44c1eeb809cca3c6670c537e957e70c1b0475c9d74ccb6264c",
+  "normalization": "Only source cache runtime_seconds and host artifact path; actual physical source hashes retained",
+  "candidate_fits": 0,
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "board_reads": 0
+}

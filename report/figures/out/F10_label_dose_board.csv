@@ -1,0 +1,10 @@
+step,board_increment,board_cumulative,forecast_increment,how
+S2b chain (own-view labels),0.0,0.0,,C69 level
+FV1 +6k official view,0.00041000000000002146,0.00041000000000002146,3e-05,C70 - C69
+FV2 +12k same labels,2.0000000000020002e-05,0.00043000000000004146,7e-05,C72 - C71
+FV-INEL W.3 INEL labels,0.00024999999999997247,0.0006800000000000139,2.999999999997449e-05,C73 - C72
+W1.0 INEL weight 1,2e-05,0.000700000000000014,2e-05,read on C75
+S7c-INEL stage learner,7.00000000000145e-05,0.0007700000000000285,2.0000000000020002e-05,C79 - C77 forecast
+INEL-FOLD March (board units k x fc),0.00045121805977303193,,,"k=1.81, CI 0.000193..0.000701"
+INEL-FOLD April (board units k x fc),0.0001799499686816524,,,"k=1.81, CI 0.000058..0.000321"
+S7C-FOLD held-out March / April (board),2e-05,,1.6e-05,exp/L_isinel/logs/s7cf_run.log fold->s7c_fv2x

@@ -1,0 +1,41 @@
+{
+  "id": "0222",
+  "parent_id": "0189",
+  "purpose": "Host continuation prerequisite rebuild, no changed scientific formulation",
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "raw_rebuild_cpu": 1,
+  "raw_rebuild_ram_gib": 7,
+  "raw_rebuild_max_minutes": 120,
+  "control_cpu": 1,
+  "control_ram_gib": 2,
+  "control_max_minutes": 15,
+  "placement": "VM after actual launcher fixture; short laptop parity test completed",
+  "code_sources": {
+    "vm_s07_supervised_data.py": "7800467d594db18b64edceba8d2ef040fe70d7b92efb54a40d013864c8b48652",
+    "q01_training_snapshot.py": "a5f707ddd00620090d514dfd2efb28baeb3bba5c6ef500d1d49e79f7428bd958"
+  },
+  "raw_array_reference_sha256": "57e3e71d6da04db8ab9850942a47afb0f8bcaecd002b27dba088bb106d0040aa",
+  "guards": [
+    "Actual updated launcher import/env/time/RAM/CPU/GPU fixture PASS",
+    "Release/key/cache parity PASS",
+    "Raw training windows byte-exact old14x population",
+    "All six original supervised177-field numerical files byte-exact per panel",
+    "Fresh F4 train-only priors/geometry/refits with actual source provenance",
+    "One-panel actual serving parity <=1e-6 before VM candidate use",
+    "All fixed OWN/ADV outcomes completed before interpretation",
+    "All time charged to original0189 deadline; no refit/seed/weight selection"
+  ],
+  "next_unexecuted": [
+    "VM0222 train-only host control",
+    "VM raw supervised rebuild one panel then all10",
+    "OWN masks raw regeneration and logical membership parity",
+    "F4 parents actual reconstruction and parity",
+    "Portable fixed S07 remaining fits/OWN/ADV/conditional production/native"
+  ],
+  "prior_rebuild_cpu": 1,
+  "prior_rebuild_ram_gib": 7,
+  "prior_rebuild_max_minutes": 45,
+  "library_loader_previous_source_sha256": "02e583c07b9c00c1578291102e74065039a596670c20753b28bc1c3026759ec9",
+  "library_loader_source_sha256": "e685d55d72d3032f58a6b7c274d1935a269f650489db5e704b828ea66f8e7abe",
+  "VM_native_library_sha256": "6a12e1a7b13824d14c252d2a4d2e36af467383331a114eb0e7448eecbf02d7b1"
+}

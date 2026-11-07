@@ -1,0 +1,9 @@
+id: '0110'
+lane: Q
+formulation: Q-00 independent queue_score organizer parity official80
+truth: artifacts/lane_q/0106/official80_observed_labels.parquet
+tolerance: 1.0e-9
+fixtures: [zero, one, oracle, random, missing, no_eligible, empty_union, source_eligible]
+threads: 4
+ram_gb: 4
+adv_reads: 0

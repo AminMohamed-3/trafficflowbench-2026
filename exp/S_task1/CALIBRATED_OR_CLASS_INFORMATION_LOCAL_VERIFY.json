@@ -1,0 +1,33 @@
+{
+  "screen_sha256": "c044d05371d6dfc1bb65f35f8b2379713a4420d10de90efdfc8e16fa110d02d3",
+  "outputs_weights_helper_protocol_SHA_exact": true,
+  "full_predictions_coordinates_parent_control_exact": true,
+  "original_parent_control_stats_exact": true,
+  "full_four_points_all2000_date_CIs_exact": true,
+  "fit_guard_receipts_pass": true,
+  "no_source_cache_raw_or_labels_pulled": true,
+  "summary": {
+    "weighted_logloss_reduction": -0.027795198780049768,
+    "raw_logloss_reduction": -0.03392779371388821,
+    "raw_Brier_reduction": -0.01178943805581878,
+    "vs_parent_weighted_logloss_reduction": -0.3776678829571696
+  },
+  "date95": {
+    "weighted_logloss_reduction": [
+      -0.08124194874661705,
+      0.03871555887531017
+    ],
+    "raw_logloss_reduction": [
+      -0.07586623971470674,
+      0.011648202886131012
+    ],
+    "raw_Brier_reduction": [
+      -0.06700748978310221,
+      0.05352348320114979
+    ],
+    "vs_parent_weighted_logloss_reduction": [
+      -0.5680418496692229,
+      -0.10724799015808781
+    ]
+  }
+}

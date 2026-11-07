@@ -1,0 +1,11 @@
+{
+  "screen_sha256": "2630a16f1c9d01d33690d25c9b32f8485877bd0948c190cc7e923ca2aba3109a",
+  "helper_protocol_output_model_source_SHA_exact": true,
+  "full_held_coordinates_parent_probability_calibrated_arithmetic_exact": true,
+  "unchanged_baseline_statistics_all_points_2000_CIs_exact": true,
+  "declared_ancestor_graph_rechecked": true,
+  "retained_VM_fit_source_poison_receipts_pass": true,
+  "useful_class_information": false,
+  "log_odds_offset": -0.5007751314721041,
+  "no_raw_source_class_label_or_feature_cache_loaded": true
+}

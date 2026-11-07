@@ -1,0 +1,18 @@
+{
+  "id": "0189",
+  "authority": [
+    "D-0026",
+    "D-0028"
+  ],
+  "upstream_kind": "F4",
+  "fixed_NN_dose": 0.0,
+  "source_config_sha256": "89801f044b335ca5ab7cc7ba8cefdf99286c2195054e7e7c9f1137d01217658a",
+  "recipe": "Existing full177 original+released-observation pooled population; scratch600; equal4701/4702/4703",
+  "runtime_threads": 3,
+  "resident_limit_gib": 1.6,
+  "aggregate_lane_limit_gib": 7,
+  "NN_CPU_reservation": 5,
+  "runtime": "Disk-backed Fortran float32 matrix; one constructed binned dataset reused for speed/flow; exact training-only parity control",
+  "gate": "Positive paired95%CI and actual three-seed deltaSD < half positive delta; marginalADV delta>.002; positive OWN validation/private CIs",
+  "limits": "No S05 dependency or NN term; original S05 eight-hour budget unchanged; one exact strong build plus one model repair"
+}

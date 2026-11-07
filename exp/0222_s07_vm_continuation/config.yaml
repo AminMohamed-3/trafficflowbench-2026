@@ -1,0 +1,25 @@
+{
+  "id": "0222",
+  "parent_id": "0189",
+  "owner": "S",
+  "cpu_threads": 1,
+  "ram_gib": 2,
+  "maximum_minutes": 15,
+  "dates": [
+    "2030-06-01",
+    "2030-06-02"
+  ],
+  "panels": [
+    "D12_I405_S",
+    "D7_I405_N"
+  ],
+  "windows": "Fixed noon train-only queue_onset/ongoing_queue; fixture only",
+  "rows": "Actual canonical177 feature sampled training rows; tile to210001 to exercise native bin sample threshold",
+  "controls": "All target truth poison, raw feature/label/weight SHA and four32-round ordinary/reused-bin fits; compare actual laptop/VM predictions",
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "board_reads": 0,
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "selection": "No selection; cross-host prerequisites only",
+  "vm_start": "After actual Lead launcher guard fixture and release/key/cache parity; existing provided VM only"
+}

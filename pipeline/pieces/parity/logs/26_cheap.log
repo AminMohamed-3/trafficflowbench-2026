@@ -1,0 +1,2 @@
+2026-10-21T06:45:20Z lock taken (26_parity)
+{"result": "FAIL", "why": "piece script exit 1", "piece": "26", "variant": "cheap", "runtime_s": 13, "panel_check": "{\"serve_files\": 6, \"differ\": [\"imp_privown_D12_I405_S_s0.npz\", \"imp_privown_D12_I405_S_s1.npz\", \"imp_privown_D12_I405_S_s2.npz\", \"imp_valown_D12_I405_S_s0.npz\", \"imp_valown_D12_I405_S_s1.npz\", \"imp_valown_D12_I405_S_s2.npz\"], \"result\": \"FAIL\"} "}

@@ -1,0 +1,41 @@
+{
+  "id": "0305",
+  "utc": "2026-10-03T21:11:40.592702+00:00",
+  "verdict": "FAIL",
+  "classification": "Fixed continuation closed for registered runtime failure; joint ADV quality unmeasured",
+  "job": "S_0305_1003T201404Z",
+  "actual_status": {
+    "state": "failed",
+    "error": "Active runtime cap",
+    "start": 1791058453.6303794,
+    "end": 1791061393.8380082,
+    "peak_process_group_rss_gib": 1.6464996337890625,
+    "owner_rss_gib": 0.5944595336914062
+  },
+  "actual_launcher_minutes": 49.00346047878266,
+  "diagnostic_actual_minutes": 87.9506643931071,
+  "diagnostic_remaining_minutes": 2.049335606892896,
+  "total_actual_launcher_minutes": 198.02774722178776,
+  "implementation_repair_used": 1,
+  "final_budget_sha256": "ea97c436646eb6c8e782ec8f8dfccb8b2f4b9e9a814b9b7abf59cdae733a0391",
+  "original_attempt_sha256": "c7df1f45ec56ce8f47d82bbd967475138d25e2437ec38d3d2bc6310a04ab601d",
+  "immutable_failure_collection_sha256": "86e2585b79a4091eeebc744e5e018ce88193842d6799956b0c24c328bf1c8f9b",
+  "OPT_joint_reads": 1,
+  "ADV_joint_reads": 0,
+  "OWN_reads": {
+    "validation": 2,
+    "private": 2
+  },
+  "complete_ADV_member_pairs": [
+    "4701",
+    "4702"
+  ],
+  "incomplete_ADV_seed": 4703,
+  "partial_files": 24,
+  "no_more_0305_jobs": true,
+  "candidate_qualified": false,
+  "joint_ADV_delta": null,
+  "retained_positive_OWN_and_quickOPT": true,
+  "reopen_condition": "Independent new information or demonstrable instrument defect plus explicit new protocol/budget authorization; never held-selected seed/dose/pool/cap rescue",
+  "next": "Physics-aware state support with D under D0061; Task4 remains frozen"
+}

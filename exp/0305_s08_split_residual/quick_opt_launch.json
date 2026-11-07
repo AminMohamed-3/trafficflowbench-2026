@@ -1,0 +1,28 @@
+{
+  "job": "S_0305_1003T192052Z",
+  "phase": "quick_opt",
+  "source_commit": "62dcd72",
+  "actual_source_plan": "PASS",
+  "actual_start_epoch": 1791055262.3122394,
+  "actual_start_utc": "2026-10-03T19:21:02.312239+00:00",
+  "maximum_minutes": 12,
+  "expected_check_utc": "2026-10-03T19:33:00Z",
+  "latest_utc": "2026-10-03T19:33:02.312239+00:00",
+  "manual_initial_sync_repeated": false,
+  "routine_guarded_autosync": "PASS",
+  "source_files": 840,
+  "source_gz_MiB": 4.4,
+  "threads": 8,
+  "ram_gib": 23,
+  "gpu": false,
+  "OWN_reads_new": 0,
+  "OPT_joint_reads_allowed": 1,
+  "models_required": 6,
+  "training_panels": [
+    "D12_I5_N",
+    "D7_I405_N"
+  ],
+  "pool_limitation": "Reduced2-panel diagnostic, never full10 OPT reproduction",
+  "charged_prior_diagnostic_minutes": 16.464491748809813,
+  "total_prior_actual_minutes": 126.54157457749048
+}

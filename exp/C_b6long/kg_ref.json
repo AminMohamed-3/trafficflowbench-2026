@@ -1,0 +1,49 @@
+{
+ "panel": "D12_I5_S",
+ "own_seed": 8853,
+ "own_fraction": 0.1,
+ "mask_sha": {
+  "D12_I5_S|validation": {
+   "hidden": "690f2978c4f4283171be467c2f434f0ba7ac6c8caa67596d2426c83120585b88",
+   "target": "13b54ffc0723fff3c16fe5d23814c0e212f45cd8116e01edf8f8811b9140c74c",
+   "dates": "c631685db72845743a7a3147caf591541729f34b8fc01321f126400755569d34"
+  },
+  "D12_I5_S|private": {
+   "hidden": "2eb37c75ee372a4b698cc63dfad8d7c08f6be49c5079998c291c6ce34748743b",
+   "target": "3056481e093331c38d4a83eab6ec85240a6e6574596a8d083e95d1d5aee0032c",
+   "dates": "43605214be96a5a964653a2191fd97c752009d678cf685b527745261744d33ba"
+  }
+ },
+ "layer": {
+  "validation": {
+   "shape": [
+    31,
+    7,
+    288,
+    100
+   ],
+   "n_vis": 382867,
+   "vis": "f850167e45e194f898e5214a665fe7e433714243135e902eff14efa067ed22e0",
+   "x_exact": "f41b762dfcdf89434568ed5662e1ed719561f48a6af9060e817ffe1160ea9c69",
+   "x_tod_sum": 1136703.175,
+   "x_sum": 538536.925,
+   "consts": "2abb1343592f6d32b491da1c69ade713f6236082b97fcd5dc42c0e2d00b42990",
+   "dates": "c631685db72845743a7a3147caf591541729f34b8fc01321f126400755569d34"
+  },
+  "private": {
+   "shape": [
+    30,
+    7,
+    288,
+    100
+   ],
+   "n_vis": 375445,
+   "vis": "ef05d4d0b1be462a330ccd456d7ba3978ea050af615b2411efed874a1c552db8",
+   "x_exact": "127d0dda3b9890c2db9c259161bf149dcd6a3acb99504ab1219a955371e6566a",
+   "x_tod_sum": 1100035.331,
+   "x_sum": 529026.553,
+   "consts": "2abb1343592f6d32b491da1c69ade713f6236082b97fcd5dc42c0e2d00b42990",
+   "dates": "43605214be96a5a964653a2191fd97c752009d678cf685b527745261744d33ba"
+  }
+ }
+}

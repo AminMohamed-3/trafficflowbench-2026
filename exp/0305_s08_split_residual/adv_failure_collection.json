@@ -1,0 +1,242 @@
+{
+  "id": "0305",
+  "utc": "2026-10-03T21:11:40.592702+00:00",
+  "verdict": "FAIL",
+  "classification": "Fixed continuation closed for registered runtime failure; joint ADV quality unmeasured",
+  "job": "S_0305_1003T201404Z",
+  "actual_status": {
+    "state": "failed",
+    "error": "Active runtime cap",
+    "start": 1791058453.6303794,
+    "end": 1791061393.8380082,
+    "peak_process_group_rss_gib": 1.6464996337890625,
+    "owner_rss_gib": 0.5944595336914062
+  },
+  "actual_launcher_minutes": 49.00346047878266,
+  "diagnostic_actual_minutes": 87.9506643931071,
+  "diagnostic_remaining_minutes": 2.049335606892896,
+  "total_actual_launcher_minutes": 198.02774722178776,
+  "implementation_repair_used": 1,
+  "final_budget_sha256": "ea97c436646eb6c8e782ec8f8dfccb8b2f4b9e9a814b9b7abf59cdae733a0391",
+  "original_attempt_sha256": "c7df1f45ec56ce8f47d82bbd967475138d25e2437ec38d3d2bc6310a04ab601d",
+  "immutable_failure_collection_sha256": "86e2585b79a4091eeebc744e5e018ce88193842d6799956b0c24c328bf1c8f9b",
+  "OPT_joint_reads": 1,
+  "ADV_joint_reads": 0,
+  "OWN_reads": {
+    "validation": 2,
+    "private": 2
+  },
+  "complete_ADV_member_pairs": [
+    "4701",
+    "4702"
+  ],
+  "incomplete_ADV_seed": 4703,
+  "partial_files": 24,
+  "no_more_0305_jobs": true,
+  "candidate_qualified": false,
+  "joint_ADV_delta": null,
+  "retained_positive_OWN_and_quickOPT": true,
+  "reopen_condition": "Independent new information or demonstrable instrument defect plus explicit new protocol/budget authorization; never held-selected seed/dose/pool/cap rescue",
+  "next": "Physics-aware state support with D under D0061; Task4 remains frozen",
+  "collection_manifest_sha256": "86e2585b79a4091eeebc744e5e018ce88193842d6799956b0c24c328bf1c8f9b",
+  "original_joint_protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+  "runtime_protocol_sha256": "7aa6a4715d3323dbc949816de8e786da378c0c06df8c5bd9551231737931446c",
+  "local_files_verified": 16,
+  "complete_models": {
+    "4701": {
+      "speed": {
+        "sha256": "104f995f410d03df9936ed3e4f5efbf1869b4d631c1e6ac501044d3d5fa5c2fa",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "sha256": "0ea9406069365485c7aec232bf94fd097882af8f7f05186b3973c2c0d998415e",
+        "rounds": 600
+      }
+    },
+    "4702": {
+      "speed": {
+        "sha256": "cc457602502cc31cc949fe7e47629ee3a4859cf82f314be603ab86b62675b764",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "sha256": "68c4e6111636b0190bb38c799650dca10bda030ed1c88e51c0c3539ec6ebb6d6",
+        "rounds": 600
+      }
+    }
+  },
+  "complete_data": {
+    "4701": {
+      "complete_sha256": "482ac5b3a8c0730028e5fbdccc0195fb659d8a9d817c121de1af0f05f871c04f",
+      "n_rows": 791770,
+      "panels": [
+        "D7_I10_E",
+        "D7_I10_W",
+        "D7_I210_E",
+        "D7_I210_W",
+        "D7_I405_N",
+        "D7_I405_S",
+        "D12_I5_N",
+        "D12_I5_S",
+        "D12_I405_N",
+        "D12_I405_S"
+      ],
+      "arrays": "original_complete_hashes_PASS"
+    },
+    "4702": {
+      "complete_sha256": "84eef338fcde01e5ac06ce33291196055be1220a477db4e246d6d32a96a86d81",
+      "n_rows": 799340,
+      "panels": [
+        "D7_I10_E",
+        "D7_I10_W",
+        "D7_I210_E",
+        "D7_I210_W",
+        "D7_I405_N",
+        "D7_I405_S",
+        "D12_I5_N",
+        "D12_I5_S",
+        "D12_I405_N",
+        "D12_I405_S"
+      ],
+      "arrays": "original_complete_hashes_PASS"
+    }
+  },
+  "partial_data_inventory": {
+    "data_seed4703/D12_I5_N/X.npy": {
+      "sha256": "6593fbbee8426db1bf9dfc2b9dab5c2ac46760d3992f6428d7799205d97eee33",
+      "bytes": 91371036,
+      "mtime_epoch": 1791061352.370127
+    },
+    "data_seed4703/D12_I5_N/w.npy": {
+      "sha256": "e12d9228aab1d120cb7eae92e2cb2366be40fff633c9c834137a286b96f6686b",
+      "bytes": 510580,
+      "mtime_epoch": 1791061352.370127
+    },
+    "data_seed4703/D12_I5_N/y.npy": {
+      "sha256": "b251d6164d5fe1c8f47a8a98165c774ad03da73492bf6db16f89f1397733247a",
+      "bytes": 1021032,
+      "mtime_epoch": 1791061352.370127
+    },
+    "data_seed4703/D12_I5_S/X.npy": {
+      "sha256": "b69744ea407a27ec5396c80d17b9d35ea0a312fd3bd42396620e8714d5a1076b",
+      "bytes": 38290376,
+      "mtime_epoch": 1791061393.3255568
+    },
+    "data_seed4703/D12_I5_S/w.npy": {
+      "sha256": "e741f3b876f1c12b15813b2c5893002d2107d2f5c4684ca6882903db91175fc5",
+      "bytes": 214040,
+      "mtime_epoch": 1791061393.3255568
+    },
+    "data_seed4703/D12_I5_S/y.npy": {
+      "sha256": "688f5c1f3dec37bf837785696633e29121bb77ba1ef8245fd5cac3fceeb1c9fb",
+      "bytes": 427952,
+      "mtime_epoch": 1791061393.3255568
+    },
+    "data_seed4703/D7_I10_E/X.npy": {
+      "sha256": "73880e519b88cd226d32109fb9796ce06ae28c5d5f5040c8c3f5da2f09aaa1a8",
+      "bytes": 50488868,
+      "mtime_epoch": 1791060671.6110866
+    },
+    "data_seed4703/D7_I10_E/w.npy": {
+      "sha256": "527829d7e645ce06eac417c87144facb156f2527a0ab6384511a6e857b4a80c3",
+      "bytes": 282188,
+      "mtime_epoch": 1791060671.6110866
+    },
+    "data_seed4703/D7_I10_E/y.npy": {
+      "sha256": "dbf9e3280640a0dc5d48fc39f35d925e9b0752bc0fdeff80b3b319d0b6c29b20",
+      "bytes": 564248,
+      "mtime_epoch": 1791060671.6110866
+    },
+    "data_seed4703/D7_I10_W/X.npy": {
+      "sha256": "5504114cfe2cbdd0643366b3b04f284520526f920ddde535bc0d3be0672c33b2",
+      "bytes": 29539424,
+      "mtime_epoch": 1791060725.0783467
+    },
+    "data_seed4703/D7_I10_W/w.npy": {
+      "sha256": "a601cc254447c0f24f04d1c734a1c939d99535cbfcdf13f699e3d58103a840ab",
+      "bytes": 165152,
+      "mtime_epoch": 1791060725.0783467
+    },
+    "data_seed4703/D7_I10_W/y.npy": {
+      "sha256": "7e1f2bba83f4a481f20f010c4110868b46bf9559f1552b15a0889a3273f3d264",
+      "bytes": 330176,
+      "mtime_epoch": 1791060725.0783467
+    },
+    "data_seed4703/D7_I210_E/X.npy": {
+      "sha256": "1f9c8d4c49bdd34e738d70c3da2e2156d36a2da8f5d21782177a92d89ef336ae",
+      "bytes": 93771784,
+      "mtime_epoch": 1791060903.240145
+    },
+    "data_seed4703/D7_I210_E/w.npy": {
+      "sha256": "9be21c9055d414e853fa9eb41a3836e4a90b1470247eec794bcd36e434f41af6",
+      "bytes": 523992,
+      "mtime_epoch": 1791060903.240145
+    },
+    "data_seed4703/D7_I210_E/y.npy": {
+      "sha256": "cc62cb93d34119a042d611523521e570d22722ebf513f41e7ca9ec4b4c071076",
+      "bytes": 1047856,
+      "mtime_epoch": 1791060903.240145
+    },
+    "data_seed4703/D7_I210_W/X.npy": {
+      "sha256": "96a80bd0583eaa748991f9a9745cca887bb19f6148f704fd034f4114bc3cbaaa",
+      "bytes": 33521816,
+      "mtime_epoch": 1791060946.2115939
+    },
+    "data_seed4703/D7_I210_W/w.npy": {
+      "sha256": "c7e3a7b634141361daf29a45f109797796b19fb51ef87c09ddd77ce24aeb8b33",
+      "bytes": 187400,
+      "mtime_epoch": 1791060946.2115939
+    },
+    "data_seed4703/D7_I210_W/y.npy": {
+      "sha256": "95688c6c46f4756f343eafa8fd589b8b3df6ce437dcfce4907e153a6da6b0ca1",
+      "bytes": 374672,
+      "mtime_epoch": 1791060946.2115939
+    },
+    "data_seed4703/D7_I405_N/X.npy": {
+      "sha256": "879ab6b330acf0f7530507a5f2629927702f27c92b408d9a2f3d5bc47660a74c",
+      "bytes": 135773060,
+      "mtime_epoch": 1791061153.3408554
+    },
+    "data_seed4703/D7_I405_N/w.npy": {
+      "sha256": "b9ae688758850c1539488d06563053eb5e7fde2369f78149fcd39f15f8d86e52",
+      "bytes": 758636,
+      "mtime_epoch": 1791061153.3408554
+    },
+    "data_seed4703/D7_I405_N/y.npy": {
+      "sha256": "e3219facb9ad1d67d4348cbd4a5ff6f570069046a101d746b1bf04d4c8137f52",
+      "bytes": 1517144,
+      "mtime_epoch": 1791061153.3408554
+    },
+    "data_seed4703/D7_I405_S/X.npy": {
+      "sha256": "ee8df1f7064f8e11991b10be56a666bd83c83894f1ca69ddefa8a86f2d61904e",
+      "bytes": 41709992,
+      "mtime_epoch": 1791061208.512107
+    },
+    "data_seed4703/D7_I405_S/w.npy": {
+      "sha256": "70fce5183bd1161c03f8518fa2c9d163a27da0dcbfdcdc738117b828f890778b",
+      "bytes": 233144,
+      "mtime_epoch": 1791061207.836116
+    },
+    "data_seed4703/D7_I405_S/y.npy": {
+      "sha256": "f3922cb45c01a68c3ad69fe5595d22ca22a68117b8845601a294ca2624e04a96",
+      "bytes": 466160,
+      "mtime_epoch": 1791061208.512107
+    }
+  },
+  "local_collection_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\artifacts\\lane_s\\0305\\diagnostics\\adv_failure_collected",
+  "checks": {
+    "local_exact_bytes": "PASS",
+    "failed_actual_launcher": "PASS",
+    "original_source_pins": "PASS",
+    "all_original_prior_budget_attempts": "PASS",
+    "original_ADV_attempt_fields": "PASS",
+    "original_windows_160": "PASS",
+    "complete_179_full600_pairs": "PASS",
+    "no_ADV_scorer_read": "PASS",
+    "charge_and_budget_binding": "PASS",
+    "no_candidate_qualification": "PASS"
+  },
+  "disk_used_gb_at_collection": 35,
+  "disk_available_gb_at_collection": 46,
+  "VM_active_S_jobs": 0,
+  "disposable_matrices_pulled": false
+}

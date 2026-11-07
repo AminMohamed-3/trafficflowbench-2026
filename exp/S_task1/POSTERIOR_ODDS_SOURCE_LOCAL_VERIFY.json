@@ -1,0 +1,23 @@
+{
+  "screen_sha256": "c48d0caba908f6538799158efa747aa9c9087651efd6748b0ed1ede8e92035f9",
+  "helper_protocol_output_class_SHA_exact": true,
+  "all_context_statistics_points_2000_CIs_gate_dates_exact": true,
+  "retained_VM_source_model_poison_receipts_pass": true,
+  "dependency_graph_rechecked": true,
+  "source_gate": true,
+  "summary": {
+    "weighted_class_probability_bias": -0.005904349088921391,
+    "raw_class_probability_bias": -0.002588056435866314
+  },
+  "date95": {
+    "weighted_class_probability_bias": [
+      -0.0091130963366125,
+      -0.002090780861810601
+    ],
+    "raw_class_probability_bias": [
+      -0.0045461005573962975,
+      -0.00041945412255428544
+    ]
+  },
+  "no_raw_source_class_labels_or_model_predictions_loaded": true
+}

@@ -1,0 +1,11 @@
+{
+  "id": "0189",
+  "authority": "S07 brief and D0022/D0028 strong form",
+  "recipe_changed": false,
+  "upstream": "Carried F4; NN dose0",
+  "OPT_role": "Full three-seed diagnosis of train-domain adaptation; neither recipe selection nor closure of validation/private/JanFeb transfer",
+  "transfer_start": "Complete the one prespecified strong OWN1/ADV1 build after complete actual3seed OPT, regardless its diagnostic CI",
+  "deciding_gates": "ADV marginal J>.002, positive pairedCI, actual3seed deltaSD<halfdelta, positive OWN validation/private and their deltaSD gates",
+  "native": "Use the exact frozen OWN2-qualified273+own-blinded-observation models; full released inputs at inference; no post-OWN refit or model choice",
+  "limits": "One exact strong build plus one model repair; no hyperparameter/dose ladder; original mask/population600/equal3 unchanged"
+}

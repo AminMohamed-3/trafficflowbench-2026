@@ -1,0 +1,41 @@
+step,file,adopted_rows,component,mode,level_before,level_after,board_delta,forecast_delta,band_lo_delta,band_hi_delta,how
+C10 state v/q models + phys3,c10_state_spd_hedge_flow_phys3_on_c03,1,state,read,0.88225,0.88668,0.00443,0.00405,0.00285,0.00505,public read of c10_state_spd_hedge_flow_phys3_on_c03
+C11 stage-2 residual stack,c11_state_stack_s2stage_on_c03,1,state,read,0.88668,0.88745,0.00077,0.0008,0.0003,0.0012,public read of c11_state_stack_s2stage_on_c03
+C12 B6 U-Net imputer blend,c12_state_c11_b6blp_on_c03,1,state,read,0.88745,0.88793,0.00048,0.0004,0.0001,0.0007,public read of c12_state_c11_b6blp_on_c03
+C13 polish chain,c13_state_c12_polish_on_c03,1,state,read,0.88793,0.8881,0.00017,0.00018,7e-05,0.00037,public read of c13_state_c12_polish_on_c03
+C14 LSA + big stage 3,c14_state_c13_lsa_s3big,1,state,read,0.8881,0.8894,0.0013,0.0015,0.0009,0.0019,public read of c14_state_c13_lsa_s3big
+"C15 S08 input, phys4, gap rows v3",c15_k6_s08_phys4_gap_selcond_on_c03,1,state,read,0.8894,0.88942,2e-05,0.0012,-0.0001,0.0021,public read of c15_k6_s08_phys4_gap_selcond_on_c03
+C16 onset Q03 + Q0436,c16_k6_q0436_onset_on_c15,2,onset,read,0.88942,0.88942,0.0,0.00188,-0.00252,0.00598,public read of c16_k6_q0436_onset_on_c15
+C17 occupancy + demand factor,c17_k6_s0447_state_on_c15,1,state,read,0.88942,0.8896,0.00018,0.00018,8e-05,0.00028,public read of c17_k6_s0447_state_on_c15
+"C19 ongoing ong2 (sccnn A, band)",c19_ong2_sccnnA_on_c17,4,ongoing,read,0.8896,0.89411,0.00451,0.0021,0.0003,0.0039,public read of c19_ong2_sccnnA_on_c17
+C26 phys5 stage 4 (build A),c26_final_A_build,1,state,read,0.89411,0.8944,0.00029,0.0003,-0.00011,0.00069,public read of c26_final_A_build
+C28 ConvNeXt-Tiny member,c27_bb_tinye8_drop20_on_c26,6,ongoing,read,0.8944,0.8945,0.0001,0.0006,-0.0003,0.0015,public read of c27_bb_tinye8_drop20_on_c26
+C29 adapted/unadapted mix .75,c29_noad75_ong_on_c28,7,ongoing,read,0.8945,0.89452,2e-05,0.0002,-0.0001,0.0005,public read of c29_noad75_ong_on_c28
+C30 stage 2 l63 x r600,c30_s2l63r600_on_c29,8,state,read,0.89452,0.89457,5e-05,4e-05,2e-05,8e-05,public read of c30_s2l63r600_on_c29
+C31 e16 ongoing members,c31_e16s01_on_c30,9,ongoing,read,0.89457,0.89537,0.0008,0.00063,-0.00017,0.00143,public read of c31_e16s01_on_c30
+C33 5 seeds per member,c33_e16s5_on_c31,10,ongoing,read,0.89537,0.89556,0.00019,0.00093,0.00013,0.00163,public read of c33_e16s5_on_c31
+C34 stage 2 on 3M rows,c34_s2n3r600_on_c33,11,state,read,0.89556,0.89561,5e-05,5e-05,1e-05,9e-05,public read of c34_s2n3r600_on_c33
+C35 adaptation recipe mh5,c35_mh5_on_c34,12,ongoing,read,0.89561,0.89631,0.0007,0.00016,-0.00016,0.00039,public read of c35_mh5_on_c34
+C36 cold-start pools XSD,c36_coldxsd_on_c35,13,ongoing,read,0.89631,0.89667,0.00036,0.00169,-0.00011,0.00369,public read of c36_coldxsd_on_c35
+C43 S08 refit l127 x r4800,c36_s08l127r4800_on_c36,15,state,read,0.89667,0.89703,0.00036,0.0004,0.0003,0.00048,public read of c36_s08l127r4800_on_c36
+C44 B6 imputer 12k it,c_b6l12k_on_c43,16,state,read,0.89703,0.89744,0.00041,0.00042,0.00026,0.00057,public read of c_b6l12k_on_c43
+C47 B6 imputer 24k it,c_b6l24k_on_c44,16,state,read,0.89744,0.89776,0.00032,0.00038,0.0002,0.00054,public read of c_b6l24k_on_c44
+C48 gap2 ramp-cond. gap U-Net,c_gap2_on_c47,19,state,read,0.89776,0.89813,0.00037,0.00024,7e-05,0.00091,public read of c_gap2_on_c47
+C54 L_micro knobs + B6 blend,c_lmicro2_on_c50,20,state,read,0.89813,0.89816,3e-05,0.0001,0.0,0.00021,public read of c_lmicro2_on_c50
+"C55 Tiny member, saved weights",c_tinyvm_on_c54,21,ongoing,read,0.89816,0.8985,0.00034,0.0,-0.0002,0.0002,public read of c_tinyvm_on_c54
+"C57 A3 speed term, cold fits",c_a3xsd_on_c55,22,ongoing,read,0.8985,0.89907,0.00057,-5e-05,-0.0005,0.0004,public read of c_a3xsd_on_c55
+C59 Tiny per-date adaptation,c_tinyad_on_c57,23,ongoing,read,0.89907,0.89956,0.00049,0.00023,-0.00047,0.00083,public read of c_tinyad_on_c57
+C64 B6 S2 ramp + occupancy,c_b6s2_on_c59,24,state,read,0.89956,0.89964,8e-05,6e-05,2e-05,0.00012,public read of c_b6s2_on_c59
+C65 GAPW gap rows,c_gapw_on_c64,25,state,read,0.89964,0.89976,0.00012,7e-05,3e-05,0.00012,public read of c_gapw_on_c64
+C66 BUNDLE18 S2b + S7b,c_bundle18_s2b_s7b,26,state,read,0.89976,0.89984,8e-05,0.00014,2e-05,0.00024,public read of c_bundle18_s2b_s7b
+C69 L_gap2 gap rows,c_gap_on_c66,27,state,read,0.89984,0.89996,0.00012,9e-05,0.0,0.00017,public read of c_gap_on_c66
+C70 FV-FT March labels,c_fvft_mar_on_c69,28,state,read,0.89996,0.90037,0.00041,3e-05,-2e-05,9e-05,public read of c_fvft_mar_on_c69
+C71 gap3 + April FV-FT,c_gap3_aprfv_on_c70,29,state,read,0.90037,0.90044,7e-05,4e-05,0.0,9e-05,public read of c_gap3_aprfv_on_c70
+C72 FV2 dose +6k,c_fv2_on_b19,30,state,read,0.90044,0.90046,2e-05,7e-05,-3e-05,0.0002,public read of c_fv2_on_b19
+C73 FV-INEL W.3 labels,c_fvinel_on_b19,31,state,read,0.90046,0.90071,0.00025,3e-05,-3e-05,0.0001,public read of c_fvinel_on_b19
+C74P FV-INEL April rows,,31,state,private,0.90071,0.90071,0.0,,,,private rows only; public rows unchanged by construction
+C75 gap rows on FV chain,c_gapfv_on_c74p,32,state,read,0.90071,0.90073,2e-05,2e-05,-2e-05,9e-05,public read of c_gapfv_on_c74p
+C76 Q-ACCUM ongoing,c_qaccum_on_c75,33,ongoing,read,0.90073,0.90079,6e-05,7e-05,-0.00013,0.00027,public read of c_qaccum_on_c75
+C77 FV-INEL W1.0 (unread),c_fvinel_w10_on_c75,34,state,sibling,0.90079,0.90081,2e-05,2e-05,-0.00013,0.00015,not read on its parent; delta = read of c_fvinel_w10_on_c75 on C75
+C79 S7c-INEL stage learner,c_isinel_s7c_mar_on_c77,35,state,read,0.90081,0.90088,7e-05,2e-05,0.0,4e-05,public read of c_isinel_s7c_mar_on_c77
+C80 April W1.0 + S7c April,,34;35,state,private,0.90088,0.90088,0.0,,,,private rows only; public rows unchanged by construction

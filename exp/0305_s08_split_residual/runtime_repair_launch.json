@@ -1,0 +1,31 @@
+{
+  "id": "0305",
+  "phase": "quick_opt_repair",
+  "job": "S_0305_1003T195027Z",
+  "source_commit": "49f5baf",
+  "actual_source_plan": "PASS",
+  "actual_start_epoch": 1791057036.7848368,
+  "actual_start_utc": "2026-10-03T19:50:36.784837+00:00",
+  "registered_maximum_minutes": 12,
+  "expected_check_utc": "2026-10-03T20:03:00Z",
+  "latest_utc": "2026-10-03T20:02:36.784837+00:00",
+  "retained_complete_seeds": [
+    4701,
+    4702
+  ],
+  "remaining_fixed_seed": 4703,
+  "implementation_repair_used": 1,
+  "old_failed_job": "S_0305_1003T192052Z",
+  "old_failed_actual_minutes": 12.004492016633352,
+  "prior_diagnostic_actual_minutes": 28.468983765443166,
+  "prior_total_actual_minutes": 138.54606659412383,
+  "next_ADV_fixed_requested_cap_minutes": 49,
+  "original_joint_source_protocol_unchanged": true,
+  "recipe_unchanged": true,
+  "OWN_read_counts_unchanged": true,
+  "manual_initial_sync_repeated": false,
+  "routine_guarded_autosync": "PASS",
+  "threads": 8,
+  "ram_gib": 23,
+  "gpu": false
+}

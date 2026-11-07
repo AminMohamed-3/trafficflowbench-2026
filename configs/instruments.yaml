@@ -1,0 +1,185 @@
+schema_version: 1
+status: FROZEN
+metric_truth: released source float64
+date_folds:
+  path: configs/date_folds.csv
+  sha256: 920c6fc35db24ba5f188ac428231de4f0d11bbe4034ad3651524b6365183982f
+  n_folds: 5
+  group_unit: whole UTC calendar day
+  assignment: five chronological blocks; fit excludes held block
+I-S-OPT:
+  start: '2030-06-01'
+  end: '2030-12-31'
+  folds: date_folds
+  simulated_gaps: false
+I-S-ADV:
+  fit_start: '2030-06-01'
+  fit_end: '2030-12-31'
+  score_start: '2031-01-01'
+  score_end: '2031-02-28'
+  gap_offsets_minutes:
+  - 5
+  - 90
+  history_offsets_minutes:
+  - -60
+  - -5
+  windows:
+    path: artifacts/lead/0109/i_s_adv_frozen_windows.csv
+    sha256: 3bb6edec7dbb003dcf6d0bf7d69935009c867ad4a51413803407104c14e94670
+  read_budget: 3
+  selection_calibrated: false
+  window_spacing_minutes: 155
+  window_repair_decision: D-0006
+I-Q-ADV:
+  fit_start: '2030-06-01'
+  fit_end: '2030-12-31'
+  score_start: '2031-01-01'
+  score_end: '2031-02-28'
+  all_candidates:
+    path: artifacts/lane_q/0106/iq_adv_windows.parquet
+    sha256: c2c438649e6b33d0125fd2fe8d3873dd1f28386c535841f6977c57bf16193691
+  frozen_subset:
+    path: artifacts/lane_q/0106/i_q_adv_frozen_windows.csv
+    sha256: 5a183133cb3018f448a31012e8d2e6de230582d1bdaca170beef58a0a8242e97
+  first_per_day_diagnostic:
+    path: artifacts/lane_q/0106/iq_adv_first_onset_per_day_subset.csv
+    sha256: 019c640e513c85be1403359312e48945947d14d4b083757ef339920a44bb4d3d
+  read_budget: 3
+  selection_calibrated: false
+I-Q-OFF:
+  fit_excludes:
+  - '2030-06-01'
+  - '2030-06-10'
+  windows: 80 official train windows
+  purpose: sanity only
+I-D-LB:
+  purpose: user-uploaded global Task 4 method probes
+  component_weight: 0.2
+selector_review: exp/0109_l05_metric/selector_review.md
+calibration_requirement: sign agreement against three board reads before instrument
+  selects
+frozen_utc: '2026-09-30T11:47:59.930205+00:00'
+approved_selector: chronological onsets with >=360 minute spacing; first-per-day diagnostic
+  only
+decision: D-0005
+amended_utc: '2026-09-30T12:12:13.193359+00:00'
+I-S-OWN:
+  decision: D-0020
+  status: FROZEN
+  calibration:
+    path: exp/0184_l_s_own_instrument/result.json
+    sha256: 3b19cbad6971a1289de6c2b5bfbb872c76c4c2dc142c7c82bfd75d28f8ea3677
+    validation_known_worse: PASS
+  manifest:
+    path: artifacts\lead\0184\manifest.json
+    sha256: 39f2f12433ab953af3ac8290e3abe122cc2c959da5df024969294dd921f65c99
+  periods:
+  - jan_feb
+  - validation
+  - private
+  targets: Released observed eligible pairs only; official histories/gaps protected;
+    original template targets excluded
+  random_fraction: 0.1
+  seed: 8853
+  block_minutes: 90
+  blocks_per_day: 1
+  constant_exclusion: All pseudo hidden cells excluded before any feature/statistic
+  read_budget_per_formulation_per_period: 3
+  metric: Lead state_score, audited released observations; not hidden evaluation labels
+  known_worse_reference: Train-stale B2 below exclusion-aware split-local B2 on validation,
+    positive paired-date CI required
+  candidate_gate: Positive paired CI on I-S-ADV and OWN validation/private before
+    S upload
+  reference_reads: 1
+  new_candidate_reads: 0
+  scope: Tasks1/3 offline only; never authorizes Task2 private scoring/diagnosis/selection
+
+I-Q-VAL:
+  decision: D-0025
+  status: FROZEN
+  split: validation
+  score_start: '2031-03-01'
+  score_end: '2031-03-31'
+  manifest:
+    path: artifacts/lead/0185/manifest.json
+    sha256: 954a5409bbbde0c96bb9cf98f06f01ec0361f5ada76f2a90b0e0a2bcfe529622
+  population_review:
+    path: exp/0185_l_q_val_instrument/result.json
+    sha256: 58a3abc6945779bdcc0f7e59fdb50239a6c248cf4334c28f7442797915df3f13
+  broad_windows: 4476
+  union_windows: 4500
+  official_like_windows: 70
+  official_like_missing_panel: D7_I10_W exact5+5 quota infeasible; no relaxation
+  selector: Frozen Q candidates, all onsets/up to20ongoing/date; official histories/gaps
+    protected; seed106
+  labels: Released observed finite speed proxy; interpolation evaluation-only sensitivity
+    on same windows
+  forecast_scope: Same-day<=T/strictly earlier dates; no future or private diagnostic
+    access
+  selection_calibrated: false
+  reference_diagnostic_reads: 1
+  new_candidate_reads: 0
+  read_budget_per_formulation: 3
+  candidate_gate: Predeclared comparison/CI and independent reproduction with actual
+    online poison; standing D0009 public-sign and calibration rules
+  scope: Task2 validation only; private generated windows/scoring/diagnosis/selection
+    forbidden
+
+I-D-CV:
+  decision: D-0033
+  status: FROZEN
+  manifest:
+    path: configs/frozen/i_d_cv/manifest.json
+    sha256: 0c19604969abf8b53ba9a0c9d54d323707f56ebdaf23126f7786227adb00c205
+  folds: 5
+  population: All10 Task4 panels x train/validation/private, own-split released counts
+    and priors
+  accessor: tfb.lane_d.frozen_cut_cv.score_frozen(problem, method, fold_path)
+  metric: Sum multiplicity-weighted held absolute residual / held count total over5folds;
+    balanced10panel mean
+  known_worse_E2:
+    E2_worse_than_NNLS_panels: 10
+    population: 10
+    public_P01_sign: E2 aggregate ODME lower than NNLS; one global agreement only
+  calibration:
+    public_sign_agreements: 1
+    required_agreements_for_selection: 3
+    selection_eligible: false
+  independent_validation_review:
+    path: exp/0208_l_cut_cv_review/result.json
+    sha256: 0b94b231c4a437a3396863f4d8492c86dc615a3b4f23e93dba1c2b2e7afe3ac9
+  scope: Released count holdout only; no hidden OD/path accuracy inferred; public
+    sign calibration required
+I-Q-OFFICIAL-HOUR:
+  decision: D-0037
+  status: FROZEN
+  manifest:
+    path: configs/frozen/i_q_official_hour.json
+    sha256: ae74ecd54d3d46f137fae322ba7a08b9564b089f638adc61aaea495a795a70a8
+  weights: Official panel-hour joint masses, balanced family/panel reduction; train
+    mix for ADV/trainCV, validation mix for VAL
+  scope: Ongoing supplement only; old populations/memberships/read budgets unchanged;
+    no private metadata
+  support: Missing positive-target cells UNIDENTIFIABLE; never renormalize
+  selection_calibrated: false
+  future_selection_gate: Paired-date CI and actual weighted three-seed delta SD; existing
+    public-sign rules
+  independent_review:
+    path: exp/0219_l_q_hour_review/result.json
+    sha256: 681fd943f3ec885ee5350eeee9588848a1a672a9f5a66a222ab757674d512659
+
+I-Q-SPLIT:
+  decision: D-0044
+  status: FROZEN_VALIDATION_ONLY
+  manifest:
+    path: configs/frozen/i_q_split/manifest.json
+    sha256: d7d6b0a22291638100e81d57e5dee3f13b29415fda083db3cb611226603b1b06
+  split: validation
+  reference_gate: Q04 current-incumbent, Q05 and last-observed persistence on the
+    same masked-only population before candidate comparison
+  read_budget_per_formulation: 3
+  paired_three_seeds: Three reads; freeze seed/recipe/aggregation before scoring,
+    noise first then one reveal
+  scope: Prospective validation selection supplement. Private confirmation held for
+    direct acting-chat authorization; original I-Q-VAL/ADV objects and budgets unchanged
+  selection_calibrated: false

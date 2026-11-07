@@ -1,0 +1,26 @@
+item,value,note
+board reads with a written forecast (board_calibration.csv),90,
+  in the pre-written band (recomputed),72%,
+  forecast and board agree in sign (abs change >= .00001),64%,rows without a forecast change counted as not agreeing
+Claude probe manifest rows,86,artifacts/claude_ref/probes/manifest.csv
+  read on the board,80,2 prepared but not uploaded
+  UTC days with at least one read,20,2026-10-01 to 2026-10-20
+  most reads on one UTC day,5,cap 5 per UTC day (RULES.md 7)
+  median reads per active day,5.0,
+reads of kind: early whole-file and ODME probes,9,"in band 78%, sign agree 44%"
+reads of kind: knockout or isolation (diagnostic),6,"in band 83%, sign agree 83%"
+reads of kind: ongoing: decode or selection-conditioned input,4,"in band 25%, sign agree 75%"
+reads of kind: ongoing: members trained on train months,10,"in band 50%, sign agree 40%"
+reads of kind: ongoing: per-date adaptation,18,"in band 61%, sign agree 33%"
+reads of kind: onset,5,"in band 40%, sign agree 20%"
+reads of kind: state and physics (target split),32,"in band 97%, sign agree 94%"
+reads of kind: state: target-month labels,6,"in band 50%, sign agree 83%"
+"GPU training: FV-INEL W.3 March, 30 members",2.6 h,Tesla T4; FVI_INFO in exp/L_fvinel/logs/fvi_verify_inst.log
+"GPU training: FV-INEL W1.0 March, 30 members",2.9 h,NVIDIA GeForce RTX 3050 Ti Laptop GPU; FVI_INFO in exp/L_fvinel/logs/w10/fvi_verify_inst.log
+"GPU training: FV-INEL LW March, 30 members",2.5 h,Tesla T4; FVI_INFO in exp/L_fvinel/logs/lw/fvi_verify_inst.log
+"GPU training: FV-INEL W.3 April, 30 members",3.0 h,NVIDIA GeForce RTX 3050 Ti Laptop GPU; FVI_INFO in exp/L_fvinel/logs/apr/fvi_apr_verify.log
+"GPU training: FV-INEL W1.0 April, 30 members",2.7 h,NVIDIA GeForce RTX 3050 Ti Laptop GPU; FVI_INFO in exp/L_fvinel/logs/apr_w10/fvi_aprw10_verify.log
+CPU rebuild of C47 from code (base of the final),about 9 h,docs/report/FINAL_PLAN_2026-10-21.md section 1; docs/report/REPRO_README.md
+CPU build entry from shipped weights (file B qualification),2570 s,docs/report/REPRO_README.md (peak 4.4 GiB)
+registry rows with an explicit GPU-hour effort,"3 rows, 31 h",lower bound; most rows give effort as S/M/L or tokens
+total GPU and CPU hours of the project,not tallied,"not logged in one place: VM time (Vast, 2 x RTX 5070, until 10-17), Kaggle weekly quota (used up 10-20), laptop RTX 3050 Ti. Recipe: sum the job logs under exp/*/logs and the Kaggle kernel run times (exp/C_backbone/KAGGLE.md)."

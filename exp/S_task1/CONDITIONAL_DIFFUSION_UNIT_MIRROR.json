@@ -1,0 +1,25 @@
+{
+  "id": "0762",
+  "utc": "2026-10-08T17:38:28.3017842Z",
+  "fresh_S_idle": true,
+  "files": {
+    "docs/reference_code/flow_krige.py": "dadb29c5a4f12b6117ca7da9c1b9e8d4db847f4f0127046dc8a1551ce5bcc455",
+    "src/tfb/metric.py": "d17385eba203fd679344f81fda89f5b5ff72c74b22d45d7aadf2eba9348bc980",
+    "docs/reference_code/phys_lwr_diag.py": "27c4bae4caa58d3fcb143ebf23613708106b501433352c27100cdcbd10a1e868",
+    "src/tfb/data.py": "76db71ceb74440b8f204d63d60f78e7547374a0522dc6273b84aafa25b64fdc6",
+    "src/tfb/lane_s/evaluate_baselines.py": "b92cfdd86ca26bba1b1d91f6f5818129d610fda5bf984a78d632ec7c0e78c042",
+    "exp/S_task1/CONDITIONAL_DIFFUSION_UNIT_PROTOCOL.md": "7f4ec43dddcb490c8d8b9514b30fd0d372fd0ce0feb7bf364c32bca7c72c0ba1",
+    "docs/reference_code/s_task1_conditional_diffusion_unit.py": "4d6026aca49c0b896adbfab64a563f70d392c3f3c2829bd1eae85d7cb47dea85",
+    "src/tfb/paths.py": "6c7e3a2294c5ebbe58a89131bae005362dd4675383712cf0f1e1e2ec841d3cde",
+    "docs/reference_code/b6v2_const.json": "6ab8ce3109bba180d2d4aece5c0a28b59b957749527650da1b688d5d65669a6c",
+    "docs/reference_code/flow_own.py": "9ccd7e536b348ba81b1299771ddea3aa32239344bb71b48d2cd91946cc90d245",
+    "docs/reference_code/b6full_imp.py": "b2fc3200a6fb3686d4d59f9512dd0840ea27858ec58dbde966a66e648a92c69e",
+    "docs/reference_code/b6v2_imp.py": "ec5813222722adc71d25249f0b68b7995aa8f1c63e799a8e11da961039154df3",
+    "docs/reference_code/tfb.py": "8f4ff3a8ff8dc74ce4bc901b1fa9aa338f9b681aa0e6b4a6cab01669bec6deaf"
+  },
+  "copied": [
+    "docs/reference_code/s_task1_conditional_diffusion_unit.py",
+    "exp/S_task1/CONDITIONAL_DIFFUSION_UNIT_PROTOCOL.md",
+    "docs/reference_code/b6v2_const.json"
+  ]
+}

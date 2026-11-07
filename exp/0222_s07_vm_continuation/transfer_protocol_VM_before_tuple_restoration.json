@@ -1,0 +1,73 @@
+{
+  "id": "0189",
+  "placement_id": "0222",
+  "host": "vm",
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "scientific_config_sha256": "89801f044b335ca5ab7cc7ba8cefdf99286c2195054e7e7c9f1137d01217658a",
+  "fixed_NN_dose": 0,
+  "seeds": [
+    4701,
+    4702,
+    4703
+  ],
+  "num_boost_round": 600,
+  "phases": [
+    "OWN1_jan_feb",
+    "OWN1_validation",
+    "OWN1_private",
+    "ADV1"
+  ],
+  "population": "Exact original214 plus each blinded own observed period; all177/sampling/weights/combined30 masses unchanged",
+  "fit_runtime": {
+    "cpu_threads": 3,
+    "ram_gib": 30,
+    "maximum_minutes_per_seed_phase": 90,
+    "runtime_only_change": "VM RAM availability; same Fortran matrix and fixed reused-bin training"
+  },
+  "OWN1": {
+    "cpu_threads": 2,
+    "ram_gib": 7,
+    "maximum_minutes": 180,
+    "reads_per_period": 1
+  },
+  "ADV1": {
+    "cpu_threads": 2,
+    "ram_gib": 7,
+    "maximum_minutes": 180,
+    "reads": 1,
+    "n_targets": 7000196
+  },
+  "source_sha256": {
+    "vm_s07_transfer_data.py": "a0c55412864aa81bdbff0ab93ff75998554ba078d72133a9616f6effc71b6cda",
+    "vm_s07_transfer_fit.py": "dacaa6cefd2e74e7d6e668c83e243ff66b8c51adf55dfa0650caac7c80cb13c6",
+    "vm_s07_stages.py": "2c975945d5b5db21426b6456ea70b1fa05763693cfa15c193368e39ad031976f",
+    "vm_s07_predict.py": "5e886a07931101742b17682a93f8e2be0224967777538c30d4d95be82735458b",
+    "vm_s07_transfer_predict.py": "1f69dd0f010dc0e2de39b1b7d2116bfc7c29ae99f399c4ac8f659e499e76f621",
+    "vm_evaluate_s07_own.py": "5a76a8228891156b3062ec1d845279033a008aad4f83e689e411daecc9d2b29d",
+    "vm_evaluate_s07_adv.py": "d84bfee317de8bcb38cca4c9268de635db5f058b67ebb0ff694165dc4608322b",
+    "observed_adaptation_delta_gate.py": "68a28cbc3bfd782edcff3332eef0fee13f438798243a25e628059cd5fe723d82"
+  },
+  "selection": "Run full fixed OWN1 AND ADV1 before interpretation regardless OPT/OWN signs; CI positive, actual3seedSD belowhalf delta, ADV>.002; then conditionalproduction/OWN2/native20-under60/independentLead/publicsign/finaluser; no dose/seed/recipe choice.",
+  "coordination": "On laptop only through tools/ledger.py and tools/msg.py; actual remote read_started markers pulled promptly",
+  "sequence": {
+    "cpu_threads": 3,
+    "ram_gib": 30,
+    "maximum_minutes": 1200,
+    "bound": "Effective max-minutes clipped at launch to remaining original0189 deadline; no budget reset",
+    "source_sha256": "4d5c80be765679539c793adf3e782148d5d3619d463d7ae113d300f3938dfe1a",
+    "dependent_phase_caps_minutes": {
+      "ADVwindows": 30,
+      "combined_controls": 60,
+      "parent_serving": 30,
+      "data_phase": 90,
+      "each_seed_fit": 90,
+      "OWN_batch": 180,
+      "ADV_batch": 180
+    }
+  },
+  "native_precision_qualification": {
+    "source_sha256": "afe29560706a47e690d842d839b2cfc762a4c03fa5f638a5a3ddeeda3c00d00e",
+    "reference_sha256": "398c33cb8fba9bb66761293434dc993933f62e7966baef94d091ba2512a4c7c5",
+    "definition": "Preregistered before any VM transfer fit or held read: exact all structure and other values, onlyleaf11decimal serialization tolerance; real ensemble bound6e-9 perlane, all10 serving proof and final1e-6 native gate retained."
+  }
+}

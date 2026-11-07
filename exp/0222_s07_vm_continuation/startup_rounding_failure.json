@@ -1,0 +1,7 @@
+{
+  "job": "S_0189_1001T204808Z",
+  "runtime_min": 0.027057445049285887,
+  "held_reads": 0,
+  "fits": 0,
+  "reason": "PowerShell bare numeric CLI argument rounded above precise registered remaining cap; use quoted floored decimal arguments."
+}

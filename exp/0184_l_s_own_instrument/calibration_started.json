@@ -1,0 +1,8 @@
+{
+  "utc": "2026-09-30T23:13:44.039653+00:00",
+  "script_sha256": "e3bc02be6f1d3eac208316f58e638f8e4f48a1477d63c0d106e8bbd6a7199aa0",
+  "manifest_sha256": "39f2f12433ab953af3ac8290e3abe122cc2c959da5df024969294dd921f65c99",
+  "reference_reads_per_period": 1,
+  "formulations": "B1/B2 reference; F3 candidate reads0",
+  "selection": false
+}

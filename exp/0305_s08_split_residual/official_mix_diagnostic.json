@@ -1,0 +1,119 @@
+{
+  "id": "0305",
+  "phase": "official_mix",
+  "job": "S_0305_1003T174446Z",
+  "actual_state": "done",
+  "actual_exit": 0,
+  "actual_start_epoch": 1791049495.4149091,
+  "actual_end_epoch": 1791050058.9208128,
+  "peak_process_group_rss_gib": 1.074371337890625,
+  "budget_result_binding": "PASS",
+  "protocol_model_result_bindings": "PASS",
+  "unchanged_forecasts_panel_periods": 20,
+  "weights_labels_used": false,
+  "fits": 0,
+  "OWN_reads": {
+    "validation": 2,
+    "private": 2
+  },
+  "reports": {
+    "validation": {
+      "parent_S_state": 0.9342788191954641,
+      "candidate_S_state": 0.9373505243716952,
+      "delta_S_state": 0.003071705176231121,
+      "ci95": [
+        0.0027273077862162293,
+        0.00336310786138872
+      ],
+      "member_deltas": [
+        0.0025258792661349005,
+        0.0021560824410340462,
+        0.0023829420357707187
+      ],
+      "gate": {
+        "delta_S_state": 0.003071705176231121,
+        "ci95": [
+          0.0027273077862162293,
+          0.00336310786138872
+        ],
+        "seed_delta_sd": 0.00018647878315550286,
+        "positive": true
+      },
+      "points": {
+        "parent": 0.9342788191954641,
+        "candidate": 0.9373505243716952,
+        "4701": 0.936804698461599,
+        "4702": 0.9364349016364981,
+        "4703": 0.9366617612312348
+      },
+      "n_dates": 31,
+      "bootstrap_samples": 1000,
+      "period": "validation",
+      "instrument": "I-S-OWN official regime/block mix diagnostic",
+      "reference": "Original F4fit214; unchanged S08 equal3/dose1",
+      "fits": 0,
+      "original_joint_OWN_reads": 1,
+      "additional_joint_diagnostic_reads": 1,
+      "total_joint_OWN_reads": 2,
+      "n_targets": 1118289,
+      "original_raw_read_not_replaced": true,
+      "physics": "UNKNOWN",
+      "verdict": "PASS",
+      "official_template_target_gap_fraction": 0.018751941254734342,
+      "official_template_targets": 3451376,
+      "official_template_gap_targets": 64720
+    },
+    "private": {
+      "parent_S_state": 0.9337165380928903,
+      "candidate_S_state": 0.9372474613728301,
+      "delta_S_state": 0.003530923279939757,
+      "ci95": [
+        0.0031326186986301158,
+        0.0038651422464241357
+      ],
+      "member_deltas": [
+        0.002723304665980697,
+        0.0026758454059470083,
+        0.003157511154854409
+      ],
+      "gate": {
+        "delta_S_state": 0.003530923279939757,
+        "ci95": [
+          0.0031326186986301158,
+          0.0038651422464241357
+        ],
+        "seed_delta_sd": 0.00026545230268779275,
+        "positive": true
+      },
+      "points": {
+        "parent": 0.9337165380928903,
+        "candidate": 0.9372474613728301,
+        "4701": 0.936439842758871,
+        "4702": 0.9363923834988374,
+        "4703": 0.9368740492477448
+      },
+      "n_dates": 30,
+      "bootstrap_samples": 1000,
+      "period": "private",
+      "instrument": "I-S-OWN official regime/block mix diagnostic",
+      "reference": "Original F4fit214; unchanged S08 equal3/dose1",
+      "fits": 0,
+      "original_joint_OWN_reads": 1,
+      "additional_joint_diagnostic_reads": 1,
+      "total_joint_OWN_reads": 2,
+      "n_targets": 1090848,
+      "original_raw_read_not_replaced": true,
+      "physics": "UNKNOWN",
+      "verdict": "PASS",
+      "official_template_target_gap_fraction": 0.019408303264595656,
+      "official_template_targets": 3284419,
+      "official_template_gap_targets": 63745
+    }
+  },
+  "verdict": "PASS",
+  "actual_launcher_minutes": 9.391765062014262,
+  "driver_minutes": 9.385479712486267,
+  "diagnostic_actual_minutes": 9.391765062014262,
+  "diagnostic_remaining_minutes": 80.60823493798574,
+  "total_actual_launcher_minutes": 119.46884789069493
+}

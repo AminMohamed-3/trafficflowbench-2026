@@ -1,0 +1,20 @@
+{
+  "id": "0189",
+  "placement_id": "0222",
+  "utc": "2026-10-01T20:47:13.220233+00:00",
+  "failed_job": "S_0189_1001T194438Z",
+  "failed_runtime_min": 51.96541287899017,
+  "failed_pair_runtime_min": 38.62842328463303,
+  "first_pair_remaining_minutes": 51.37157671536697,
+  "sequence_remaining_minutes": 1148.0345871210097,
+  "original_deadline": "2026-10-02T17:34:00+00:00",
+  "source_sha256": {
+    "vm_s07_transfer_fit.py": "84d5889ed8a18174e2a72722d1001b0fb8fedd082795e1d5288ca2ad1072050e",
+    "vm_s07_numeric_runtime.py": "4192159b621677ced0f9fcb6e154e22032e3c4758b98a390d53bc1ced8b3ca05",
+    "vm_s07_transfer_sequence.py": "4dc0287354dd47e4b2751f4d34a453f816979f496215fa205ae375347e0c935e"
+  },
+  "OWN_reads": 0,
+  "ADV_reads": 0,
+  "board_reads": 0,
+  "definition": "Original immutable S07 runtime passes CATEGORICAL tuple, effectively numeric fields in LightGBM4.6; preserve that actual recipe. Failed adapter list pair has real categorical splits and is retained unscored; F4 parent correctly retains list categories unchanged. No gate/seed/dose/population change; no OWN/ADV read."
+}

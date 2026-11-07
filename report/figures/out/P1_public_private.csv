@@ -1,0 +1,92 @@
+file,date,kind,forecast,public,private,gap
+0120_u1_canonical,2026-09-30 13:17,early whole-file and ODME probes,0.827227,0.83664,0.81725,0.01939
+0133_u2_onset_zero,2026-09-30 13:49,knockout or isolation (diagnostic),0.712881071,0.72388,0.72415,-0.00027
+0134_u3_ongoing_zero,2026-09-30 14:12,knockout or isolation (diagnostic),0.717760221,0.72731,0.70689,0.02042
+0145_u4_q03_only,2026-09-30 15:54,onset,0.849320869,0.84875,0.8385,0.01025
+0146_u5_b2_only,2026-09-30 16:16,early whole-file and ODME probes,0.838428095,0.83562,0.81617,0.01945
+0159_p01_e2_maxent,2026-10-01 00:03,early whole-file and ODME probes,0.85075,0.81851,0.8085,0.01001
+0164_q04_ongoing_only,2026-10-01 00:07,early whole-file and ODME probes,0.859970677,0.85925,0.84999,0.00926
+0193_f4_state_only,2026-10-01 09:00,early whole-file and ODME probes,0.866859581,0.87732,0.86848,0.00884
+c01_physics_kernel_w33,2026-10-01 12:44,state and physics (target split),0.86943,0.87176,0.86848,0.00328
+c02_queue_cnn_ongoing,2026-10-01 18:27,ongoing: members trained on train months,0.8848,0.86747,0.86138,0.00609
+0214_p02_dimensionless_weighted_recovery,2026-10-02 00:03,early whole-file and ODME probes,0.87532,0.86453,0.85537,0.00916
+0229_p03_scaled_nnls_readiness,2026-10-02 00:10,early whole-file and ODME probes,0.88132,0.85923,0.85012,0.00911
+c03_queue_cnn_adapt_ongoing,2026-10-02 00:10,ongoing: per-date adaptation,0.8812,0.88225,0.87242,0.00983
+0204_q05_ctm_ongoing_only,2026-10-02 00:15,early whole-file and ODME probes,0.879895891,0.87669,0.87031,0.00638
+c05_queue_cnn_onset_adapt_on_c03,2026-10-03 12:51,onset,0.8845,0.87128,0.87772,-0.00644
+0309_p04_scale093_c03,2026-10-03 13:28,early whole-file and ODME probes,0.873808,0.87489,0.86498,0.00991
+0322_p05_fixedmass_rho1_c03,2026-10-03 15:15,,,0.878,0.86826,0.00974
+c07_state_flow0358_on_c03,2026-10-03 22:21,state and physics (target split),0.88295,0.88312,0.87325,0.00987
+c08_state_speed0360_on_c03,2026-10-03 22:24,state and physics (target split),0.88305,0.88325,0.87341,0.00984
+c09_state_spd_flow_phys3_on_c03,2026-10-04 00:04,state and physics (target split),0.8858,0.88571,0.87592,0.00979
+c10_state_spd_hedge_flow_phys3_on_c03,2026-10-04 00:07,state and physics (target split),0.8863,0.88668,0.8769,0.00978
+c11_state_stack_s2stage_on_c03,2026-10-04 00:15,state and physics (target split),0.88748,0.88745,0.87767,0.00978
+c12_state_c11_b6blp_on_c03,2026-10-04 10:57,state and physics (target split),0.88785,0.88793,0.87786,0.01007
+c13_state_c12_polish_on_c03,2026-10-04 12:15,state and physics (target split),0.88811,0.8881,0.87805,0.01005
+c14_state_c13_lsa_s3big,2026-10-05 07:08,state and physics (target split),0.8896,0.8894,0.87939,0.01001
+c15_k6_s08_phys4_gap_selcond_on_c03,2026-10-05 07:11,state and physics (target split),0.8906,0.88942,0.87921,0.01021
+c16_k6_q0436_onset_on_c15,2026-10-05 07:17,onset,0.8913,0.88942,0.88635,0.00307
+c17_k6_s0447_state_on_c15,2026-10-05 11:32,state and physics (target split),0.8896,0.8896,0.8794,0.0102
+c18_onset4_p1_on_c12,2026-10-05 11:35,onset,0.8879,0.88168,0.88126,0.00042
+c19_ong2_sccnnA_on_c17,2026-10-06 00:34,ongoing: decode or selection-conditioned input,0.8917,0.89411,0.88889,0.00522
+c20_phys5_stepF_on_c17,2026-10-06 00:38,state and physics (target split),0.8899,0.8899,0.8797,0.0102
+c21_x1_c17_nogap,2026-10-06 00:41,knockout or isolation (diagnostic),0.8892,0.88948,0.87914,0.01034
+c22_x2_c17_nosc,2026-10-06 00:44,knockout or isolation (diagnostic),0.8887,0.88999,0.88018,0.00981
+c23_ong3_K2_on_c17,2026-10-06 00:50,ongoing: decode or selection-conditioned input,0.8947,0.89254,0.88835,0.00419
+c24_ong4_k2bc_on_c19,2026-10-07 00:05,ongoing: decode or selection-conditioned input,0.8949,0.89271,0.88846,0.00425
+c25_ong5_tfmA_on_c19,2026-10-07 00:10,ongoing: members trained on train months,0.895,0.89389,0.88934,0.00455
+c26_final_A_build,2026-10-07 20:59,state and physics (target split),0.89441,0.8944,0.89627,-0.00187
+b0708_p2B_on_c26,2026-10-08 11:24,ongoing: decode or selection-conditioned input,0.89462,0.89442,0.89566,-0.00124
+c27_bb_tinye8_drop20_on_c26,2026-10-08 21:57,ongoing: members trained on train months,0.895,0.8945,0.89642,-0.00192
+c29_noad75_ong_on_c28,2026-10-09 10:07,ongoing: per-date adaptation,0.8947,0.89452,0.8966,-0.00208
+c30_s2l63r600_on_c29,2026-10-09 17:53,state and physics (target split),0.89456,0.89457,0.89665,-0.00208
+c31_e16s01_on_c30,2026-10-09 18:17,ongoing: members trained on train months,0.8952,0.89537,0.89518,0.00019
+c32_e16s01G_on_c31,2026-10-09 19:20,ongoing: members trained on train months,0.8952,0.89468,0.8949,-0.00022
+c33_e16s5_on_c31,2026-10-09 21:01,ongoing: members trained on train months,0.8963,0.89556,0.89511,0.00045
+c34_s2n3r600_on_c33,2026-10-10 00:05,state and physics (target split),0.89561,0.89561,0.89518,0.00043
+c35_mh5_on_c34,2026-10-10 02:34,ongoing: per-date adaptation,0.89577,0.89631,0.89588,0.00043
+c36_coldxsd_on_c35,2026-10-10 03:15,ongoing: per-date adaptation,0.898,0.89667,0.89595,0.00072
+c37_s0631_on_c36,2026-10-10 04:22,state and physics (target split),0.89674,0.89664,0.89587,0.00077
+c36_s08l63r2400_on_c36,2026-10-10 18:03,state and physics (target split),0.89691,0.89692,0.89612,0.0008
+c_w35_on_c38,2026-10-11 00:08,ongoing: members trained on train months,0.89697,0.89607,0.89664,-0.00057
+c_tinye24_on_c38,2026-10-11 00:12,ongoing: members trained on train months,0.89695,0.89637,0.89544,0.00093
+c36_s08l127r2400_on_c36,2026-10-11 00:47,state and physics (target split),0.89697,0.89698,0.89624,0.00074
+c36_s08l255r2400_on_c36,2026-10-11 06:02,state and physics (target split),0.89702,0.89703,0.89628,0.00075
+c36_s08l127r4800_on_c36,2026-10-11 12:47,state and physics (target split),0.89707,0.89703,0.89629,0.00074
+c_xsd5s_on_c43,2026-10-12 00:05,ongoing: per-date adaptation,0.89725,0.89681,0.89599,0.00082
+c_b6l12k_on_c43,2026-10-12 01:43,state and physics (target split),0.89745,0.89744,0.89671,0.00073
+c_poolhi_on_c44,2026-10-12 19:05,ongoing: per-date adaptation,0.89744,0.89741,0.89843,-0.00102
+c_f33_sizestack_mar_on_c44,2026-10-13 00:03,ongoing: per-date adaptation,0.89804,0.89666,0.89671,-5e-05
+c_b6l24k_on_c44,2026-10-13 03:16,state and physics (target split),0.89782,0.89776,0.89697,0.00079
+c_gap2_on_c47,2026-10-13 14:15,state and physics (target split),0.898,0.89813,0.89744,0.00069
+c_w2gncfdq_on_c48,2026-10-13 16:26,state and physics (target split),0.89823,0.89809,0.89745,0.00064
+c_gap2w_on_c47,2026-10-13 18:04,state and physics (target split),0.89813,0.89813,0.89748,0.00065
+c_llabp1_on_c50,2026-10-14 01:01,ongoing: per-date adaptation,0.89833,0.89798,0.89775,0.00023
+c_llabp1r3_on_c50,2026-10-15 14:09,ongoing: per-date adaptation,0.89823,0.89774,0.89738,0.00036
+c_onsclk_s1u_on_c50,2026-10-15 20:57,onset,0.89825,0.89114,0.89467,-0.00353
+c_lmicro2_on_c50,2026-10-15 22:35,state and physics (target split),0.89823,0.89816,0.89753,0.00063
+c_tinyvm_on_c54,2026-10-15 22:46,ongoing: members trained on train months,0.89816,0.8985,0.89765,0.00085
+c_a2spd_on_c55,2026-10-16 07:41,ongoing: per-date adaptation,0.89852,0.8983,0.89838,-8e-05
+c_a3xsd_on_c55,2026-10-16 07:46,ongoing: per-date adaptation,0.89845,0.89907,0.89694,0.00213
+c_linfF_on_c57,2026-10-16 10:29,ongoing: members trained on train months,0.8993,0.89624,0.89887,-0.00263
+c_tinyad_on_c57,2026-10-16 12:08,ongoing: per-date adaptation,0.8993,0.89956,0.89727,0.00229
+c_n47Afix_on_c59,2026-10-16 18:14,ongoing: per-date adaptation,0.89966,0.89847,0.89862,-0.00015
+c_n2swa_on_c59,2026-10-17 00:04,ongoing: per-date adaptation,0.89966,0.89856,0.89707,0.00149
+c_coldaux2_on_c59,2026-10-17 00:11,ongoing: per-date adaptation,0.89966,0.89833,0.89762,0.00071
+c_warmsd_on_c59,2026-10-17 00:39,ongoing: per-date adaptation,0.89965,0.89915,0.8962,0.00295
+c_b6s2_on_c59,2026-10-17 03:34,state and physics (target split),0.89962,0.89964,0.89738,0.00226
+c_gapw_on_c64,2026-10-17 18:03,state and physics (target split),0.89971,0.89976,0.89749,0.00227
+c_bundle18_s2b_s7b,2026-10-18 00:04,state and physics (target split),0.8999,0.89984,0.89756,0.00228
+c_b1ko_on_c64,2026-10-18 00:08,knockout or isolation (diagnostic),0.5508,0.54994,0.54704,0.0029
+c_bundle18_s2b,2026-10-18 00:22,knockout or isolation (diagnostic),0.8998,0.89979,0.89751,0.00228
+c_gap_on_c66,2026-10-18 11:34,state and physics (target split),0.89993,0.89996,0.89759,0.00237
+c_fvft_mar_on_c69,2026-10-18 18:04,state: target-month labels,0.89999,0.90037,0.89759,0.00278
+c_gap3_aprfv_on_c70,2026-10-19 00:05,state and physics (target split),0.90041,0.90044,0.89812,0.00232
+c_fv2_on_b19,2026-10-19 00:14,state: target-month labels,0.90051,0.90046,0.89812,0.00234
+c_onltrust_on_fv2b19,2026-10-19 00:46,ongoing: per-date adaptation,0.90048,0.90008,0.89828,0.0018
+c_fvinel_on_b19,2026-10-19 04:51,state: target-month labels,0.90049,0.90071,0.89812,0.00259
+c_gapfv_on_c74p,2026-10-19 19:05,state and physics (target split),0.90073,0.90073,0.89844,0.00229
+c_qaccum_on_c75,2026-10-20 00:05,ongoing: per-date adaptation,0.9008,0.90079,0.89874,0.00205
+c_fvinel_w10_on_c75,2026-10-20 00:10,state: target-month labels,0.90075,0.90075,0.89844,0.00231
+c_fvinel_lw_on_c76,2026-10-20 02:16,state: target-month labels,0.90081,0.90078,0.89874,0.00204
+c_isinel_s7c_mar_on_c77,2026-10-20 05:09,state: target-month labels,0.90083,0.90088,0.89874,0.00214

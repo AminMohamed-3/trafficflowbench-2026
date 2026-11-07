@@ -1,0 +1,4 @@
+repo_path,sha256,bytes,old_repo_path,piece
+21_tinyvm/bb_member_vm.parquet,c02523d2e9464f9e4bda710ad889375c21c44dab1df9ee30d52b41d4cb7ddf6a,184316,artifacts/claude_ref/c_bb/vm_tiny_swap/bb_member_vm.parquet,21
+21_tinyvm/model.pt,43da1ffcb0871b16190b9251e7d3a14a018e78283d7d05402323d2ac252c6dc7,113790491,artifacts/claude_ref/c_bb/vm_tinyserve_e8s0/out/runs/convnext_tiny_up2_e8_s0_serve0228_vm/model.pt,21
+21_tinyvm/config.json,68eb56d2a79b6a8467415f89162901a6e4f8a2fc62c8e2fcc09a2e63394ae17a,955,artifacts/claude_ref/c_bb/vm_tinyserve_e8s0/out/runs/convnext_tiny_up2_e8_s0_serve0228_vm/config.json,21

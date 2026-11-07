@@ -1,0 +1,36 @@
+{
+  "id": "0305",
+  "utc": "2026-10-03T19:49:43.786052+00:00",
+  "verdict": "PASS",
+  "scope": "Single runtime resume, original source/harness/recipe unchanged",
+  "synthetic_count": 5,
+  "synthetic_checks": [
+    "exact failed guard and elapsed charge",
+    "original attempt fields preserved after reconciliation",
+    "only fixed qualified two seeds skipped",
+    "partial bytes preserved by move to done",
+    "complete stages/models/started read cannot be quarantined"
+  ],
+  "local_source_plan": "PASS",
+  "actual_VM_source_plan": "PENDING guarded run",
+  "runtime_protocol_sha256": "7aa6a4715d3323dbc949816de8e786da378c0c06df8c5bd9551231737931446c",
+  "original_joint_protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+  "original_harness_sha256": "0de20d5de69c28aa057d0a791178da26d1a5af5b097a5ef9842bd258e5133fa2",
+  "scientific_source_sha256": "d63a8080bc0ae3522c78381c6dcd2419f4da18ac85a2c356d28dff0332ffd53e",
+  "new_fits": 0,
+  "new_reads": 0,
+  "retained_completed_seeds": [
+    4701,
+    4702
+  ],
+  "missing_seed": 4703,
+  "failed_charge": 12.004492016633352,
+  "diagnostic_used": 28.468983765443166,
+  "diagnostic_remaining": 61.53101623455684,
+  "caps": {
+    "quick_opt_repair": 12,
+    "adv": 49
+  },
+  "full_ADV_model_unchanged": true,
+  "seed_dose_pool_choice_from_held": false
+}

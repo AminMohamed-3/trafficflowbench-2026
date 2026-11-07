@@ -1,0 +1,20 @@
+{
+ "id": "aminmohamed333345/tfb-kg-todr-serve",
+ "title": "tfb-kg-todr-serve",
+ "code_file": "tfb-kg-todr-serve.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": true,
+ "dataset_sources": [
+  "aminmohamed333345/tfb-dwadapt-base-weights"
+ ],
+ "competition_sources": [
+  "2026-ieee-big-data-traffic-flow-bench"
+ ],
+ "kernel_sources": [],
+ "model_sources": [],
+ "machine_shape": "NvidiaTeslaT4"
+}

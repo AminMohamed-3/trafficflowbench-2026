@@ -1,0 +1,37 @@
+{
+  "id": "0184",
+  "owner": "L",
+  "decision": "D-0020",
+  "seed": 8853,
+  "random_fraction": 0.1,
+  "block_minutes": 90,
+  "blocks_per_day": 1,
+  "ram_cap_mib": 768,
+  "budget_minutes": 90,
+  "panels": [
+    "D7_I10_E",
+    "D7_I10_W",
+    "D7_I210_E",
+    "D7_I210_W",
+    "D7_I405_N",
+    "D7_I405_S",
+    "D12_I5_N",
+    "D12_I5_S",
+    "D12_I405_N",
+    "D12_I405_S"
+  ],
+  "source_sha256": {
+    "scripts/freeze_s_own.py": "e84ec16635f366bf4bff111ff08f2558637189311dc3abc796ff9fe59a50a507",
+    "src/tfb/split_constants.py": "17cdfd1aca08a2500d6ec88a4357d130c686c047ce9cc0a838effdc312b89390",
+    "src/tfb/lane_s/predict.py": "299043f28cceb8b677aa1807f74823443f17bfeb64549e275244ebd0a25e3e36",
+    "src/tfb/lane_s/reference_data.py": "bda3b01a3a324732e585acb8fac57a268e4e1d4b97380c94cf97abbd6a1046fa",
+    "src/tfb/metric.py": "d17385eba203fd679344f81fda89f5b5ff72c74b22d45d7aadf2eba9348bc980"
+  },
+  "definition": "All10 panels separately on JanFeb(train observed only), validation, private. Fixed10pct observed eligible speed/flow pairs stratified by regime, plus one uniform protected-free90min all-station block per UTC date. Official supplied histories and gaps protected against pseudo-hiding to prevent a second released source restoring labels. Original template targets never scored. Both fields hidden before every feature/constant; only originally released finite pairs are labels.",
+  "metric_labels": "Audited float32 released masked observations, accumulated in float64 Lead state_score; no organizer/hidden truth",
+  "known_worse": "Original canonical B2 with train-derived mean versus same predictor with L08 hidden-excluded split-local free_speed; validation local-minus-stale point and paired-date CI lower>0. B1 reference also scored. No threshold/source/selector selection after read.",
+  "baseline_fit_dates": "JanFeb214June-Dec; validation/private273June-Feb, matching production U5; none of the scored split hidden cells enter stale fits",
+  "read_counts": "Known-worse/reference comparison1 per period for B1/B2; F3/new candidate0, max3 per formulation/period",
+  "new_ADV_reads": 0,
+  "new_public_reads": 0
+}

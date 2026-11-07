@@ -1,0 +1,19 @@
+{
+  "models": {
+    "speed": {
+      "original_model_sha256": "88cd2e76090676a6d6703a514d4af860fb3f1d8fe77fa57e3ccac6df9d1ee45b",
+      "numeric": {
+        "numeric_leaf11_canonical_sha256": "119e742101ab4422a5b964d21077d9712854ad4388312130e808809272653111",
+        "numeric_leaf11_trees_sha256": "5ad461be9053b088fa3cb20f2dfea723504b4e4af077e353885b85a68134b69c"
+      }
+    },
+    "flow_lane": {
+      "original_model_sha256": "2f2cb775202088ceb8b081a88dc5bfb7e85eb48a85cd8cce6f865952dd9dc155",
+      "numeric": {
+        "numeric_leaf11_canonical_sha256": "0d4303fbbb1bfaa5c854f284cd26240d95abc37c468b962d5e980813b78c77a8",
+        "numeric_leaf11_trees_sha256": "5fb2c3cb683d487709b6ac899b247b9aec67914c11a87421b92a79de46726601"
+      }
+    }
+  },
+  "scope": "Original qualified F4fit214; existing leaf11 precision; strict hash outcomes retained separately"
+}

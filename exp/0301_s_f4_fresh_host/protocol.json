@@ -1,0 +1,82 @@
+{
+  "id": "0301",
+  "lane": "S",
+  "purpose": "carried_F4_reconstruction",
+  "reference_sha256": "0b2b1fd3c0460cb9eae72b3702f570288a1c2730d80e570cb566cfe74e00f654",
+  "original_reference_sha256": "9ee2efb5961c712dabe2bf58a2229005f618c498369ec4c4c4f831f064cb7720",
+  "source_commit_before_preparation": "b4a0eed",
+  "phases": {
+    "raw": {
+      "maximum_minutes": 135,
+      "threads": 1
+    },
+    "fit": {
+      "maximum_minutes": 90,
+      "threads": 8
+    },
+    "native": {
+      "maximum_minutes": 60,
+      "threads": 2
+    }
+  },
+  "maximum_combined_active_minutes": 285,
+  "RAM_gib": 7,
+  "GPU": false,
+  "quality_reads": 0,
+  "maximum_attempts_per_phase": 2,
+  "destination": "artifacts/lane_s/0301",
+  "lane_source_sha256": {
+    "vm_run.py": "aedb1138f6bc3338f78724e0aecdec8b970550dc9d983eae760634e60af4e048",
+    "vm_f4_reconstruct.py": "feb9bbe77b5d74c7937926326f4931418970ad773cfcfda2713e5a6db7215f65",
+    "jobs.py": "41d676c601d0fee2ba44eaf046e82a4ed756a9835d26ac4574d81c63ce026bea",
+    "local_predict.py": "10771c5c0b0b6475438e242260469609433457f7c781c14528a54f359ebd9e2f",
+    "predict_lgb.py": "abe6a02d9c2eecea93e492bb51b4c4756849ce19af63f338d3d75ad62a81538c",
+    "gap_model.py": "9fc45477d91b8de2c92a348c7138275968fffa36246b918ef5c5bdf96f9cc37e",
+    "build_lgb_data.py": "d94ef0941c629d5e3481485503ad824dc146fcf8506660f91079014b5857c527",
+    "features.py": "788259ffaba52082bac546de801fd3484ff634c5c63e204e70bf13f9e86a7dbd",
+    "predict.py": "7ece448309d8824c8fc23c09907db06ffdc06028acade92807aa5756f289e57b",
+    "reference_data.py": "098a0da2169cf38f2f1fe36d02050ca2c3bb610a96bd40e0c1444d25cb369da9",
+    "evaluate_baselines.py": "b92cfdd86ca26bba1b1d91f6f5818129d610fda5bf984a78d632ec7c0e78c042",
+    "bootstrap.py": "9d2c2be6c5b4ab97ea038df3b8ea805c29cd6c32ec2548ed98a8f5647b4de484",
+    "day_stats.py": "acd4fb0c31dd12bb87d0ea357e0c641e533757a52a23fb843e9269b85d1ccef4",
+    "instruments.py": "743f13eec21d1dffacba409fd33cb9b465b03af51e91c79e64492362456676b1",
+    "asm.py": "8624038c42eaee4766bcf3b2ae0f93c7a3cc8b24ce97417c5bb75d4003c0feb2",
+    "gap_features.py": "c6fc9a7f25c24c3107166c976776406f8a7c5c0681830a26b9122fbfa6828249",
+    "lgb_runtime.py": "e685d55d72d3032f58a6b7c274d1935a269f650489db5e704b828ea66f8e7abe",
+    "bounded_predict.py": "5ef9f301a34e7e2139c19cb1048ec8a3b1069e255c179b881b13a44511490a51",
+    "own_instrument.py": "db1827b13d9acfa06d4eb8d32742ab440ba3e72fe3117b6908fce426b8ad9ae3",
+    "local_model.py": "636d63a7fcfc63250e2d86c357356c93493216d33099f1b621253027ae923b19",
+    "local_priors.py": "f31d5778e9fd8597a409a8dd44ffc20dcc11fbd4d142cc5321f8c87f1116bdc6",
+    "travel_features.py": "d461e45613f96aa435f1a8c131e58fd0bc7459185add083dae4c80270d758e8b",
+    "characteristics.py": "4ac4393ad27d617d36b9edc8d988847ccbb37669171ff0a6758906c8005399b4",
+    "self_supervision.py": "02d04fdbee4c7bc0685ca9a403cb1e19aea308c0075cd9ecd74af86375632cb4",
+    "vm_model_numeric_fingerprint.py": "afe29560706a47e690d842d839b2cfc762a4c03fa5f638a5a3ddeeda3c00d00e",
+    "vm_f4_parent.py": "af5f5c34a92b5bb69a67f4cd55d3819570347fc91a8dd8b089ced04201737c3d",
+    "build_production_travel.py": "e5863c7aea890d611d162ff137744b5be8b73185af0a53f37ffa8616ced22a3d",
+    "travel_model.py": "9bf2cc93cffae22b12e903a02adf47849cee69ff05cbe2f44de12ca7c439249a",
+    "build_gap_data.py": "b38f4682b2c9c1d7253c635ef1fc47ae5d4bb33a8511e897b4d2bc43a0ea1538",
+    "q01_training_snapshot.py": "a5f707ddd00620090d514dfd2efb28baeb3bba5c6ef500d1d49e79f7428bd958"
+  },
+  "main_source_sha256": {
+    "src/tfb/__init__.py": "069ec0d95a441ac1d56b9267d14d0b788e2822bc18a4cc15218d1072791147af",
+    "src/tfb/paths.py": "6c7e3a2294c5ebbe58a89131bae005362dd4675383712cf0f1e1e2ec841d3cde",
+    "src/tfb/data.py": "76db71ceb74440b8f204d63d60f78e7547374a0522dc6273b84aafa25b64fdc6",
+    "src/tfb/metric.py": "d17385eba203fd679344f81fda89f5b5ff72c74b22d45d7aadf2eba9348bc980",
+    "src/tfb/split_constants.py": "17cdfd1aca08a2500d6ec88a4357d130c686c047ce9cc0a838effdc312b89390",
+    "src/tfb/lane_q/windows.py": "69816719a5868233ba81cedcbed6982426c132e6ac98248f63162235680e4420",
+    "configs/date_folds.csv": "920c6fc35db24ba5f188ac428231de4f0d11bbe4034ad3651524b6365183982f"
+  },
+  "entrypoint": "src/tfb/lane_s/vm_run.py tfb.lane_s.vm_f4_reconstruct",
+  "readiness": [
+    "C VM ready notice in S inbox",
+    "one manual sync from primary lane-s",
+    "C actual release/cache gate",
+    "Lead actual guarded launcher fixture"
+  ],
+  "scientific_recipe": "Original incumbent0193 F4/parent0182/full273/full177/full600/seed4701/list categorical; no S07 or NN",
+  "budget": "New raw reconstruction allocation only; charge all actual launcher attempts, including startup and failures. Before any retry reconcile retained VM job status against driver active_budget; never use an unresolved RUNNING attempt or reset a charge. One repair within original phase cap.",
+  "acceptance": "Original raw/window/prior/geometry numeric fingerprints, numeric model leaf11 fingerprints and all20 actual native output hashes. New metadata/source/runtime records; independent Lead and measured laptop parity before integration.",
+  "estimated_raw_numeric_bytes": 5068902765,
+  "estimated_native_array_bytes": 53968280,
+  "minimum_free_disk_headroom_bytes": 10737418240
+}

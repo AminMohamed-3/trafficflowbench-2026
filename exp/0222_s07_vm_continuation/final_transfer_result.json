@@ -1,0 +1,266 @@
+{
+  "id": "0189",
+  "placement_id": "0222",
+  "lane": "S",
+  "formulation": "Fixed full S07 numeric fields,177features,600rounds,equal3 on F4",
+  "utc": "2026-10-02T13:55:45.777360+00:00",
+  "instrument": "I-S-OWN1/ADV1",
+  "incumbent_id": "F4_parent214_v2, carried F4 recipe",
+  "verdict": "NULL",
+  "meaning": "All three OWN periods pass state CI/noise. Original ADV joint gain is positive but below the frozen .002 floor, so original combined gate forbids conditional production. Exact formulation only; broader self-supervision family remains open.",
+  "host": "vm",
+  "job": "S_0189_1001T214752Z",
+  "commit": "55e2ef317495f7d8e69ca2a7e31847a4b30fccb2",
+  "OWN": {
+    "jan_feb": {
+      "comparison_vs_parent": {
+        "incumbent_S_state": 0.8817813779356358,
+        "candidate_S_state": 0.8942626683249827,
+        "delta_S_state": 0.012481290389346866,
+        "ci95": [
+          0.010356207864653685,
+          0.014709811443943854
+        ],
+        "n_dates": 59,
+        "bootstrap_samples": 1000,
+        "seed": 4701,
+        "incumbent_ci95": [
+          0.878211115943243,
+          0.887971668239941
+        ],
+        "incumbent_half_width": 0.0048802761483490165,
+        "verdict": "PASS"
+      },
+      "paired_delta_noise": {
+        "authority": "D0026",
+        "verdict": "PASS",
+        "seed_deltas": [
+          0.011976999585291415,
+          0.012090915620405873,
+          0.012492253008738352
+        ],
+        "actual3seed_delta_SD": 0.0002706580415405888,
+        "half_delta": 0.006240645194673433,
+        "paired_ci95": [
+          0.010356207864653685,
+          0.014709811443943854
+        ],
+        "paired_CI_positive": true,
+        "seed_SD_below_half_delta": true,
+        "score_level_CI_used_as_floor": false,
+        "conditioning": "Fixed carried F4; no seed or incumbent selection"
+      },
+      "n_targets": 2103231,
+      "read": 1
+    },
+    "validation": {
+      "comparison_vs_parent": {
+        "incumbent_S_state": 0.8820793461266152,
+        "candidate_S_state": 0.894093784980394,
+        "delta_S_state": 0.012014438853778842,
+        "ci95": [
+          0.008993013509447922,
+          0.015712585296059216
+        ],
+        "n_dates": 31,
+        "bootstrap_samples": 1000,
+        "seed": 4701,
+        "incumbent_ci95": [
+          0.8729665463001017,
+          0.8931512891181965
+        ],
+        "incumbent_half_width": 0.010092371409047396,
+        "verdict": "PASS"
+      },
+      "paired_delta_noise": {
+        "authority": "D0026",
+        "verdict": "PASS",
+        "seed_deltas": [
+          0.011860013324102692,
+          0.011729530982352632,
+          0.011423985766723321
+        ],
+        "actual3seed_delta_SD": 0.00022379438148173772,
+        "half_delta": 0.006007219426889421,
+        "paired_ci95": [
+          0.008993013509447922,
+          0.015712585296059216
+        ],
+        "paired_CI_positive": true,
+        "seed_SD_below_half_delta": true,
+        "score_level_CI_used_as_floor": false,
+        "conditioning": "Fixed carried F4; no seed or incumbent selection"
+      },
+      "n_targets": 1118289,
+      "read": 1
+    },
+    "private": {
+      "comparison_vs_parent": {
+        "incumbent_S_state": 0.8876133875316186,
+        "candidate_S_state": 0.8999667393955747,
+        "delta_S_state": 0.012353351863956141,
+        "ci95": [
+          0.008984518356269108,
+          0.016111602127208573
+        ],
+        "n_dates": 30,
+        "bootstrap_samples": 1000,
+        "seed": 4701,
+        "incumbent_ci95": [
+          0.8829531856712068,
+          0.8966553744737801
+        ],
+        "incumbent_half_width": 0.006851094401286617,
+        "verdict": "PASS"
+      },
+      "paired_delta_noise": {
+        "authority": "D0026",
+        "verdict": "PASS",
+        "seed_deltas": [
+          0.012147449932900845,
+          0.011875755121751208,
+          0.012173271749051806
+        ],
+        "actual3seed_delta_SD": 0.00016482363307249238,
+        "half_delta": 0.006176675931978071,
+        "paired_ci95": [
+          0.008984518356269108,
+          0.016111602127208573
+        ],
+        "paired_CI_positive": true,
+        "seed_SD_below_half_delta": true,
+        "score_level_CI_used_as_floor": false,
+        "conditioning": "Fixed carried F4; no seed or incumbent selection"
+      },
+      "n_targets": 1090848,
+      "read": 1
+    }
+  },
+  "ADV": {
+    "n_dates": 59,
+    "bootstrap_samples": 1000,
+    "seed": 4701,
+    "incumbent": {
+      "S_state": 0.9352760489763708,
+      "S_physics": 0.7284068463424239,
+      "J_S": 0.4366076440930934
+    },
+    "candidate": {
+      "S_state": 0.9355143299347836,
+      "S_physics": 0.7306229746725855,
+      "J_S": 0.4370234616780621
+    },
+    "delta_J_S": 0.0004158175849687251,
+    "ci95": [
+      0.00034423383394960316,
+      0.0004893402193624399
+    ],
+    "paired_ci_half_width": 7.255319270641836e-05,
+    "incumbent_J_S_ci95": [
+      0.43566853666884126,
+      0.4375795241965886
+    ],
+    "incumbent_instrument_ci_half_width": 0.0009554937638736605,
+    "paired_delta_noise": {
+      "authority": "D0026",
+      "verdict": "PASS",
+      "seed_deltas": [
+        9.570832346189606e-05,
+        0.00013258206867594602,
+        7.121289531586417e-05
+      ],
+      "actual3seed_delta_SD": 3.089194750812328e-05,
+      "half_delta": 0.00020790879248436256,
+      "paired_ci95": [
+        0.00034423383394960316,
+        0.0004893402193624399
+      ],
+      "paired_CI_positive": true,
+      "seed_SD_below_half_delta": true,
+      "score_level_CI_used_as_floor": false,
+      "conditioning": "Fixed carried F4; no seed or incumbent selection"
+    },
+    "n_targets": 7000196,
+    "registered_marginal_floor": 0.002,
+    "numeric_ADV_gate": "NULL_OR_FAIL"
+  },
+  "historic_OPT": {
+    "delta_J_S": 0.0003090266636413541,
+    "ci95": [
+      0.0001626095127907651,
+      0.0004394252246650548
+    ],
+    "delta_S_state": 0.0001734238002062,
+    "n_dates": 43,
+    "n_targets": 4876316,
+    "fit_dates": 171,
+    "source": "artifacts/lane_s/0215/OPT/result.json",
+    "source_sha256": "531fa8c8454138794e5f196dfc31c022513520390c405785ca4e2ed6569fec69",
+    "limitation": "Screening only,171 fitted dates versus214 for transfer; no matched transfer ratio claimed."
+  },
+  "reads": {
+    "OWN": {
+      "jan_feb": 1,
+      "validation": 1,
+      "private": 1
+    },
+    "ADV": 1,
+    "BOARD": 0
+  },
+  "integrity": {
+    "verdict": "PASS_INTEGRITY_NULL_OR_FAIL",
+    "completed_pair_checks": 12,
+    "original_completed_model_pairs": 5,
+    "all_available_original_text_matches": true,
+    "new_pairs_without_old_reference": 7,
+    "fixed_equal3_predictions": "EXACT",
+    "local_check_sha256": "4756d63aee6aec6ed12ed3418a948e429f83fdfb382b9aa13828d4adaa7f93c7",
+    "source_contract_sha256": "57727b59083d999987cf47765b3358337f0d1887481e18f1c9ef0a14d0e17f71",
+    "controller_sha256": "344f50c87f648790d962681155ba652d8948659505d7c7d9dab9a7f9f076eb5f",
+    "gate_sha256": "1c8257686f624060a4f2f0a1e44a61d86554b209dc40b3869393319bb09c6b8a",
+    "receipt_sha256": "8acaa4f987096d71798568d797426b6a1c4b74b947fdc6bf3ff451c76b672395",
+    "recovery_log_sha256": "9861c342c352315a004b433c0b84efe59c789ae92e2a7b743822e35626c4fa19"
+  },
+  "accounting": {
+    "id": "0189",
+    "placement_id": "0222",
+    "host": "vm",
+    "job": "S_0189_1001T214752Z",
+    "utc": "2026-10-02T13:36:27.285757+00:00",
+    "verdict": "PASS",
+    "job_status": {
+      "state": "done",
+      "exit": 0,
+      "start": 1790891280.4547243,
+      "end": 1790926530.010536,
+      "hours": 9.7915,
+      "peak_rss_gib_max_child": 5.18,
+      "peak_process_group_rss_gib": 5.384716033935547
+    },
+    "prior_failed_charged_minutes": 54.690062789122265,
+    "actual_active_minutes": 587.4925968607266,
+    "cumulative_original_active_minutes": 642.1826596498489,
+    "maximum_minutes": 1200,
+    "original_deadline": "2026-10-02T17:34:00+00:00",
+    "source_contract_sha256": "57727b59083d999987cf47765b3358337f0d1887481e18f1c9ef0a14d0e17f71",
+    "whole_result_sha256": "344f50c87f648790d962681155ba652d8948659505d7c7d9dab9a7f9f076eb5f",
+    "transfer_gate_sha256": "1c8257686f624060a4f2f0a1e44a61d86554b209dc40b3869393319bb09c6b8a",
+    "OWN_result_sha256": "9ce686abb9109b3658dfd73b297a2a8eb86c35c03758f4d327a8c71a3ba77db1",
+    "ADV_result_sha256": "f4d8c9b7459ec5b1e50851b2240575dacb688da902bde1dcaf9eee3e69d1fed2",
+    "OWN_read_marker_sha256": "9dc7ad6551b05739d97633a7eecd2d3b1ab909b5f3435b994c84542b105418a9",
+    "ADV_read_marker_sha256": "636bb8f76692b6d022059b23938ea020af357748ef2e09bb1f78f294d4ee5aa5",
+    "live_owned_group": [],
+    "meaning": "Actual launcher runtime plus all previously failed active prefixes charged to the original cap and deadline; no living owned processes and no new held read."
+  },
+  "conditional_production": "NOT_STARTED_OR_ALLOWED_BY_ORIGINAL_GATE",
+  "candidate_upload_qualified": false,
+  "OWN_hidden_physics_measured": false,
+  "new_held_reads_for_local_verification": 0,
+  "post_primary_diagnostic_reads": {
+    "id": "0215",
+    "ADV_added": 1,
+    "original0189_ADV_reads_total": 2,
+    "OWN_added": 0,
+    "BOARD_added": 0
+  }
+}

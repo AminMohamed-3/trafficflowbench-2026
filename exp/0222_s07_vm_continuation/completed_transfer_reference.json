@@ -1,0 +1,287 @@
+{
+  "OWN1_jan_feb|4701": {
+    "metadata_sha256": "a7594aef09574a1885add9f85100c5e1f57ca55267d6a754feea4aa23b98b0b0",
+    "population": {
+      "D7_I10_E": {
+        "original": 378280,
+        "observed": 76543
+      },
+      "D7_I10_W": {
+        "original": 200920,
+        "observed": 42890
+      },
+      "D7_I210_E": {
+        "original": 594062,
+        "observed": 117698
+      },
+      "D7_I210_W": {
+        "original": 253938,
+        "observed": 52908
+      },
+      "D7_I405_N": {
+        "original": 1288409,
+        "observed": 226512
+      },
+      "D7_I405_S": {
+        "original": 315288,
+        "observed": 68134
+      },
+      "D12_I5_N": {
+        "original": 738568,
+        "observed": 132019
+      },
+      "D12_I5_S": {
+        "original": 329328,
+        "observed": 56490
+      },
+      "D12_I405_N": {
+        "original": 199277,
+        "observed": 36727
+      },
+      "D12_I405_S": {
+        "original": 90565,
+        "observed": 20604
+      }
+    },
+    "models": {
+      "speed": {
+        "canonical_threads_sha256": "008b6efcc1643164de524c62a05dd807a8becdaafcbe39f3551e8d60cfc03beb",
+        "tree_values_sha256": "91da8ae7e242f778929c4a6473482d514fae50dd6133d4f2a6ae859eb46b6394",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "canonical_threads_sha256": "7af6504cc11fdf6eb31e7d0144d1baa303440d1f9816502c43c045cc65e2c041",
+        "tree_values_sha256": "33e20795e863fa62f54c98cf72384d08cb5578ba845d9af807c9e389b77aaae2",
+        "rounds": 600
+      }
+    }
+  },
+  "OWN1_jan_feb|4702": {
+    "metadata_sha256": "b9c937316f5350425ff8d6c4c154c4818db40220685dc0276b891ca89c0c2549",
+    "population": {
+      "D7_I10_E": {
+        "original": 378280,
+        "observed": 76543
+      },
+      "D7_I10_W": {
+        "original": 200920,
+        "observed": 42890
+      },
+      "D7_I210_E": {
+        "original": 594062,
+        "observed": 117698
+      },
+      "D7_I210_W": {
+        "original": 253938,
+        "observed": 52908
+      },
+      "D7_I405_N": {
+        "original": 1288409,
+        "observed": 226512
+      },
+      "D7_I405_S": {
+        "original": 315288,
+        "observed": 68134
+      },
+      "D12_I5_N": {
+        "original": 738568,
+        "observed": 132019
+      },
+      "D12_I5_S": {
+        "original": 329328,
+        "observed": 56490
+      },
+      "D12_I405_N": {
+        "original": 199277,
+        "observed": 36727
+      },
+      "D12_I405_S": {
+        "original": 90565,
+        "observed": 20604
+      }
+    },
+    "models": {
+      "speed": {
+        "canonical_threads_sha256": "6f78078d4c2d3eff652118167aa1085d7be6e5f0599d831b1d4aa4b03c673985",
+        "tree_values_sha256": "2b4d9ae4232a5f32ff7e918cf582823bd6c32919145c5fe04694ef7c9a0265ad",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "canonical_threads_sha256": "3d51a80b881fd91f5bdd562a57fe17d3a9dc286a96b04af004ce3a0ac8ee1147",
+        "tree_values_sha256": "50b0c18fa0983d777e6c3a58a5cf769cb794259c3e5a3539b8a9a94f431c2719",
+        "rounds": 600
+      }
+    }
+  },
+  "OWN1_jan_feb|4703": {
+    "metadata_sha256": "24b6bd03b0bb5993879bbc726f15bd0399da0b8bcd2b2d4ca27bc37726586464",
+    "population": {
+      "D7_I10_E": {
+        "original": 378280,
+        "observed": 76543
+      },
+      "D7_I10_W": {
+        "original": 200920,
+        "observed": 42890
+      },
+      "D7_I210_E": {
+        "original": 594062,
+        "observed": 117698
+      },
+      "D7_I210_W": {
+        "original": 253938,
+        "observed": 52908
+      },
+      "D7_I405_N": {
+        "original": 1288409,
+        "observed": 226512
+      },
+      "D7_I405_S": {
+        "original": 315288,
+        "observed": 68134
+      },
+      "D12_I5_N": {
+        "original": 738568,
+        "observed": 132019
+      },
+      "D12_I5_S": {
+        "original": 329328,
+        "observed": 56490
+      },
+      "D12_I405_N": {
+        "original": 199277,
+        "observed": 36727
+      },
+      "D12_I405_S": {
+        "original": 90565,
+        "observed": 20604
+      }
+    },
+    "models": {
+      "speed": {
+        "canonical_threads_sha256": "754566f9307d7e4e01411a3928ea7247fc6e12e7be9908c090dcd45687e96f81",
+        "tree_values_sha256": "a3670a4d4ebf0e629104eed80d0dfa5c0afdbb0ae805964f815799ea55d10704",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "canonical_threads_sha256": "2314237274bce5f06d044db8a03f636f366d48db37e4da2488aa6a2eaeb21da0",
+        "tree_values_sha256": "88e217d736d61f97b31d4c0b8276c930e4ebda3e5ed77736c289c0fdf07d282a",
+        "rounds": 600
+      }
+    }
+  },
+  "OWN1_validation|4701": {
+    "metadata_sha256": "dd1e562a5751951d8bc1371afbb3a55e2a7c01c85c1385be72ae796f97fc2187",
+    "population": {
+      "D7_I10_E": {
+        "original": 378280,
+        "observed": 32860
+      },
+      "D7_I10_W": {
+        "original": 200920,
+        "observed": 18895
+      },
+      "D7_I210_E": {
+        "original": 594062,
+        "observed": 45132
+      },
+      "D7_I210_W": {
+        "original": 253938,
+        "observed": 23168
+      },
+      "D7_I405_N": {
+        "original": 1288409,
+        "observed": 103759
+      },
+      "D7_I405_S": {
+        "original": 315288,
+        "observed": 36380
+      },
+      "D12_I5_N": {
+        "original": 738568,
+        "observed": 54072
+      },
+      "D12_I5_S": {
+        "original": 329328,
+        "observed": 28717
+      },
+      "D12_I405_N": {
+        "original": 199277,
+        "observed": 20539
+      },
+      "D12_I405_S": {
+        "original": 90565,
+        "observed": 8972
+      }
+    },
+    "models": {
+      "speed": {
+        "canonical_threads_sha256": "3125a5fe3d4e6e0da0c7eb9bf43c3c08914781b8421c9468ec5ad87be9ad89da",
+        "tree_values_sha256": "d916e20c514ca9cdbbf25aa6519093a8de3ea2c275d688d359441825d7326ba4",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "canonical_threads_sha256": "36d2614fdc5b78b4c77e1b6ce1560ad65a3c8f3533adb4d9b85c60e72b003067",
+        "tree_values_sha256": "f8222337565b1448b08fdec93a2b9b5e4609df451fcf2a5fe5d0c6b499921491",
+        "rounds": 600
+      }
+    }
+  },
+  "OWN1_validation|4702": {
+    "metadata_sha256": "e759737e1cabfbcda3e3bb3f7fe2d95a4e7cf3bbe7beb40c84dc59b7e3b79dc1",
+    "population": {
+      "D7_I10_E": {
+        "original": 378280,
+        "observed": 32860
+      },
+      "D7_I10_W": {
+        "original": 200920,
+        "observed": 18895
+      },
+      "D7_I210_E": {
+        "original": 594062,
+        "observed": 45132
+      },
+      "D7_I210_W": {
+        "original": 253938,
+        "observed": 23168
+      },
+      "D7_I405_N": {
+        "original": 1288409,
+        "observed": 103759
+      },
+      "D7_I405_S": {
+        "original": 315288,
+        "observed": 36380
+      },
+      "D12_I5_N": {
+        "original": 738568,
+        "observed": 54072
+      },
+      "D12_I5_S": {
+        "original": 329328,
+        "observed": 28717
+      },
+      "D12_I405_N": {
+        "original": 199277,
+        "observed": 20539
+      },
+      "D12_I405_S": {
+        "original": 90565,
+        "observed": 8972
+      }
+    },
+    "models": {
+      "speed": {
+        "canonical_threads_sha256": "dc10f639005f3e46971533cf116742a32006c33070417e44fc7336a18ca233bd",
+        "tree_values_sha256": "cce48c2e64cfc01fbda96b969449452f283835d0ddf317b82d163e67d34192c9",
+        "rounds": 600
+      },
+      "flow_lane": {
+        "canonical_threads_sha256": "4062ed0a6f490027d258b09fee6210f5716a1bce50d9321f4c8405b4a65b3a73",
+        "tree_values_sha256": "27e4c20dfaf8fe92bb89792fbcfd222060ae365ee4e1127d48960f689b0ab608",
+        "rounds": 600
+      }
+    }
+  }
+}

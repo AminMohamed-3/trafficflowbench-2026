@@ -1,0 +1,48 @@
+{
+  "id": "0305",
+  "authority": "Original one implementation/runtime repair; existing shared90 reserve and total600; no held read before repair",
+  "caps": {
+    "quick_opt_repair": 12,
+    "adv": 49
+  },
+  "failed_job": "S_0305_1003T192052Z",
+  "repair_count": 1,
+  "quality_reads_at_failure": 0,
+  "completed_seeds": [
+    4701,
+    4702
+  ],
+  "original_joint_protocol_sha256": "615ca3f5e0a46e071ba0c5b80dc674b5ccfd309cee91772f102a847dbff88d36",
+  "original_joint_source_sha256": "0de20d5de69c28aa057d0a791178da26d1a5af5b097a5ef9842bd258e5133fa2",
+  "scientific_source_sha256": "d63a8080bc0ae3522c78381c6dcd2419f4da18ac85a2c356d28dff0332ffd53e",
+  "failure_collection_manifest_sha256": "f68d89a2f0f3ccef548121bb48cfe52796e13a3993a993b20cd222e753221e4c",
+  "failed_status_sha256": "541d39024ad81c6d689008da46ba8351977bc1a659a9748106baf48d97f62872",
+  "before_budget_sha256": "128f05ebe01f1b706dbbcd47bac20baaa525d8f41827281fe3baf7a01132f62d",
+  "failed_actual_minutes": 12.004492016633352,
+  "carry_file_sha256": {
+    "quick_opt/cache_bindings.json": "31cf03f3dd150ba78743c37899604acbc98b501415abcd2fda83da4cfdea51b8",
+    "quick_opt/seed4701/flow_lane.txt": "b56b640558299f8d605de9e9a611187c6ec8c7e2b2eb8516a4604d029846ac5d",
+    "quick_opt/seed4701/metadata.json": "37f42dcbfbd15bb8e8dc36d170affdebde243a94cd04582d92d7da0c269fc2a7",
+    "quick_opt/seed4701/speed.txt": "58a98189861c99f2d6900d0868cb6c89f472fcc5da138df25f63d0fa8ea80c2f",
+    "quick_opt/seed4702/flow_lane.txt": "3964ac70a42a39702417fefcc1a95ad2732994a69f7cb3c5db5d7e2db41b1f2f",
+    "quick_opt/seed4702/metadata.json": "c1aa7d77cbec17ae1afc9ba3aa280515c5ca84f04cb74d79aa5680764e6a4f8c",
+    "quick_opt/seed4702/speed.txt": "09cafbcff48951e597ac9db53ca8481e8f0789f790c7eca3835ff33a48b7b909",
+    "quick_opt/data_seed4701/complete.json": "11b2c37d3f64d7012411e29e78f4ba47fd735359b3f8ab86f3f679689dcbf04b",
+    "quick_opt/data_seed4702/complete.json": "29012f0e6c71d2720a1e5c16f1ffbd2ac2b73cadb71ae1984bd1844edc6fe715"
+  },
+  "source_sha256": {
+    "src/tfb/lane_s/s08_runtime_resume.py": "3888e9218ebac47ea096c5531084aeb909db0032cce027acdeb6d8b6dd2bd21f",
+    "src/tfb/lane_s/check_s08_runtime_resume.py": "0d52baf548473c2943a6c87bac00f398b2977165c266cf44e9e9695e1acd6c92"
+  },
+  "phase_cap_rule": "Separate stopped-job repair within original reserve; no extension of old active job; ADV49 chosen before any quality read from worst-case remaining charge",
+  "skip_rule": "Only exact complete4701/4702 data and model recipes/600/native feature list may be skipped",
+  "partial_rule": "Move uncompleted4703 data to done with byte hashes before exact regeneration; never remove/overwrite valid complete stages",
+  "new_OPT_joint_reads": 1,
+  "new_ADV_joint_reads": 1,
+  "new_OWN_reads": 0,
+  "gate": "All fixed3 members and original per-arm scorer/matched population, positive J_S CI, actual3seed noise, original noise-floor and no point state-loss remain binding; failed quick gate stops continuation",
+  "changes_to_original_harness": false,
+  "changes_to_recipe": false,
+  "diagnostic_prior_used_minutes": 28.468983765443166,
+  "diagnostic_minimum_after_max_repair_minutes": 49.53101623455684
+}

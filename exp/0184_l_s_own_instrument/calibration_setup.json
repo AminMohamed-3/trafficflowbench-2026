@@ -1,0 +1,14 @@
+{
+  "phase": "known-worse reference check",
+  "ram_cap_mib": 1024,
+  "threads": 2,
+  "affinity": [
+    12,
+    13
+  ],
+  "budget_minutes": 90,
+  "script_sha256": "e3bc02be6f1d3eac208316f58e638f8e4f48a1477d63c0d106e8bbd6a7199aa0",
+  "config_sha256": "b726b49282baf8eba566cfdb6ff6ccdaa30bbd8c8dd5892708e3f21f40f7cf3c",
+  "no_selector_change": true,
+  "candidate_selection": false
+}

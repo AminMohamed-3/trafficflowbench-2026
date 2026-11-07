@@ -1,0 +1,32 @@
+{
+  "screen_output_helper_protocol_SHA_exact": true,
+  "available_source_SHA_exact": [
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation.json",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I10_E.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I10_W.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I210_E.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I210_W.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D7_I405_S.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I5_N.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I5_S.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/0419_own_inputs/validation_D12_I405_S.npz"
+  ],
+  "VM_only_sources_not_pulled": [
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I10_E.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I10_W.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I210_E.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I210_W.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D7_I405_S.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I5_N.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I5_S.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I405_N.npz",
+    "/workspace/work/main/artifacts/lane_s/S_task1/current_validation_D12_I405_S.npz"
+  ],
+  "local_macro_counts_exact": true,
+  "base": 0.914858563752263,
+  "ceiling": 0.0,
+  "first_local_check_stopped_at_absent_VM_only_source": true
+}

@@ -1,0 +1,16 @@
+{
+  "id": "0182",
+  "instrument": "Lead frozen I-S-OWN 0184",
+  "manifest_sha256": "39f2f12433ab953af3ac8290e3abe122cc2c959da5df024969294dd921f65c99",
+  "calibration_sha256": "3b19cbad6971a1289de6c2b5bfbb872c76c4c2dc142c7c82bfd75d28f8ea3677",
+  "first_batch": "Fixed600-round all10 fit214 June-Dec model on JanFeb, validation and private separately, each one read; no held scalar/selector or feature selection",
+  "candidate": "Corrected strongest177-field F4 with hidden-excluded L08 scored-period levels, against actual B1",
+  "transfer_ablation": "Same fixed F4 boosters/geometry/observations, four level inputs swapped to old F3 train-derived fit214 summaries; diagnostic only, never selected",
+  "inputs": "Released observations only; frozen hidden v/q plus occupancy/pct blanked before all constants, bases and177 fields; no scored originaltemplate targets or protected cells",
+  "gap_context": "Official known conditions retained; frozen uniform artificial blocks condition0 unknown, no T+30 onset assumption; after edge uses next observed day when block ends23:55, missing if unavailable",
+  "metric": "Lead state_score float64 from original float32 observations, paired whole-UTC-date1000 seed4701, regime then panel then family macro; no pseudo-physics claim",
+  "read_budget": {"jan_feb":3,"validation":3,"private":3},
+  "candidate_reads_used": {"jan_feb":0,"validation":0,"private":0},
+  "deployment_confirmation": "After positive initial OWN and fixed ADV, refit all273 train with same config and correct local inputs. Confirm production273 on same frozen OWN validation/private as a second predeclared read before upload; no fitting or adaptation on OWN labels.",
+  "acceptance": "Positive paired confidence interval vsB1 on ADV and OWN validation/private, independent Lead reproduction and public sign. No threshold or dose tuning on OWN."
+}

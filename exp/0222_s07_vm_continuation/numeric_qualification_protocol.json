@@ -1,0 +1,12 @@
+{
+  "id": "0222",
+  "host": "vm",
+  "source_sha256": "c929d04e03e01155e2989730605860d89aa347644617b36073d50279b629180a",
+  "maximum_minutes": 2,
+  "cpu_threads": 1,
+  "ram_gib": 1,
+  "numeric_reference_sha256": "22959911fe8a5744e69b54029a976759894583589557762cba8ce03ced3e50eb",
+  "no_extra_fit": true,
+  "OWN_reads": 0,
+  "ADV_reads": 0
+}

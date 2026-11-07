@@ -1,0 +1,156 @@
+{
+  "id": "0305",
+  "lane": "S",
+  "status": "OWN_STATE_PASS_JOINT_DIAGNOSTICS_PENDING",
+  "authority": "D0059 + D0061",
+  "instrument": "I-S-OWN validation then unchanged private confirmation",
+  "reference": "original qualified F4fit214",
+  "validation_completion": {
+    "id": "0305",
+    "phase": "validation",
+    "job": "S_0305_1003T145821Z",
+    "actual_state": "done",
+    "actual_exit": 0,
+    "actual_start_epoch": 1791039510.4831634,
+    "actual_end_epoch": 1791041382.8054857,
+    "actual_launcher_minutes": 31.20537203947703,
+    "driver_minutes": 31.20045782069986,
+    "peak_process_group_rss_gib": 1.0585899353027344,
+    "budget_result_binding": "PASS",
+    "protocol_model_data_bindings": "PASS",
+    "collected_models": {
+      "4701": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "1469a780307d4b038ee0aab386c2d68c183236889bd1a259b29a2368e7241f53"
+      },
+      "4702": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "b4814f16219b8aa3dfc4baa41e54be916b2f75e443ed72db725dae382ea0a012"
+      },
+      "4703": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "fe230ced3214713bfe9554d3bbfb4b70a51eed3d2abd26cab7b28ee651fe611b"
+      }
+    },
+    "OWN_reads": 1,
+    "n_targets": 1118289,
+    "panel_rows_files": 10,
+    "comparison": {
+      "incumbent_S_state": 0.8820793461266152,
+      "candidate_S_state": 0.8953448160941748,
+      "delta_S_state": 0.013265469967559618,
+      "ci95": [
+        0.01054021683144155,
+        0.016969918340714398
+      ],
+      "n_dates": 31,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent_ci95": [
+        0.8729665463001017,
+        0.8931512891181965
+      ],
+      "incumbent_half_width": 0.010092371409047396,
+      "verdict": "PASS"
+    },
+    "gate": {
+      "delta_S_state": 0.013265469967559618,
+      "ci95": [
+        0.01054021683144155,
+        0.016969918340714398
+      ],
+      "seed_delta_sd": 0.001005966849215456,
+      "positive": true
+    },
+    "verdict": "PASS",
+    "total_actual_launcher_minutes": 79.95546567837397,
+    "total_driver_minutes": 79.93975582849235,
+    "startup_charges_preserved_externally": true
+  },
+  "private_completion": {
+    "id": "0305",
+    "phase": "private",
+    "job": "S_0305_1003T163814Z",
+    "actual_state": "done",
+    "actual_exit": 0,
+    "actual_start_epoch": 1791045504.637356,
+    "actual_end_epoch": 1791047311.934385,
+    "actual_launcher_minutes": 30.1216171503067,
+    "driver_minutes": 30.113877030989777,
+    "peak_process_group_rss_gib": 1.0692253112792969,
+    "budget_result_binding": "PASS",
+    "protocol_model_data_bindings": "PASS",
+    "collected_models": {
+      "4701": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "2ae657767e0a38ad187ebfadd9c30e5c0a869b64eba6b72ca504c82e350b7aaf"
+      },
+      "4702": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "8b3ae8acee1a537ac1a7b78ada6049329a04d9d5e509f1e999b9967ad28cd83c"
+      },
+      "4703": {
+        "models": 2,
+        "rounds_each": 600,
+        "bindings": "PASS",
+        "data_completion_sha256": "d8b4d9ffb199b3b7de5c5531a9faee5d514beec48050fab7c11bb746f5878a2b"
+      }
+    },
+    "OWN_reads": 1,
+    "n_targets": 1090848,
+    "panel_rows_files": 10,
+    "comparison": {
+      "incumbent_S_state": 0.8876133875316186,
+      "candidate_S_state": 0.9024100191397633,
+      "delta_S_state": 0.014796631608144706,
+      "ci95": [
+        0.011023516826232604,
+        0.018744506533134902
+      ],
+      "n_dates": 30,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent_ci95": [
+        0.8829531856712068,
+        0.8966553744737801
+      ],
+      "incumbent_half_width": 0.006851094401286617,
+      "verdict": "PASS"
+    },
+    "gate": {
+      "delta_S_state": 0.014796631608144706,
+      "ci95": [
+        0.011023516826232604,
+        0.018744506533134902
+      ],
+      "seed_delta_sd": 0.003971651400400902,
+      "positive": true
+    },
+    "verdict": "PASS",
+    "total_actual_launcher_minutes": 110.07708282868067,
+    "total_driver_minutes": 110.05363285948212,
+    "startup_charges_preserved_externally": true
+  },
+  "OWN_reads": {
+    "validation": 1,
+    "private": 1
+  },
+  "ADV_reads": 0,
+  "limitations": [
+    "OWN state gates PASS; official-mix diagnostic is pending",
+    "OPT/ADV state+physics J_S diagnostic not implemented; required before candidate request under D0061",
+    "Physics remains unknown on OWN; no candidate or incumbent promotion",
+    "Old S07/NN NULLs and budgets unchanged; Task4 fallback superseded by D0061"
+  ],
+  "next": "Fixed OPT/ADV state+physics J_S plus official-mix OWN diagnostic; physics-aware state fallback with D"
+}

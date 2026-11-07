@@ -1,0 +1,66 @@
+id: '0154'
+lane: S
+formulation: S03 F3 physically resolved travel-time characteristics
+reference: 0111 B2 OPT-frozen, Lead PASS0126, unpromoted
+instrument: I-S-OPT
+date_folds_sha256: 920c6fc35db24ba5f188ac428231de4f0d11bbe4034ad3651524b6365183982f
+fit_start: '2030-06-01'
+fit_end: '2030-12-31'
+folds:
+- 0
+- 1
+- 2
+- 3
+- 4
+screen_panels:
+- D12_I5_N
+- D7_I405_N
+asm_parameters:
+  sigma_km: 0.05
+  tau_min: 5.0
+  v_c_kmh: 70.0
+  delta_v_kmh: 20.0
+features: 129 F2 fields unchanged plus48 resolved +/-5/10/15min characteristic observation
+  fields
+rows: all gap, all nonfree or near-congested; uniform10percent otherfree withweight10;
+  gap weight1
+sampling_seed: 4701
+target_speed: speed residual over B2
+target_flow: per-lane flow residual over B1
+parameters:
+  objective: regression
+  metric: l2
+  learning_rate: 0.05
+  num_leaves: 31
+  min_data_in_leaf: 200
+  max_bin: 127
+  feature_fraction: 1.0
+  bagging_fraction: 1.0
+  bagging_freq: 0
+  seed: 4701
+  deterministic: true
+  force_col_wise: true
+  num_threads: 8
+  histogram_pool_size: 256
+  verbosity: -1
+num_boost_round: 600
+early_stopping_rounds: 50
+bootstrap_samples: 1000
+bootstrap_seed: 4701
+adv_reads: 0
+adv_read_budget: 1
+ram_limit_gib: 7
+threads: 8
+lightgbm_runtime:
+  version: 4.6.0
+  path: .venv_tfb/Lib/site-packages
+  wheel_sha256: 37089ee95664b6550a7189d887dbf098e3eadab03537e411f52c63c121e3ba4b
+  manifest_sha256: 8d2069c41a7bb2b06274a09e17d225e6373e0fbb7f27b61105f0a62de0e7d055
+  reason: D0012 shared4.6 migration complete; exact fixture equality PASS0144
+  dll_sha256: d2a41567e16b127b2486b417cc25813588fe015a0481e06fe8ce662ebed1ec61
+training_windows_path: artifacts/lane_s/0142/windows/windows.csv
+training_windows_sha256: cdcd7cb04027f120e2407caa1bf79871925bd7bc5569569c302781517afb589a
+prior_reference: 0131 F0 gap-free all10/fold0; REF only
+drop_features: []
+parent_reference: 0142 F2 full10/5fold J.435931955, gap-shaped exact same rows and
+  targets

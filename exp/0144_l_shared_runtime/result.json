@@ -1,0 +1,125 @@
+{
+  "id": "0144",
+  "status": "COMPLETE",
+  "version": "4.6.0",
+  "package": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\.venv_tfb\\Lib\\site-packages\\lightgbm\\__init__.py",
+  "runtime_file_parity": {
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\basic.py": "3bb8761547ec0c5064947ab95eee3785c36defc294494d459c0db58a51a722f2",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\callback.py": "958d3aed952cd6d2001f2b1fec4b06a7bdf85b19ac78f407bc955b70c8892775",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\compat.py": "74422408002c29854e29f9746199fc44097800883f95c9952ee412b9e07ca232",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\dask.py": "f57d9810b566701fff81b792b1c953a642e7b7b8974d78fbd826c733ac505521",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\engine.py": "56782ac9b113182273a22b4732158a9a90eaf423c4c3808d32d8f52abf70881f",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\libpath.py": "8bbb0e24ec927715d44e6af5da412a62149a2c2eaff5a3150b56c9e636a1b363",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\plotting.py": "7aced1bd07f60b9dc2b5be64212dc81b1d3ed05bc0430852316a06f946ae03b9",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\sklearn.py": "0d1e4ed615464d26dcfa09549f4081573e6c12431a929e64b8e17684e31c2987",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\__init__.py": "402e67c2be1e884cea21453f97e32bdfaf10d013e989a3788573342479d55baa",
+    ".venv_tfb\\Lib\\site-packages\\lightgbm\\bin\\lib_lightgbm.dll": "d2a41567e16b127b2486b417cc25813588fe015a0481e06fe8ce662ebed1ec61"
+  },
+  "requirements_sha256": "4a2582bfa27c510ea20bc7de1f53761e8eccc1c1973573823f21019aba9d988f",
+  "installed_utc": "2026-09-30T14:59:42.125647+00:00",
+  "competition_reads": 0,
+  "verdict": "PASS",
+  "builder_fixtures": {
+    "S": {
+      "path": "artifacts/lane_s/0142/shared_runtime_fixture.json",
+      "sha256": "cb351ce53ebf50127078e1ca21f1cfb7bcb708b9ee805ce3759dd10e13989866",
+      "fixture": {
+        "verdict": "PASS",
+        "version": "4.6.0",
+        "runtime_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\.venv_tfb\\Lib\\site-packages\\lightgbm\\__init__.py",
+        "dll_sha256": "d2a41567e16b127b2486b417cc25813588fe015a0481e06fe8ce662ebed1ec61",
+        "prediction_sha256": "c8aa40ad69b85da06bc53d7205972a04e2c132513c1f8badecc65e106dc51e76",
+        "seed_max_difference": 0.0,
+        "shared_migration": true,
+        "phase": "OPT fit dates only, runtime fixture; no metric/ADV read"
+      }
+    },
+    "Q": {
+      "path": "artifacts/lane_q/0121/shared_runtime_fixture.json",
+      "sha256": "2f1fb0479a24e9e59aa4a598b58610a1fd7ef4b3b637f1865f00b88963f5d53d",
+      "fixture": {
+        "result": "PASS",
+        "learned_model_sha256": "334552c014269e00ec61495047db451c8ccb5ab4172207496b4737ad849ebbb2",
+        "checks": [
+          {
+            "panel": "D7_I10_E",
+            "rows": 8760,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 678,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "9a8b51cb2cf72f91fda5911b56538621586f6304e4a1a9dfede8e9c835ae03c0"
+          },
+          {
+            "panel": "D7_I10_W",
+            "rows": 6420,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 303,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "2280102c90e8bbbc98c9dac9863147ebe82ca81d8018e20279b90e971414f64f"
+          },
+          {
+            "panel": "D7_I210_E",
+            "rows": 17820,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 448,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "41d3ccd1a629039fca24f3ed7c078539ce3a6a034ec5a91c70d6d0e8a0a30a9e"
+          },
+          {
+            "panel": "D7_I210_W",
+            "rows": 4860,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 1538,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "219deb8155091316926ec618917254b653b892d91eec710f6b46b4b341894119"
+          },
+          {
+            "panel": "D7_I405_N",
+            "rows": 21120,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 1539,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "c2fe5f83aa1ad7f584382e2b791eb520c1a006d0d6c5b37b822b28e33cbe480b"
+          },
+          {
+            "panel": "D7_I405_S",
+            "rows": 6540,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 875,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "a30b584158237f4e0882074e97c11c713b46fa2a0191cfac043ba90b8d714435"
+          },
+          {
+            "panel": "D12_I5_N",
+            "rows": 15480,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 875,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "04d9e76d0db3bb4f2d85bc53defdb767950e916ca8299f5cf21ab72d8b6bd067"
+          },
+          {
+            "panel": "D12_I5_S",
+            "rows": 6000,
+            "binary_predictions": "bit-identical to original four-thread Q03 output",
+            "probability_rows": 1097,
+            "probabilities_2_vs_3": "bit-identical",
+            "original_sha256": "339295846598c97eaf81660bc3d29f1d479da3bd0963fd9bc9d82d744555a765"
+          }
+        ],
+        "probability_rows": 7353,
+        "validation_rows": 87000,
+        "instrument": "existing original prediction fixture; no ADV labels",
+        "runtime_version": "4.6.0",
+        "runtime_path": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\.venv_tfb\\Lib\\site-packages\\lightgbm\\__init__.py",
+        "shared_runtime": true,
+        "new_ADV_reads": 0,
+        "default_threads": "TFB_Q_THREADS if set, otherwise original4",
+        "API": "OnsetModel.load(directory, num_threads=2); cfg={onset_model:model}",
+        "runtime_min": 0.24973333333327902,
+        "peak_memory_mib": 265.9765625
+      }
+    }
+  },
+  "completed_utc": "2026-09-30T15:10:29.854541+00:00",
+  "overrides_removed_by_builders": true
+}

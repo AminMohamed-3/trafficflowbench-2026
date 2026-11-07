@@ -1,0 +1,308 @@
+{
+ "train": {
+  "D12_I405_N": {
+   "npy": "8a4cf2d646f2d38d528b0180",
+   "shape": [
+    273,
+    288,
+    89
+   ],
+   "target_rows": 1793853,
+   "dates": 273
+  },
+  "D12_I405_S": {
+   "npy": "881007153589b1e788b30366",
+   "shape": [
+    273,
+    288,
+    44
+   ],
+   "target_rows": 947966,
+   "dates": 273
+  },
+  "D12_I5_N": {
+   "npy": "88df5ace86b9e1f5ba3b04cd",
+   "shape": [
+    273,
+    288,
+    258
+   ],
+   "target_rows": 5148741,
+   "dates": 273
+  },
+  "D12_I5_S": {
+   "npy": "1c6b8280098780f2d66fed1b",
+   "shape": [
+    273,
+    288,
+    100
+   ],
+   "target_rows": 2049512,
+   "dates": 273
+  },
+  "D7_I10_E": {
+   "npy": "719152c9edd989f41e33d6ff",
+   "shape": [
+    273,
+    288,
+    146
+   ],
+   "target_rows": 2815381,
+   "dates": 273
+  },
+  "D7_I10_W": {
+   "npy": "74f1d88141bc07e94ef339b5",
+   "shape": [
+    273,
+    288,
+    107
+   ],
+   "target_rows": 2156021,
+   "dates": 273
+  },
+  "D7_I210_E": {
+   "npy": "ec53ed28ae5692d2b1ff3733",
+   "shape": [
+    273,
+    288,
+    297
+   ],
+   "target_rows": 6061039,
+   "dates": 273
+  },
+  "D7_I210_W": {
+   "npy": "7eae50a58cb4c4344f041d4f",
+   "shape": [
+    273,
+    288,
+    81
+   ],
+   "target_rows": 1569035,
+   "dates": 273
+  },
+  "D7_I405_N": {
+   "npy": "5bd05c2884dc457544bb495f",
+   "shape": [
+    273,
+    288,
+    352
+   ],
+   "target_rows": 7114278,
+   "dates": 273
+  },
+  "D7_I405_S": {
+   "npy": "e0bef4ccc5c977a420321059",
+   "shape": [
+    273,
+    288,
+    109
+   ],
+   "target_rows": 2127937,
+   "dates": 273
+  }
+ },
+ "validation": {
+  "D12_I405_N": {
+   "npy": "115b4a3c50b96b79f55862e6",
+   "shape": [
+    31,
+    288,
+    89
+   ],
+   "target_rows": 203337,
+   "dates": 31
+  },
+  "D12_I405_S": {
+   "npy": "ae30845c2b35dbe0f7f56999",
+   "shape": [
+    31,
+    288,
+    44
+   ],
+   "target_rows": 93718,
+   "dates": 31
+  },
+  "D12_I5_N": {
+   "npy": "d54f4cf462552ece9f49b1f3",
+   "shape": [
+    31,
+    288,
+    258
+   ],
+   "target_rows": 588468,
+   "dates": 31
+  },
+  "D12_I5_S": {
+   "npy": "e61320dabc35863775957582",
+   "shape": [
+    31,
+    288,
+    100
+   ],
+   "target_rows": 219222,
+   "dates": 31
+  },
+  "D7_I10_E": {
+   "npy": "ef8e38cb68e9fab67fa77025",
+   "shape": [
+    31,
+    288,
+    146
+   ],
+   "target_rows": 337512,
+   "dates": 31
+  },
+  "D7_I10_W": {
+   "npy": "b1051c635906db4d1fa49283",
+   "shape": [
+    31,
+    288,
+    107
+   ],
+   "target_rows": 233060,
+   "dates": 31
+  },
+  "D7_I210_E": {
+   "npy": "0cad679dd6ee78e5be6c4e0c",
+   "shape": [
+    31,
+    288,
+    297
+   ],
+   "target_rows": 625014,
+   "dates": 31
+  },
+  "D7_I210_W": {
+   "npy": "536e17b30084c64463464567",
+   "shape": [
+    31,
+    288,
+    81
+   ],
+   "target_rows": 205973,
+   "dates": 31
+  },
+  "D7_I405_N": {
+   "npy": "4c538da298bfef2350575d9a",
+   "shape": [
+    31,
+    288,
+    352
+   ],
+   "target_rows": 673133,
+   "dates": 31
+  },
+  "D7_I405_S": {
+   "npy": "67bc53057214bd69fca2b737",
+   "shape": [
+    31,
+    288,
+    109
+   ],
+   "target_rows": 271939,
+   "dates": 31
+  }
+ },
+ "private": {
+  "D12_I405_N": {
+   "npy": "b74230d1e54d2e09908cb0de",
+   "shape": [
+    30,
+    288,
+    89
+   ],
+   "target_rows": 192164,
+   "dates": 30
+  },
+  "D12_I405_S": {
+   "npy": "782562c69963d879a1ae7542",
+   "shape": [
+    30,
+    288,
+    44
+   ],
+   "target_rows": 107416,
+   "dates": 30
+  },
+  "D12_I5_N": {
+   "npy": "2ab1c34ef2a9fdcbb421db77",
+   "shape": [
+    30,
+    288,
+    258
+   ],
+   "target_rows": 543092,
+   "dates": 30
+  },
+  "D12_I5_S": {
+   "npy": "fc87e9cae898dea54adb9ab9",
+   "shape": [
+    30,
+    288,
+    100
+   ],
+   "target_rows": 204957,
+   "dates": 30
+  },
+  "D7_I10_E": {
+   "npy": "b1b3aa41d6548c1fe9be36e8",
+   "shape": [
+    30,
+    288,
+    146
+   ],
+   "target_rows": 303294,
+   "dates": 30
+  },
+  "D7_I10_W": {
+   "npy": "910afac4a59abafb48576840",
+   "shape": [
+    30,
+    288,
+    107
+   ],
+   "target_rows": 203699,
+   "dates": 30
+  },
+  "D7_I210_E": {
+   "npy": "e827c08f9de99e3426bc7ca5",
+   "shape": [
+    30,
+    288,
+    297
+   ],
+   "target_rows": 581196,
+   "dates": 30
+  },
+  "D7_I210_W": {
+   "npy": "5ce9a89638c9c1a42ebb0585",
+   "shape": [
+    30,
+    288,
+    81
+   ],
+   "target_rows": 158901,
+   "dates": 30
+  },
+  "D7_I405_N": {
+   "npy": "79d86889a0acb7f22e9d156d",
+   "shape": [
+    30,
+    288,
+    352
+   ],
+   "target_rows": 746097,
+   "dates": 30
+  },
+  "D7_I405_S": {
+   "npy": "61c0a537fb3f906311b67738",
+   "shape": [
+    30,
+    288,
+    109
+   ],
+   "target_rows": 243603,
+   "dates": 30
+  }
+ }
+}

@@ -1,0 +1,165 @@
+{
+  "id": "0154",
+  "phase": "F3-F2 full5OPT reference",
+  "adv_read": 0,
+  "paired": {
+    "n_dates": 214,
+    "bootstrap_samples": 1000,
+    "seed": 4701,
+    "incumbent": {
+      "S_state": 0.9339963494317004,
+      "S_physics": 0.7268882190553255,
+      "J_S": 0.43593195515939387
+    },
+    "candidate": {
+      "S_state": 0.9342104975074964,
+      "S_physics": 0.7281746030583252,
+      "J_S": 0.4361998645863725
+    },
+    "delta_J_S": 0.00026790942697862974,
+    "ci95": [
+      0.00023359556134309873,
+      0.000299732900502897
+    ],
+    "paired_ci_half_width": 3.306866957989914e-05,
+    "incumbent_J_S_ci95": [
+      0.43519824819085207,
+      0.43659362386232337
+    ],
+    "incumbent_instrument_ci_half_width": 0.0006976878357356497
+  },
+  "subgroups": {
+    "gap": {
+      "group": "gap",
+      "n": 464434,
+      "n_dates": 214,
+      "samples": 1000,
+      "speed_rmse_delta": 0.014763664709810165,
+      "speed_rmse_delta_ci95": [
+        -0.016989654317213464,
+        0.042153243861444006
+      ],
+      "q_lane_rmse_delta": 0.33140736894401357,
+      "speed_relative_improvement": -0.002146374981015775,
+      "speed_relative_improvement_ci95": [
+        -0.006253313707694347,
+        0.002470373751698412
+      ],
+      "population": "pooled subgroup target cells; paired whole-UTC-date bootstrap across panels"
+    },
+    "gap_onset": {
+      "group": "gap_onset",
+      "n": 238463,
+      "n_dates": 214,
+      "samples": 1000,
+      "speed_rmse_delta": 0.055772930801352594,
+      "speed_rmse_delta_ci95": [
+        0.013551803032015442,
+        0.0963207873108348
+      ],
+      "q_lane_rmse_delta": 0.2442430348652067,
+      "speed_relative_improvement": -0.009445317517692287,
+      "speed_relative_improvement_ci95": [
+        -0.016682951480395763,
+        -0.0022472855191636443
+      ],
+      "population": "pooled subgroup target cells; paired whole-UTC-date bootstrap across panels"
+    },
+    "gap_ongoing": {
+      "group": "gap_ongoing",
+      "n": 225971,
+      "n_dates": 214,
+      "samples": 1000,
+      "speed_rmse_delta": -0.018058550129866013,
+      "speed_rmse_delta_ci95": [
+        -0.060309152420169744,
+        0.019579569100346333
+      ],
+      "q_lane_rmse_delta": 0.4153375492140299,
+      "speed_relative_improvement": 0.0023227252049338176,
+      "speed_relative_improvement_ci95": [
+        -0.0026357815285352414,
+        0.007833258238689435
+      ],
+      "population": "pooled subgroup target cells; paired whole-UTC-date bootstrap across panels"
+    },
+    "congested": {
+      "group": "congested",
+      "n": 1206412,
+      "n_dates": 214,
+      "samples": 1000,
+      "speed_rmse_delta": -0.0100882581156716,
+      "speed_rmse_delta_ci95": [
+        -0.023858346188860423,
+        0.004740651931719575
+      ],
+      "q_lane_rmse_delta": -0.10673021043530895,
+      "speed_relative_improvement": 0.001973234507575694,
+      "speed_relative_improvement_ci95": [
+        -0.0008894543064252413,
+        0.004702259887527052
+      ],
+      "population": "pooled subgroup target cells; paired whole-UTC-date bootstrap across panels"
+    },
+    "congested_known_bottleneck": {
+      "group": "congested_known_bottleneck",
+      "n": 342033,
+      "n_dates": 214,
+      "samples": 1000,
+      "speed_rmse_delta": 0.012449359950064576,
+      "speed_rmse_delta_ci95": [
+        -0.010783449230498742,
+        0.037436735639160224
+      ],
+      "q_lane_rmse_delta": -0.08452194206277142,
+      "speed_relative_improvement": -0.002165598660962109,
+      "speed_relative_improvement_ci95": [
+        -0.0065962656144925415,
+        0.0018909365412824615
+      ],
+      "population": "pooled subgroup target cells; paired whole-UTC-date bootstrap across panels"
+    },
+    "congested_elsewhere": {
+      "group": "congested_elsewhere",
+      "n": 864379,
+      "n_dates": 214,
+      "samples": 1000,
+      "speed_rmse_delta": -0.02076983264133414,
+      "speed_rmse_delta_ci95": [
+        -0.035126105990716174,
+        -0.007543455293537089
+      ],
+      "q_lane_rmse_delta": -0.1148647213312799,
+      "speed_relative_improvement": 0.004293252861846675,
+      "speed_relative_improvement_ci95": [
+        0.0015130150032302476,
+        0.007318275599617677
+      ],
+      "population": "pooled subgroup target cells; paired whole-UTC-date bootstrap across panels"
+    },
+    "free": {
+      "group": "free",
+      "n": 23144751,
+      "n_dates": 214,
+      "samples": 1000,
+      "speed_rmse_delta": -0.002780237627634463,
+      "speed_rmse_delta_ci95": [
+        -0.004432258123062005,
+        -0.0011794496167217962
+      ],
+      "q_lane_rmse_delta": -0.2528288583269074,
+      "speed_relative_improvement": 0.0016996021801324313,
+      "speed_relative_improvement_ci95": [
+        0.0007274371278859688,
+        0.0026936303457150063
+      ],
+      "population": "pooled subgroup target cells; paired whole-UTC-date bootstrap across panels"
+    }
+  },
+  "runtime_min": 2.3825500000006286,
+  "seed_sd_J_S": null,
+  "selection": "L0162 reopened firstADV preparation/read; group refits/full-model seed noise pending before freeze; no model promotion.",
+  "peak_rss_gib": 1.7073974609375,
+  "verdict": "REF",
+  "status_correction": "Old comparison-driver HOLD text was stale; corrected here after L0162 message18:01Z. All metrics/arrays unchanged."
+}

@@ -1,0 +1,50 @@
+id: c08
+slug: state_speed0360_on_c03
+mode: board_read_artifact
+file: submissions/c08_state_speed0360_on_c03.csv
+sha256: c7215ca7d9e2b6e81de2f64cbe27984dfcc592860240a3b47763f6855ad64e24
+public: 0.88325
+submission_ref: 56807607
+parent: submissions/c03_queue_cnn_adapt_ongoing.csv
+parent_public: 0.88225
+proof_tier: 1
+decision: D-0058
+selected_utc: '2026-10-03T22:54:43.262787+00:00'
+components:
+  state: F4 production273 + C0360 common-mode speed correction; original F4 flow unchanged
+  queue_onset: Q03 (unchanged0193)
+  queue_ongoing: C03 adapted no-prior/position/tod CNN, seeds0+1, expected-IoU
+  odme: NNLS lambda .05 (unchanged0193)
+evidence:
+  validator_and_isolation: exp/0373_l_state_tier1/validator_isolation.json
+  split_aware: BOARD C08 .88325 vsC03 .88225, delta+.00100; original band [.88255,.88365]
+    contains the read
+  owner_reproduction: exp/0371_d_c0360_speed_port/result.json
+  owner_exact_serving_parity: exp/0375_d_board_serving_parity/result.json, method
+    C only:20 populations/6735795 rows with zero speed/flow mismatches; overall FAIL
+    of separate flow branch preserved
+  parent_queue_causality: Inherited C03 exp/0292_l_c03_native/causality_intake.json;
+    queue unchanged exact CSV text
+  owner_recipe: docs/reference_code/build_state_probe.py speed mode; fixed C0360 coefficients
+    and own-month masked observations
+native_reproduction:
+  status: DEFERRED_TIER2_FROM_2026-10-22
+  production_port_owner: Q
+  historical_native_queue: exp/0292_l_c03_native
+  previous_native_recipe: configs/incumbent_0193_native.yaml
+  production_port_qualification:
+    status: FAIL_EXACT_BINARY_REPRODUCTION
+    owner_result: exp/0326_q_cnn_full_serving/result.json
+    generated_origins: 80
+    generated_rows: 87000
+    changed_cells: 2
+    changed_windows: 2
+    selection_effect: Original board-read file and retained ongoing artifact remain
+      authoritative; port outputs cannot replace them
+    reopen_condition: Verified historical deployment environment/checkpoint provenance
+      explains the binary drift without parameter tuning or quality evaluation
+  state_postprocessor_owner: D; exact C08 serving qualified byD0371/D0375; full native
+    final-pair proof deferredTier2
+final_selection: user
+upload: false
+promotion_result: exp/0373_l_state_tier1/result.json

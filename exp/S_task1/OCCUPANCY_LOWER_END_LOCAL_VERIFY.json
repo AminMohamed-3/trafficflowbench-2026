@@ -1,0 +1,10 @@
+{
+  "screen_helper_protocol_and_two_retained_receipt_sha_exact": true,
+  "all_aggregate_counts_and_retained_minima_exact": true,
+  "old_source_cal_DD_upper_all10_VM_receipts_retained": true,
+  "no_local_raw_source_or_label_read": true,
+  "zero_panels": {
+    "D12_I5_N": 1,
+    "D12_I405_N": 5
+  }
+}

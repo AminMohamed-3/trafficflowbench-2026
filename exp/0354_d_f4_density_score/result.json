@@ -1,0 +1,164 @@
+{
+  "id": "0354",
+  "reference": "frozen F4 fit171 OPT / fit214 OWN",
+  "C_instruction": "20261003T204734Z_C_0353.md",
+  "recipe": "original-F4 v<45; valid published congested FD; spatial interior targets; q exact; alpha .75",
+  "new_fits": 0,
+  "VM_jobs": 0,
+  "uploads": 0,
+  "provider_metadata": "L0352 metadata-only in-memory binding; arrays unchanged",
+  "actual_exit": 0,
+  "strong": {
+    "OPT_original_date_CI": {
+      "n_dates": 43,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent": {
+        "S_state": 0.9404910147577864,
+        "S_physics": 0.7364388279329338,
+        "J_S": 0.4396376793551653
+      },
+      "candidate": {
+        "S_state": 0.9405264126071973,
+        "S_physics": 0.7396792507290526,
+        "J_S": 0.44013613202187685
+      },
+      "delta_J_S": 0.0004984526667115574,
+      "ci95": [
+        0.0004388553372535839,
+        0.0005548175640456037
+      ],
+      "paired_ci_half_width": 5.798111339600992e-05,
+      "incumbent_J_S_ci95": [
+        0.4391681093039008,
+        0.44020774647440397
+      ],
+      "incumbent_instrument_ci_half_width": 0.0005198185852515746
+    },
+    "OPT_reference_components": {
+      "S_FD": 0.9876520898028016,
+      "S_LWR": 0.6108321969980001
+    },
+    "OPT_candidate_components": {
+      "S_FD": 0.9877818763826403,
+      "S_LWR": 0.6156279379022587
+    },
+    "OWN_March_original_date_CI": {
+      "incumbent_S_state": 0.8820793461266152,
+      "candidate_S_state": 0.8820592648010352,
+      "delta_S_state": -2.008132557995701e-05,
+      "ci95": [
+        -0.00011446714118520108,
+        9.535862437613226e-05
+      ],
+      "n_dates": 31,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent_ci95": [
+        0.8729665463001017,
+        0.8931512891181965
+      ],
+      "incumbent_half_width": 0.010092371409047396,
+      "verdict": "NULL"
+    },
+    "J_S_proxy": {
+      "reference": 0.4191935953342554,
+      "candidate": 0.4196726302897202,
+      "delta": 0.0004790349554648077,
+      "scope": "cross-instrument descriptive proxy: OWN March state + OPT43 physics; no joint CI or selection"
+    },
+    "density": {
+      "reference_density": {
+        "n_target": 4945707,
+        "MAE_total": 1.258984960714916,
+        "MAE_per_lane": 0.28864852705442723
+      },
+      "candidate_density": {
+        "n_target": 4945707,
+        "MAE_total": 1.2221511244622405,
+        "MAE_per_lane": 0.28140039930855393
+      }
+    },
+    "OWN_physics": "UNAVAILABLE",
+    "upstream_seed_SD": "UNMEASURED",
+    "qualification": "Tier0 screen only; no joint CI/three-seed exemption/candidate selection"
+  },
+  "sole_repair": {
+    "OPT_original_date_CI": {
+      "n_dates": 43,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent": {
+        "S_state": 0.9404910147577864,
+        "S_physics": 0.7364388279329338,
+        "J_S": 0.4396376793551653
+      },
+      "candidate": {
+        "S_state": 0.9405411437069132,
+        "S_physics": 0.7393470001614545,
+        "J_S": 0.4400914503216377
+      },
+      "delta_J_S": 0.0004537709664724221,
+      "ci95": [
+        0.00040489685604180176,
+        0.0004960055001737116
+      ],
+      "paired_ci_half_width": 4.555432206595491e-05,
+      "incumbent_J_S_ci95": [
+        0.4391681093039008,
+        0.44020774647440397
+      ],
+      "incumbent_instrument_ci_half_width": 0.0005198185852515746
+    },
+    "OPT_reference_components": {
+      "S_FD": 0.9876520898028016,
+      "S_LWR": 0.6108321969980001
+    },
+    "OPT_candidate_components": {
+      "S_FD": 0.9877383220119397,
+      "S_LWR": 0.6151513392362119
+    },
+    "OWN_March_original_date_CI": {
+      "incumbent_S_state": 0.8820793461266152,
+      "candidate_S_state": 0.8821088915111945,
+      "delta_S_state": 2.9545384579332534e-05,
+      "ci95": [
+        -3.161181532285451e-05,
+        0.00010739304249272606
+      ],
+      "n_dates": 31,
+      "bootstrap_samples": 1000,
+      "seed": 4701,
+      "incumbent_ci95": [
+        0.8729665463001017,
+        0.8931512891181965
+      ],
+      "incumbent_half_width": 0.010092371409047396,
+      "verdict": "NULL"
+    },
+    "J_S_proxy": {
+      "reference": 0.4191935953342554,
+      "candidate": 0.4196401620531362,
+      "delta": 0.00044656671888082533,
+      "scope": "cross-instrument descriptive proxy: OWN March state + OPT43 physics; no joint CI or selection"
+    },
+    "density": {
+      "reference_density": {
+        "n_target": 4945707,
+        "MAE_total": 1.258984960714916,
+        "MAE_per_lane": 0.28864852705442723
+      },
+      "candidate_density": {
+        "n_target": 4945707,
+        "MAE_total": 1.2258207716632967,
+        "MAE_per_lane": 0.28205635290220643
+      }
+    },
+    "OWN_physics": "UNAVAILABLE",
+    "upstream_seed_SD": "UNMEASURED",
+    "qualification": "Tier0 screen only; no joint CI/three-seed exemption/candidate selection"
+  },
+  "status": "COMPLETE_TIER0_SCORE_NO_CANDIDATE_SELECTION",
+  "elapsed_worker_minutes": 13.321791411666588,
+  "utc": "2026-10-03T21:07:28.213924+00:00"
+}

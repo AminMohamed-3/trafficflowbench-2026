@@ -1,0 +1,203 @@
+2026-10-21T01:57:36Z lock taken (20_parity)
+weights: 1 files OK
+2026-10-21T01:57:40Z 20 state build (S08 /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/c_budget/s08/official/l127_r4800, B6 /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/c_b6long/p24k/arm24k, threads 6)
+TFB_ASM2_ART 2 entries
+GATE PASS validation
+GATE PASS private
+override artifacts/lane_s/0398_s08/official_private.parquet -> artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_private.parquet
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D12_I405_N {'rows': 192164, 'slane_changed': 192164, 'phys5_mean_abs_dq': 9.513698289461836, 'asm_vs_s08_mean_abs_dv': 0.2672161528321432, 's': 49}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D12_I405_S {'rows': 107416, 'slane_changed': 107416, 'phys5_mean_abs_dq': 14.908548855989737, 'asm_vs_s08_mean_abs_dv': 0.3763470612086893, 's': 27}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D12_I5_N {'rows': 543092, 'slane_changed': 533121, 'phys5_mean_abs_dq': 8.744862483878599, 'asm_vs_s08_mean_abs_dv': 0.3068831645489569, 's': 138}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D12_I5_S {'rows': 204957, 'slane_changed': 201926, 'phys5_mean_abs_dq': 10.037463464200808, 'asm_vs_s08_mean_abs_dv': 0.36686379160782595, 's': 54}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D7_I10_E {'rows': 303294, 'slane_changed': 295793, 'phys5_mean_abs_dq': 8.669300201752513, 'asm_vs_s08_mean_abs_dv': 0.41980664084653824, 's': 82}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D7_I10_W {'rows': 203699, 'slane_changed': 199497, 'phys5_mean_abs_dq': 8.947738863126006, 'asm_vs_s08_mean_abs_dv': 0.4023728646970141, 's': 56}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D7_I210_E {'rows': 581196, 'slane_changed': 570559, 'phys5_mean_abs_dq': 7.627726330018253, 'asm_vs_s08_mean_abs_dv': 0.5146502624993251, 's': 160}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D7_I210_W {'rows': 158901, 'slane_changed': 156337, 'phys5_mean_abs_dq': 8.651552290990876, 'asm_vs_s08_mean_abs_dv': 0.45872599924625523, 's': 45}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D7_I405_N {'rows': 746097, 'slane_changed': 725882, 'phys5_mean_abs_dq': 9.545481000167877, 'asm_vs_s08_mean_abs_dv': 0.5409985266051649, 's': 196}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+private D7_I405_S {'rows': 243603, 'slane_changed': 237979, 'phys5_mean_abs_dq': 9.790587495831929, 'asm_vs_s08_mean_abs_dv': 0.5553176096526914, 's': 64}
+override artifacts/lane_s/0398_s08/official_validation.parquet -> artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_validation.parquet
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D12_I405_N {'rows': 203337, 'slane_changed': 203337, 'phys5_mean_abs_dq': 9.613473280443683, 'asm_vs_s08_mean_abs_dv': 0.28922832498529516, 's': 58}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D12_I405_S {'rows': 93718, 'slane_changed': 93718, 'phys5_mean_abs_dq': 14.43199654616259, 'asm_vs_s08_mean_abs_dv': 0.34787648565647183, 's': 25}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D12_I5_N {'rows': 588468, 'slane_changed': 578152, 'phys5_mean_abs_dq': 8.276200403787199, 'asm_vs_s08_mean_abs_dv': 0.3167413183878348, 's': 151}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D12_I5_S {'rows': 219222, 'slane_changed': 215210, 'phys5_mean_abs_dq': 9.896997507080217, 'asm_vs_s08_mean_abs_dv': 0.3755238111524516, 's': 62}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D7_I10_E {'rows': 337512, 'slane_changed': 329163, 'phys5_mean_abs_dq': 8.597003933834655, 'asm_vs_s08_mean_abs_dv': 0.4162157541941195, 's': 92}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_lsa.py:49: RuntimeWarning: Mean of empty slice
+  R = np.nanmean(np.where(ob, X, np.nan), axis=1, keepdims=True)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D7_I10_W {'rows': 233060, 'slane_changed': 229094, 'phys5_mean_abs_dq': 8.607173486825705, 'asm_vs_s08_mean_abs_dv': 0.3903110321350271, 's': 64}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D7_I210_E {'rows': 625014, 'slane_changed': 610287, 'phys5_mean_abs_dq': 7.579189470949114, 'asm_vs_s08_mean_abs_dv': 0.5136283377166515, 's': 171}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D7_I210_W {'rows': 205973, 'slane_changed': 201776, 'phys5_mean_abs_dq': 8.643676079052666, 'asm_vs_s08_mean_abs_dv': 0.4988210340008188, 's': 54}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D7_I405_N {'rows': 673133, 'slane_changed': 659051, 'phys5_mean_abs_dq': 9.656285444394888, 'asm_vs_s08_mean_abs_dv': 0.5416802433777709, 's': 184}
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\polish_eval.py:54: RuntimeWarning: All-NaN slice encountered
+  pr = np.nanmedian(x, axis=0)                     # [T, S]
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys4_feat.py:61: RuntimeWarning: All-NaN slice encountered
+  cm = np.nanmedian(oa, axis=2)
+C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\phys5_s3.py:47: RuntimeWarning: All-NaN slice encountered
+  cstep = np.nanmedian(M[:, 1:] - M[:, :-1], axis=2)              # [D, nb+1]; j = step from block j to j+1 (padded idx)
+validation D7_I405_S {'rows': 271939, 'slane_changed': 266868, 'phys5_mean_abs_dq': 9.872239348893078, 'asm_vs_s08_mean_abs_dv': 0.54475457597731, 's': 70}
+state only: wrote C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/20_work/20_lmicro/t1.csv.state.parquet
+2026-10-21T02:28:15Z 20 state build done: peak_rss_mb 2983 now_mb 2125 sha 9e52af9f915ff13f31bdf812728af7e8e3f18d7f190faa8102710469fddcb2c3
+2026-10-21T02:28:15Z 20 file step (state /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/20_work/20_lmicro/t1.csv.state.parquet, control /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/c_b6long/p24k/official/t1.csv.state.parquet)
+parent state rows equal to the control state build: 6607330 kept (gap2 rows): 128465
+PROBE {"probe": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\final_solution\\work\\parity\\20_out.csv", "sha256": "b0cbce4e1352a38c41110225f9d04794c616d0a91c8b743ffadc895b722b729a", "parent": "C:\\Data\\Projects\\Money Making\\work\\IEEE Big Data-Traffic\\final_solution\\work\\parity\\20_parent.csv", "parent_sha256": "9ddd8848c235627c665b2a6732043485f7e2c14e3bbb45f09b6bb509f1d75bb4", "rows": 6980503, "blanks_by_column": {"submission_id": 0, "task": 0, "speed_kmh": 0, "flow_vph": 0, "queue_pred": 0, "path_flow": 0}, "state_rows_replaced": 6607330, "gap2_rows_kept": 128465, "rows_changed": 6607330, "rows_changed_by_split": {"validation": {"state_rows": 3451376, "rows_changed": 3386656}, "private": {"state_rows": 3284419, "rows_changed": 3220674}}, "queue_odme_rows_unchanged": true, "state_parquet": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/20_work/20_lmicro/t1.csv.state.parquet", "control": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/c_b6long/p24k/official/t1.csv.state.parquet"}
+2026-10-21T02:28:57Z 20 done: /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/20_out.csv b0cbce4e1352a38c41110225f9d04794c616d0a91c8b743ffadc895b722b729a
+{"built": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/20_out.csv", "sha256": "b0cbce4e1352a38c41110225f9d04794c616d0a91c8b743ffadc895b722b729a", "expected": "b0cbce4e1352a38c41110225f9d04794c616d0a91c8b743ffadc895b722b729a", "result": "PASS-SHA", "piece": "20", "variant": "full", "state_check": {"built": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/20_work/20_lmicro/t1.csv.state.parquet", "stored": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/l_micro/a2/t1.csv.state.parquet", "rows": 6735795, "missing": 0, "speed_kmh": {"differ": 0, "max_abs": 0.0}, "flow_vph": {"differ": 0, "max_abs": 0.0}, "result": "EQUAL"}, "runtime_s": 1885}

@@ -1,0 +1,155 @@
+{
+  "id": "0110",
+  "lane": "Q",
+  "formulation": "Q-00 independent queue_score organizer parity official80",
+  "commit": "81a5f2a23ed7813ecb340fb54d6b5349602e2ed5",
+  "config": "exp/0110_q00_metric/config.yaml",
+  "utc": "2026-09-30T12:05:50.838274+00:00",
+  "instrument": "I-Q-OFF metric fixtures (80 official train windows)",
+  "adv_read": 0,
+  "incumbent_id": null,
+  "panels": {},
+  "onset_iou": null,
+  "ongoing_iou": null,
+  "S_queue": null,
+  "delta_S_queue": null,
+  "ci95": null,
+  "frozen_subset": {
+    "onset": null,
+    "ongoing": null
+  },
+  "official80": {
+    "n": 80,
+    "parity_max_abs_delta": 9.974659986866641e-17
+  },
+  "poisoned_future_test": "PASS",
+  "runtime_min": 0.55625,
+  "verdict": "PASS",
+  "metric_source_sha256": "d17385eba203fd679344f81fda89f5b5ff72c74b22d45d7aadf2eba9348bc980",
+  "organizer_source_sha256": "0faff70ca6bbff8a12b804b7c4d7148abaede4c87aa8dfb26c3f083e18853849",
+  "fixtures": {
+    "zero": {
+      "n_windows": 80,
+      "max_abs_delta": 0.0,
+      "overall_abs_delta": 0.0,
+      "per_window_abs_delta": 0.0,
+      "per_condition_abs_delta": 0.0,
+      "per_panel_abs_delta": 0.0,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 0.0125,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "11dd0f9076595b611990aaeac2822cac789adf570dab82eecabec9b6535f86f7",
+      "prediction_sha256": "3c0dc985fcc1bd381590ac4d349a282200b6aab5b5a1a802b7a57e8d7c34b169",
+      "organizer_sha256": "9058caac240e2ae04d2b9d52c0b9f92df00fa624c50f1c6bf0061fabbcc30c1a"
+    },
+    "one": {
+      "n_windows": 80,
+      "max_abs_delta": 9.80118763926896e-17,
+      "overall_abs_delta": 8.326672684688674e-17,
+      "per_window_abs_delta": 9.80118763926896e-17,
+      "per_condition_abs_delta": 9.367506770274758e-17,
+      "per_panel_abs_delta": 8.326672684688674e-17,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 0.09309910097971508,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "11dd0f9076595b611990aaeac2822cac789adf570dab82eecabec9b6535f86f7",
+      "prediction_sha256": "90e6ddda3316a79c01112c2a700b6efab0a798c887ed6a8a57512918cde71130",
+      "organizer_sha256": "2476e9ba9afa9f5e108c7f37dd21dba43dbbf1587f22e16515eb4f29228bc637"
+    },
+    "oracle_proxy": {
+      "n_windows": 80,
+      "max_abs_delta": 0.0,
+      "overall_abs_delta": 0.0,
+      "per_window_abs_delta": 0.0,
+      "per_condition_abs_delta": 0.0,
+      "per_panel_abs_delta": 0.0,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 1.0,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "11dd0f9076595b611990aaeac2822cac789adf570dab82eecabec9b6535f86f7",
+      "prediction_sha256": "9b754e1240061b325b48d10b8e4d401b9c1631baec2aefb1dfbbb1748face61a",
+      "organizer_sha256": "a39e1f576a2424cbac1276498ef49f6716fae882b63333a47c37804e134f0d71"
+    },
+    "random_binary": {
+      "n_windows": 80,
+      "max_abs_delta": 9.974659986866641e-17,
+      "overall_abs_delta": 9.71445146547012e-17,
+      "per_window_abs_delta": 9.974659986866641e-17,
+      "per_condition_abs_delta": 9.020562075079397e-17,
+      "per_panel_abs_delta": 7.28583859910259e-17,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 0.07176185384847529,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "11dd0f9076595b611990aaeac2822cac789adf570dab82eecabec9b6535f86f7",
+      "prediction_sha256": "a266273cc6e63db7dd364d315fb3624b39392b5c90b364ef75d6e648f85bdfec",
+      "organizer_sha256": "4b0bb9bf329ab9722575eaa646bff38cae7e06598e179b1b684231edc9d63e05"
+    },
+    "missing_and_extra": {
+      "n_windows": 80,
+      "max_abs_delta": 9.71445146547012e-17,
+      "overall_abs_delta": 3.469446951953614e-17,
+      "per_window_abs_delta": 9.71445146547012e-17,
+      "per_condition_abs_delta": 9.71445146547012e-17,
+      "per_panel_abs_delta": 9.020562075079397e-17,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 0.04213056100910004,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "11dd0f9076595b611990aaeac2822cac789adf570dab82eecabec9b6535f86f7",
+      "prediction_sha256": "a45f69ffdfa559499b775d38aaf9aed6790c977254dad5e7eaa7c2c9b9a78736",
+      "organizer_sha256": "82e2608044678c4bd00d0aa3c89bbf9d23f2b4d8ddee4e2e34de106c67c9344a"
+    },
+    "no_eligible_window": {
+      "n_windows": 80,
+      "max_abs_delta": 9.974659986866641e-17,
+      "overall_abs_delta": 9.71445146547012e-17,
+      "per_window_abs_delta": 9.974659986866641e-17,
+      "per_condition_abs_delta": 9.020562075079397e-17,
+      "per_panel_abs_delta": 8.326672684688674e-17,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 0.07169981910902119,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "7626df7ed0ae412fbc963b7aaff4d70037bc6e74db3363848d241252a6c26246",
+      "prediction_sha256": "a266273cc6e63db7dd364d315fb3624b39392b5c90b364ef75d6e648f85bdfec",
+      "organizer_sha256": "4b7f07229bb406d7b2fd670f740b86364fb0f7cda0ff4bf496c9533eea0e6a55"
+    },
+    "genuine_empty_union": {
+      "n_windows": 80,
+      "max_abs_delta": 0.0,
+      "overall_abs_delta": 0.0,
+      "per_window_abs_delta": 0.0,
+      "per_condition_abs_delta": 0.0,
+      "per_panel_abs_delta": 0.0,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 0.025,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "9b45a2bb87550b5ad9cb47d4f5a3bbf1364626766a817d296ecc360c56f60315",
+      "prediction_sha256": "3c0dc985fcc1bd381590ac4d349a282200b6aab5b5a1a802b7a57e8d7c34b169",
+      "organizer_sha256": "6f3def60249ff5b7114a9bc09705e0eaa889d785c8e6838cbeeb92c44607fa3a"
+    },
+    "source_eligible_labels": {
+      "n_windows": 80,
+      "max_abs_delta": 9.71445146547012e-17,
+      "overall_abs_delta": 2.7755575615628914e-17,
+      "per_window_abs_delta": 9.71445146547012e-17,
+      "per_condition_abs_delta": 9.280770596475918e-17,
+      "per_panel_abs_delta": 6.938893903907228e-17,
+      "missing_prediction_counts": "exact",
+      "fixture_S_queue": 0.07116469548838883,
+      "interpretation": "metric fixture only; not an experiment score or gain",
+      "truth_sha256": "6274670f0382bbe3a8ea027f3b8f6b9a7a4d064c64bc62d8bfa3b3099a3eaa5e",
+      "prediction_sha256": "a266273cc6e63db7dd364d315fb3624b39392b5c90b364ef75d6e648f85bdfec",
+      "organizer_sha256": "0bed9b9136126ae7dd7c66d090a3929cbd191fa5e4981200e66ac1797c6ca366"
+    }
+  },
+  "rejections": {
+    "nonbinary": {
+      "lead": "rejected",
+      "organizer": "rejected"
+    },
+    "duplicates": {
+      "lead": "rejected",
+      "organizer": "rejected"
+    }
+  },
+  "label_limitation": "Q-01 observed proxies, not withheld noise-free truth; one onset window has no observed queued horizon cell"
+}
