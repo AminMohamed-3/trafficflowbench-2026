@@ -17,7 +17,7 @@
 2026-10-21T07:02:37Z	31	FVI_BOTH_ON_C70	PASS-SHA	8dd8dafaba3c2158c6cec1e74426f3eb31095bd4360d4b88d5fc96459f913e1e	8dd8dafaba3c2158c6cec1e74426f3eb31095bd4360d4b88d5fc96459f913e1e	R3_PARENTS=stored R3_BUILDS=stored
 2026-10-21T07:03:29Z	31	C74P	PASS-SHA	d4376e1de0fdff94cc2abb62fa608bf5bbfbcb98a1cedee68c6de1327ba48776	d4376e1de0fdff94cc2abb62fa608bf5bbfbcb98a1cedee68c6de1327ba48776	R3_PARENTS=stored R3_BUILDS=stored
 2026-10-21T07:03:31Z	31	PIECE_31	GLUE-DONE	-	-	297 s (stored parents + stored builds)
-2026-10-21T07:03:35Z	32	GAPFV_HOOK	PASS-EXACT	hook old arm == FV build gap rows	C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/r3parity/w/gapfv/build_parity.json	R3_BUILDS=stored
+2026-10-21T07:03:35Z	32	GAPFV_HOOK	PASS-EXACT	hook old arm == FV build gap rows	<DEVROOT>/final_solution/work/r3parity/w/gapfv/build_parity.json	R3_BUILDS=stored
 2026-10-21T07:04:21Z	32	GAPFV_ON_C73P	PASS-SHA	7b936ed558ebc7d05001a309bc616e6c663098f28866494106cbdb44612aac85	7b936ed558ebc7d05001a309bc616e6c663098f28866494106cbdb44612aac85	R3_PARENTS=stored R3_BUILDS=stored
 2026-10-21T07:06:28Z	32	C75	PASS-SHA	1528092555064863e98d462d001a2ac984aa12d640f9edcbeb2d3e7fe7d02162	1528092555064863e98d462d001a2ac984aa12d640f9edcbeb2d3e7fe7d02162	R3_PARENTS=stored R3_BUILDS=stored
 2026-10-21T07:06:29Z	32	PIECE_32	GLUE-DONE	-	-	178 s (stored parents + stored builds)

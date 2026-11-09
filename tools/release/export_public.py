@@ -13,6 +13,8 @@ from pathlib import Path
 FS = Path(__file__).resolve().parents[2]
 DROP = re.compile(r"^(report/html/|report/OPEN_ITEMS\.md$|report/figures/TODO_F6_F7\.md$|pipeline/pieces/BRIEF_R2\.md$|outputs/)")
 SECRET = re.compile(rb"gho_[A-Za-z0-9]{20}|ghp_[A-Za-z0-9]{20}|KGAT[A-Za-z0-9]{8}|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY")
+LOCAL = re.compile(rb"(?i)(?:[a-z]:|/[a-z]|/mnt/[a-z])(?:\\\\|\\|/)+data(?:\\\\|\\|/)+projects(?:\\\\|\\|/)+money making"
+                   rb"(?:\\\\|\\|/)+work(?:\\\\|\\|/)+ieee big data-traffic")
 
 
 def main():
@@ -21,14 +23,17 @@ def main():
     files = subprocess.run(["git", "-c", "core.quotepath=off", "ls-files", "."], cwd=FS, capture_output=True, text=True,
                            encoding="utf-8", check=True).stdout.splitlines()
     keep = [f for f in files if not DROP.match(f) and (FS / f).is_file()]
-    bad, nbytes = [], 0
+    hashed = {r.split(",")[0] for r in (FS / "checks/code_files.csv").read_text(encoding="utf-8").splitlines()[1:]}
+    bad, nbytes, masked = [], 0, []
     for f in keep:
         src, dst = FS / f, out / f
         b = src.read_bytes()
         if SECRET.search(b):
             bad.append(f)
+        if LOCAL.search(b) and not f.endswith((".py", ".sh")) and f not in hashed:
+            b = LOCAL.sub(b"<DEVROOT>", b); masked.append(f)   # logs and notes: hide the author's local folder
         dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(src, dst)
+        dst.write_bytes(b)
         nbytes += len(b)
     if bad:
         sys.exit(f"SECRET-LIKE STRING in: {bad}")
@@ -36,7 +41,8 @@ def main():
            and p.name != ".export_receipt.json"]
     stale = sorted(set(old) - set(keep))
     head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=FS, capture_output=True, text=True, check=True).stdout.strip()
-    rec = dict(files=len(keep), bytes=nbytes, source_commit=head, dropped=[f for f in files if DROP.match(f)], stale=stale)
+    rec = dict(files=len(keep), bytes=nbytes, source_commit=head, dropped=[f for f in files if DROP.match(f)], stale=stale,
+               local_path_masked=masked)
     (out / ".export_receipt.json").write_text(json.dumps(rec, indent=1) + "\n", encoding="utf-8")
     if site:
         site.mkdir(parents=True, exist_ok=True)

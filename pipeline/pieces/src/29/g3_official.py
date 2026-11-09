@@ -21,7 +21,7 @@ ROOT = Path(os.environ["TFB_ROOT"])
 for p in ("src", "docs/reference_code", "exp/C_gap2c47", "exp/L_b6"):
     sys.path.insert(0, str(ROOT / p))
 CR = ROOT / "artifacts/claude_ref"; D = Path(os.environ["G3_OUT"]); G2 = CR / "l_gap2"
-C69 = Path(os.environ.get("G3_PARENT") or G2 / "c_gap_on_c66.csv"); C69SHA = "d1ada3d6"
+C69 = Path(os.environ.get("G3_PARENT") or G2 / "c_gap_on_c66.csv"); C69SHA = "" if os.environ.get("SKIP_PARENT_SHA") == "1" else "d1ada3d6"   # chain: parent is the rebuilt C69 (value-equal); the par-arm parity below still checks its gap rows bit for bit
 GAPWF = CR / "l_b6/bundle18/off_c_bundle18_s2b/t1_gapwf.state.parquet"
 HOOK = G2 / "build/t1.csv.gaprows.npz"
 WJF = G2 / "g2/weights_g2.json"; MEMD = G2 / "g1/pred_cpu"; MTAGS = ("off8k_s0", "off8k_s1", "off8k_s2"); V6D = G2 / "g3"

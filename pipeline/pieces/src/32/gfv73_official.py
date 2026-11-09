@@ -22,7 +22,7 @@ ROOT = Path(os.environ["TFB_ROOT"])
 for p in ("src", "docs/reference_code", "exp/C_gap2c47", "exp/L_b6"):
     sys.path.insert(0, str(ROOT / p))
 CR = ROOT / "artifacts/claude_ref"; D = Path(os.environ["GFV_OUT"]); G2 = CR / "l_gap2"; G3 = CR / "l_gap3"
-PAR = Path(os.environ["GFV_PARENT"]); PARSHA = "5827d508"
+PAR = Path(os.environ["GFV_PARENT"]); PARSHA = "" if os.environ.get("SKIP_PARENT_SHA") == "1" else "5827d508"   # chain: rebuilt parent (value-equal)
 GAPWF = CR / "l_b6/bundle18/off_c_bundle18_s2b/t1_gapwf.state.parquet"
 HOOK = {"par": G2 / "build/t1.csv.gaprows.npz", "new": Path(os.environ.get("GFV73_NEW_HOOK", str(D / "build/t1.csv.gaprows.npz")))}  # override only for the code-parity dry run
 WJF = G2 / "g2/weights_g2.json"; MEMD = G2 / "g1/pred_cpu"; MTAGS = ("off8k_s0", "off8k_s1", "off8k_s2"); V6D = G2 / "g3"

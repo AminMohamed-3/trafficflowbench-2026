@@ -1,0 +1,42 @@
+2026-11-08T18:40:46Z start epoch 1794163246; source repo <DEV>/.claude/worktrees/cleanup-unrelated-code-370431/final_solution commit 2429a5f5
+EXPORT_OK 674 files, 10.7 MB, dropped 7, stale 0
+competition_contract.json
+corridors.json
+synthetic_release_v1.json
+weights/MANIFEST.csv: 2084 rows, 4107706685 bytes
+FETCH_OK 2084 files: present 1, link 2083, copy 0, extract 0
+CHECK OK 2084 files, 0 bad
+DEVROOT_OK C:\Data\tfb_cleanroom\run3\devroot {"kept": 1, "linked": 12419, "copied": 390}
+2026-11-08T18:43:16Z chain python /c/Data/tfb_cleanroom/run3/venv/Scripts/python.exe (base C:\ProgramData\miniconda3, + lightgbm 4.6.0, audit .pth)
+audit in child with own PYTHONPATH: True
+2026-11-08T18:43:16Z chain start
+2026-11-09T04:08:03Z chain rc=1
+atime_reads: 430 files, 4.56 GB at or after 2026-11-08T18:39:46Z
+2026-11-09T04:08:30Z python opens outside the clean room: 150 (outputs/logs/clean_room/open_audit.log)
+28	C70	csv	NOT_COMPARED	314f10afeb17c628
+29	SERVE_FVFT_APR	serve	PASS-ARRAYS	30 members
+29	B_FVFT_APR	build	SHA_EQUAL	f104616edba12b24
+29	FVFT_BOTH_ON_C69	csv	NOT_COMPARED	8dc9b37a2079c592
+29	GAP3_ON_C69	csv	NOT_COMPARED	7b08d874fa90c845
+29	GAP3_ON_C70	csv	NOT_COMPARED	f60763fbaaa4af36
+29	C71	csv	NOT_COMPARED	d76e8227ba1293e5
+30	SERVE_FV2_MAR	serve	PASS-ARRAYS	30 members
+30	B_FV2_MAR	build	SHA_EQUAL	b4ddea3a4f22c185
+30	FV2_MAR_ON_C70	csv	NOT_COMPARED	b54c7fc01b48aa85
+30	C72	csv	NOT_COMPARED	8c5707b9cfd390f7
+30	SERVE_FV2_APR	serve	PASS-ARRAYS	30 members
+30	B_FV2_APR	build	SHA_EQUAL	e696b29b42ea5149
+30	FV2_BOTH_ON_C70	csv	NOT_COMPARED	68368bde747fbff5
+30	C72P	csv	NOT_COMPARED	780dc075ca919f3e
+31	SERVE_FVI_MAR	serve	PASS-ARRAYS	30 members
+31	B_FVI_MAR	build	SHA_EQUAL	537ad7839cf94680
+31	FVI_MAR_ON_C70	csv	NOT_COMPARED	ad0c770dd362993e
+31	C73	csv	NOT_COMPARED	c6fbc45ffb10edd5
+31	C73P	csv	NOT_COMPARED	5bb006d9ce2be346
+31	SERVE_FVI_APR	serve	PASS-ARRAYS	30 members
+31	B_FVI_APR	build	SHA_EQUAL	e35d5a4efe41a970
+31	FVI_BOTH_ON_C70	csv	NOT_COMPARED	5801d5cf357869f1
+31	C74P	csv	NOT_COMPARED	a123066542051e27
+32	PIECE_32	piece	PIECE_FAILED	-
+2026-11-09T04:08:30Z CLEAN_ROOM_END rc=1 opens_outside=150 minutes=567
+DONE

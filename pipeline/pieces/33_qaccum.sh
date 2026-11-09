@@ -24,7 +24,9 @@ unlock
 QD=$Q/build/delta/c_qaccum_on_c75.delta.csv.gz; [ -f "$QD" ] || r3fail "qa: delta not found ($QD)"
 say "qa delta: $(grep -o 'A3_DELTA OK.*' "$Q/delta.log" | cut -c1-250)"
 rm -f "$R3W/C76.csv"; waitdisk 1350 "expand C76"
-"$PY" "$TFB_ROOT/tools/probe.py" expand "$PW" "$QD" "$R3W/C76.csv" --sha "$(xsha C76)" >&2 || r3fail "qa: expand C76"
+XS=$(xsha C76)   # chain mode: parent C75 is a value-equal rebuild, so check the expansion against the sha the delta step streamed
+[ "${SKIP_PARENT_SHA:-0}" = 1 ] && XS=$(grep -o '"full_sha256": *"[0-9a-f]*"' "${QD%.delta.csv.gz}.json" | grep -o '[0-9a-f]\{64\}')
+"$PY" "$TFB_ROOT/tools/probe.py" expand "$PW" "$QD" "$R3W/C76.csv" --sha "$XS" >&2 || r3fail "qa: expand C76"
 put C76 "$R3W/C76.csv"
 rm -rf "$Q/build/tmp"
 say "PIECE_33_DONE C76 $(( $(date +%s) - T0 )) s"

@@ -1,5 +1,5 @@
 2026-10-21T06:45:33Z lock taken (27_parity)
-2026-10-21T06:45:36Z 27 inputs: hook /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/l_gap2/build/t1.csv.gaprows.npz | gapwf /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/l_b6/bundle18/off_c_bundle18_s2b/t1_gapwf.state.parquet | shipped gap2 members /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/artifacts/claude_ref/c_gap2c47/pred_cpu | G1 weights C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\artifacts\claude_ref\l_gap2\g1\weights
+2026-10-21T06:45:36Z 27 inputs: hook <DEVROOT>/artifacts/claude_ref/l_gap2/build/t1.csv.gaprows.npz | gapwf <DEVROOT>/artifacts/claude_ref/l_b6/bundle18/off_c_bundle18_s2b/t1_gapwf.state.parquet | shipped gap2 members <DEVROOT>/artifacts/claude_ref/c_gap2c47/pred_cpu | G1 weights <DEVROOT>\artifacts\claude_ref\l_gap2\g1\weights
 2026-10-21T06:45:36Z 27 step 1: G1 serve
 validation D7_I10_E 8349 rows 2.7 s inputs equal to training: True
 validation D7_I10_W 3966 rows 2.2 s inputs equal to training: True
@@ -21,7 +21,7 @@ private D12_I5_S 3031 rows 1.6 s inputs equal to training: True
 SERVE DONE private wall 23.6 s cpu 23.5 s peak RAM 1440 MB | inputs equal to the training receipt: True
 27 G1_SERVE_VALUES EQUAL
 2026-10-21T06:46:30Z 27 step 2: G3 serve
-C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\state6_gaptrain.py:61: RuntimeWarning: Mean of empty slice
+<DEVROOT>\docs\reference_code\state6_gaptrain.py:61: RuntimeWarning: Mean of empty slice
   an3 = np.nanmean(np.stack([np.roll(an, k, 1) for k in (-1, 0, 1)], 0), 0)
 g3 validation D7_I10_E 8349 rows 2 s
 g3 validation D7_I10_W 3966 rows 3 s
@@ -31,8 +31,8 @@ g3 validation D7_I405_N 14082 rows 9 s
 g3 validation D7_I405_S 5071 rows 10 s
 g3 validation D12_I5_N 10316 rows 12 s
 g3 validation D12_I5_S 4012 rows 13 s
-G3_SERVE_DONE C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\final_solution\work\parity\27_work\27_gap2\g3\pred_v6r_off_validation.npz 13 s
-C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\docs\reference_code\state6_gaptrain.py:61: RuntimeWarning: Mean of empty slice
+G3_SERVE_DONE <DEVROOT>\final_solution\work\parity\27_work\27_gap2\g3\pred_v6r_off_validation.npz 13 s
+<DEVROOT>\docs\reference_code\state6_gaptrain.py:61: RuntimeWarning: Mean of empty slice
   an3 = np.nanmean(np.stack([np.roll(an, k, 1) for k in (-1, 0, 1)], 0), 0)
 g3 private D7_I10_E 7501 rows 2 s
 g3 private D7_I10_W 4202 rows 3 s
@@ -42,9 +42,9 @@ g3 private D7_I405_N 20215 rows 9 s
 g3 private D7_I405_S 5624 rows 11 s
 g3 private D12_I5_N 9971 rows 13 s
 g3 private D12_I5_S 3031 rows 14 s
-G3_SERVE_DONE C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\final_solution\work\parity\27_work\27_gap2\g3\pred_v6r_off_private.npz 14 s
+G3_SERVE_DONE <DEVROOT>\final_solution\work\parity\27_work\27_gap2\g3\pred_v6r_off_private.npz 14 s
 2026-10-21T06:47:04Z 27 step 3: gap rows over PARENT
 G2OFF_PARITY p1 (hook GAPW arm == recomputed) EXACT | p2 (hook GAPW arm == t1_gapwf gap rows) EXACT | p3 (GAPW + m3 here == C66 gap rows) EXACT
 G2OFF_PROBE {"probe": "final_solution/work/parity/27_out.csv", "sha256": "d1ada3d6453ee9fd0b25ce9c24f48e4ce062a63302ab69b8af82e8f513a99c1e", "rows_changed": 128465, "rows_changed_by_split": {"validation": 64720, "private": 63745}, "change_size": {"mean_abs_dv": 0.4463979015042148, "max_dv": 37.21598889553114, "mean_abs_dq": 38.28664089264345, "max_dq": 1281.8774288070454}}
-2026-10-21T06:47:33Z 27 done: /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/27_out.csv d1ada3d6453ee9fd0b25ce9c24f48e4ce062a63302ab69b8af82e8f513a99c1e
-{"built": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/27_out.csv", "sha256": "d1ada3d6453ee9fd0b25ce9c24f48e4ce062a63302ab69b8af82e8f513a99c1e", "expected": "d1ada3d6453ee9fd0b25ce9c24f48e4ce062a63302ab69b8af82e8f513a99c1e", "result": "PASS-SHA", "piece": "27", "variant": "full", "runtime_s": 121}
+2026-10-21T06:47:33Z 27 done: <DEVROOT>/final_solution/work/parity/27_out.csv d1ada3d6453ee9fd0b25ce9c24f48e4ce062a63302ab69b8af82e8f513a99c1e
+{"built": "<DEVROOT>/final_solution/work/parity/27_out.csv", "sha256": "d1ada3d6453ee9fd0b25ce9c24f48e4ce062a63302ab69b8af82e8f513a99c1e", "expected": "d1ada3d6453ee9fd0b25ce9c24f48e4ce062a63302ab69b8af82e8f513a99c1e", "result": "PASS-SHA", "piece": "27", "variant": "full", "runtime_s": 121}

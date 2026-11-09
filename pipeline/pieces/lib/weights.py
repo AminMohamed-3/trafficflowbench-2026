@@ -5,6 +5,7 @@ piece (columns: repo_path, sha256, bytes, old_repo_path, piece); the union is me
 (path under final_solution/weights/). Resolution order:
   1. $FS/weights/<repo_path> (after pipeline/01_fetch_weights.sh, or on a clean machine);
   2. $TFB_OLD_REPO/<old_repo_path> (laptop mode: the development repo, no copy needed).
+  When this repository is not inside $TFB_OLD_REPO (clean machine with a devroot), the order is 2 then 1 (see FS_IN_OLD).
 The sha256 is always checked; a mismatch stops the run.
 
 CLI:
@@ -18,6 +19,11 @@ HERE = Path(__file__).resolve()
 FS = Path(os.environ.get("FS", HERE.parents[3]))            # final_solution/
 OLD = Path(os.environ.get("TFB_OLD_REPO", FS.parent))         # development repo root (laptop)
 MAN = FS / "weights" / "rows"
+# Laptop: this repository lies inside the development repo, the repo copy comes first. Clean machine (repo beside a devroot made by
+# pipeline/15_make_devroot.py): the devroot copy at the development path comes first (same sha256), because several pieces record
+# their inputs relative to TFB_ROOT (= the devroot) and refuse files outside it.
+_n = lambda p: os.path.normcase(os.path.abspath(p))
+FS_IN_OLD = _n(FS).startswith(_n(OLD) + os.sep)
 _SHA_CACHE = {}
 
 
@@ -46,7 +52,8 @@ def resolve(repo_path, check=True):
     if not rs:
         raise SystemExit(f"weights: {repo_path} not in {MAN}")
     r = rs[0]
-    for cand in (FS / "weights" / r["repo_path"], OLD / r["old_repo_path"]):
+    cands = (FS / "weights" / r["repo_path"], OLD / r["old_repo_path"].split("::")[-1])
+    for cand in (cands if FS_IN_OLD else cands[::-1]):
         if cand.is_file():
             if check and sha256(cand) != r["sha256"]:
                 raise SystemExit(f"weights: sha mismatch {cand}: {sha256(cand)} != {r['sha256']}")

@@ -4,7 +4,10 @@ Author: Amin Mohamed. Private score .89874 (8th), public .90088.
 
 - Write-up: `report/KAGGLE_WRITEUP.md`; full method report: `report/REPORT.md`.
 - Interactive site (all board reads, the idea registry, the analysis): https://aminmohamed-3.github.io/trafficflowbench-2026/
-- Weights: the `weights-v1` release of this repository (4.1 GB in 3 zip parts, sha256-checked by the fetch script).
+- Weights: the `weights-v1` release of this repository (4.1 GB in 3 zip parts plus `devroot_extra.zip`, 0.7 GB of stored intermediate files; all sha256-checked by the fetch script).
+- Verified on a clean folder (2026-11-09): from this repository, the release assets and the competition data alone, the chain
+  rebuilt C79 and C80 byte-equal to the submitted files, with an audit showing no file read from outside that folder
+  (`checks/clean_room/run_clean_room.sh`; logs in `checks/clean_room/run_2026-11-09/`).
 
 Code that rebuilds our submitted files from the organisers' release and our saved weights.
 Competition: Kaggle `2026-ieee-big-data-traffic-flow-bench`. Score: S_total = .35 state + .15 onset + .15 ongoing
@@ -42,11 +45,15 @@ uv pip install --python /workspace/tfb/venv/bin/python -r environment/requiremen
 export PATH=/workspace/tfb/venv/bin:$PATH
 # 1. data and weights
 bash pipeline/00_fetch_data.sh                      # Kaggle CLI with your own credentials (or --link DIR)
-bash pipeline/01_fetch_weights.sh --release         # downloads the 3 release parts, checks sha256, unpacks (or --from-dir DIR)
+bash pipeline/01_fetch_weights.sh --release         # downloads the 3 weight parts + devroot_extra.zip, checks sha256, unpacks
+#   (or --from-dir DIR --pieces "" for an unpacked release: "" = all pieces, the default is base,reference only)
 # 2. base build C47 (Linux / WSL, CPU only, self-detaching; log and result in outputs/logs/)
 bash pipeline/10_base_c47.sh --s08-fitted           # optional --reuse-cache DIR
 cat outputs/logs/base_c47.result                    # RESULT ... VERIFY_PASS ... -> outputs/c47/final_A.csv (+ .state.parquet)
-# 3. ADOPTED rows 19-35 chained on the fresh C47 (Git Bash): each piece reads the previous piece's output
+# 3. ADOPTED rows 19-35 chained on the fresh C47 (Git Bash): each piece reads the previous piece's output.
+#    The pieces run development code at its development paths: first lay out that folder ("devroot", same volume = hard links)
+python pipeline/15_make_devroot.py C:/tfb/devroot --extra weights/devroot_extra
+export TFB_OLD_REPO=C:/tfb/devroot CHAIN_WORK=C:/tfb/devroot/work PY=<your venv>/Scripts/python.exe
 bash pipeline/20_pieces.sh --dry-run                # checks inputs and stored references, prints the plan
 bash pipeline/20_pieces.sh                          # -> outputs/C80.csv; per step outputs/logs/chain_19_35.tsv
 # 4. verify the final file against the submitted C80 (sha 3e27d66c...)

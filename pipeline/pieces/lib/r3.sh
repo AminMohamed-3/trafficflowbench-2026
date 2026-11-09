@@ -17,7 +17,7 @@
 # all paths in Windows mixed form (C:/...): MSYS_NO_PATHCONV=1 below, and Windows python cannot open /c/... paths
 FS=$(cygpath -m "$FS"); OLD=$(cygpath -m "$OLD"); WORK=$(cygpath -m "$WORK"); OUTD=$(cygpath -m "$OUTD"); LOCK=$(cygpath -m "$LOCK")
 export FS TFB_OLD_REPO=$OLD TFB_ROOT=$(cygpath -m "${TFB_ROOT:-$OLD}")
-export MSYS_NO_PATHCONV=1 PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 PYTHONPATH=$TFB_ROOT/src CUDA_VISIBLE_DEVICES=-1
+export MSYS_NO_PATHCONV=1 PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 PYTHONPATH="$TFB_ROOT/src${PYTHONPATH:+;$PYTHONPATH}" CUDA_VISIBLE_DEVICES=-1   # keep an inherited PYTHONPATH (checks/open_audit)
 R3=$FS/pipeline/pieces/src/r3lib
 CH=${CH:-$WORK/r3chain}; R3W=${R3W:-$WORK/r3}; RES=${RES:-$FS/pipeline/pieces/parity/r3_results.tsv}
 CH=$(cygpath -m "$CH"); R3W=$(cygpath -m "$R3W"); RES=$(cygpath -m "$RES"); export CH R3W
@@ -25,7 +25,7 @@ CR=$TFB_ROOT/artifacts/claude_ref
 R3_PARENTS=${R3_PARENTS:-chain}; R3_BUILDS=${R3_BUILDS:-run}
 mkdir -p "$CH" "$R3W" "$(dirname "$RES")"
 case "$WORK/" in "$TFB_ROOT/"*) ;; *) say "WORK ($WORK) must lie inside TFB_ROOT ($TFB_ROOT)"; exit 2;; esac
-lock() { local k=0 op
+lock() { local k=0 op; mkdir -p "$(dirname "$LOCK")"   # a clean devroot has no exp/L_b6/logs
   until mkdir "$LOCK" 2>/dev/null; do
     op=$(cat "$LOCK/pid" 2>/dev/null || true)
     if [ -n "$op" ] && ! kill -0 "$op" 2>/dev/null; then say "stale lock of pid $op removed"; rm -rf "$LOCK"; continue; fi

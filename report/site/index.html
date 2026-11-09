@@ -381,7 +381,7 @@ cd trafficflowbench-2026
 uv venv --python 3.12 /workspace/tfb/venv
 uv pip install --python /workspace/tfb/venv/bin/python -r environment/requirements-cpu.txt
 export PATH=/workspace/tfb/venv/bin:$PATH</pre></div></div></li>
-        <li><div><b>Fetch data and weights</b>: the competition data with your own Kaggle login; our weights (4.1 GB in 3 parts) from the GitHub release, sha256 checked
+        <li><div><b>Fetch data and weights</b>: the competition data with your own Kaggle login; our weights (4.1 GB in 3 parts, plus 0.7 GB of stored intermediate files) from the GitHub release, sha256 checked
           <div class="code"><button class="copy" type="button">Copy</button><pre>bash pipeline/00_fetch_data.sh
 bash pipeline/01_fetch_weights.sh --release</pre></div></div></li>
         <li><div><b>Build the base file C47</b><span class="oschip">Linux / WSL2</span> about 3.5 h with our fitted S08 files, about 9 h with a full refit (7 to 11.5 h by flags)
@@ -399,7 +399,7 @@ cat outputs/logs/chain_19_35.tsv</pre></div></div></li>
         <p><b>Stored outputs instead of re-serving:</b> rows 21 (ConvNeXt-Tiny retrain), 22 (cold-date members), 23 (per-date Tiny adaptation) and 26 (S2b imputer members),
           because the originals ran on a GPU or another machine and floats differ in the last bits; and row 33 (Q-ACCUM: per-date fits inside Kaggle kernels, no weights).
           The base build's original ConvNeXt member is stored too: its fine-tuned weights were lost, and row 21 replaces it with a retrain whose weights are saved.</p>
-        <p id="chain-status"><b>Verification run:</b> a fresh rerun of the whole chain, C47 to C80 with the stored row-26 outputs, is in progress; this line will carry its per-step result. The 21 October run matched rows 20 to 25 exactly; row 26 then differed by re-serving its imputer members on CPU, which is why row 26 now uses stored outputs.</p>
+        <p id="chain-status"><b>Verification run:</b> passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except the two stored submission files used for the final comparison. Every rebuilt member set matched development by sha256, and C79 and C80 came out byte-equal to the submitted files (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13).</p>
       </div>
       <div class="tbl" style="margin-top:14px"><table>
         <thead><tr><th>step</th><th class="n">runtime</th></tr></thead>

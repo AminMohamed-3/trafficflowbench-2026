@@ -14,7 +14,11 @@ assert rows, f"no weights rows for {old}"
 rdirs = {r["repo_path"][: len(r["repo_path"]) - len(r["old_repo_path"]) + len(old)] for r in rows}
 assert len(rdirs) == 1, rdirs
 rdir = FS / "weights" / rdirs.pop()
-base = rdir if rdir.is_dir() else OLD / old
+_n = lambda p: os.path.normcase(os.path.abspath(p))
+if _n(FS).startswith(_n(OLD) + os.sep):   # laptop: repo copy first
+    base = rdir if rdir.is_dir() else OLD / old
+else:   # clean machine: the devroot copy (pipeline/15_make_devroot.py), pieces record inputs relative to TFB_ROOT
+    base = OLD / old if (OLD / old).is_dir() else rdir
 def sha(p):
     h = hashlib.sha256()
     with open(p, "rb") as f:

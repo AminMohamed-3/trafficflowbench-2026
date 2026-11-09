@@ -6,6 +6,7 @@ set -euo pipefail
 FS=${FS:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)}
 OLD=${TFB_OLD_REPO:-$(cd "$FS/.." && pwd)}
 export FS TFB_OLD_REPO=$OLD
+export TFB_ROOT=${TFB_ROOT:-$(cygpath -m "$OLD" 2>/dev/null || printf %s "$OLD")}   # src/tfb/paths.py: project root by env (a clean devroot has no .git to find it by; it has the PLAN.md marker)
 PY=${PY:-$OLD/.venv_tfb/Scripts/python.exe}
 [ -x "$PY" ] || PY=python
 W="$PY $FS/pipeline/pieces/lib/weights.py"
@@ -17,7 +18,7 @@ wpy() { "$PY" "$FS/pipeline/pieces/lib/weights.py" "$@"; }   # use this, not $W 
 wpath() { wpy path "$1"; }                     # resolved weights file (sha checked)
 LOCK=${LOCK:-$OLD/exp/L_b6/logs/laptop.lock.d}
 unlock() { [ -d "$LOCK" ] && [ "$(cat "$LOCK/pid" 2>/dev/null)" = "$$" ] && rm -rf "$LOCK"; return 0; }
-lock() { local k=0 op
+lock() { local k=0 op; mkdir -p "$(dirname "$LOCK")"   # a clean devroot has no exp/L_b6/logs
   until mkdir "$LOCK" 2>/dev/null; do
     op=$(cat "$LOCK/pid" 2>/dev/null || true)
     if [ -n "$op" ] && ! kill -0 "$op" 2>/dev/null; then say "stale lock of pid $op removed"; rm -rf "$LOCK"; continue; fi

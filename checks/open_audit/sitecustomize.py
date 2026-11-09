@@ -42,3 +42,10 @@ if _LOG and _ROOT:
 
     _seen.add(os.path.normcase(_real(os.path.abspath(_LOG))))
     sys.addaudithook(_hook)
+
+if "|" in os.environ.get("TFB_OPEN_AUDIT_FETCH", ""):   # discovery run of the clean room only (see fetch_mode.py)
+    try:
+        import fetch_mode
+        fetch_mode.install()
+    except Exception as e:
+        sys.stderr.write(f"fetch_mode not installed: {e}\n")

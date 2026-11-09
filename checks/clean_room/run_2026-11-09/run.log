@@ -1,0 +1,77 @@
+2026-11-09T04:15:12Z chain 19-35 start: rows 19..35, base /c/Data/tfb_cleanroom/run3/devroot/final_solution/outputs/c47/final_A.csv, run /c/Data/tfb_cleanroom/run3/devroot/final_solution/outputs/c47/run, S08 /c/Data/tfb_cleanroom/run3/devroot/artifacts/claude_ref/c_budget/s08/official/l127_r4800, WORK /c/Data/tfb_cleanroom/run3/devroot/work
+2026-11-09T04:15:13Z STEP 10 C47 (csv): VALUE_EQUAL_TOL - fresh base build (outputs/c47/verify.json: VERIFY_PASS state max|d| speed 4.19e-13 flow 3.64e-11)
+2026-11-09T04:15:14Z lock taken (R4 chain row 19)
+2026-11-09T04:16:45Z STEP 19 C50 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/probes/c_gap2w_on_c47.csv.gz) SERVE_VALUES EQUAL;
+2026-11-09T04:16:45Z lock taken (R4 chain row 20)
+2026-11-09T04:55:05Z STEP 20 C54 (csv): NOT_COMPARED - sha differs; no stored single-step reference (pd:artifacts/claude_ref/probes/c_gap2w_on_c47.csv.gz:artifacts/claude_ref/l_micro/c_lmicro2_on_c50.delta.csv.gz) 
+2026-11-09T04:55:06Z lock taken (R4 chain row 21)
+2026-11-09T04:56:11Z STEP 21 C55 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/probes/c_tinyvm_on_c54.csv.gz) 
+2026-11-09T04:56:11Z lock taken (R4 chain row 22)
+2026-11-09T04:57:52Z STEP 22 C57 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/l_dose/a3/rebase/delta/c_a3xsd_on_c55.csv.gz) 
+2026-11-09T04:57:52Z lock taken (R4 chain row 23)
+2026-11-09T04:59:00Z STEP 23 C59 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/l_tinyad/a1/on_c57/delta/c_tinyad_on_c57.csv.gz) 
+2026-11-09T04:59:01Z lock taken (R4 chain row 24)
+2026-11-09T05:44:48Z STEP 24 C64 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/l_b6/s2/c_b6s2_on_c59.csv.gz) 
+2026-11-09T05:44:49Z lock taken (R4 chain row 25)
+2026-11-09T06:25:49Z STEP 25 C65 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/l_b6/gapw/c_gapw_on_c64.csv.gz) 
+2026-11-09T06:25:50Z lock taken (R4 chain row 26)
+2026-11-09T07:49:00Z STEP 26 C66 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/l_b6/bundle18/c_bundle18_s2b_s7b.csv) 
+2026-11-09T07:49:00Z lock taken (R4 chain row 27)
+2026-11-09T07:51:34Z STEP 27 C69 (csv): NOT_COMPARED - sha differs; no stored single-step reference (full:artifacts/claude_ref/l_gap2/c_gap_on_c66.csv) G1_SERVE_VALUES EQUAL;
+2026-11-09T08:38:57Z STEP 28 SERVE_FVFT_MAR (serve): PASS-ARRAYS - 187 s
+2026-11-09T08:38:58Z STEP 28 B_FVFT_MAR (build): SHA_EQUAL - build 2402 s; peak_rss_mb 20 now_mb 20
+2026-11-09T08:38:58Z STEP 28 FVFT_MAR_ON_C66 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T08:38:59Z STEP 28 C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T08:38:59Z row 28 done in 2842 s
+2026-11-09T09:30:31Z STEP 29 SERVE_FVFT_APR (serve): PASS-ARRAYS - 181 s
+2026-11-09T09:30:31Z STEP 29 B_FVFT_APR (build): SHA_EQUAL - build 2391 s; peak_rss_mb 19 now_mb 19
+2026-11-09T09:30:32Z STEP 29 FVFT_BOTH_ON_C69 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T09:30:32Z STEP 29 GAP3_ON_C69 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T09:30:33Z STEP 29 GAP3_ON_C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T09:30:33Z STEP 29 C71 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T09:30:34Z row 29 done in 3092 s
+2026-11-09T11:00:46Z STEP 30 SERVE_FV2_MAR (serve): PASS-ARRAYS - 189 s
+2026-11-09T11:00:46Z STEP 30 B_FV2_MAR (build): SHA_EQUAL - build 2403 s; peak_rss_mb 20 now_mb 20
+2026-11-09T11:00:47Z STEP 30 FV2_MAR_ON_C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T11:00:47Z STEP 30 C72 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T11:00:47Z STEP 30 SERVE_FV2_APR (serve): PASS-ARRAYS - 183 s
+2026-11-09T11:00:48Z STEP 30 B_FV2_APR (build): SHA_EQUAL - build 2273 s; peak_rss_mb 20 now_mb 20
+2026-11-09T11:00:48Z STEP 30 FV2_BOTH_ON_C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T11:00:49Z STEP 30 C72P (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T11:00:49Z row 30 done in 5412 s
+2026-11-09T12:26:22Z STEP 31 SERVE_FVI_MAR (serve): PASS-ARRAYS - 159 s
+2026-11-09T12:26:23Z STEP 31 B_FVI_MAR (build): SHA_EQUAL - build 2016 s; peak_rss_mb 20 now_mb 20
+2026-11-09T12:26:23Z STEP 31 FVI_MAR_ON_C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T12:26:24Z STEP 31 C73 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T12:26:24Z STEP 31 C73P (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T12:26:24Z STEP 31 SERVE_FVI_APR (serve): PASS-ARRAYS - 182 s
+2026-11-09T12:26:25Z STEP 31 B_FVI_APR (build): SHA_EQUAL - build 2340 s; peak_rss_mb 20 now_mb 20
+2026-11-09T12:26:25Z STEP 31 FVI_BOTH_ON_C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T12:26:26Z STEP 31 C74P (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T12:26:26Z row 31 done in 5133 s
+2026-11-09T13:03:14Z STEP 32 GAPFV_HOOK (check): PASS-EXACT - R3_BUILDS=run
+2026-11-09T13:03:14Z STEP 32 GAPFV_ON_C73P (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T13:03:15Z STEP 32 C75 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T13:03:15Z row 32 done in 2208 s
+2026-11-09T13:07:06Z STEP 33 C76 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T13:07:06Z row 33 done in 230 s
+2026-11-09T14:31:40Z STEP 34 SERVE_W10_MAR (serve): PASS-ARRAYS - 163 s
+2026-11-09T14:31:41Z STEP 34 B_W10_MAR (build): SHA_EQUAL - build 2278 s; peak_rss_mb 19 now_mb 19
+2026-11-09T14:31:41Z STEP 34 W10_MAR_ON_C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T14:31:42Z STEP 34 W10_ON_C75 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T14:31:42Z STEP 34 C77 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T14:31:43Z STEP 34 SERVE_W10_APR (serve): PASS-ARRAYS - 163 s
+2026-11-09T14:31:43Z STEP 34 B_W10_APR (build): SHA_EQUAL - build 1992 s; peak_rss_mb 19 now_mb 19
+2026-11-09T14:31:43Z STEP 34 W10_BOTH_ON_C70 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T14:31:44Z STEP 34 C78 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T14:31:44Z row 34 done in 5074 s
+2026-11-09T15:49:41Z STEP 35 B_S7C_VAL (build): SHA_EQUAL - build 2001 s; peak_rss_mb 20 now_mb 20
+2026-11-09T15:50:10Z STEP 35 C79 (csv): VALUE_EQUAL_TOL -  VERIFY_PASS byte_equal=True changed_rows={} state max|d| speed 0 flow 0
+2026-11-09T15:50:10Z STEP 35 B_S7C_PRIV (build): SHA_EQUAL - build 2235 s; peak_rss_mb 20 now_mb 20
+2026-11-09T15:50:11Z STEP 35 S7C_APR_ON_C78 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T15:50:12Z STEP 35 X_C79_APRW10 (csv): NOT_COMPARED - sha differs; no stored single-step reference (none) 
+2026-11-09T15:50:41Z STEP 35 C80 (csv): VALUE_EQUAL_TOL -  VERIFY_PASS byte_equal=True changed_rows={} state max|d| speed 0 flow 0
+2026-11-09T15:50:41Z row 35 done in 4676 s
+2026-11-09T15:50:42Z final file /c/Data/tfb_cleanroom/run3/repo/outputs/C80.csv sha 96feaaca3ce7e07bdf9e3d6afb61b9b999ebaf50f8b2e17cd1c9a63f58f6200e
+2026-11-09T15:50:44Z STEP 19-35 summary (-): CHAIN_DONE - PASS-ARRAYS=8 VALUE_EQUAL_TOL=3 PASS-EXACT=1 SHA_EQUAL=10 NOT_COMPARED=34 
+2026-11-09T15:50:44Z CHAIN_19_35_DONE in 695 min: PASS-ARRAYS=8 VALUE_EQUAL_TOL=3 PASS-EXACT=1 SHA_EQUAL=10 NOT_COMPARED=34 

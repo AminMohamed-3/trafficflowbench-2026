@@ -11,7 +11,7 @@ D = ROOT / "exp/0354_d_f4_density_score"
 P = json.loads((D / "inputs.json").read_text())
 sys.path.insert(0, str(ROOT / "src"))
 import tfb
-tfb.__path__.insert(0, str(Path(P["S_source_root"]) / "src/tfb"))
+tfb.__path__.insert(0, str(ROOT / "src/tfb"))   # 2026-11-09: this root, not inputs.json S_source_root (old lane-s worktree, same code up to line endings)
 from tfb import metric
 base = importlib.import_module("tfb.lane_s.evaluate_baselines")
 data = importlib.import_module("tfb.data")

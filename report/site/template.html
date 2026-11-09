@@ -381,7 +381,7 @@ cd __REPO_NAME__
 uv venv --python 3.12 /workspace/tfb/venv
 uv pip install --python /workspace/tfb/venv/bin/python -r environment/requirements-cpu.txt
 export PATH=/workspace/tfb/venv/bin:$PATH</pre></div></div></li>
-        <li><div><b>Fetch data and weights</b>: the competition data with your own Kaggle login; our weights (4.1 GB in 3 parts) from the GitHub release, sha256 checked
+        <li><div><b>Fetch data and weights</b>: the competition data with your own Kaggle login; our weights (4.1 GB in 3 parts, plus 0.7 GB of stored intermediate files) from the GitHub release, sha256 checked
           <div class="code"><button class="copy" type="button">Copy</button><pre>bash pipeline/00_fetch_data.sh
 bash pipeline/01_fetch_weights.sh --release</pre></div></div></li>
         <li><div><b>Build the base file C47</b><span class="oschip">Linux / WSL2</span> about 3.5 h with our fitted S08 files, about 9 h with a full refit (7 to 11.5 h by flags)

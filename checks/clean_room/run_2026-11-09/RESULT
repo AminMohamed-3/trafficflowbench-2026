@@ -1,0 +1,37 @@
+2026-11-09T04:15:05Z start epoch 1794197705; source repo <DEV>/.claude/worktrees/cleanup-unrelated-code-370431/final_solution commit c6d4a601
+EXPORT_OK 674 files, 10.7 MB, dropped 7, stale 12350
+2026-11-09T04:15:11Z RESUME: setup of the earlier start kept (data link, weights, base outputs, devroot)
+2026-11-09T04:15:12Z chain python /c/Data/tfb_cleanroom/run3/venv/Scripts/python.exe (base C:\ProgramData\miniconda3, + lightgbm 4.6.0, audit .pth)
+audit in child with own PYTHONPATH: True
+2026-11-09T04:15:12Z chain start
+2026-11-09T15:50:44Z chain rc=0
+atime_reads: 1 files, 0.00 GB at or after 2026-11-09T04:14:05Z
+2026-11-09T15:51:09Z python opens outside the clean room: 2 (outputs/logs/clean_room/open_audit.log)
+31	C73P	csv	NOT_COMPARED	5bb006d9ce2be346
+31	SERVE_FVI_APR	serve	PASS-ARRAYS	30 members
+31	B_FVI_APR	build	SHA_EQUAL	e35d5a4efe41a970
+31	FVI_BOTH_ON_C70	csv	NOT_COMPARED	5801d5cf357869f1
+31	C74P	csv	NOT_COMPARED	a123066542051e27
+32	GAPFV_HOOK	check	PASS-EXACT	hook old arm == 
+32	GAPFV_ON_C73P	csv	NOT_COMPARED	634091a02932d1cc
+32	C75	csv	NOT_COMPARED	60fd84e7024921e7
+33	C76	csv	NOT_COMPARED	5b8f2cb042455626
+34	SERVE_W10_MAR	serve	PASS-ARRAYS	30 members
+34	B_W10_MAR	build	SHA_EQUAL	bbdf6e0c549f16ee
+34	W10_MAR_ON_C70	csv	NOT_COMPARED	54511c6fa9ac1dc8
+34	W10_ON_C75	csv	NOT_COMPARED	f5ba1491b0b3af5c
+34	C77	csv	NOT_COMPARED	3b199bef27f6c8e6
+34	SERVE_W10_APR	serve	PASS-ARRAYS	30 members
+34	B_W10_APR	build	SHA_EQUAL	18cfb31e967d6eef
+34	W10_BOTH_ON_C70	csv	NOT_COMPARED	905899f1dfbe60dc
+34	C78	csv	NOT_COMPARED	04de90f4555b0d47
+35	B_S7C_VAL	build	SHA_EQUAL	332cd0ea809e5fb0
+35	C79	csv	VALUE_EQUAL_TOL	f2507de144e021ee
+35	B_S7C_PRIV	build	SHA_EQUAL	e300e81eddc6ad80
+35	S7C_APR_ON_C78	csv	NOT_COMPARED	dbfa9cbc82ef883f
+35	X_C79_APRW10	csv	NOT_COMPARED	a37767dfff01ab53
+35	C80	csv	VALUE_EQUAL_TOL	96feaaca3ce7e07b
+19-35	summary	-	CHAIN_DONE	-
+2026-11-09T15:51:11Z C80 sha 96feaaca3ce7e07b
+2026-11-09T15:51:11Z CLEAN_ROOM_END rc=0 opens_outside=2 minutes=696
+DONE

@@ -1,5 +1,5 @@
 """asm2 (ledger 0475) portable copy of phys_lwr_diag.py: falls back to artifacts/claude_ref/asm2/env/0354_inputs.json and the
-main src/tfb when the sibling tfb-wt worktrees are absent (VM, clean clone). Otherwise verbatim.
+main src/tfb of this root (never the old tfb-wt worktrees). Otherwise verbatim.
 Claude 2026-10-04: where does the S_LWR loss sit, and does a density-only smoother help J_S? Tier 0 screen.
 OPT setup of D's 0354 screen (train held dates, frozen F4 OPT predictions retained by D, local truth-projected replica).
 Transition classes: oo (both cells observed: error 0), ot/to (one target), tt (both target). Variants change v only
@@ -15,8 +15,8 @@ if (D / "inputs.json").exists():
     P = json.loads((D / "inputs.json").read_text())
 else:  # portable: date lists only; F4 OPT predictions (held_panel) then need TFB_0354_DIR
     P = json.loads((ROOT / "artifacts/claude_ref/asm2/env/0354_inputs.json").read_text()); P["S_source_root"] = str(ROOT)
-if not (Path(P["S_source_root"]) / "src/tfb/lane_s/evaluate_baselines.py").exists():
-    P["S_source_root"] = str(ROOT)  # src/tfb/lane_s/evaluate_baselines.py is byte-identical in main and lane-s
+P["S_source_root"] = str(ROOT)  # always this root: src/tfb (lane_s included) equals the old lane-s worktree up to line endings
+# (checked 2026-11-09); the stored inputs.json names that worktree, and reading code outside the root broke the clean-room audit
 sys.path.insert(0, str(ROOT / "src"))
 import tfb
 tfb.__path__.insert(0, str(Path(P["S_source_root"]) / "src/tfb"))

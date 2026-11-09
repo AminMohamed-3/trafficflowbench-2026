@@ -11,8 +11,8 @@ wp() { if command -v cygpath >/dev/null 2>&1; then cygpath -m "$1"; else printf 
 # step SCRIPT ARGS...: python docs/reference_code/asm2_step.py docs/reference_code/SCRIPT ARGS (cwd CODE), with the
 # environment of the development chain (exp/L_lab/a3/a3.py chain_env: DET, 2 threads, CPU only).
 step() { local s=$1; shift
-  ( cd "$CODE" && env TFB_ASM2_DET=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 PYTHONPATH="$(wp "$CODE/src")" \
+  ( cd "$CODE" && env TFB_ASM2_DET=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 PYTHONPATH="$(wp "$CODE/src")${PYTHONPATH:+;$PYTHONPATH}" \
       PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 CUDA_VISIBLE_DEVICES="${STEP_CVD:--1}" COLD_PARITY_TOL="${COLD_PARITY_TOL:-1e-6}" \
       "$PY" -B docs/reference_code/asm2_step.py "docs/reference_code/$s" "$@" ); }
-glue() { ( cd "$CODE" && env PYTHONPATH="$(wp "$CODE/src")" PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 "$PY" -B "$@" ); }
+glue() { ( cd "$CODE" && env PYTHONPATH="$(wp "$CODE/src")${PYTHONPATH:+;$PYTHONPATH}" PYTHONUNBUFFERED=1 PYTHONIOENCODING=utf-8 "$PY" -B "$@" ); }
 fsha() { [ "${PARENT_SHA_CHECK:-1}" = 0 ] && { say "parent sha check skipped (PARENT_SHA_CHECK=0)"; return 0; }; need_sha "$1" "$2"; }

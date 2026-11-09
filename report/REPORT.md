@@ -485,7 +485,7 @@ inside the gate of about .009.
 fitted files, sha256 receipts and the exact recipe [ADOPTED 19 to 35; .claude/CLAUDE.md]. The solution repository
 (`final_solution/`) rebuilds them in adoption order from saved weights, with a parity check per piece:
 `pipeline/00_fetch_data.sh`, `01_fetch_weights.sh`, `10_base_c47.sh`, `pipeline/pieces/19_*.sh` to `35_*.sh`, `99_verify.py`
-[docs/report/FINAL_PLAN_2026-10-21.md section 3]. Verification run: [CHAIN RESULT]. Two known exceptions: Q-ACCUM has no weights (per-date online fits in three Kaggle kernels;
+[docs/report/FINAL_PLAN_2026-10-21.md section 3]. Verification run (clean machine): passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except the two stored submission files used for the final comparison. Every rebuilt member set matched development by sha256, and C79 and C80 came out byte-equal to the submitted files (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13). Two known exceptions: Q-ACCUM has no weights (per-date online fits in three Kaggle kernels;
 stored outputs are sha-checked; leaving it out costs about .00006 public) [ADOPTED 33], and the per-date weights of A1 were
 not saved (rerun about .8 GPU h, or stored probabilities with sha) [ADOPTED 23].
 

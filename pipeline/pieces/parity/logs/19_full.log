@@ -1,7 +1,7 @@
 2026-10-21T01:49:35Z lock taken (19_parity)
-wrote C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/19_parent.csv sha256 1606b1c59e9a59f46605db19a25e4b83ba493b47e46b3ff41fbdeec255c2a61a (MATCH); 6735795 rows from delta, columns ['speed_kmh', 'flow_vph']
+wrote <DEVROOT>/final_solution/work/parity/19_parent.csv sha256 1606b1c59e9a59f46605db19a25e4b83ba493b47e46b3ff41fbdeec255c2a61a (MATCH); 6735795 rows from delta, columns ['speed_kmh', 'flow_vph']
 weights: 56 files OK
-2026-10-21T01:50:20Z 19 serve: weights C:\Data\Projects\Money Making\work\IEEE Big Data-Traffic\artifacts\claude_ref\c_gap2c47\weights
+2026-10-21T01:50:20Z 19 serve: weights <DEVROOT>\artifacts\claude_ref\c_gap2c47\weights
 validation D7_I10_E 8349 rows 3.1 s inputs equal to training: True
 validation D7_I10_W 3966 rows 2.6 s inputs equal to training: True
 validation D7_I210_E 14727 rows 4.9 s inputs equal to training: True
@@ -85,5 +85,5 @@ pass 3 (expand check): sha from parent + delta 9ddd8848c235627c665b2a6732043485f
  "note": "parent with official gap&target state rows = clip((1-w) parent row + w mean(cnr0,cnr1,cnr2 official predictions, sm1)); w (class,channel) fitted on March I-S-OWN selector-like blocks, all dates"
 }
 BUILD DONE 13 s
-2026-10-21T01:51:39Z 19 done: /c/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/19_out.csv 9ddd8848c235627c665b2a6732043485f7e2c14e3bbb45f09b6bb509f1d75bb4
-{"built": "C:/Data/Projects/Money Making/work/IEEE Big Data-Traffic/final_solution/work/parity/19_out.csv", "sha256": "9ddd8848c235627c665b2a6732043485f7e2c14e3bbb45f09b6bb509f1d75bb4", "expected": "9ddd8848c235627c665b2a6732043485f7e2c14e3bbb45f09b6bb509f1d75bb4", "result": "PASS-SHA", "piece": "19", "variant": "full", "runtime_s": 125}
+2026-10-21T01:51:39Z 19 done: <DEVROOT>/final_solution/work/parity/19_out.csv 9ddd8848c235627c665b2a6732043485f7e2c14e3bbb45f09b6bb509f1d75bb4
+{"built": "<DEVROOT>/final_solution/work/parity/19_out.csv", "sha256": "9ddd8848c235627c665b2a6732043485f7e2c14e3bbb45f09b6bb509f1d75bb4", "expected": "9ddd8848c235627c665b2a6732043485f7e2c14e3bbb45f09b6bb509f1d75bb4", "result": "PASS-SHA", "piece": "19", "variant": "full", "runtime_s": 125}

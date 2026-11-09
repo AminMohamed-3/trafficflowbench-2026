@@ -50,10 +50,12 @@ m() { cygpath -m "$1"; }
 first() { local x; for x in "$@"; do [ -e "$x" ] && { echo "$x"; return; }; done; echo ""; }
 
 # ---- inputs of the fresh base build -------------------------------------------------------------------------------
-BASE=${CHAIN_BASE:-$FS/outputs/c47/final_A.csv}; BASE_STATE=$BASE.state.parquet
-BASE_RUN=${CHAIN_BASE_RUN:-$(first "$FS/outputs/c47/run/mix/cnn_ens2.parquet" "$FS/artifacts/claude_ref/asm2/run/mix/cnn_ens2.parquet")}
+# the base build inside the code root first (row 20 records its inputs relative to TFB_ROOT; pipeline/15_make_devroot.py links
+# outputs/c47 to DEVROOT/final_solution/outputs/c47, the development layout)
+BASE=${CHAIN_BASE:-$(first "$OLD/final_solution/outputs/c47/final_A.csv" "$FS/outputs/c47/final_A.csv")}; BASE_STATE=$BASE.state.parquet
+BASE_RUN=${CHAIN_BASE_RUN:-$(first "$OLD/final_solution/outputs/c47/run/mix/cnn_ens2.parquet" "$FS/outputs/c47/run/mix/cnn_ens2.parquet" "$FS/artifacts/claude_ref/asm2/run/mix/cnn_ens2.parquet")}
 BASE_RUN=${BASE_RUN%/mix/cnn_ens2.parquet}
-S08=${CHAIN_S08_DIR:-$(first "$BASE_RUN/s08/l127_r4800/official_validation.parquet" "$FS/artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_validation.parquet")}
+S08=${CHAIN_S08_DIR:-$(first "$BASE_RUN/s08/l127_r4800/official_validation.parquet" "$OLD/artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_validation.parquet" "$FS/artifacts/claude_ref/c_budget/s08/official/l127_r4800/official_validation.parquet")}
 S08=${S08%/official_validation.parquet}
 # piece environment: base run intermediates and earlier pieces' intermediates (never the stored old equivalents)
 export TFB_BASE_RUN=$BASE_RUN BASE_RUN=$BASE_RUN S08_DIR=$S08 B6_DIR=$BASE_RUN/b6l

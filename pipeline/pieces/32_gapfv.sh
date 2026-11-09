@@ -24,7 +24,7 @@ else
   for pn in $PANELS; do
     [ -f "$BD/t1.csv.$pn.gaprows.npz" ] && continue
     waitmem 36 "hook $pn"; t1=$(date +%s)
-    LM_THREADS=4 LM_RSS_GB=3.5 "$PY" -B "$D/src/32/gfv73_build.py" "$BD/t1.csv" "$G/tune.json" --panels $pn > "$G/build_$pn.log" 2>&1 || { unlock; r3fail "hook $pn: $(grep -v '^\s*$' "$G/build_$pn.log" | tail -n 1 | cut -c1-200)"; }
+    LM_THREADS=4 LM_RSS_GB=${GFV_RSS_GB:-6} "$PY" -B "$D/src/32/gfv73_build.py" "$BD/t1.csv" "$G/tune.json" --panels $pn > "$G/build_$pn.log" 2>&1 || { unlock; r3fail "hook $pn: $(grep -v '^\s*$' "$G/build_$pn.log" | tail -n 1 | cut -c1-200)"; }
     say "hook $pn $(( $(date +%s) - t1 )) s $(cat "$BD/t1.csv.rss.txt" 2>/dev/null || true)"
   done
   unlock

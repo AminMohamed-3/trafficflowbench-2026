@@ -17,3 +17,4 @@ work/
 __pycache__/
 *.pyc
 *.part
+devroot/
