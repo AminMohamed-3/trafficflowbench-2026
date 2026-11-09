@@ -218,12 +218,12 @@ The repository rebuilds the scored file C79 (sha256 104c2c6f…) and C80 from th
 - **Lost weights.** The base build's ConvNeXt member is also stored: its fine-tuned weights were lost. Row 21 replaces it with a retrain whose weights are saved.
 - **Verification run:** Passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except our two stored files of C79 and C80, read for the final comparison. Every rebuilt member set matched development by sha256, C79 came out byte-equal to the scored submission and C80 to our stored file (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13).
 
-## How it was built
+## How it was run
 
-One person set the goal, the budget, the rule interpretations and the final selection. AI coding agents did the engineering: Codex lanes coordinated by a Claude planner until 8 October, then Claude Code alone, running as a harness. The harness kept state in files (registry, ledger, calibration table) and launched helper agents for ideation, ranking, line work and critique.
-- A hook blocked uploads without a manifest line and a written forecast.
+All state lived in files: the idea registry, a ledger of every board read with its forecast, and a calibration table.
+- A pre-upload check blocked any upload without a manifest line and a written forecast.
 - Our own mistakes:
-  - wrong headroom estimates that sent two lanes to ODME;
+  - wrong headroom estimates that sent two lines of work to ODME;
   - a destroyed rented machine that took one member's weights with it.
 - Each mistake became a rule: save weights and a recipe at adoption.
 
