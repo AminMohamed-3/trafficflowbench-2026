@@ -216,7 +216,7 @@ The repository rebuilds the scored file C79 (sha256 104c2c6f…) and C80 from th
   - rows 21, 22, 23 and 26, because the originals ran on a GPU or another machine and floats differ in the last bits;
   - row 33, Q-ACCUM, whose per-date fits ran inside Kaggle kernels and have no weights.
 - **Lost weights.** The base build's ConvNeXt member is also stored: its fine-tuned weights were lost. Row 21 replaces it with a retrain whose weights are saved.
-- **Verification run:** Passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except the two stored submission files used for the final comparison. Every rebuilt member set matched development by sha256, and C79 and C80 came out byte-equal to the submitted files (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13).
+- **Verification run:** Passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except our two stored files of C79 and C80, read for the final comparison. Every rebuilt member set matched development by sha256, C79 came out byte-equal to the scored submission and C80 to our stored file (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13).
 
 ## How it was built
 

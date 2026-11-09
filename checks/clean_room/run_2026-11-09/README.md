@@ -11,7 +11,7 @@ The development repository path is written `<DEV>` here; from it only the compet
 - `RESULT`, `run.log`, `chain_19_35.tsv`: the rerun of rows 19-35 in the same setup (RESUME=1, empty work folder), 2026-11-09
   04:15Z to 15:51Z (696 min). Every build step SHA_EQUAL to development, every serve PASS-ARRAYS, C79 and C80 VERIFY_PASS
   byte_equal=True against the submitted files.
-- `open_audit.log`: every Python file open outside the clean folder, venv, data and system folders. Two lines: the stored
-  C79 and C80 submission files read by `pipeline/99_verify.py` for the final comparison.
+- `open_audit.log`: every Python file open outside the clean folder, venv, data and system folders. Two lines: our stored
+  C79 and C80 files read by `pipeline/99_verify.py` for the final comparison.
 - `atime_reads.tsv`: files of the development repository read during the run by NTFS access time (one: `.gitattributes` at 13:36Z,
   touched by a git process on the laptop; no Python process of the chain opened it, see open_audit.log).

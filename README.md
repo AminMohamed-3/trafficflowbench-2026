@@ -6,7 +6,7 @@ Author: Amin Mohamed. Private score .89874 (8th), public .90088.
 - Interactive site (all board reads, the idea registry, the analysis): https://aminmohamed-3.github.io/trafficflowbench-2026/
 - Weights: the `weights-v1` release of this repository (4.1 GB in 3 zip parts plus `devroot_extra.zip`, 0.7 GB of stored intermediate files; all sha256-checked by the fetch script).
 - Verified on a clean folder (2026-11-09): from this repository, the release assets and the competition data alone, the chain
-  rebuilt C79 and C80 byte-equal to the submitted files, with an audit showing no file read from outside that folder
+  rebuilt C79 byte-equal to the scored submission and C80 byte-equal to our stored file, with an audit showing no file read from outside that folder
   (`checks/clean_room/run_clean_room.sh`; logs in `checks/clean_room/run_2026-11-09/`).
 
 Code that rebuilds our submitted files from the organisers' release and our saved weights.

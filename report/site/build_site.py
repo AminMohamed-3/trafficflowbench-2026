@@ -84,7 +84,7 @@ html = (SITE / "template.html").read_text(encoding="utf-8")
 blob = json.dumps(D, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 import os
 repo = os.environ.get("REPO_URL", "https://github.com/AminMohamed-3/trafficflowbench-2026").rstrip("/")
-status = os.environ.get("CHAIN_STATUS", 'passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except the two stored submission files used for the final comparison. Every rebuilt member set matched development by sha256, and C79 and C80 came out byte-equal to the submitted files (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13).')
+status = os.environ.get("CHAIN_STATUS", 'passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except our two stored files of C79 and C80, read for the final comparison. Every rebuilt member set matched development by sha256, C79 came out byte-equal to the scored submission and C80 to our stored file (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13).')
 html = html.replace("__CHAIN_STATUS__", status)
 html = html.replace("__REPO_URL__", repo).replace("__REPO_NAME__", repo.rsplit("/", 1)[-1])
 (SITE / "index.html").write_text(html.replace("/*__DATA__*/null", blob), encoding="utf-8", newline="\n")
