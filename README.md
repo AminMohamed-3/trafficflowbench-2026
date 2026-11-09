@@ -33,7 +33,7 @@ The reproducibility gate of the award is 1% of the private score (about .009). C
   at a time (lower RAM, about +1.8 h); `--reuse-cache` saves 20 min, `--s08-fitted` saves about 4 h.
 - Disk: release 12 GB; fetched weights 1.6 GB (+ .55 GB reference); build peak about 2.6 to 7.5 GB (flags).
 
-## Commands (reproduce C80)
+## Commands (reproduce C79, the scored file, and C80)
 
 Five steps, run from the repository root. Steps 0-2 run on Linux (or WSL2); steps 3-4 run in Git Bash on Windows with
 the Windows venv (the piece scripts use `cygpath` and `python.exe`), on the same checkout.
@@ -55,10 +55,13 @@ cat outputs/logs/base_c47.result                    # RESULT ... VERIFY_PASS ...
 python pipeline/15_make_devroot.py C:/tfb/devroot --extra weights/devroot_extra
 export TFB_OLD_REPO=C:/tfb/devroot CHAIN_WORK=C:/tfb/devroot/work PY=<your venv>/Scripts/python.exe
 bash pipeline/20_pieces.sh --dry-run                # checks inputs and stored references, prints the plan
-bash pipeline/20_pieces.sh                          # -> outputs/C80.csv; per step outputs/logs/chain_19_35.tsv
-# 4. verify the final file against the submitted C80 (sha 3e27d66c...)
-#    (C80_SUBMITTED.csv = the submitted file; not in reference/ yet, laptop: artifacts/claude_ref/l_isinel/cand/c80/c_s7c_both_aprw10_c80.csv)
-python pipeline/99_verify.py outputs/C80.csv --ref C80_SUBMITTED.csv --ref-sha 3e27d66cd2b3cfc4371fd218617ebf08a0fa16e481a7bf7108ea2942cd9ef650 --state-atol 1e-8
+bash pipeline/20_pieces.sh                          # -> $CHAIN_WORK/r3chain/C79.csv (scored file) and outputs/C80.csv
+# 4. verify. C79 is the selected and scored Kaggle submission (public .90088, private .89874); its sha256 must be
+#    104c2c6fce3393b14ea219ce8ae3ada6230ec358bba37f137335615eb4db1f04 (byte-equal in our clean-folder run, 2026-11-09).
+#    C80 (never uploaded) must be 3e27d66cd2b3cfc4371fd218617ebf08a0fa16e481a7bf7108ea2942cd9ef650.
+sha256sum "$CHAIN_WORK/r3chain/C79.csv" outputs/C80.csv
+#    value check against a copy of the submission downloaded from Kaggle (C79_SUBMITTED.csv):
+python pipeline/99_verify.py "$CHAIN_WORK/r3chain/C79.csv" --ref C79_SUBMITTED.csv --ref-sha 104c2c6fce3393b14ea219ce8ae3ada6230ec358bba37f137335615eb4db1f04 --state-atol 1e-8
 # steps 3 + 4 unattended (waits for a free laptop lock, writes outputs/logs/chain_19_35.result: RESULT ... or FAILED ...):
 nohup bash pipeline/run_chain_when_free.sh > /dev/null 2>&1 &
 ```
