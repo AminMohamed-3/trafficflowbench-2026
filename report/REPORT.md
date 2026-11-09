@@ -4,6 +4,10 @@ Amin Mohamed
 
 2026 IEEE BigData Cup: TrafficFlowBench. Method report for the final package (code and report due 2026-11-10).
 
+Code, weights and rebuild: https://github.com/AminMohamed-3/trafficflowbench-2026 . Interactive write-up:
+https://aminmohamed-3.github.io/trafficflowbench-2026/ . Kaggle write-up:
+https://www.kaggle.com/competitions/2026-ieee-big-data-traffic-flow-bench/writeups/8th-place-solution-per-month-masked-u-net-and-per
+
 **How to read the sources.** Every number carries a source in square brackets. T1 to T5 and F1 to F14 are the tables and
 figures of this report (Appendix F lists their data files). Other keys: "ADOPTED n" = row n of docs/report/ADOPTED.md;
 "Rnnn" = row of the idea registry docs/research/registry/REGISTRY.tsv; "Lnnnn" = row of LEDGER.md; "calib" =
@@ -131,6 +135,10 @@ measurements and queue forecasts as priors. After the calibration review the use
 *F11. I-S-INEL, calibrated once on FV-FT, forecast the next step at board/forecast 1.05; the S7c read (+.00007) exceeds its held-out value (+.00002) and matches its in-sample value (+.000069).*
 
 ## 4. Method per component
+
+![S1. The system at a glance](figures/out/system_diagram.png)
+
+*S1. Five task engines, built once per scored month, write the four row types of the submitted file (physics has no model; it scores our state rows). Tags say what each engine may read. Every piece came in through the loop at the bottom, and the chain rebuilds byte-equal from the public repository (section 9). F1 shows the same pipeline block by block.*
 
 ![F1. Pipeline and the data each block may read](figures/out/F1_pipeline.png)
 
@@ -628,6 +636,7 @@ Script: final_solution/report/figures/make_figures.py (deterministic; captions i
 
 | id | claim (caption) | data |
 |---|---|---|
+| S1 | system overview: inputs, five engines, submitted file, adoption loop, rebuild | report/site/system_diagram.py |
 | F1 | pipeline; each stage reads only allowed data (month, stamp) | docs/report/ASSEMBLY.md, FINAL_BUILD_PLAN.md |
 | F2 | waterfall U1 to C80, one bar per piece, forecast band | ADOPTED.md, calib |
 | F3 | forecast vs board, y = x, by kind: state reads on the line, queue reads scattered | calib |

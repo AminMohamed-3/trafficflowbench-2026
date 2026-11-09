@@ -152,7 +152,7 @@ def fig_F1(mf):
     X0, W0 = 89.0, 10.0
     ax.add_patch(FancyBboxPatch((X0, 8.0), W0, 66.0, boxstyle="round,pad=0,rounding_size=.6", fc="#E8E8E8", ec=edge, lw=.9, zorder=2))
     xc = X0 + W0 / 2
-    for yy, s, kw in ((61.5, "C80", dict(fontsize=8.0, fontweight="bold")), (58.8, "submitted file", {}), (55.8, "sha", {}),
+    for yy, s, kw in ((61.5, "C80", dict(fontsize=8.0, fontweight="bold")), (58.8, "final build", {}), (55.8, "sha", {}),
                       (54.0, sha8, {}), (51.0, "public", {}), (49.2, ".90088", {}), (45.6, "March and", {}), (43.8, "April rows", {}),
                       (42.0, "built separately", {})):
         ax.text(xc, yy, s, ha="center", va="center", color=txt, zorder=3, **({"fontsize": 5.6} | kw))

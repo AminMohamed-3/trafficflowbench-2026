@@ -2,7 +2,7 @@
 
 Author: Amin Mohamed. Private score .89874 (8th), public .90088.
 
-- Write-up: `report/KAGGLE_WRITEUP.md`; full method report: `report/REPORT.md`.
+- Write-up: `report/KAGGLE_WRITEUP.md`; full method report: `report/REPORT.md` (PDF: `report/REPORT.pdf`, built by `report/build_pdf.py`).
 - Interactive site (all board reads, the idea registry, the analysis): https://aminmohamed-3.github.io/trafficflowbench-2026/
 - Weights: the `weights-v1` release of this repository (4.1 GB in 3 zip parts plus `devroot_extra.zip`, 0.7 GB of stored intermediate files; all sha256-checked by the fetch script).
 - Verified on a clean folder (2026-11-09): from this repository, the release assets and the competition data alone, the chain
