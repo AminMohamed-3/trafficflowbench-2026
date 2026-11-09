@@ -80,7 +80,11 @@ for r in st:
         err[i][t] = num(r["err_kmh"], 1)
 D["spacetime"] = dict(panel="D12_I405_S", date="2031-03-18", stations=ns, steps=nt, mask=mask, err=err)
 
+import subprocess, sys
+subprocess.run([sys.executable, str(SITE / "system_diagram.py")], check=True)   # system diagram (SVG + CSS), one source with the PNG
 html = (SITE / "template.html").read_text(encoding="utf-8")
+html = html.replace("<!--__SYSTEM_SVG__-->", (SITE / "system_diagram.svg").read_text(encoding="utf-8"))
+html = html.replace("/*__SYSTEM_CSS__*/", (SITE / "system_diagram.css").read_text(encoding="utf-8"))
 blob = json.dumps(D, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
 import os
 repo = os.environ.get("REPO_URL", "https://github.com/AminMohamed-3/trafficflowbench-2026").rstrip("/")

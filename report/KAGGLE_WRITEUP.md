@@ -22,6 +22,12 @@ Thanks to the organisers of the 2026 IEEE BigData Cup for a benchmark with four 
 4. **State pieces carried to April; late queue pieces did not.** After C47, state carried 1.04× from March to April and ongoing 0.03×.
 5. **ODME:** we ship the organiser's own NNLS (λ = .05). Every move away from it lost.
 
+## The system at a glance
+
+![System diagram: three inputs, five task engines built once per scored month, the submitted file, the loop every piece went through, and the rebuild](https://raw.githubusercontent.com/AminMohamed-3/trafficflowbench-2026/main/report/figures/out/system_diagram.png)
+
+*Five task engines, built once per scored month, write the four row types of the submitted file (physics has no model; it scores our state rows). Tags say what each engine may read. Every piece came in through the loop at the bottom, and the chain rebuilds byte-equal from the public repository.*
+
 ## What carried from March to April
 
 | | public (March) | private (April) |

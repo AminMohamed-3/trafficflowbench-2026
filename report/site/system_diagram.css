@@ -1,0 +1,15 @@
+.sd { width: 100%; height: auto; display: block; font-family: var(--body) }
+.sd .sd-box { fill: var(--surface); stroke: var(--rule); stroke-width: 1.2 }
+.sd .sd-mini { fill: var(--bg); stroke: var(--rule) }
+.sd .sd-out { fill: var(--sunk); stroke: var(--ink); stroke-width: 1.5 }
+.sd .sd-ln { stroke: var(--ink); stroke-width: 1.4 } .sd .sd-head { fill: var(--ink) }
+.sd text { fill: var(--ink) }
+.sd .sd-h { font: 700 11px var(--display); letter-spacing: .08em; fill: var(--muted) }
+.sd .sd-t { font: 700 13.5px var(--display) } .sd .sd-big { font: 900 18px var(--display) }
+.sd .sd-m { font: 700 12px var(--display) } .sd .sd-s { font-size: 11.5px; fill: var(--muted) }
+.sd .sd-a { font: 600 10px var(--mono); fill: var(--muted) }
+.sd .sd-chip { font: 700 10px var(--mono) }
+.sd .sd-c-train { fill: none; stroke: var(--muted) } .sd .sd-c-train-t { fill: var(--muted) }
+.sd .sd-c-month { fill: none; stroke: var(--c-state) } .sd .sd-c-month-t { fill: var(--c-state) }
+.sd .sd-c-online { fill: none; stroke: var(--pub) } .sd .sd-c-online-t { fill: var(--pub) }
+.sd .sd-c-m4a { fill: none; stroke: var(--priv) } .sd .sd-c-m4a-t { fill: var(--priv) }
