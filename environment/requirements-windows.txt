@@ -1,0 +1,27 @@
+# Windows venv of the piece chain (run_all.sh step 1; pipeline/20_pieces.sh with PY=<venv>/Scripts/python.exe).
+# Python 3.12 (qualified: 3.12.1, 64-bit). These are the exact versions of the venv that produced C79 and C80 and passed
+# the clean-folder check of 2026-11-09: the packages the chain code imports and their dependency closure.
+# The chain serves on CPU (20_pieces.sh sets CUDA_VISIBLE_DEVICES=""); torch is the cu118 build we used, CPU path only.
+--extra-index-url https://download.pytorch.org/whl/cu118
+filelock==3.25.2
+fsspec==2023.10.0
+Jinja2==3.1.6
+lightgbm==4.6.0
+MarkupSafe==3.0.3
+mpmath==1.3.0
+networkx==3.6.1
+numpy==2.4.4
+packaging==24.0
+pandas==3.0.2
+psutil==7.2.2
+pyarrow==23.0.1
+python-dateutil==2.9.0.post0
+PyYAML==6.0.3
+scipy==1.17.1
+setuptools==68.2.2
+six==1.16.0
+sympy==1.14.0
+threadpoolctl==3.6.0
+torch==2.7.1+cu118
+typing_extensions==4.15.0
+tzdata==2026.1

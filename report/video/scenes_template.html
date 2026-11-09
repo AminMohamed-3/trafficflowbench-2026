@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>TrafficFlowBench video scenes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Overpass:wght@400;600;700;800;900&family=Overpass+Mono:wght@400;600;700&display=block" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b110e; --surface: #131c17; --sunk: #080d0a; --ink: #e6eee8; --muted: #93a69a; --rule: #2a3b33;
+  --accent: #2fb57e; --pub: #6ea8ff; --priv: #ff9152; --bad: #f2685f; --warn: #e0a640;
+  --c-state: #3cc2ad; --c-ongoing: #a98bf0; --c-onset: #e3b53c; --c-physics: #f07f5f; --c-odme: #8fb8ff;
+  --display: "Overpass", "Segoe UI", sans-serif; --body: "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+  --mono: "Overpass Mono", Consolas, monospace; color-scheme: dark;
+}
+html, body { margin: 0; background: var(--bg); overflow: hidden }
+#stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; color: var(--ink); font-family: var(--body);
+  background: radial-gradient(1200px 700px at 78% 18%, #12241b 0%, rgba(11,17,14,0) 70%), radial-gradient(900px 600px at 10% 100%, #0f1c25 0%, rgba(11,17,14,0) 70%), var(--bg) }
+#bgc { position: absolute; inset: 0 }
+.scene { position: absolute; inset: 0; opacity: 0; display: none }
+.abs { position: absolute }
+.kick { font: 700 22px var(--mono); letter-spacing: .14em; color: var(--muted); text-transform: uppercase }
+.h1 { font: 900 64px/1.05 var(--display); letter-spacing: -.01em }
+.h2 { font: 800 44px/1.1 var(--display) }
+.lab { font: 600 22px var(--display); color: var(--muted) }
+.mono { font-family: var(--mono) }
+#brand { position: absolute; left: 64px; top: 44px; font: 700 20px var(--mono); letter-spacing: .12em; color: var(--muted); text-transform: uppercase }
+#brand b { color: var(--accent) }
+#chap { position: absolute; right: 64px; top: 44px; font: 700 20px var(--mono); letter-spacing: .1em; color: var(--muted); text-transform: uppercase; text-align: right }
+#cap { position: absolute; left: 50%; bottom: 58px; transform: translateX(-50%); max-width: 1500px; text-align: center;
+  font: 400 31px/1.35 var(--body); color: #f3f7f4; padding: 10px 26px; border-radius: 12px; background: rgba(4,8,6,.72);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.05) }
+#prog { position: absolute; left: 0; bottom: 0; height: 5px; background: var(--accent) }
+.card { position: absolute; background: rgba(19,28,23,.92); border: 1px solid var(--rule); border-radius: 14px }
+.chip { display: inline-block; font: 700 18px var(--mono); padding: 4px 12px; border-radius: 8px; border: 1.5px solid }
+svg text { font-family: var(--display) }
+/*__SDCSS__*/
+#s-system .sd { --surface: #141d18; --bg: #0b110e; --sunk: #0d1611; --ink: #e2ebe5; --muted: #93a69a; --rule: #34473d;
+  --c-state: #3cc2ad; --pub: #6ea8ff; --priv: #ff9152; --display: "Overpass", sans-serif; --body: "Atkinson Hyperlegible", sans-serif; --mono: "Overpass Mono", monospace }
+</style></head>
+<body><div id="stage">
+<canvas id="bgc" width="1920" height="1080"></canvas>
+
+<!-- 1 title -->
+<div class="scene" id="s-title">
+  <div class="abs kick" id="t-kick" style="left:140px;top:250px">2026 IEEE BigData Cup &middot; TrafficFlowBench</div>
+  <div class="abs" id="t-num" style="left:132px;top:290px;font:900 250px/1 var(--display);letter-spacing:-.04em"></div>
+  <div class="abs lab" id="t-sub" style="left:146px;top:548px;font-size:32px"></div>
+  <div class="abs" id="t-title" style="left:140px;top:640px;width:900px">
+    <div class="h1" style="font-size:56px">Learn on the month you are scored on.</div>
+    <div class="h1" style="font-size:56px;color:var(--accent);margin-top:6px">Trust only what you can measure.</div>
+    <div class="lab" style="margin-top:26px;font-size:26px">Amin Mohamed</div>
+  </div>
+  <canvas class="abs" id="t-dots" width="760" height="420" style="left:1040px;top:300px"></canvas>
+  <div class="abs lab" id="t-dotlab" style="left:1040px;top:740px;font-size:22px;width:760px;text-align:right"></div>
+</div>
+
+<!-- 2 task -->
+<div class="scene" id="s-task">
+  <div class="abs kick" style="left:120px;top:150px">One corridor, one March day &middot; D12_I405_S, 18 March 2031</div>
+  <canvas class="abs" id="k-grid" width="900" height="440" style="left:120px;top:200px"></canvas>
+  <div class="abs lab" style="left:120px;top:652px;font-size:20px">44 stations (rows) &times; 288 five-minute steps (columns)</div>
+  <div class="abs" id="k-leg" style="left:120px;top:688px;font:600 20px var(--display);color:var(--muted)">
+    <span style="display:inline-block;width:16px;height:16px;background:#5b6b62;vertical-align:-2px"></span> released&nbsp;&nbsp;&nbsp;
+    <span id="k-leg2"><span style="display:inline-block;width:16px;height:16px;background:var(--c-onset);vertical-align:-2px"></span> hidden: fill in speed and flow</span></div>
+  <div class="abs" id="k-score" style="left:1110px;top:150px;width:700px">
+    <div class="kick">One score: S_total</div>
+    <svg id="k-bar" width="700" height="56" style="margin-top:16px;display:block"></svg>
+    <div id="k-rows" style="margin-top:22px"></div>
+  </div>
+  <div class="card" id="k-mar" style="left:1110px;top:700px;width:310px;height:120px;padding:18px 22px;box-sizing:border-box">
+    <div class="kick" style="color:var(--pub)">Public board</div><div class="h2" style="font-size:40px;margin-top:8px">March 2031</div></div>
+  <div class="abs" id="k-neq" style="left:1440px;top:712px;font:900 64px var(--display);color:var(--warn)">&ne;</div>
+  <div class="card" id="k-apr" style="left:1500px;top:700px;width:310px;height:120px;padding:18px 22px;box-sizing:border-box">
+    <div class="kick" style="color:var(--priv)">Private board</div><div class="h2" style="font-size:40px;margin-top:8px">April 2031</div></div>
+  <div class="abs lab" id="k-indep" style="left:1110px;top:836px;width:700px;text-align:center;font-size:22px;color:var(--warn)">generated independently, with different incidents</div>
+</div>
+
+<!-- 3 insight -->
+<div class="scene" id="s-insight">
+  <div class="abs h1" id="i-head" style="left:120px;top:150px">Each month is its own scenario</div>
+  <div class="abs lab" id="i-sub" style="left:122px;top:232px;font-size:24px">Board change divided by the forecast change, one dot per upload</div>
+  <svg class="abs" id="i-svg" width="1680" height="560" style="left:120px;top:290px"></svg>
+  <div class="abs" id="i-rule" style="left:0;width:1920px;top:868px;text-align:center"><span class="h1" style="font-size:58px">Learn on the month you are scored on.</span></div>
+</div>
+
+<!-- 4 system -->
+<div class="scene" id="s-system">
+  <div class="abs" id="y-wrap" style="left:430px;top:112px;width:1030px;transform-origin:50% 40%"><!--__SVG__--></div>
+  <div class="abs" id="y-note" style="left:64px;top:170px;width:300px;font:700 30px/1.25 var(--display)"></div>
+</div>
+
+<!-- 5 labels -->
+<div class="scene" id="s-labels">
+  <div class="abs h1" id="l-head" style="left:120px;top:150px;font-size:54px">New label sources beat new inputs</div>
+  <div class="abs lab" style="left:122px;top:224px;font-size:23px">Board gain of each label step, S_total (public, March)</div>
+  <svg class="abs" id="l-bars" width="820" height="560" style="left:110px;top:280px"></svg>
+  <div class="abs kick" id="l-mapk" style="left:1040px;top:226px">Held-out cells, one March day</div>
+  <canvas class="abs" id="l-map" width="760" height="420" style="left:1040px;top:270px"></canvas>
+  <div class="abs" id="l-stat" style="left:1040px;top:712px;width:760px">
+    <span style="font:900 64px var(--display);color:var(--accent)" id="l-rmse"></span><span class="lab" style="font-size:26px"> km/h error at hidden cells</span><br>
+    <span class="lab" style="font-size:26px">against a spread (SD) of <b style="color:var(--ink)">18.9 km/h</b> at the same cells</span></div>
+</div>
+
+<!-- 6 measure -->
+<div class="scene" id="s-measure">
+  <div class="abs h1" style="left:120px;top:150px;font-size:54px">Honest measurement</div>
+  <svg class="abs" id="m-sc" width="820" height="650" style="left:100px;top:230px"></svg>
+  <div class="abs" id="m-count" style="left:1040px;top:160px;width:760px"><span style="font:900 72px var(--display)" id="m-n"></span>
+    <span class="lab" style="font-size:24px">uploads with a forecast written before the upload</span></div>
+  <div class="abs" id="m-inst" style="left:1040px;top:300px;width:780px"></div>
+  <div class="abs" id="m-reg" style="left:1040px;top:500px;width:780px">
+    <div><span style="font:900 64px var(--display)" id="m-regn">267</span><span class="lab" style="font-size:24px"> ideas in the registry, each with a verdict</span></div>
+    <canvas id="m-waf" width="760" height="112" style="margin-top:8px;display:block"></canvas>
+    <div id="m-leg" style="font:600 19px var(--display);color:var(--muted);margin-top:8px"></div></div>
+</div>
+
+<!-- 7 results -->
+<div class="scene" id="s-results">
+  <div class="abs" style="left:120px;top:140px"><span class="kick">Best public score so far</span><br><span id="r-num" style="font:900 96px var(--display);color:var(--pub)"></span></div>
+  <div class="abs" id="r-priv" style="left:640px;top:140px"><span class="kick">Its private score</span><br><span id="r-pnum" style="font:900 96px var(--display);color:var(--priv)"></span></div>
+  <svg class="abs" id="r-svg" width="1680" height="600" style="left:120px;top:330px"></svg>
+  <div class="card" id="r-badge" style="left:1290px;top:132px;width:510px;height:170px;padding:16px 28px;box-sizing:border-box;border-color:var(--warn)">
+    <div style="font:900 96px/1 var(--display);color:var(--warn)">8<span style="font-size:52px;vertical-align:38px">th</span> <span style="font:800 40px var(--display);color:var(--ink)">of 802</span></div>
+    <div class="lab" style="font-size:22px;margin-top:8px">private leaderboard (April) &middot; winner .92823</div></div>
+</div>
+
+<!-- 8 repro -->
+<div class="scene" id="s-repro">
+  <div class="abs h1" style="left:120px;top:150px;font-size:54px">Everything is open</div>
+  <div class="card" id="p-term" style="left:120px;top:250px;width:820px;height:480px;padding:26px 30px;box-sizing:border-box;font:400 23px/1.6 var(--mono)"></div>
+  <div class="card" id="p-check" style="left:1000px;top:250px;width:800px;height:480px;padding:26px 30px;box-sizing:border-box">
+    <div class="kick">Clean-folder check &middot; 9 November 2026</div>
+    <div class="lab" style="font-size:20px;margin-top:6px">a fresh folder made only from the public repository, the weight release and the competition data</div>
+    <div id="p-lines" style="margin-top:22px;font:400 22px/1.75 var(--mono)"></div>
+    <div id="p-seal" style="margin-top:20px;padding:16px 20px;border-radius:12px;border:2px solid var(--accent);font:700 24px/1.4 var(--mono);color:var(--accent)"></div></div>
+</div>
+
+<!-- 9 end -->
+<div class="scene" id="s-end">
+  <div class="abs" style="left:0;width:1920px;top:210px;text-align:center"><div class="kick">TrafficFlowBench &middot; 2026 IEEE BigData Cup</div>
+    <div class="h1" style="font-size:88px;margin-top:14px">8th of 802</div></div>
+  <div class="abs" id="e-links" style="left:330px;top:440px;width:1260px;font:400 30px/1.5 var(--body)"></div>
+  <div class="abs lab" id="e-credit" style="left:0;width:1920px;top:880px;text-align:center;font-size:21px">Amin Mohamed&nbsp;&nbsp;&middot;&nbsp;&nbsp;narration voice: ElevenLabs</div>
+</div>
+
+<div id="brand">TrafficFlowBench &middot; <b>8th place</b></div>
+<div id="chap"></div>
+<div id="cap"></div>
+<div id="prog"></div>
+</div>
+<script>
+const G = /*__DATA__*/null;
+const D = G.data, SC = G.scenes;
+const $ = id => document.getElementById(id);
+const NS = "http://www.w3.org/2000/svg";
+const S = (tag, a = {}, p, txt) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; if (p) p.appendChild(e); return e; };
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = x => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const eo = x => 1 - Math.pow(1 - clamp(x), 3);
+const seg = (t, a, d = .7) => ease((t - a) / d);
+const lerp = (a, b, x) => a + (b - a) * x;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const f5 = (v, d = 5) => (v >= 0 ? "+" : "-") + Math.abs(v).toFixed(d).replace(/^0/, "");
+const p5 = v => v.toFixed(5).replace(/^0/, "");
+const TITLES = { title: "TrafficFlowBench", task: "The task", insight: "The key fact", system: "The system", labels: "State: label sources",
+  measure: "Measurement", results: "Results", repro: "Reproducibility", end: "Links" };
+
+// sentence start times inside each scene (seconds from scene start), by share of characters
+for (const s of SC) {
+  const sent = s.text.match(/[^.!?]+[.!?]+["']?\s*/g) || [s.text];
+  let c = 0; const tot = sent.reduce((a, x) => a + x.length, 0);
+  s.sent = sent.map(x => { const st = s.lead + (c / tot) * s.audio; c += x.length; return { text: x.trim(), t: st }; });
+  s.sentEnd = s.lead + s.audio;
+}
+const sT = (s, i) => s.sent[Math.min(i, s.sent.length - 1)].t;
+
+// ---------------------------------------------------------------- background: lanes of moving traffic, a slow jam wave
+const bg = $("bgc").getContext("2d");
+const LANES = Array.from({ length: 18 }, (_, i) => ({ y: 70 + i * 56, v: 70 + (i * 37) % 60, ph: (i * 113) % 400, dir: i % 2 ? -1 : 1 }));
+function drawBg(T) {
+  bg.clearRect(0, 0, 1920, 1080);
+  for (const L of LANES) {
+    for (let k = 0; k < 26; k++) {
+      const base = (k * 83 + L.ph);
+      // jam wave travelling against traffic: cars slow down where the wave sits
+      let x = (base + L.v * T) % 2000 - 40;
+      const wave = (1500 - (T * 38 + L.ph) % 2100);
+      const near = Math.exp(-Math.pow((x - wave) / 160, 2));
+      x -= near * 40;
+      const xx = L.dir > 0 ? x : 1920 - x;
+      bg.fillStyle = near > .45 ? "rgba(240,127,95,0.16)" : "rgba(60,194,173,0.10)";
+      bg.fillRect(xx, L.y, 18 - near * 8, 3);
+    }
+  }
+}
+
+// ---------------------------------------------------------------- scene 1: title
+const dotsC = $("t-dots").getContext("2d");
+function sceneTitle(t, s) {
+  $("t-kick").style.opacity = seg(t, sT(s, 0) - .3, .8);
+  const a1 = sT(s, 1), a2 = sT(s, 2), a3 = sT(s, 3);
+  const showRank = seg(t, a2, .8);
+  const n = Math.round(802 * eo((t - a1) / 1.4));
+  $("t-num").style.opacity = seg(t, a1 - .2, .5);
+  $("t-num").innerHTML = showRank < .5 ? `${n}` : `8<span style="font-size:130px;vertical-align:96px">th</span>`;
+  $("t-num").style.color = showRank < .5 ? "var(--ink)" : "var(--warn)";
+  $("t-sub").style.opacity = seg(t, a1, .6);
+  $("t-sub").innerHTML = showRank < .5 ? "teams on the private leaderboard" : `of 802 teams&nbsp;&nbsp;&middot;&nbsp;&nbsp;private score <b style="color:var(--ink)">.89874</b>`;
+  const ti = seg(t, a3 - .1, .9);
+  $("t-title").style.opacity = ti; $("t-title").style.transform = `translateY(${(1 - ti) * 30}px)`;
+  // dots: 802 teams, 41 x 20 grid in rank order; ours (rank 8) lights up
+  dotsC.clearRect(0, 0, 760, 420);
+  const cols = 41, gap = 18.4;
+  for (let i = 0; i < 802; i++) {
+    const app = eo((t - a1 - i * .0016) / .35);
+    if (app <= 0) continue;
+    const x = 14 + (i % cols) * gap, y = 14 + Math.floor(i / cols) * gap;
+    const ours = i === 7, top10 = i < 10;
+    let r = 5.2 * app, col = `rgba(147,166,154,${.55 * app})`;
+    if (showRank > 0) {
+      if (ours) { r = lerp(5.2, 9, showRank); col = `rgba(224,166,64,${app})`; }
+      else col = `rgba(147,166,154,${app * lerp(.55, top10 ? .5 : .16, showRank)})`;
+    }
+    dotsC.beginPath(); dotsC.arc(x, y, r, 0, 7); dotsC.fillStyle = col; dotsC.fill();
+    if (ours && showRank > 0) { dotsC.beginPath(); dotsC.arc(x, y, 9 + 10 * showRank, 0, 7); dotsC.strokeStyle = `rgba(224,166,64,${.6 * showRank})`; dotsC.lineWidth = 2; dotsC.stroke(); }
+  }
+  $("t-dotlab").style.opacity = seg(t, a2, .6);
+  $("t-dotlab").textContent = "each dot is a team, in private-leaderboard order";
+}
+
+// ---------------------------------------------------------------- scene 2: task
+const kg = $("k-grid").getContext("2d");
+const TASKS = [["Task 1", "State: fill hidden speed and flow", .35, "--c-state", 2], ["Task 2", "Queue onset: where queues start", .15, "--c-onset", 3],
+  ["Task 2", "Ongoing queues: where they persist", .15, "--c-ongoing", 3], ["Task 3", "Physics: consistent with traffic flow theory", .15, "--c-physics", 4],
+  ["Task 4", "Demand: origin to destination (ODME)", .20, "--c-odme", 5]];
+function buildTask() {
+  const rowsEl = $("k-rows");
+  TASKS.forEach((k, i) => { const d = document.createElement("div"); d.id = "k-r" + i; d.style.cssText = "display:flex;align-items:center;gap:16px;margin:0 0 16px;font:600 25px var(--display)";
+    d.innerHTML = `<span class="chip" style="color:var(${k[3]});border-color:var(${k[3]})">${k[0]}</span><span style="flex:1">${k[1]}</span><span class="mono" style="font-size:24px;color:var(${k[3]})">${Math.round(k[2] * 100)}%</span>`; rowsEl.appendChild(d); });
+  const bar = $("k-bar"); let x = 0;
+  TASKS.forEach((k, i) => { S("rect", { id: "k-b" + i, x: x + 1, y: 6, width: k[2] * 700 - 2, height: 44, rx: 6, fill: css(k[3]) }, bar); x += k[2] * 700; });
+  S("rect", { x: .5, y: 5.5, width: 699, height: 45, rx: 7, fill: "none", stroke: css("--rule") }, bar);
+}
+function sceneTask(t, s) {
+  const M = D.f6.mask, ns = D.f6.ns, nt = D.f6.nt, cw = 900 / nt, ch = 440 / ns;
+  const sweep = eo((t - sT(s, 0) + .2) / 2.2), hid = seg(t, sT(s, 2), .9);
+  kg.clearRect(0, 0, 900, 440);
+  const cut = Math.floor(sweep * nt);
+  for (let i = 0; i < ns; i++) for (let j = 0; j < cut; j++) {
+    const m = M[ns - 1 - i][j];
+    if (m === 2) kg.fillStyle = hid > 0 ? `rgba(227,181,60,${hid})` : "#5b6b62";
+    else kg.fillStyle = "#5b6b62";
+    if (m === 2 && hid <= 0) kg.fillStyle = "#5b6b62";
+    kg.fillRect(j * cw, i * ch, cw + .3, ch - 1.5);
+  }
+  $("k-leg2").style.opacity = hid;
+  $("k-score").style.opacity = seg(t, sT(s, 1) - .2, .6);
+  TASKS.forEach((k, i) => { const v = seg(t, sT(s, k[4]), .6); $("k-r" + i).style.opacity = .12 + .88 * v; $("k-b" + i).setAttribute("opacity", .15 + .85 * v); });
+  $("k-mar").style.opacity = seg(t, sT(s, 6), .5); $("k-apr").style.opacity = seg(t, sT(s, 7), .5);
+  $("k-neq").style.opacity = seg(t, sT(s, 8), .5); $("k-indep").style.opacity = seg(t, sT(s, 8) + .2, .6);
+}
+
+// ---------------------------------------------------------------- scene 3: insight (board / forecast by group)
+const IG = [{ g: "Ongoing members: epochs, seeds, backbone, weight", lab: "Queue members learned on the TRAIN months", col: "--priv", at: 2 },
+  { g: "Task 1 state and physics pieces", lab: "State pieces learned on the SCORED month", col: "--c-state", at: 3 }];
+const XR = [-1.5, 2.2];
+function buildInsight() {
+  const svg = $("i-svg"), x0 = 830, x1 = 1640, X = v => x0 + (clamp(v, XR[0], XR[1]) - XR[0]) / (XR[1] - XR[0]) * (x1 - x0), OFF = 730;
+  for (const v of [-1, 0, 1, 2]) {
+    S("line", { x1: X(v), x2: X(v), y1: 20, y2: 470, stroke: v === 1 ? css("--accent") : v === 0 ? "#6b7d72" : css("--rule"), "stroke-width": v === 1 ? 3 : v === 0 ? 2 : 1, "stroke-dasharray": v === 1 || v === 0 ? "" : "4 6" }, svg);
+    S("text", { x: X(v), y: 510, "text-anchor": "middle", fill: css("--muted"), "font-size": 24, "font-weight": 700 }, svg, v === 1 ? "1.0x" : v + "x");
+  }
+  S("line", { x1: OFF + 45, x2: OFF + 45, y1: 20, y2: 470, stroke: css("--rule"), "stroke-width": 2, "stroke-dasharray": "2 8" }, svg);
+  S("text", { x: OFF, y: 510, "text-anchor": "middle", fill: css("--muted"), "font-size": 20, "font-weight": 700 }, svg, "off scale");
+  S("text", { x: X(1), y: 548, "text-anchor": "middle", fill: css("--accent"), "font-size": 22, "font-weight": 700 }, svg, "landed as forecast");
+  S("text", { x: X(0), y: 548, "text-anchor": "middle", fill: css("--muted"), "font-size": 22, "font-weight": 700 }, svg, "no effect");
+  IG.forEach((g, gi) => {
+    const y = 130 + gi * 220, pts = D.f4.filter(r => r.g === g.g).map(r => r.r).sort((a, b) => a - b);
+    const med = pts.length % 2 ? pts[(pts.length - 1) / 2] : (pts[pts.length / 2 - 1] + pts[pts.length / 2]) / 2;
+    const off = pts.filter(v => v < XR[0]), nSmall = pts.filter(v => v >= 0 && v <= .25).length, nNeg = pts.filter(v => v < 0).length;
+    const sub = gi === 0 && nSmall + nNeg === pts.length ? `${pts.length} uploads: ${nSmall} at a fifth or less, ${nNeg} flipped sign` : `${pts.length} uploads, median ${med.toFixed(2)}x`;
+    const grp = S("g", { id: "i-g" + gi }, svg);
+    S("text", { x: 0, y: y - 10, fill: css(g.col), "font-size": 27, "font-weight": 800 }, grp, g.lab);
+    S("text", { x: 0, y: y + 26, fill: css("--muted"), "font-size": 22, "font-weight": 600 }, grp, sub);
+    let ko = 0;
+    pts.forEach((v, k) => {
+      const jitter = ((k * 37) % 9 - 4) * 7, isOff = v < XR[0] || v > XR[1];
+      const cx = isOff ? OFF + (ko - (off.length - 1) / 2) * 22 : X(v), cy = isOff ? y : y + jitter; if (isOff) ko++;
+      S("circle", { cx, cy, r: 13, fill: css(g.col), "fill-opacity": .85, stroke: "#0b110e", "stroke-width": 2, class: "i-pt", "data-k": k }, grp);
+    });
+    if (off.length) S("text", { x: OFF, y: y + 46, "text-anchor": "middle", fill: css(g.col), "font-size": 19, "font-weight": 700 }, grp, `${off[0].toFixed(0)}x to ${off[off.length - 1].toFixed(0)}x`);
+    if (med >= XR[0]) S("line", { x1: X(med), x2: X(med), y1: y - 40, y2: y + 40, stroke: css("--ink"), "stroke-width": 4, id: "i-m" + gi }, grp);
+    else S("g", { id: "i-m" + gi }, grp);
+  });
+}
+function sceneInsight(t, s) {
+  $("i-head").style.opacity = seg(t, sT(s, 1) - .3, .6); $("i-sub").style.opacity = seg(t, sT(s, 1), .6);
+  IG.forEach((g, gi) => {
+    const a = sT(s, g.at); $("i-g" + gi).style.opacity = seg(t, a - .2, .5);
+    $("i-g" + gi).querySelectorAll(".i-pt").forEach(c => { const k = +c.dataset.k; const v = eo((t - a - k * .07) / .4); c.setAttribute("r", 13 * v); });
+    $("i-m" + gi).style.opacity = seg(t, a + 1.2, .5);
+  });
+  const r = seg(t, sT(s, 5) - .1, .7); $("i-rule").style.opacity = r; $("i-rule").style.transform = `scale(${lerp(.94, 1, r)})`;
+}
+
+// ---------------------------------------------------------------- scene 4: system diagram with a moving spotlight
+const REG = { none: [0, 0, 1000, 712], inputs: [8, 30, 188, 304], state: [230, 30, 544, 152], phys: [230, 186, 544, 50], queues: [230, 236, 544, 240], odme: [230, 472, 544, 76] };
+const NOTES = { inputs: "Each scored month is built on its own", state: "State: LightGBM stack, then a masked U-Net per corridor", phys: "Physics scores our state rows", queues: "Queues: online, data stamped before T, fine-tuned per date", odme: "Demand: the organisers' least-squares solver" };
+let spot, spotEdge;
+function buildSystem() {
+  const svg = document.querySelector("#y-wrap svg"); svg.style.width = "1030px"; svg.style.height = "auto";
+  spot = S("path", { fill: "rgba(4,7,5,.66)", "fill-rule": "evenodd" }, svg);
+  spotEdge = S("rect", { fill: "none", stroke: css("--warn"), "stroke-width": 2.5, rx: 8 }, svg);
+}
+function sceneSystem(t, s) {
+  const seq = [["none", 0], ["inputs", 1], ["state", 2], ["phys", 3], ["queues", 4], ["odme", 5]];
+  let cur = REG.none, prev = REG.none, x = 1, name = "none";
+  for (let i = 0; i < seq.length; i++) { const a = sT(s, seq[i][1]); if (t >= a - .15) { prev = i ? REG[seq[i - 1][0]] : REG.none; cur = REG[seq[i][0]]; x = seg(t, a - .15, .7); name = seq[i][0]; } }
+  const r = prev.map((v, i) => lerp(v, cur[i], x));
+  const on = name === "none" ? 1 - x : (prev === REG.none ? x : 1);
+  spot.setAttribute("d", `M-10,-10H1010V722H-10Z M${r[0]},${r[1]}h${r[2]}v${r[3]}h${-r[2]}Z`);
+  spot.setAttribute("opacity", name === "none" ? 0 : on);
+  spotEdge.setAttribute("x", r[0]); spotEdge.setAttribute("y", r[1]); spotEdge.setAttribute("width", r[2]); spotEdge.setAttribute("height", r[3]);
+  spotEdge.setAttribute("opacity", name === "none" ? 0 : on);
+  const z = lerp(.96, 1, eo(t / 2.5)); $("y-wrap").style.transform = `scale(${z})`;
+  const n = $("y-note"); n.textContent = NOTES[name] || ""; n.style.opacity = name === "none" ? 0 : seg(t, sT(s, seq.find(q => q[0] === name)[1]), .5);
+  n.style.color = name === "state" ? "var(--c-state)" : name === "phys" ? "var(--c-physics)" : name === "queues" ? "var(--c-ongoing)" : name === "odme" ? "var(--c-odme)" : "var(--ink)";
+}
+
+// ---------------------------------------------------------------- scene 5: label sources + held-out error map
+const LB = [["S2b", "own-view labels (base)"], ["FV1", "official view, +6k"], ["FV2", "+12k, same labels"], ["FV-INEL", "INEL cells as labels"], ["W1.0", "INEL weight 1"], ["S7c", "stage learner on INEL"]];
+const BIG = [1, 3, 5];
+function buildLabels() {
+  const svg = $("l-bars"), n = D.f10.length, bw = 92, gap = 40, y0 = 440, sc = 380 / .00045;
+  D.f10.forEach((r, i) => {
+    const x = 50 + i * (bw + gap), big = BIG.includes(i), h = Math.max(r.v * sc, 3);
+    const g = S("g", { id: "l-b" + i }, svg);
+    S("rect", { x, y: y0 - h, width: bw, height: h, rx: 6, fill: big ? css("--accent") : "#4d5e55", class: "l-rect", "data-h": h }, g);
+    S("text", { x: x + bw / 2, y: y0 - h - 14, "text-anchor": "middle", fill: big ? css("--ink") : css("--muted"), "font-size": 24, "font-weight": 800, class: "l-val" }, g, r.v === 0 ? "base" : f5(r.v));
+    S("text", { x: x + bw / 2, y: y0 + 36, "text-anchor": "middle", fill: css("--ink"), "font-size": 23, "font-weight": 800 }, g, LB[i][0]);
+    const words = LB[i][1].split(" "), half = Math.ceil(words.length / 2);
+    S("text", { x: x + bw / 2, y: y0 + 64, "text-anchor": "middle", fill: css("--muted"), "font-size": 17 }, g, words.slice(0, half).join(" "));
+    S("text", { x: x + bw / 2, y: y0 + 85, "text-anchor": "middle", fill: css("--muted"), "font-size": 17 }, g, words.slice(half).join(" "));
+    if (big) S("circle", { cx: x + bw / 2, cy: y0 - h - 62, r: 20, fill: "none", stroke: css("--accent"), "stroke-width": 3, class: "l-badge" }, g);
+    if (big) S("text", { x: x + bw / 2, y: y0 - h - 54, "text-anchor": "middle", fill: css("--accent"), "font-size": 22, "font-weight": 900, class: "l-badge" }, g, String(BIG.indexOf(i) + 1));
+  });
+  S("line", { x1: 30, x2: 800, y1: y0, y2: y0, stroke: css("--rule"), "stroke-width": 2 }, svg);
+  const e = D.f6.err.flat().filter(v => v !== null);
+  $("l-rmse").textContent = Math.sqrt(e.reduce((a, v) => a + v * v, 0) / e.length).toFixed(1);
+}
+const lm = $("l-map").getContext("2d");
+function errCol(v) { const x = clamp(v / 4, -1, 1); return x >= 0 ? `rgb(${Math.round(lerp(235, 230, x))},${Math.round(lerp(235, 140, x))},${Math.round(lerp(235, 40, x))})` : `rgb(${Math.round(lerp(235, 120, -x))},${Math.round(lerp(235, 90, -x))},${Math.round(lerp(235, 200, -x))})`; }
+function sceneLabels(t, s) {
+  $("l-head").style.opacity = seg(t, sT(s, 0) - .3, .6);
+  D.f10.forEach((r, i) => {
+    const g = $("l-b" + i), a = sT(s, 1) + i * .55, v = eo((t - a) / .6);
+    g.style.opacity = seg(t, sT(s, 0) + .3, .5);
+    const rect = g.querySelector(".l-rect"), h = +rect.dataset.h; rect.setAttribute("height", h * v); rect.setAttribute("y", 440 - h * v);
+    g.querySelector(".l-val").style.opacity = v; g.querySelectorAll(".l-badge").forEach(b => b.style.opacity = seg(t, a + .5, .4));
+  });
+  const m1 = seg(t, sT(s, 2) - .4, .6), m2 = seg(t, sT(s, 2) + 1.6, 1);
+  $("l-mapk").style.opacity = m1; $("l-map").style.opacity = m1; $("l-stat").style.opacity = seg(t, sT(s, 2) + 2.2, .6);
+  const M = D.f6.mask, E = D.f6.err, ns = D.f6.ns, nt = D.f6.nt, cw = 760 / nt, ch = 420 / ns;
+  lm.clearRect(0, 0, 760, 420);
+  for (let i = 0; i < ns; i++) for (let j = 0; j < nt; j++) {
+    const m = M[ns - 1 - i][j];
+    let c = m === 2 ? "#3a3220" : m === 1 ? "#0f8f63" : "#2a3530";
+    if (m === 1 && m2 > 0) c = m2 > .5 ? errCol(E[ns - 1 - i][j] || 0) : c;
+    if (m !== 1 && m2 > .5) c = m === 2 ? "#1c1a14" : "#17201b";
+    lm.fillStyle = c; lm.fillRect(j * cw, i * ch, cw + .3, ch - 1.2);
+  }
+}
+
+// ---------------------------------------------------------------- scene 6: forecast vs board, instruments, registry
+const SL = v => Math.sign(v) * Math.log10(1 + Math.abs(v) / 1e-5);
+const kindCol = k => k.startsWith("state") ? css("--c-state") : (k.startsWith("ongoing") || k === "onset") ? css("--c-ongoing") : "#7c8b82";
+const INST = [["I-S-OWN", "state"], ["I-S-INEL", "state"], ["INEL-FOLD", "state"], ["Gap bench", "gap rows"], ["I-Q-SPLIT, TM-R", "queue"], ["OFF250", "veto"]];
+const CLS = [["ADOPTED", "--accent"], ["REFUTED", "--bad"], ["UNDETECTED", "--muted"], ["BAD-INSTRUMENT", "--warn"], ["REASONING-ONLY", "--pub"]];
+let wafCells = [];
+function buildMeasure() {
+  const svg = $("m-sc"), L = 90, R = 790, T = 20, B = 560, lim = SL(.4);
+  const X = v => L + (SL(v) + lim) / (2 * lim) * (R - L), Y = v => B - (SL(v) + lim) / (2 * lim) * (B - T);
+  for (const v of [-.1, -.01, -.001, -.0001, 0, .0001, .001, .01, .1]) {
+    S("line", { x1: X(v), x2: X(v), y1: T, y2: B, stroke: css("--rule"), "stroke-width": v === 0 ? 2 : 1 }, svg);
+    S("line", { x1: L, x2: R, y1: Y(v), y2: Y(v), stroke: css("--rule"), "stroke-width": v === 0 ? 2 : 1 }, svg);
+    const lab = v === 0 ? "0" : (v > 0 ? "+" : "-") + String(Math.abs(v)).replace(/^0/, "");
+    S("text", { x: X(v), y: B + 30, "text-anchor": "middle", fill: css("--muted"), "font-size": 17 }, svg, lab);
+    S("text", { x: L - 10, y: Y(v) + 6, "text-anchor": "end", fill: css("--muted"), "font-size": 17 }, svg, lab);
+  }
+  S("line", { x1: X(-.4), y1: Y(-.4), x2: X(.4), y2: Y(.4), stroke: css("--accent"), "stroke-width": 2.5, "stroke-dasharray": "8 6" }, svg);
+  S("text", { x: (L + R) / 2, y: B + 66, "text-anchor": "middle", fill: css("--muted"), "font-size": 21, "font-weight": 700 }, svg, "forecast change, written before the upload");
+  S("text", { x: 22, y: (T + B) / 2, "text-anchor": "middle", fill: css("--muted"), "font-size": 21, "font-weight": 700, transform: `rotate(-90 22 ${(T + B) / 2})` }, svg, "board change");
+  D.f3.forEach((p, i) => S("circle", { cx: X(p.x), cy: Y(p.y), r: 0, fill: kindCol(p.k), "fill-opacity": .9, stroke: "#0b110e", "stroke-width": 1.5, class: "m-pt", "data-i": i, "data-k": p.k }, svg));
+  const ie = $("m-inst");
+  ie.innerHTML = `<div class="kick" style="margin-bottom:12px">An instrument per component, gated before use</div>` +
+    INST.map((x, i) => `<span class="chip m-chip" style="margin:0 10px 12px 0;color:var(--ink);border-color:var(--rule);font-size:20px">${x[0]} <span style="color:var(--muted);font-weight:400">${x[1]}</span></span>`).join("");
+  // waffle: 267 squares by verdict class
+  const order = []; CLS.forEach(([k]) => { for (let i = 0; i < (D.reg[k] || 0); i++) order.push(k); });
+  for (const k in D.reg) if (!CLS.find(c => c[0] === k)) for (let i = 0; i < D.reg[k]; i++) order.push("OTHER");
+  wafCells = order;
+  $("m-regn").textContent = order.length;
+  $("m-leg").innerHTML = CLS.map(([k, c]) => `<span style="margin-right:14px;white-space:nowrap"><span style="display:inline-block;width:14px;height:14px;background:var(${c});vertical-align:-1px"></span> ${(D.reg[k] || 0)} ${k.toLowerCase()}</span>`).join("");
+}
+const wf = $("m-waf").getContext("2d");
+function sceneMeasure(t, s) {
+  const a1 = sT(s, 1), a2 = sT(s, 2), a3 = sT(s, 3), a4 = sT(s, 4);
+  const pts = document.querySelectorAll(".m-pt"), n = pts.length;
+  let shown = 0;
+  pts.forEach(c => {
+    const i = +c.dataset.i, k = c.dataset.k, v = eo((t - a1 - i * (2.6 / n)) / .3); if (v > .5) shown++;
+    const isS = k.startsWith("state"), isQ = k.startsWith("ongoing") || k === "onset";
+    const hs = seg(t, a2, .5) * (1 - seg(t, a3, .5)), hq = seg(t, a3, .5);
+    let r = 7 * v, op = .9;
+    if (hs > 0) { r *= isS ? lerp(1, 1.35, hs) : 1; op = isS ? .95 : lerp(.9, .25, hs); }
+    if (hq > 0) { r *= isQ ? lerp(1, 1.35, hq) : 1; op = isQ ? .95 : lerp(.9, .25, hq); }
+    c.setAttribute("r", r); c.setAttribute("fill-opacity", op);
+  });
+  $("m-count").style.opacity = seg(t, a1 - .2, .5);
+  $("m-n").innerHTML = `${Math.min(90, Math.round(90 * eo((t - a1) / 2.6)))} <span style="font-size:44px;color:var(--muted)">of 91</span>`;
+  $("m-inst").style.opacity = seg(t, a3 + .6, .6);
+  document.querySelectorAll(".m-chip").forEach((c, i) => c.style.opacity = seg(t, a3 + .8 + i * .18, .4));
+  $("m-reg").style.opacity = seg(t, a4 - .2, .6);
+  wf.clearRect(0, 0, 760, 112);
+  const cols = 45, cs = 760 / cols;
+  const col = { ADOPTED: css("--accent"), REFUTED: css("--bad"), UNDETECTED: css("--muted"), "BAD-INSTRUMENT": css("--warn"), "REASONING-ONLY": css("--pub"), OTHER: "#cfd8d2" };
+  wafCells.forEach((k, i) => {
+    const v = eo((t - a4 - i * .006) / .3); if (v <= 0) return;
+    const x = (i % cols) * cs, y = Math.floor(i / cols) * cs, w = (cs - 4) * v;
+    wf.fillStyle = col[k]; wf.globalAlpha = .9; wf.fillRect(x + (cs - 4 - w) / 2, y + (cs - 4 - w) / 2, w, w); wf.globalAlpha = 1;
+  });
+}
+
+// ---------------------------------------------------------------- scene 7: score history
+let RS;
+function buildResults() {
+  const reads = D.p1.filter(r => r.pub != null && !r.k.startsWith("knockout")).sort((a, b) => a.d < b.d ? -1 : 1);
+  let best = null; const run = [];
+  reads.forEach((r, i) => { if (!best || r.pub > best.pub) best = r; run.push({ i, pub: best.pub, priv: best.priv }); });
+  const svg = $("r-svg"), L = 110, R = 1640, T = 10, B = 520, y0 = .81, y1 = .905, n = reads.length;
+  const X = i => L + i / (n - 1) * (R - L), Y = v => B - (clamp(v, y0, y1) - y0) / (y1 - y0) * (B - T);
+  for (const v of [.82, .84, .86, .88, .90]) { S("line", { x1: L, x2: R, y1: Y(v), y2: Y(v), stroke: css("--rule") }, svg); S("text", { x: L - 14, y: Y(v) + 7, "text-anchor": "end", fill: css("--muted"), "font-size": 21 }, svg, v.toFixed(2).replace(/^0/, "")); }
+  S("text", { x: (L + R) / 2, y: B + 50, "text-anchor": "middle", fill: css("--muted"), "font-size": 21, "font-weight": 700 }, svg, `uploads in time order, 30 September to 20 October 2026 (${n} reads)`);
+  const pubDots = S("g", { id: "r-pd" }, svg), privDots = S("g", { id: "r-vd" }, svg);
+  reads.forEach((r, i) => { S("circle", { cx: X(i), cy: Y(r.pub), r: 4.5, fill: css("--pub"), "fill-opacity": .35, "data-i": i }, pubDots); if (r.priv != null) S("circle", { cx: X(i), cy: Y(r.priv), r: 4.5, fill: css("--priv"), "fill-opacity": .3, "data-i": i }, privDots); });
+  const path = k => run.map((p, i) => `${i ? "L" : "M"}${X(i).toFixed(1)},${Y(p[k]).toFixed(1)}` + (i < n - 1 ? `H${X(i + 1).toFixed(1)}` : "")).join("");
+  const pp = S("path", { d: path("pub"), fill: "none", stroke: css("--pub"), "stroke-width": 5, id: "r-pl", "stroke-linejoin": "round" }, svg);
+  const vp = S("path", { d: path("priv"), fill: "none", stroke: css("--priv"), "stroke-width": 5, id: "r-vl", "stroke-linejoin": "round" }, svg);
+  const last = run[n - 1];
+  S("text", { x: R - 6, y: Y(last.pub) - 16, "text-anchor": "end", fill: css("--pub"), "font-size": 26, "font-weight": 800, id: "r-pt" }, svg, `public (March) ${p5(last.pub)}`);
+  S("text", { x: R - 6, y: Y(last.priv) + 36, "text-anchor": "end", fill: css("--priv"), "font-size": 26, "font-weight": 800, id: "r-vt" }, svg, `private (April) ${p5(last.priv)}`);
+  RS = { run, n, lp: pp.getTotalLength(), lv: vp.getTotalLength() };
+}
+function sceneResults(t, s) {
+  const a0 = sT(s, 0), a1 = sT(s, 1), a2 = sT(s, 2), dr = Math.max(4, a1 - a0 - .3);
+  const x = eo((t - a0 - .2) / dr), k = Math.min(RS.n - 1, Math.floor(x * (RS.n - 1)));
+  $("r-pl").setAttribute("stroke-dasharray", `${RS.lp * x} ${RS.lp}`);
+  $("r-num").textContent = p5(RS.run[k].pub);
+  document.querySelectorAll("#r-pd circle").forEach(c => c.style.opacity = +c.dataset.i <= k ? 1 : 0);
+  const y = eo((t - a1) / 1.8);
+  $("r-vl").setAttribute("stroke-dasharray", `${RS.lv * y} ${RS.lv}`); $("r-vl").style.opacity = y > 0 ? 1 : 0;
+  document.querySelectorAll("#r-vd circle").forEach(c => c.style.opacity = y);
+  $("r-priv").style.opacity = seg(t, a1 - .2, .5); $("r-pnum").textContent = p5(RS.run[Math.min(RS.n - 1, Math.floor(y * (RS.n - 1)))].priv);
+  $("r-pt").style.opacity = seg(t, a1 - .6, .5); $("r-vt").style.opacity = seg(t, a1 + 1.4, .5);
+  const b = seg(t, a2 - .2, .6); $("r-badge").style.opacity = b; $("r-badge").style.transform = `scale(${lerp(.9, 1, b)})`;
+}
+
+// ---------------------------------------------------------------- scene 8: reproducibility
+const STEPS = ["1  Windows venv, pinned packages", "2  competition data", "3  weight release, sha256 checked", "4  Linux venv in WSL", "5  base build C47", "6  development layout", "7  piece chain, rows 19 to 35", "8  verify C79 and C80 by sha256"];
+function sceneRepro(t, s) {
+  const a1 = sT(s, 1), a2 = sT(s, 2);
+  const cmd = "bash run_all.sh", nc = Math.round(cmd.length * clamp((t - a1 + .3) / .9));
+  const ns = Math.floor(clamp((t - a1 - .9) / 2.6) * STEPS.length + (t > a1 + .9 ? 1 : 0));
+  $("p-term").innerHTML = `<div style="color:var(--muted)"># competition data + public weights in, C79 out</div>` +
+    `<div><span style="color:var(--accent)">$</span> ${cmd.slice(0, nc)}<span style="opacity:${(Math.floor(t * 2) % 2) ? 1 : 0}">&#9611;</span></div>` +
+    STEPS.slice(0, Math.min(ns, STEPS.length)).map(x => `<div style="color:var(--ink)"><span style="color:var(--accent)">&rsaquo;</span> step ${x}</div>`).join("");
+  $("p-term").style.opacity = seg(t, sT(s, 0), .6);
+  const L = D.log, lines = [
+    ["base build C47", "VERIFY_PASS", "state max|d| 4e-13"],
+    [`${L.builds} member builds`, "SHA_EQUAL", "each matches development"],
+    ["C79, the scored file", "BYTE-EQUAL", "sha256 104c2c6f…"],
+    ["C80", "BYTE-EQUAL", "sha256 3e27d66c…"]];
+  $("p-check").style.opacity = seg(t, a2 - .3, .6);
+  $("p-lines").innerHTML = lines.map((l, i) => `<div style="opacity:${seg(t, a2 + .2 + i * .7, .4)}"><span style="color:var(--accent)">&#10003;</span> ${l[0]}  <b style="color:var(--accent)">${l[1]}</b> <span style="color:var(--muted)">${l[2]}</span></div>`).join("");
+  $("p-seal").style.opacity = seg(t, a2 + 3.3, .6);
+  $("p-seal").textContent = "rebuilt C79 = the submission scored on Kaggle, byte for byte";
+}
+
+// ---------------------------------------------------------------- scene 9: links
+const LINKS = [["Code and weights", "github.com/AminMohamed-3/trafficflowbench-2026"], ["Interactive write-up", "aminmohamed-3.github.io/trafficflowbench-2026"],
+  ["Full report (PDF)", "report/REPORT.pdf in the repository"], ["Kaggle write-up", "kaggle.com, competition write-ups, 8th place"]];
+function sceneEnd(t, s) {
+  $("e-links").innerHTML = LINKS.map((l, i) => `<div style="opacity:${seg(t, .4 + i * .35, .5)};display:flex;gap:28px;margin-bottom:18px"><span style="width:330px;flex:none;color:var(--muted);font:700 22px var(--display);text-transform:uppercase;letter-spacing:.06em;padding-top:6px">${l[0]}</span><span style="font:600 28px var(--mono);color:var(--ink);font-variant-ligatures:none;white-space:nowrap">${l[1]}</span></div>`).join("");
+  $("e-credit").style.opacity = seg(t, 2, .8);
+}
+
+// ---------------------------------------------------------------- timeline
+const DRAW = { title: sceneTitle, task: sceneTask, insight: sceneInsight, system: sceneSystem, labels: sceneLabels, measure: sceneMeasure, results: sceneResults, repro: sceneRepro, end: sceneEnd };
+buildTask(); buildInsight(); buildSystem(); buildLabels(); buildMeasure(); buildResults();
+window.renderFrame = function (T) {
+  drawBg(T);
+  let k = SC.findIndex(s => T >= s.start && T < s.start + s.dur); if (k < 0) k = SC.length - 1;
+  SC.forEach((s, i) => { const el = $("s-" + s.id); if (i !== k) { el.style.display = "none"; return; }
+    el.style.display = "block"; const t = T - s.start;
+    const fin = i === 0 ? clamp(t / .8) : clamp(t / .45), fout = i === SC.length - 1 ? clamp((s.dur - t) / 1.2) : clamp((s.dur - t) / .4);
+    el.style.opacity = Math.min(fin, fout); DRAW[s.id](t, s);
+    $("chap").textContent = i ? `${String(i + 1).padStart(2, "0")} / ${String(SC.length).padStart(2, "0")} · ${TITLES[s.id]}` : "";
+    const cur = s.sent.findIndex((x, j) => t >= x.t - .05 && t < (j + 1 < s.sent.length ? s.sent[j + 1].t : s.sentEnd + .5) - .05);
+    const cap = $("cap"); cap.textContent = cur >= 0 ? s.sent[cur].text : ""; cap.style.opacity = cur >= 0 ? Math.min(fout, 1) : 0;
+  });
+  $("prog").style.width = (1920 * T / G.total) + "px";
+  $("brand").style.opacity = T < 1.5 ? clamp(T / 1.5) : 1;
+};
+Promise.all(['400 31px "Atkinson Hyperlegible"','700 31px "Atkinson Hyperlegible"','400 30px Overpass','600 30px Overpass','700 30px Overpass','800 30px Overpass','900 30px Overpass',
+  '400 30px "Overpass Mono"','600 30px "Overpass Mono"','700 30px "Overpass Mono"'].map(f => document.fonts.load(f))).then(() => document.fonts.ready).then(() => { window.renderFrame(0); window.__ready = true; });
+</script></body></html>

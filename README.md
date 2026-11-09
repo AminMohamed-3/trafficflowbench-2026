@@ -4,6 +4,7 @@ Author: Amin Mohamed. Private score .89874 (8th), public .90088.
 
 - Write-up: `report/KAGGLE_WRITEUP.md`; full method report: `report/REPORT.md` (PDF: `report/REPORT.pdf`, built by `report/build_pdf.py`).
 - Interactive site (all board reads, the idea registry, the analysis): https://aminmohamed-3.github.io/trafficflowbench-2026/
+- Video, the approach in 3 minutes (narrated, 1080p): https://aminmohamed-3.github.io/trafficflowbench-2026/#video (built from `report/video/` by `report/video/build_video.py`; narration voice: ElevenLabs).
 - Weights: the `weights-v1` release of this repository (4.1 GB in 3 zip parts plus `devroot_extra.zip`, 0.7 GB of stored intermediate files; all sha256-checked by the fetch script).
 - Verified on a clean folder (2026-11-09): from this repository, the release assets and the competition data alone, the chain
   rebuilt C79 byte-equal to the scored submission and C80 byte-equal to our stored file, with an audit showing no file read from outside that folder
@@ -33,7 +34,24 @@ The reproducibility gate of the award is 1% of the private score (about .009). C
   at a time (lower RAM, about +1.8 h); `--reuse-cache` saves 20 min, `--s08-fitted` saves about 4 h.
 - Disk: release 12 GB; fetched weights 1.6 GB (+ .55 GB reference); build peak about 2.6 to 7.5 GB (flags).
 
-## Commands (reproduce C79, the scored file, and C80)
+## Single entry script
+
+```bash
+bash run_all.sh --data /path/to/competition/release   # or no --data: downloads it with your Kaggle credentials
+cat outputs/logs/run_all.result                        # RUN_ALL_PASS: outputs/C79.csv and outputs/C80.csv match by sha256
+```
+
+`run_all.sh` runs the eight steps below in order, from the competition data and the public `weights-v1` release, and
+checks the result: (1) Windows venv from `environment/requirements-windows.txt`, (2) data, (3) weights (sha256-checked),
+(4) Linux venv in WSL from `environment/requirements-cpu.txt`, (5) base build C47 inside WSL, (6) development layout,
+(7) piece chain rows 19-35, (8) sha256 of C79 and C80. It runs in Git Bash on Windows 10/11 with WSL2 (Ubuntu 22.04),
+the split under which the files were made: the base build accepts only the pinned Linux runtime, the piece chain uses
+Windows paths. Each finished step leaves a marker, so a stopped run resumes with `--from N`; `--dry-run` checks the
+machine and prints the plan; `bash run_all.sh --help` lists the options. Needs about 40 GB free disk on the repository's
+drive, 16 GB RAM, no GPU; about 15 h on our laptop. Each stage was verified on its own (base build 2026-10-21, piece chain
+in the clean folder 2026-11-09, both byte- or value-equal); the script chains exactly those commands.
+
+## Commands, step by step (reproduce C79, the scored file, and C80)
 
 Five steps, run from the repository root. Steps 0-2 run on Linux (or WSL2); steps 3-4 run in Git Bash on Windows with
 the Windows venv (the piece scripts use `cygpath` and `python.exe`), on the same checkout.

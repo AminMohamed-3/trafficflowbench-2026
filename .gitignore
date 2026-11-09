@@ -18,3 +18,6 @@ __pycache__/
 *.pyc
 *.part
 devroot/
+# video build output (the rendered MP4 is a release asset)
+report/video/build/
+report/video/out/
