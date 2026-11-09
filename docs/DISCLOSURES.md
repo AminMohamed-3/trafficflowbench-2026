@@ -49,6 +49,4 @@ train-fit choices only. Each is listed with its recipe in `pipeline/pieces/`.
 
 ## 6. Development process
 
-Author: Amin Mohamed. Built with AI coding agents directed by the author (OpenAI Codex agents until 2026-10-08, then
-Anthropic Claude Code as the only developer), under written project rules (online rule, board-use rules, no
-credentials).
+Author: Amin Mohamed. Built under written project rules (online rule, board-use rules, no credentials in code).

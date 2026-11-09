@@ -1,4 +1,4 @@
-# 8th place: learn on the scored month, trust only what you can measure
+# 8th place solution: per-month masked U-Net and per-date queue adaptation
 
 Thanks to the organisers of the 2026 IEEE BigData Cup for a benchmark with four very different tasks in one score, and congratulations to the top teams.
 

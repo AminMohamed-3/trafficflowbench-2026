@@ -1265,7 +1265,7 @@ def table_T4():
         dict(item="  in the pre-written band (recomputed)", value=f"{cal.in_band_calc.mean():.0%}", note=""),
         dict(item="  forecast and board agree in sign (abs change >= .00001)", value=f"{(cal.sign_calc == 'agree').mean():.0%}",
              note="rows without a forecast change counted as not agreeing"),
-        dict(item="Claude probe manifest rows", value=len(man), note="artifacts/claude_ref/probes/manifest.csv"),
+        dict(item="probe manifest rows", value=len(man), note="artifacts/claude_ref/probes/manifest.csv"),
         dict(item="  read on the board", value=len(reads), note=f"{len(not_up)} prepared but not uploaded"),
         dict(item="  UTC days with at least one read", value=per_day.size, note=f"{per_day.index.min()} to {per_day.index.max()}"),
         dict(item="  most reads on one UTC day", value=int(per_day.max()), note="cap 5 per UTC day (RULES.md 7)"),
@@ -1303,7 +1303,7 @@ def table_T4():
         "Every upload had a manifest line with hypothesis, prediction and band written first (D-0069, D-0068).",
         "Sources: docs/report/board_calibration.csv, artifacts/claude_ref/probes/manifest.csv, FVI_INFO log lines, "
         "REPRO_README.md, REGISTRY.tsv effort column.",
-        "The early Codex-lane uploads before C01 appear only where they have a calibration row."])
+        "The early uploads before C01 appear only where they have a calibration row."])
     pd.DataFrame(dict(read_day=per_day.index, reads=per_day.values)).to_csv(OUT / "T4_reads_per_day.csv", index=False,
                                                                             lineterminator="\n")
 

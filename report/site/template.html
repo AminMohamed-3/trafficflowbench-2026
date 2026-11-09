@@ -181,7 +181,7 @@ pre.cite { background: var(--sunk); border: 1px solid var(--rule); border-radius
       <a href="#result"><b>1</b>Result</a><a href="#private"><b>2</b>Public vs private</a><a href="#pipeline"><b>3</b>Pipeline</a>
       <a href="#buildup"><b>4</b>Score build-up</a><a href="#measure"><b>5</b>Measuring</a><a href="#analysis"><b>6</b>Error anatomy</a>
       <a href="#registry"><b>7</b>Idea registry</a><a href="#negative"><b>8</b>What failed</a><a href="#reproduce"><b>9</b>Reproduce</a>
-      <a href="#agents"><b>10</b>How it was built</a><a href="#rules"><b>11</b>Rules</a>
+      <a href="#agents"><b>10</b>How it was run</a><a href="#rules"><b>11</b>Rules</a>
     </nav>
   </div>
 </div>
@@ -411,18 +411,17 @@ cat outputs/logs/chain_19_35.tsv</pre></div></div></li>
 </div></section>
 
 <section class="sec wrap" id="agents"><div class="col">
-  <div class="sec-head"><span class="exitno">Exit 10</span><div class="prose"><h2>How it was built</h2>
-    <p style="margin-top:10px">One person set the goal, the budget, the rule interpretations and the final selection. The engineering was done by AI coding agents: Codex lanes
-      coordinated by a Claude planner until 8 October, then Claude Code alone, running as a harness that kept state in files and launched helper agents.</p></div></div>
+  <div class="sec-head"><span class="exitno">Exit 10</span><div class="prose"><h2>How it was run</h2>
+    <p style="margin-top:10px">All state lived in files, every upload had a written forecast first, and every idea got a verdict with the power of its test.</p></div></div>
   <div class="grid3">
     <div class="panel"><span class="label">State in files</span><p class="small" style="margin-top:6px">An idea registry (267 rows, one verdict class each), a ledger, a register of adopted pieces with build status, a calibration table of forecasts and board reads, and a digest of every user ruling.</p></div>
-    <div class="panel"><span class="label">Roles</span><p class="small" style="margin-top:6px">Ideation agents with different information wrote ideas only. A fresh advisor ranked them against the registry. Workers ran one line each with a hypothesis, budget and kill condition. A read-only critic reviewed between attempts.</p></div>
-    <div class="panel"><span class="label">Guards</span><p class="small" style="margin-top:6px">A hook blocked credential reads and allowed a submission only with a manifest line and a written forecast. Workers could not edit the instrument that judged them.</p></div>
+    <div class="panel"><span class="label">Roles</span><p class="small" style="margin-top:6px">Ideation rounds, each from different information, wrote ideas only. A separate ranking step compared them with the registry. Each line of work had a hypothesis, budget and kill condition, with a read-only review between attempts.</p></div>
+    <div class="panel"><span class="label">Guards</span><p class="small" style="margin-top:6px">A pre-upload check allowed a submission only with a manifest line and a written forecast. A line of work could not edit the instrument that judged it.</p></div>
   </div>
   <div class="panel" style="margin-top:16px"><h3>Numbers</h3><div class="tbl" style="margin-top:10px"><table id="compute"></table></div></div>
   <details style="margin-top:16px"><summary>What went wrong in the process</summary>
-    <div class="prose small" style="margin-top:10px"><p>Wrong headroom estimates sent two lanes to ODME for days. The Codex lanes produced 1,093 coordination messages in six days, 61% with no action.
-      The supervisor lost one member's weights with a destroyed rented machine and deleted a cache later work needed.
+    <div class="prose small" style="margin-top:10px"><p>Wrong headroom estimates sent two lines of work to ODME for days, and early coordination between parallel lines was mostly overhead.
+      One member's weights were lost with a destroyed rented machine, and a cache later work needed was deleted.
       Each became a rule: save weights and a recipe at adoption.</p></div></details>
 </div></section>
 

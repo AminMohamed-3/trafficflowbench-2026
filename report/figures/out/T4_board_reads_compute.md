@@ -2,14 +2,14 @@
 
 - Every upload had a manifest line with hypothesis, prediction and band written first (D-0069, D-0068).
 - Sources: docs/report/board_calibration.csv, artifacts/claude_ref/probes/manifest.csv, FVI_INFO log lines, REPRO_README.md, REGISTRY.tsv effort column.
-- The early Codex-lane uploads before C01 appear only where they have a calibration row.
+- The early uploads before C01 appear only where they have a calibration row.
 
 | item | value | note |
 |---|---|---|
 | board reads with a written forecast (board_calibration.csv) | 90 |  |
 |   in the pre-written band (recomputed) | 72% |  |
 |   forecast and board agree in sign (abs change >= .00001) | 64% | rows without a forecast change counted as not agreeing |
-| Claude probe manifest rows | 86 | artifacts/claude_ref/probes/manifest.csv |
+| probe manifest rows | 86 | artifacts/claude_ref/probes/manifest.csv |
 |   read on the board | 80 | 2 prepared but not uploaded |
 |   UTC days with at least one read | 20 | 2026-10-01 to 2026-10-20 |
 |   most reads on one UTC day | 5 | cap 5 per UTC day (RULES.md 7) |

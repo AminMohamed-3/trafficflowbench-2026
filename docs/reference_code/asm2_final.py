@@ -5,7 +5,7 @@ Final candidate F1 (2026-10-05) = C17 board chain + phys5 stage 4 + onset Q0436:
   Task 1/3 state rows, per split and panel, in memory, every stage from the split's released official view:
     1. asm chain K5 (asm2_build.Stages): S08 input -> 0360 -> 0368 -> 0358 -> phys3 -> stage 2 -> B6 imputer blend -> polish
        -> phys4 LSA -> phys4 stage 3 (L) -> gap specialist (skip with --no-gap = isolation X1) -> speed clip
-    2. Codex S lane S0424 + S0426 + S0447 (s0447_probe.predict: occupancy residuals and joint demand-block flow factor)
+    2. S lane S0424 + S0426 + S0447 (s0447_probe.predict: occupancy residuals and joint demand-block flow factor)
     3. phys5 stage 4 (tag AL+FL, phys5_stage4.apply) + speed clip   (skip with --no-phys5 = C17 state)
   Task 2 queue rows:
     onset   = Q03 rows (--onset-rows; default the C03 rows) + Q0436 delta (--onset-delta; '' to skip)
@@ -51,7 +51,7 @@ def rd(p, cols=None):
 
 
 def slane_setup():
-    """S lane modules (Codex S 0424/0426/0447, docs/reference_code/s04*). Import the asm feature modules first so they keep
+    """S lane modules (S lane 0424/0426/0447, docs/reference_code/s04*). Import the asm feature modules first so they keep
     the full phys_lwr_diag shim; s0416_density.modules swaps in a metadata-only stub for the S lane's own imports."""
     import phys4_feat, phys4_lsa, flow_screen, phys4_lsa_eval, polish_eval  # noqa: F401
     import lightgbm as lgb

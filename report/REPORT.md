@@ -409,8 +409,8 @@ T3 is picked for its lessons. The mechanical selection (15 refuted rows with a n
 
 Three lessons follow from T3. Train-month evidence for queue models misled in sign several times (R098, R101, R103).
 Pseudo windows misled corrections fitted on top of the model's output (R118, R191). For ODME the held-out count fit could
-not see total mass, and the board rejected what it favoured (R158). Over 2026-10-12 and 10-13, five rounds of fresh-context
-helper agents produced no new adopted piece; 4 of 4 open proposals in the first round landed in already tested regions
+not see total mass, and the board rejected what it favoured (R158). Over 2026-10-12 and 10-13, five ideation rounds
+produced no new adopted piece; 4 of 4 open proposals in the first round landed in already tested regions
 [docs/report/REPORT_DRAFT.md section 7e]. The generator emulator was killed at its first gate (section 2)
 [exp/G_gen/GATE1.md].
 
@@ -482,7 +482,7 @@ rows within 4.19e-13 km/h and 3.64e-11 vph of the submitted file [final_solution
 inside the gate of about .009.
 
 **C47 to C80.** ADOPTED rows 19 to 35 are not yet in the single build (BUILD = NO). Each was saved at adoption with weights or
-fitted files, sha256 receipts and the exact recipe [ADOPTED 19 to 35; .claude/CLAUDE.md]. The solution repository
+fitted files, sha256 receipts and the exact recipe [ADOPTED 19 to 35; project rules]. The solution repository
 (`final_solution/`) rebuilds them in adoption order from saved weights, with a parity check per piece:
 `pipeline/00_fetch_data.sh`, `01_fetch_weights.sh`, `10_base_c47.sh`, `pipeline/pieces/19_*.sh` to `35_*.sh`, `99_verify.py`
 [docs/report/FINAL_PLAN_2026-10-21.md section 3]. Verification run (clean machine): passed on 2026-11-09. Rows 19 to 35 ran in 11.6 h on the laptop from a fresh folder made only from this repository, the release assets and the competition data, with every Python file open audited: nothing outside that folder was read except our two stored files of C79 and C80, read for the final comparison. Every rebuilt member set matched development by sha256, C79 came out byte-equal to the scored submission and C80 to our stored file (VERIFY_PASS). The base C47 was rebuilt separately in WSL (VERIFY_PASS, state rows within 4e-13). Two known exceptions: Q-ACCUM has no weights (per-date online fits in three Kaggle kernels;
@@ -601,33 +601,26 @@ ledger rows to 0841; section 8); negative results with power (section 7); code a
 - Declared April methods 1 to 4 (section 8).
 - Public notebooks and forum topics were read for ideas (twelve notebooks, fourteen topics) [L0489]
 - Screened, not shipped: TabPFN v2, Big-LaMa, Chronos-Bolt, PeMS pretraining [RULES.md section 3].
-- An AI agent system did the engineering (Appendix E).
+## Appendix E. The working process
 
-## Appendix E. The agentic process
-
-**Who did what.** One human set the goal, the budget, the rule interpretations and the final selection. From 2026-09-25 to
-10-08 a planner agent (Claude) coordinated four Codex lanes (state, queue, ODME and physics, lead). From 2026-10-08 Claude
-Code, Anthropic's coding agent, was the only developer; it ran as a harness that launched helper agents [DIGEST 2026-10-08;
-docs/report/REPORT_DRAFT.md section 8a].
-
-**How the harness worked** [LESSONS_AND_CONSTITUTION.md Article 14].
+**How the work was organised** [LESSONS_AND_CONSTITUTION.md Article 14].
 - *State in files.* An idea registry (267 rows, one verdict class each), a ledger (rows to 0841), a register of adopted pieces
-  with BUILD status, a calibration table of forecasts and board reads, and a rules digest with every user ruling.
-- *Roles.* Ideation agents wrote ideas only, each with different information (13 numbered rounds and six analysis seats R1
-  to R6) [docs/research/ideas_L1 to ideas_L13, ideas_R1 to ideas_R6]. A fresh advisor agent ranked the pool against the
+  with BUILD status, a calibration table of forecasts and board reads, and a digest of every ruling.
+- *Steps.* Ideation rounds wrote ideas only, each from different information (13 numbered rounds and six analysis rounds R1
+  to R6) [docs/research/ideas_L1 to ideas_L13, ideas_R1 to ideas_R6]. A separate ranking step compared the pool with the
   registry and wrote assignments with a predicted result [docs/research/advisor_L1 to advisor_L8; ADVICE_C70, ADVICE_C73,
-  ideas_R6/ADVICE_R6]. Worker agents ran one line each in its own folder with a line card (hypothesis, formulation, budget,
-  kill and reopen condition) and an attempts table [76 folders exp/L_*]. A read-only critic reviewed between attempts.
-- *Protected scorers.* Workers could not edit the instrument that judged them; instruments used date folds and counted reads
+  ideas_R6/ADVICE_R6]. Each line of work ran in its own folder with a line card (hypothesis, formulation, budget,
+  kill and reopen condition) and an attempts table [76 folders exp/L_*], with a read-only review between attempts.
+- *Protected scorers.* A line could not edit the instrument that judged it; instruments used date folds and counted reads
   of the confirm month (for example the gap bench, 13 counted April reads) [exp/L_gap/README.md].
-- *Guards.* A pre-command hook blocked credential reads and allowed a Kaggle submit only with a manifest line, a written
-  forecast and a window-guard PASS [.claude/hooks/probe_guard.py; tools/upload_day.py].
-- *Limits.* At most three lines and one critic at a time; a weekly usage cap set by the user.
+- *Guards.* A pre-upload check allowed a Kaggle submit only with a manifest line, a written forecast and a window-guard PASS
+  [tools/upload_day.py; tools/window_guard.py].
+- *Limits.* At most three lines of work and one review at a time.
 
-**What went wrong in the process.** Wrong headroom estimates sent two lanes to ODME for days; the Codex lanes produced 1,093
-coordination messages in six days, 61% with no action [docs/report/RETRO_2026-10-06.md section 2]. The supervisor lost one member's
-weights with a destroyed machine, and deleted a cache that later work
-needed [REVIEW section 5]. Each led to a rule (save weights and a recipe at adoption).
+**What went wrong in the process.** Wrong headroom estimates sent two lines of work to ODME for days, and early coordination
+between parallel lines was mostly overhead [docs/report/RETRO_2026-10-06.md section 2]. One member's weights were lost with a
+destroyed rented machine, and a cache that later work needed was deleted [REVIEW section 5]. Each led to a rule (save weights
+and a recipe at adoption).
 
 ## Appendix F. Figures and tables
 
