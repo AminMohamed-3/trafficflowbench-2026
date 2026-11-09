@@ -2,7 +2,8 @@
 
   python report/video/build_video.py [--fps 30] [--only-html] [--from-s S --to-s S]
 
-1. Timeline: one scene per narration clip (narration.json order); scene length = lead + clip + tail.
+1. Timeline: one scene per narration clip (narration.json order); scene length = lead + clip + tail. "text" is the caption;
+   "say", where present, is what was typed into the voice tool (spoken spellings, e.g. Light G-B-M, You-Net).
 2. build/scenes.html: the template with the data inlined (report/figures/out tables, the registry, the system diagram,
    the clean-folder log lines). Every number on screen comes from those files.
 3. capture.mjs (Node 22+, no packages): headless Edge/Chrome over the DevTools protocol renders frame t = i / fps by
