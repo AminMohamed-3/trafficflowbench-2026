@@ -1,0 +1,2 @@
+# shell scripts run under bash in WSL and Git Bash: keep LF on every checkout (core.autocrlf would add CR)
+*.sh text eol=lf
