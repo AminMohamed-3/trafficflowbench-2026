@@ -2,9 +2,15 @@
 
 Author: Amin Mohamed. Private score .89874 (8th), public .90088.
 
+**Watch first: the approach in 3 minutes** (narrated video, 1080p): https://aminmohamed-3.github.io/trafficflowbench-2026/#video
+
+[![Video: the approach in 3 minutes](https://aminmohamed-3.github.io/trafficflowbench-2026/video/poster_play.jpg)](https://aminmohamed-3.github.io/trafficflowbench-2026/#video)
+
+**Rebuild the scored submission:** `bash run_all.sh` (section "Single entry script" below).
+
 - Write-up: `report/KAGGLE_WRITEUP.md`; full method report: `report/REPORT.md` (PDF: `report/REPORT.pdf`, built by `report/build_pdf.py`).
 - Interactive site (all board reads, the idea registry, the analysis): https://aminmohamed-3.github.io/trafficflowbench-2026/
-- Video, the approach in 3 minutes (narrated, 1080p): https://aminmohamed-3.github.io/trafficflowbench-2026/#video (built from `report/video/` by `report/video/build_video.py`; narration voice: ElevenLabs).
+- Video sources: `report/video/` (built by `report/video/build_video.py`; narration voice: ElevenLabs).
 - Weights: the `weights-v1` release of this repository (4.1 GB in 3 zip parts plus `devroot_extra.zip`, 0.7 GB of stored intermediate files; all sha256-checked by the fetch script).
 - Verified on a clean folder (2026-11-09): from this repository, the release assets and the competition data alone, the chain
   rebuilt C79 byte-equal to the scored submission and C80 byte-equal to our stored file, with an audit showing no file read from outside that folder

@@ -4,6 +4,8 @@ Amin Mohamed
 
 2026 IEEE BigData Cup: TrafficFlowBench. Method report for the final package (code and report due 2026-11-10).
 
+Video, the approach in 3 minutes: https://aminmohamed-3.github.io/trafficflowbench-2026/#video .
+
 Code, weights and rebuild: https://github.com/AminMohamed-3/trafficflowbench-2026 . Interactive write-up:
 https://aminmohamed-3.github.io/trafficflowbench-2026/ . Kaggle write-up:
 https://www.kaggle.com/competitions/2026-ieee-big-data-traffic-flow-bench/writeups/8th-place-solution-per-month-masked-u-net-and-per

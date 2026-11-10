@@ -3,12 +3,15 @@
 Thanks to the organisers of the 2026 IEEE BigData Cup for a benchmark with four very different tasks in one score, and congratulations to the top teams.
 
 - Private score .89874 (8th), public .90088. Scored file: C79.
+- **Video, the approach in 3 minutes:** https://aminmohamed-3.github.io/trafficflowbench-2026/#video
 - Code and weights: https://github.com/AminMohamed-3/trafficflowbench-2026
 - Interactive write-up: https://aminmohamed-3.github.io/trafficflowbench-2026/
   - all 91 board reads with their April scores;
   - the 267-row idea registry;
   - a space-time map of where our state error lives.
 - Author: Amin Mohamed.
+
+[![Video: the approach in 3 minutes](https://aminmohamed-3.github.io/trafficflowbench-2026/video/poster_play.jpg)](https://aminmohamed-3.github.io/trafficflowbench-2026/#video)
 - We stopped development on 21 October, 17 days before the close. Our last upload was on 20 October.
 
 ## TL;DR
