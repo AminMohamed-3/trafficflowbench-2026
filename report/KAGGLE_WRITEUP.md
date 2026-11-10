@@ -10,9 +10,9 @@ Thanks to the organisers of the 2026 IEEE BigData Cup for a benchmark with four 
   - the 267-row idea registry;
   - a space-time map of where our state error lives.
 - Author: Amin Mohamed.
+- We stopped development on 21 October, 17 days before the close. Our last upload was on 20 October.
 
 [![Video: the approach in 3 minutes](https://aminmohamed-3.github.io/trafficflowbench-2026/video/poster_play.jpg)](https://aminmohamed-3.github.io/trafficflowbench-2026/#video)
-- We stopped development on 21 October, 17 days before the close. Our last upload was on 20 October.
 
 ## TL;DR
 
