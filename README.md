@@ -1,6 +1,6 @@
-# TrafficFlowBench 2026 (IEEE BigData Cup): 8th place solution
+# TrafficFlowBench 2026 (IEEE BigData Cup): 5th place solution
 
-Author: Amin Mohamed. Private score .89874 (8th), public .90088.
+Author: Amin Mohamed. 5th place in the [official final ranking](https://www.kaggle.com/competitions/2026-ieee-big-data-traffic-flow-bench/discussion/760505). Private score .89874, public .90088.
 
 **Watch first: the approach in 3 minutes** (narrated video, 1080p): https://aminmohamed-3.github.io/trafficflowbench-2026/#video
 

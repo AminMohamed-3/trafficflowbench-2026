@@ -116,7 +116,7 @@ for y, s in ((106, "state rows"), (297, "onset rows"), (415, "ongoing rows"), (5
     t(816, y + 4, s, "sd-m")
 t(892, 160, "public .90088", "sd-t", "middle")
 t(892, 182, "private .89874", "sd-t", "middle")
-t(892, 204, "8th of 802 teams", "sd-s", "middle")
+t(892, 204, "5th, official ranking", "sd-s", "middle")
 t(892, 236, "March and April rows", "sd-s", "middle")
 t(892, 252, "built separately", "sd-s", "middle")
 
@@ -144,7 +144,7 @@ for x, (a, b) in zip(BX, REB):
 for k in range(4):
     arrow([(BX[k] + 182, 686), (BX[k + 1] - 2, 686)])
 
-LABEL = ("System diagram of the 8th-place solution: three inputs feed five task engines, built once per scored month; "
+LABEL = ("System diagram of the 5th-place solution: three inputs feed five task engines, built once per scored month; "
          "their rows form the submitted file C79. Each piece entered through an offline instrument, a written forecast and a "
          "board read, and the whole chain rebuilds byte-equal from the public repository.")
 svg = (f'<svg class="sd" viewBox="0 0 {W} {H}" role="img" aria-label="{escape(LABEL)}" xmlns="http://www.w3.org/2000/svg">'

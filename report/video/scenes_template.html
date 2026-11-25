@@ -118,8 +118,8 @@ svg text { font-family: var(--display) }
   <div class="abs" id="r-priv" style="left:640px;top:140px"><span class="kick">Its private score</span><br><span id="r-pnum" style="font:900 96px var(--display);color:var(--priv)"></span></div>
   <svg class="abs" id="r-svg" width="1680" height="600" style="left:120px;top:330px"></svg>
   <div class="card" id="r-badge" style="left:1290px;top:132px;width:510px;height:170px;padding:16px 28px;box-sizing:border-box;border-color:var(--warn)">
-    <div style="font:900 96px/1 var(--display);color:var(--warn)">8<span style="font-size:52px;vertical-align:38px">th</span> <span style="font:800 40px var(--display);color:var(--ink)">of 802</span></div>
-    <div class="lab" style="font-size:22px;margin-top:8px">private leaderboard (April) &middot; winner .92823</div></div>
+    <div style="font:900 96px/1 var(--display);color:var(--warn)">5<span style="font-size:52px;vertical-align:38px">th</span> <span style="font:800 40px var(--display);color:var(--ink)">place</span></div>
+    <div class="lab" style="font-size:22px;margin-top:8px">official final ranking &middot; winner .92823</div></div>
 </div>
 
 <!-- 8 repro -->
@@ -136,12 +136,12 @@ svg text { font-family: var(--display) }
 <!-- 9 end -->
 <div class="scene" id="s-end">
   <div class="abs" style="left:0;width:1920px;top:210px;text-align:center"><div class="kick">TrafficFlowBench &middot; 2026 IEEE BigData Cup</div>
-    <div class="h1" style="font-size:88px;margin-top:14px">8th of 802</div></div>
+    <div class="h1" style="font-size:88px;margin-top:14px">5th place</div></div>
   <div class="abs" id="e-links" style="left:330px;top:440px;width:1260px;font:400 30px/1.5 var(--body)"></div>
   <div class="abs lab" id="e-credit" style="left:0;width:1920px;top:880px;text-align:center;font-size:21px">Amin Mohamed&nbsp;&nbsp;&middot;&nbsp;&nbsp;narration voice: ElevenLabs</div>
 </div>
 
-<div id="brand">TrafficFlowBench &middot; <b>8th place</b></div>
+<div id="brand">TrafficFlowBench &middot; <b>5th place</b></div>
 <div id="chap"></div>
 <div id="cap"></div>
 <div id="prog"></div>
@@ -196,24 +196,24 @@ function drawBg(T) {
 const dotsC = $("t-dots").getContext("2d");
 function sceneTitle(t, s) {
   $("t-kick").style.opacity = seg(t, sT(s, 0) - .3, .8);
-  const a1 = sT(s, 1), a2 = sT(s, 2), a3 = sT(s, 3);
+  const a1 = sT(s, 1), a3 = sT(s, 2), a2 = a1 + 1.9;
   const showRank = seg(t, a2, .8);
   const n = Math.round(802 * eo((t - a1) / 1.4));
   $("t-num").style.opacity = seg(t, a1 - .2, .5);
-  $("t-num").innerHTML = showRank < .5 ? `${n}` : `8<span style="font-size:130px;vertical-align:96px">th</span>`;
+  $("t-num").innerHTML = showRank < .5 ? `${n}` : `5<span style="font-size:130px;vertical-align:96px">th</span>`;
   $("t-num").style.color = showRank < .5 ? "var(--ink)" : "var(--warn)";
   $("t-sub").style.opacity = seg(t, a1, .6);
-  $("t-sub").innerHTML = showRank < .5 ? "teams on the private leaderboard" : `of 802 teams&nbsp;&nbsp;&middot;&nbsp;&nbsp;private score <b style="color:var(--ink)">.89874</b>`;
+  $("t-sub").innerHTML = showRank < .5 ? "teams entered" : `official final ranking&nbsp;&nbsp;&middot;&nbsp;&nbsp;private score <b style="color:var(--ink)">.89874</b>`;
   const ti = seg(t, a3 - .1, .9);
   $("t-title").style.opacity = ti; $("t-title").style.transform = `translateY(${(1 - ti) * 30}px)`;
-  // dots: 802 teams, 41 x 20 grid in rank order; ours (rank 8) lights up
+  // dots: 802 teams, 41 x 20 grid; they fade back when the official rank shows
   dotsC.clearRect(0, 0, 760, 420);
   const cols = 41, gap = 18.4;
   for (let i = 0; i < 802; i++) {
     const app = eo((t - a1 - i * .0016) / .35);
     if (app <= 0) continue;
     const x = 14 + (i % cols) * gap, y = 14 + Math.floor(i / cols) * gap;
-    const ours = i === 7, top10 = i < 10;
+    const ours = false, top10 = false;
     let r = 5.2 * app, col = `rgba(147,166,154,${.55 * app})`;
     if (showRank > 0) {
       if (ours) { r = lerp(5.2, 9, showRank); col = `rgba(224,166,64,${app})`; }
@@ -223,7 +223,7 @@ function sceneTitle(t, s) {
     if (ours && showRank > 0) { dotsC.beginPath(); dotsC.arc(x, y, 9 + 10 * showRank, 0, 7); dotsC.strokeStyle = `rgba(224,166,64,${.6 * showRank})`; dotsC.lineWidth = 2; dotsC.stroke(); }
   }
   $("t-dotlab").style.opacity = seg(t, a2, .6);
-  $("t-dotlab").textContent = "each dot is a team, in private-leaderboard order";
+  $("t-dotlab").textContent = "each dot is a team that entered";
 }
 
 // ---------------------------------------------------------------- scene 2: task
@@ -459,7 +459,7 @@ function sceneResults(t, s) {
   document.querySelectorAll("#r-vd circle").forEach(c => c.style.opacity = y);
   $("r-priv").style.opacity = seg(t, a1 - .2, .5); $("r-pnum").textContent = p5(RS.run[Math.min(RS.n - 1, Math.floor(y * (RS.n - 1)))].priv);
   $("r-pt").style.opacity = seg(t, a1 - .6, .5); $("r-vt").style.opacity = seg(t, a1 + 1.4, .5);
-  const b = seg(t, a2 - .2, .6); $("r-badge").style.opacity = b; $("r-badge").style.transform = `scale(${lerp(.9, 1, b)})`;
+  const b = seg(t, a1 + 2.2, .6); $("r-badge").style.opacity = b; $("r-badge").style.transform = `scale(${lerp(.9, 1, b)})`;
 }
 
 // ---------------------------------------------------------------- scene 8: reproducibility
@@ -485,7 +485,7 @@ function sceneRepro(t, s) {
 
 // ---------------------------------------------------------------- scene 9: links
 const LINKS = [["Code and weights", "github.com/AminMohamed-3/trafficflowbench-2026"], ["Interactive write-up", "aminmohamed-3.github.io/trafficflowbench-2026"],
-  ["Full report (PDF)", "report/REPORT.pdf in the repository"], ["Kaggle write-up", "kaggle.com, competition write-ups, 8th place"]];
+  ["Full report (PDF)", "report/REPORT.pdf in the repository"], ["Kaggle write-up", "kaggle.com, competition write-ups, 5th place"]];
 function sceneEnd(t, s) {
   $("e-links").innerHTML = LINKS.map((l, i) => `<div style="opacity:${seg(t, .4 + i * .35, .5)};display:flex;gap:28px;margin-bottom:18px"><span style="width:330px;flex:none;color:var(--muted);font:700 22px var(--display);text-transform:uppercase;letter-spacing:.06em;padding-top:6px">${l[0]}</span><span style="font:600 28px var(--mono);color:var(--ink);font-variant-ligatures:none;white-space:nowrap">${l[1]}</span></div>`).join("");
   $("e-credit").style.opacity = seg(t, 2, .8);

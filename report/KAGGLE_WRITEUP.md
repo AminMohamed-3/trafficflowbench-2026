@@ -1,8 +1,8 @@
-# 8th place solution: per-month masked U-Net and per-date queue adaptation
+# 5th place solution: per-month masked U-Net and per-date queue adaptation
 
 Thanks to the organisers of the 2026 IEEE BigData Cup for a benchmark with four very different tasks in one score, and congratulations to the top teams.
 
-- Private score .89874 (8th), public .90088. Scored file: C79.
+- 5th place in the [official final ranking](https://www.kaggle.com/competitions/2026-ieee-big-data-traffic-flow-bench/discussion/760505). Private score .89874, public .90088. Scored file: C79.
 - **Video, the approach in 3 minutes:** https://aminmohamed-3.github.io/trafficflowbench-2026/#video
 - Code and weights: https://github.com/AminMohamed-3/trafficflowbench-2026
 - Interactive write-up: https://aminmohamed-3.github.io/trafficflowbench-2026/

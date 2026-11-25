@@ -20,7 +20,7 @@ docs/report/board_calibration.csv; "DIGEST" = DECISIONS_DIGEST.md. Public = Marc
 
 ## 1. Summary
 
-**Result.** Our scored file C79 scores .89874 on the private board (April), 8th place, and .90088 on the public board
+**Result.** Our scored file C79 scores .89874 on the private board (April), 5th place in the official final ranking [https://www.kaggle.com/competitions/2026-ieee-big-data-traffic-flow-bench/discussion/760505], and .90088 on the public board
 (March) [P4; calib]. The winning private score was .92823. C80 adds the April rows of ADOPTED 34 and 35 and was never
 uploaded.
 

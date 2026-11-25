@@ -1,4 +1,4 @@
-"""Build the solution video: narration (audio/*.mp3) + animated scenes (scenes_template.html) -> out/trafficflowbench_8th.mp4.
+"""Build the solution video: narration (audio/*.mp3) + animated scenes (scenes_template.html) -> out/trafficflowbench_5th_place.mp4.
 
   python report/video/build_video.py [--fps 30] [--only-html] [--from-s S --to-s S]
 
@@ -126,7 +126,7 @@ def main():
     fc = ";".join(flt) + f";{mix}amix=inputs={n}:normalize=0,apad[aout]"
     out = V / "out"
     out.mkdir(exist_ok=True)
-    mp4 = out / "trafficflowbench_8th_place.mp4"
+    mp4 = out / "trafficflowbench_5th_place.mp4"
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(silent), *ins, "-filter_complex", fc, "-map", "0:v", "-map", "[aout]",
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(mp4)], check=True)
     print(f"{mp4} {mp4.stat().st_size / 1e6:.1f} MB, {dur(mp4):.1f} s")
